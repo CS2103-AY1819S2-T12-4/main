@@ -815,7 +815,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sect2">
 <h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
 <div class="paragraph">
-<p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
+<p>Certain properties of the application can be controlled (e.g user prefs file directory, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
 </div>
 </div>
@@ -1572,7 +1572,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <p>Use <a href="https://github.com/cs2103-ay1819s2-t12-4/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter#handleAddressBookChangedEvent(AddressBookChangedEvent)</code></a> to update the number of pdfs whenever there are new changes to the addressbook.</p>
 </li>
 <li>
-<p>For tests, modify <a href="https://github.com/cs2103-ay1819s2-t12-4/main/src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a state-saving functionality for the total number of people status, just like what we did for save location and sync status.</p>
+<p>For tests, modify <a href="https://github.com/cs2103-ay1819s2-t12-4/main/src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a state-saving functionality for the total number of people status, just like what we did for save directory and sync status.</p>
 </li>
 <li>
 <p>For system tests, modify <a href="https://github.com/cs2103-ay1819s2-t12-4/main/src/test/java/systemtests/AddressBookSystemTest.java"><code>AddressBookSystemTest</code></a> to also verify the new total number of pdfs status bar.</p>
@@ -1609,7 +1609,7 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a new method <code>backupAddressBook(ReadOnlyAddressBook)</code>, so that the address book can be saved in a fixed temporary location.</p>
+<p>Add a new method <code>backupAddressBook(ReadOnlyAddressBook)</code>, so that the address book can be saved in a fixed temporary directory.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -2252,11 +2252,11 @@ Expected: Shows the GUI with a set of sample contacts. The window size may not b
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+<p>Resize the window to an optimum size. Move the window to a different directory. Close the window.</p>
 </li>
 <li>
 <p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location is retained.</p>
+Expected: The most recent window size and directory is retained.</p>
 </li>
 </ol>
 </div>
@@ -2320,4 +2320,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-12 05:19:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-19 11:43:32 UTC</div></div></div></body></html>
