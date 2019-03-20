@@ -1292,7 +1292,80 @@ to remove or add.
 <h3 id="_open_feature">3.3. Open feature</h3>
 <div class="sect3">
 <h4 id="_current_implementation_3">3.3.1. Current Implementation</h4>
-
+<div class="paragraph">
+<p>The edit feature is facilitated by both the <code>OpenCommandParser</code> and <code>OpenCommand</code>.
+Essentially upon opening a Pdf that is tracked by the application, the user will be able to
+execute the PDF with the operating system&#8217;s default PDF reader application.</p>
+</div>
+<div class="paragraph">
+<p>The Open feature has the following syntax:
+<code>open &lt;INDEX&gt;</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to edit.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The index value can be referenced from the list in the main application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+workings of the Open feature.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user launches an application with either an existing set of <code>Pdf</code> or a
+new sample set of <code>Pdf</code> stored within as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/OpenFeatureStep1Default.png" alt="OpenFeatureStep1Default" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2: The user chooses a <code>Pdf</code> that they wish to open, in this case <code>a.pdf</code>, and
+enters the <code>open</code> command into the CLI Interface, following the outlined Syntax as
+illustrated below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/OpenFeatureStep2UserInput.png" alt="OpenFeatureStep2UserInput" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 3: Upon hitting enter to execute the command, the <code>OpenCommandParser</code> parses
+the input into relevant objects that are required to be executed by the <code>OpenCommand</code>
+object. Upon parsing, the parser then creates a new <code>OpenCommand</code> that will execute the
+user&#8217;s input.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: Upon receiving the necessary information from the parser, the <code>OpenCommand</code>
+retrieves the directory of the Pdf listed in the Pdf Book. It then launches the Pdf
+with the user-default Pdf reader.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+For more information about the behavior of launching the Pdf, please refer to Java SE 9 class Desktop.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3053,7 +3126,7 @@ Expected: Similar to previous.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-20 14:43:54 UTC
+Last updated 2019-03-20 15:22:12 UTC
 </div>
 </div>
 </body>
