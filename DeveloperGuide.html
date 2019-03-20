@@ -453,11 +453,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_add_feature">3.1. Add feature</a></li>
 <li><a href="#_edit_feature">3.2. Edit feature</a></li>
-<li><a href="#_open_feature">3.3. Open feature</a></li>
-<li><a href="#_undo_redo_feature">3.4. Undo/Redo feature</a></li>
-<li><a href="#_proposed_data_encryption">3.5. [Proposed] Data Encryption</a></li>
-<li><a href="#_logging">3.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
+<li><a href="#_move_feature">3.3. Move feature</a></li>
+<li><a href="#_open_feature">3.4. Open feature</a></li>
+<li><a href="#_undo_redo_feature">3.5. Undo/Redo feature</a></li>
+<li><a href="#_proposed_data_encryption">3.6. [Proposed] Data Encryption</a></li>
+<li><a href="#_logging">3.7. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.8. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#_documentation">4. Documentation</a>
@@ -498,12 +499,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_use_cases">Appendix D: Use Cases</a></li>
 <li><a href="#_non_functional_requirements">Appendix E: Non Functional Requirements</a></li>
 <li><a href="#_glossary">Appendix F: Glossary</a></li>
-<li><a href="#_product_survey">Appendix G: Product Survey</a></li>
-<li><a href="#_instructions_for_manual_testing">Appendix H: Instructions for Manual Testing</a>
+<li><a href="#_instructions_for_manual_testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#_launch_and_shutdown">H.1. Launch and Shutdown</a></li>
-<li><a href="#_deleting_a_pdf">H.2. Deleting a pdf</a></li>
-<li><a href="#_saving_data">H.3. Saving data</a></li>
+<li><a href="#_launch_and_shutdown">G.1. Launch and Shutdown</a></li>
+<li><a href="#_deleting_a_pdf">G.2. Deleting a pdf</a></li>
+<li><a href="#_saving_data">G.3. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -1014,7 +1014,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Pdf Book</cod
 <p>The add feature is facilitated by both the <code>AddCommandParser</code> and <code>AddCommand</code>.
 This function adds the PDF file to PDF using the path specified by your users.
 Your users can then perform multiple operations supported by PDF on the added files.
-Some examples of features supported include <a href="#_edit_feature">Section 3.2, &#8220;Edit feature&#8221;</a> and <a href="#_open_feature">Section 3.3, &#8220;Open feature&#8221;</a></p>
+Some examples of features supported include <a href="#_edit_feature">Section 3.2, &#8220;Edit feature&#8221;</a> and <a href="#_open_feature">Section 3.4, &#8220;Open feature&#8221;</a></p>
 </div>
 <div class="paragraph">
 <p>Currently PDF++ only supports PDF files, any other types of files will not be accepted.</p>
@@ -1289,9 +1289,91 @@ to remove or add.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_open_feature">3.3. Open feature</h3>
+<h3 id="_move_feature">3.3. Move feature</h3>
 <div class="sect3">
 <h4 id="_current_implementation_3">3.3.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The move feature functions as a simplified version of the <code>Edit</code> feature, as in nature
+it is making an edit to the directory of the file. However, in addition to making changes
+to the directory in the application storage, it also ensures that the directory changes
+are reflected in the local filesystem.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The design consideration into separating move as a new command from edit factored in the
+purpose of the application; as a document manager, the term "edit" is synonymous with
+making content or characteristic changes when it is applied in the context of documents.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Edit feature has the following syntax:
+`move &lt;INDEX&gt; &lt;NEWDIRECTORY&gt;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to edit.</p>
+</li>
+<li>
+<p><code>&lt;NEWDIRECTORY&gt;</code> refers to the address of the new location the file is to be moved.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The index value can be referenced from the list in the main application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>All parts of the syntax are required.</p>
+</div>
+<div class="paragraph">
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+workings of the Edit feature.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user launches an application with either an existing set of <code>Pdf</code> or a
+new sample set of <code>Pdf</code> stored within as shown below.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: The user chooses a <code>Pdf</code> that they wish to move, and enters the <code>move</code>
+command into the CLI Interface, following the outlined Syntax as
+illustrated below.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: After executing the command, the <code>MoveCommandParser</code> parses the input into
+relevant objects that are required to be executed by the <code>MoveCommand</code> object. Upon
+parsing, the parser then creates a new <code>MoveCommand</code> that will execute the
+user&#8217;s input.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: Upon receiving the necessary information from the parser, the <code>Move</code> first
+begins by checking for validity as shown below.</p>
+</div>
+<div class="paragraph">
+<p>Step 5: If the validity check and the individual property check passes, the file is then
+set to move to the new directory.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_open_feature">3.4. Open feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_4">3.4.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The edit feature is facilitated by both the <code>OpenCommandParser</code> and <code>OpenCommand</code>.
 Essentially upon opening a Pdf that is tracked by the application, the user will be able to
@@ -1369,9 +1451,9 @@ For more information about the behavior of launching the Pdf, please refer to Ja
 </div>
 </div>
 <div class="sect2">
-<h3 id="_undo_redo_feature">3.4. Undo/Redo feature</h3>
+<h3 id="_undo_redo_feature">3.5. Undo/Redo feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_4">3.4.1. Current Implementation</h4>
+<h4 id="_current_implementation_5">3.5.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedPdfBook</code>.
 It extends <code>PdfBook</code> with an undo/redo history, stored internally as an <code>pdfBookStateList</code> and <code>currentStatePointer</code>.
@@ -1501,7 +1583,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_considerations">3.4.2. Design Considerations</h4>
+<h4 id="_design_considerations">3.5.2. Design Considerations</h4>
 <div class="sect4">
 <h5 id="_aspect_how_undo_redo_executes">Aspect: How undo &amp; redo executes</h5>
 <div class="ulist">
@@ -1571,20 +1653,20 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="_proposed_data_encryption">3.5. [Proposed] Data Encryption</h3>
+<h3 id="_proposed_data_encryption">3.6. [Proposed] Data Encryption</h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_logging">3.6. Logging</h3>
+<h3 id="_logging">3.7. Logging</h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1615,7 +1697,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration">3.7. Configuration</h3>
+<h3 id="Implementation-Configuration">3.8. Configuration</h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file directory, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2797,9 +2879,15 @@ for <code>RemarkCommandParser</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new pdf</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organized student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rename the PDFs to any valid name supported by the operating system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep my PDFs organized</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter my PDFs based on the tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can see all the files with the same tag in the app</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -2811,25 +2899,46 @@ for <code>RemarkCommandParser</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find a pdf by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of pdfs without having to go through the entire list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of PDFs without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with different tasks and deadlines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set due dates for my PDFs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be notified of upcoming deadlines and know the files required for that task</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view my productivity analysis and estimate time to get work done</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allocate sufficient time to finish my homework &amp; assignments before deadlines</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many pdfs in the pdf book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort pdfs by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a pdf easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view clashing tasks/appointments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be notified and make changes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">class tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">obtain the statistics of the exam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">evaluate the performance of the exam</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create new exam paper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create formatted online exam paper easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NUS student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">submit my files to LumiNUS with command lines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">submit files without using an internet browsers</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2941,21 +3050,69 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect1">
 <h2 id="_non_functional_requirements">Appendix E: Non Functional Requirements</h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>9</code> or higher installed.</p>
-</li>
-<li>
-<p>Should be able to hold up to 1000 pdfs without a noticeable sluggishness in performance for typical usage.</p>
-</li>
-<li>
-<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
-</li>
-</ol>
-</div>
+<p><strong>Technical requirements</strong></p>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p>The software should work on both 32-bit and 64-bit environments.</p>
+</div>
+</li>
+<li>
+<p><strong>Platform compatibility</strong></p>
+<div class="paragraph">
+<p>The software should work on Windows, Linux and OS-X platforms.</p>
+</div>
+</li>
+<li>
+<p><strong>Response time</strong></p>
+<div class="paragraph">
+<p>The software should respond within two seconds.</p>
+</div>
+</li>
+<li>
+<p><strong>Cost</strong></p>
+<div class="paragraph">
+<p>The software should be free of charge.</p>
+</div>
+</li>
+<li>
+<p><strong>Privacy</strong></p>
+<div class="paragraph">
+<p>The software should work entirely offline and should not collect user personal data for any purposes.</p>
+</div>
+</li>
+<li>
+<p><strong>Licensing</strong></p>
+<div class="paragraph">
+<p>The software is free, open-source does not require installation.</p>
+</div>
+</li>
+<li>
+<p><strong>Portability</strong></p>
+<div class="paragraph">
+<p>The software should not require any installer, in other words, should be able to run without installing any additional softwares.</p>
+</div>
+</li>
+<li>
+<p><strong>Extensibility</strong></p>
+<div class="paragraph">
+<p>The software should take future growth into consideration e.g. adding features, carry-forward of customizations at next major version upgrade.</p>
+</div>
+</li>
+<li>
+<p><strong>Testability</strong></p>
+<div class="paragraph">
+<p>The software should not have features that are hard to test both manual and automated testing.</p>
+</div>
+</li>
+<li>
+<p><strong>Data requirements</strong></p>
+<div class="paragraph">
+<p>The data that is stored locally should be editable by user. In other words, expert users can open the file without using the application and edit it for his or her liking.</p>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2977,44 +3134,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_product_survey">Appendix G: Product Survey</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_instructions_for_manual_testing">Appendix H: Instructions for Manual Testing</h2>
+<h2 id="_instructions_for_manual_testing">Appendix G: Instructions for Manual Testing</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -3032,7 +3152,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="_launch_and_shutdown">H.1. Launch and Shutdown</h3>
+<h3 id="_launch_and_shutdown">G.1. Launch and Shutdown</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3065,12 +3185,9 @@ Expected: The most recent window size and directory is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_deleting_a_pdf">H.2. Deleting a pdf</h3>
+<h3 id="_deleting_a_pdf">G.2. Deleting a pdf</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3097,12 +3214,9 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_saving_data">H.3. Saving data</h3>
+<h3 id="_saving_data">G.3. Saving data</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3117,16 +3231,13 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-20 15:22:12 UTC
+Last updated 2019-03-20 15:53:19 UTC
 </div>
 </div>
 </body>
