@@ -6,20 +6,19 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#importing-a-file-code-import-code">3.2. Importing a file: <code>import</code></a></li>
+<li><a href="#importing-a-file-code-add-code">3.2. Importing a file: <code>add</code></a></li>
 <li><a href="#listing-all-files-code-list-code">3.3. Listing all files : <code>list</code></a></li>
 <li><a href="#opening-a-file-code-open-code">3.4. Opening a file : <code>open</code></a></li>
-<li><a href="#assigning-labels-to-a-file-code-label-code">3.5. Assigning labels to a file : <code>label</code></a></li>
-<li><a href="#removing-labels-from-a-file-code-rlabel-code">3.6. Removing labels from a file : <code>rlabel</code></a></li>
-<li><a href="#filter-files-by-labels-code-filter-code">3.7. Filter files by labels: <code>filter</code></a></li>
-<li><a href="#deleting-a-file-code-delete-code">3.8. Deleting a file : <code>delete</code></a></li>
-<li><a href="#moving-a-file-code-move-code">3.9. Moving a file : <code>move</code></a></li>
-<li><a href="#retrieving-information-about-the-file-code-info-code">3.10. Retrieving information about the file : <code>info</code></a></li>
-<li><a href="#setting-a-deadline-for-the-file-code-deadline-code">3.11. Setting a deadline for the file : <code>deadline</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.13. Saving the data</a></li>
-<li><a href="#undo-redo-command-code-coming-in-v2-0-code">3.14. Undo, redo command <code>[coming in v2.0]</code></a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.15. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#assigning-and-deleting-tags-to-a-file-code-tag-code-code-coming-in-v1-3-code">3.5. Assigning and deleting tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#filter-files-by-tags-code-filter-code-code-coming-in-v1-3-code">3.6. Filter files by tags: <code>filter</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#deleting-a-file-code-delete-code">3.7. Deleting a file : <code>delete</code></a></li>
+<li><a href="#moving-a-file-code-move-code">3.8. Moving a file : <code>move</code></a></li>
+<li><a href="#retrieving-information-about-the-file-code-info-code-code-coming-in-v1-3-code">3.9. Retrieving information about the file : <code>info</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#setting-a-deadline-for-the-file-code-deadline-code-code-coming-in-v1-3-code">3.10. Setting a deadline for the file : <code>deadline</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.11. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.12. Saving the data</a></li>
+<li><a href="#undo-redo-command-code-coming-in-v2-0-code">3.13. Undo, redo command <code>[Coming in v2.0]</code></a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#command-summary">4. Command Summary</a></li>
@@ -34,7 +33,18 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>PDF takes your typical PDF experience to the next level. It strives to be the last PDF reader you ever need in handling PDF files. It has a multitude of functions that enhances your pdf reading and management experience, which include: set deadlines, tagging, label pages, zoom-in view, password, easy transfer, search - and much more to come! More importantly, PDF is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, PDF++ can get your PDF files management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>PDF++ is a desktop application that targets students who are looking for a file manager in organising their PDF files.
+This application integrates both Command Line Interface (CLI) and Graphical User Interface (GUI)
+to provide an unique experience for you. All supported features can be performed via the CLI and
+relevant feedback, based on your command, will be shown via the GUI.</p>
+</div>
+<div class="paragraph">
+<p>This manager plans to enhance your typical experience managing PDF files.
+It strives to be the last PDF manager you ever need. It includes a multitude of
+functions in elevating your PDF reading and management experience. These functions
+include: set deadlines, tagging, label pages, zoom-in view, password, easy transfer,
+search - and much more to come! Are you fascinated by PDF++? What are you waiting for?
+Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -62,20 +72,21 @@
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open this PDF++ User Guide.</p>
 </li>
 <li>
 <p>Some example commands you can try:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all files</p>
+<p><strong><code>list</code></strong> : lists all files in PDF++</p>
 </li>
 <li>
-<p><strong><code>import</code></strong><code>C:\Users\John Doe\Documents\myfile.pdf</code> : adds a PDF file named <code>myfile</code> to the PDF++ list</p>
+<p><strong><code>add</code></strong><code>f/C:\Users\Wei Tang\Documents\myfile.pdf</code> : adds a PDF file named <code>myfile</code>
+from the mentioned directory to the PDF++ list</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>myfile</code> : deletes the file named <code>myfile</code> and all relevant information from the PDF++</p>
+<p><strong><code>delete</code></strong><code>index</code> : deletes the file indexed at <code>index</code> of the list and all relevant information from the PDF++</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -117,10 +128,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="importing-a-file-code-import-code"><a class="link" href="#importing-a-file-code-import-code">3.2. Importing a file: <code>import</code></a></h3>
+<h3 id="importing-a-file-code-add-code"><a class="link" href="#importing-a-file-code-add-code">3.2. Importing a file: <code>add</code></a></h3>
 <div class="paragraph">
 <p>Adds a PDF file to the app<br>
-Format: <code>import PATH_TO_FILE</code></p>
+Format: <code>add f/PATH_TO_FILE</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -135,7 +146,7 @@ Format: <code>import PATH_TO_FILE</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>import C:\Users\James\Documents\Tutorial3.pdf</code></p>
+<p><code>add f/C:\Users\Raj\Documents\Tutorial3.pdf</code></p>
 </li>
 </ul>
 </div>
@@ -150,8 +161,8 @@ Format: <code>list</code></p>
 <div class="sect2">
 <h3 id="opening-a-file-code-open-code"><a class="link" href="#opening-a-file-code-open-code">3.4. Opening a file : <code>open</code></a></h3>
 <div class="paragraph">
-<p>Opens an existing file in the app with default PDF reader.<br>
-Format: <code>open FILENAME</code></p>
+<p>Opens an existing file at a specified index in the app with default PDF reader.<br>
+Format: <code>open INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -159,16 +170,17 @@ Format: <code>open FILENAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>open Tutorial3</code><br></p>
+<p><code>open 3</code><br></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="assigning-labels-to-a-file-code-label-code"><a class="link" href="#assigning-labels-to-a-file-code-label-code">3.5. Assigning labels to a file : <code>label</code></a></h3>
+<h3 id="assigning-and-deleting-tags-to-a-file-code-tag-code-code-coming-in-v1-3-code"><a class="link" href="#assigning-and-deleting-tags-to-a-file-code-tag-code-code-coming-in-v1-3-code">3.5. Assigning and deleting tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></a></h3>
 <div class="paragraph">
-<p>Assigns labels to an existing file in the app.<br>
-Format: <code>label FILENAME LABEL&#8230;&#8203;</code></p>
+<p>Assigns and/or deletes tags to an existing file in the list of the app. Use <code>-</code> to
+ delete tag. No action will be taken when the tag you want to delete does not exist.<br>
+Format: <code>tag INDEX TAG&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -176,32 +188,15 @@ Format: <code>label FILENAME LABEL&#8230;&#8203;</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>label Tutorial3 Dijkstra Graph Tutorial CS2040</code><br></p>
+<p><code>tag Tutorial3 Dijkstra -Graph Tutorial CS2040</code><br></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="removing-labels-from-a-file-code-rlabel-code"><a class="link" href="#removing-labels-from-a-file-code-rlabel-code">3.6. Removing labels from a file : <code>rlabel</code></a></h3>
+<h3 id="filter-files-by-tags-code-filter-code-code-coming-in-v1-3-code"><a class="link" href="#filter-files-by-tags-code-filter-code-code-coming-in-v1-3-code">3.6. Filter files by tags: <code>filter</code> <code>[Coming in v1.3]</code></a></h3>
 <div class="paragraph">
-<p>Removes labels from an existing file in the app.<br>
-Format: <code>rlabel FILENAME LABEL&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>rlabel Tutorial3 DFS</code><br></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="filter-files-by-labels-code-filter-code"><a class="link" href="#filter-files-by-labels-code-filter-code">3.7. Filter files by labels: <code>filter</code></a></h3>
-<div class="paragraph">
-<p>Display all files that contain any of the given labels.<br>
+<p>Display all files that contain any of the given tags.<br>
 Format: <code>filter KEYWORD&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
@@ -236,17 +231,10 @@ Format: <code>filter KEYWORD&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-file-code-delete-code"><a class="link" href="#deleting-a-file-code-delete-code">3.8. Deleting a file : <code>delete</code></a></h3>
+<h3 id="deleting-a-file-code-delete-code"><a class="link" href="#deleting-a-file-code-delete-code">3.7. Deleting a file : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified file from the app.<br>
-Format: <code>delete FILENAME</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The .pdf extension is not required</p>
-</li>
-</ul>
+<p>Deletes the file with specified index of the list from the app.<br>
+Format: <code>delete INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -254,16 +242,16 @@ Format: <code>delete FILENAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete Tutorial3</code><br></p>
+<p><code>delete 4</code><br></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="moving-a-file-code-move-code"><a class="link" href="#moving-a-file-code-move-code">3.9. Moving a file : <code>move</code></a></h3>
+<h3 id="moving-a-file-code-move-code"><a class="link" href="#moving-a-file-code-move-code">3.8. Moving a file : <code>move</code></a></h3>
 <div class="paragraph">
-<p>Move the file into another directory.<br>
-Format: <code>move FILENAME LOCATION</code></p>
+<p>Move the file at the specified index of the list into another directory.<br>
+Format: <code>move INDEX LOCATION</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -271,16 +259,16 @@ Format: <code>move FILENAME LOCATION</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>move Tutorial3 C:\User\James\Downloads</code></p>
+<p><code>move 1 C:\User\Jeremy\Downloads</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="retrieving-information-about-the-file-code-info-code"><a class="link" href="#retrieving-information-about-the-file-code-info-code">3.10. Retrieving information about the file : <code>info</code></a></h3>
+<h3 id="retrieving-information-about-the-file-code-info-code-code-coming-in-v1-3-code"><a class="link" href="#retrieving-information-about-the-file-code-info-code-code-coming-in-v1-3-code">3.9. Retrieving information about the file : <code>info</code> <code>[Coming in v1.3]</code></a></h3>
 <div class="paragraph">
-<p>Retrieve information about the pdf file, e.g. file directory, deadline, etc.<br>
-Format: <code>info FILENAME</code></p>
+<p>Retrieve information about the pdf file at the specified index of the list, e.g. file directory, deadline, etc.<br>
+Format: <code>info INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -288,25 +276,25 @@ Format: <code>info FILENAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>info Tutorial3</code></p>
+<p><code>info 3</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-a-deadline-for-the-file-code-deadline-code"><a class="link" href="#setting-a-deadline-for-the-file-code-deadline-code">3.11. Setting a deadline for the file : <code>deadline</code></a></h3>
+<h3 id="setting-a-deadline-for-the-file-code-deadline-code-code-coming-in-v1-3-code"><a class="link" href="#setting-a-deadline-for-the-file-code-deadline-code-code-coming-in-v1-3-code">3.10. Setting a deadline for the file : <code>deadline</code> <code>[Coming in v1.3]</code></a></h3>
 <div class="paragraph">
-<p>Set or remove a deadline for the pdf file.</p>
+<p>Set or remove a deadline for the pdf file of the specified index of the list.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Format for setting a deadline: <code>deadline FILENAME DATE</code><br></p>
+<p>Format for setting a deadline: <code>deadline INDEX DATE</code><br></p>
 </li>
 <li>
-<p>Format for removing a deadline: <code>deadline FILENAME</code></p>
+<p>Format for removing a deadline: <code>deadline INDEX</code></p>
 </li>
 <li>
 <p>The date must be in the format of dd-mm-yyyy</p>
@@ -321,36 +309,36 @@ Format: <code>info FILENAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>deadline Tutorial3 20-02-2019</code><br></p>
+<p><code>deadline 3 20-02-2019</code><br></p>
 </li>
 <li>
-<p><code>deadline Tutorial3</code><br></p>
+<p><code>deadline 2</code><br></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.11. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.12. Saving the data</a></h3>
 <div class="paragraph">
 <p>PDF++ data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-command-code-coming-in-v2-0-code"><a class="link" href="#undo-redo-command-code-coming-in-v2-0-code">3.14. Undo, redo command <code>[coming in v2.0]</code></a></h3>
+<h3 id="undo-redo-command-code-coming-in-v2-0-code"><a class="link" href="#undo-redo-command-code-coming-in-v2-0-code">3.13. Undo, redo command <code>[Coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>Users are able to undo previously entered commands and redo undone commands.</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.15. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>Users will be prompted to enter the password for validation purpose to open encrypted files.</em></p>
 </div>
@@ -363,43 +351,39 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Import</strong> <code>import PATH_TO_FILE</code><br>
-e.g. <code>import C:\Users\James\Documents\Tutorial3.pdf</code></p>
+<p><strong>Add</strong> <code>add f/PATH_TO_FILE</code><br>
+e.g. <code>import C:\Users\Raj\Documents\Tutorial3.pdf</code></p>
 </li>
 <li>
 <p><strong>List</strong> : <code>list</code></p>
 </li>
 <li>
-<p><strong>Open</strong> : <code>open FILENAME</code>
-e.g. <code>open Tutorial3</code></p>
+<p><strong>Open</strong> : <code>open INDEX</code>
+e.g. <code>open 3</code></p>
 </li>
 <li>
-<p><strong>Label</strong> : <code>label FILENAME LABEL…</code><br>
-e.g. <code>label Tutorial3 Dijkstra Graph Tutorial CS2040</code></p>
-</li>
-<li>
-<p><strong>Remove label</strong>: <code>rlabel FILENAME LABEL…</code>
-e.g. <code>rlabel Tutorial3 DFS</code></p>
+<p><strong>Tag</strong> : <code>tag FILENAME TAG…</code><br>
+e.g. <code>tag Tutorial3 Dijkstra Graph Tutorial CS2040</code></p>
 </li>
 <li>
 <p><strong>Filter</strong> : <code>filter KEYWORD&#8230;&#8203;</code><br>
 e.g. <code>filter Graphs DFS</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete FILENAME</code><br>
-e.g. <code>delete Tutorial3</code></p>
+<p><strong>Delete</strong> : <code>delete INDEX</code><br>
+e.g. <code>delete 4</code></p>
 </li>
 <li>
-<p><strong>Move</strong> : <code>move FILENAME LOCATION</code>
-e.g. <code>move Tutorial3 C:\User\James\Downloads</code></p>
+<p><strong>Move</strong> : <code>move INDEX LOCATION</code>
+e.g. <code>move 3 C:\User\Jeremy\Downloads</code></p>
 </li>
 <li>
-<p><strong>Info</strong> : <code>info FILENAME</code>
-e.g. <code>info Tutorial3</code></p>
+<p><strong>Info</strong> : <code>info INDEX</code>
+e.g. <code>info 3</code></p>
 </li>
 <li>
-<p><strong>Deadline</strong> : <code>deadline FILENAME DATE</code>
-e.g. <code>deadline Tutorial3 20-02-2019</code> , <code>deadline Tutorial3</code></p>
+<p><strong>Deadline</strong> : <code>deadline INDEX DATE</code> or <code>deadline INDEX</code>
+e.g. <code>deadline 3 20-02-2019</code> , <code>deadline 2</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -410,4 +394,4 @@ e.g. <code>deadline Tutorial3 20-02-2019</code> , <code>deadline Tutorial3</code
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-20 06:20:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-20 06:57:56 UTC</div></div></div></body></html>
