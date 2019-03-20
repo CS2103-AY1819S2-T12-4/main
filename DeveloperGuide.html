@@ -451,11 +451,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#_edit_feature">3.1. Edit feature</a></li>
-<li><a href="#_undo_redo_feature">3.2. Undo/Redo feature</a></li>
-<li><a href="#_proposed_data_encryption">3.3. [Proposed] Data Encryption</a></li>
-<li><a href="#_logging">3.4. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
+<li><a href="#_add_feature">3.1. Add feature</a></li>
+<li><a href="#_edit_feature">3.2. Edit feature</a></li>
+<li><a href="#_open_feature">3.3. Open feature</a></li>
+<li><a href="#_undo_redo_feature">3.4. Undo/Redo feature</a></li>
+<li><a href="#_proposed_data_encryption">3.5. [Proposed] Data Encryption</a></li>
+<li><a href="#_logging">3.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#_documentation">4. Documentation</a>
@@ -997,29 +999,211 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Pdf Book</cod
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>TAG&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>MyTag</code>, <code>TagA TagB TagC</code> etc.</p>
+</li>
+</ul>
+</div>
 <div class="sect2">
-<h3 id="_edit_feature">3.1. Edit feature</h3>
+<h3 id="_add_feature">3.1. Add feature</h3>
 <div class="sect3">
 <h4 id="_current_implementation">3.1.1. Current Implementation</h4>
 <div class="paragraph">
-<p>The edit feature is facilitated by both the <code>EditCommandParser</code> and <code>EditCommand</code>.
-Essentially upon adding a Pdf to be tracked by the application, the user will be able to
-change certain attributes tied to the PDF such as the <code>Name</code> and `Tag`s tied to a particular Pdf.</p>
+<p>The add feature is facilitated by both the <code>AddCommandParser</code> and <code>AddCommand</code>.
+This function adds the PDF file to PDF using the path specified by your users.
+Your users can then perform multiple operations supported by PDF on the added files.
+Some examples of features supported include <a href="#_edit_feature">Section 3.2, &#8220;Edit feature&#8221;</a> and <a href="#_open_feature">Section 3.3, &#8220;Open feature&#8221;</a></p>
 </div>
 <div class="paragraph">
-<p>The Edit feature has the following syntax:
-<code>edit &lt;Index&gt; n/&lt;NewName&gt; t/&lt;NewTag1&gt; t/&lt;NewTag2&gt;</code></p>
+<p>Currently PDF++ only supports PDF files, any other types of files will not be accepted.</p>
+</div>
+<div class="paragraph">
+<p>The Add feature has the following syntax:
+<code>add f/&lt;PATH_TO_FILE&gt; t/&lt;TAG&gt;&#8230;&#8203;</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;Index&gt;</code> refers to the index of the <code>Pdf</code> that you wish to edit.</p>
+<p><code>f/</code> refers to command immediately following after this prefix is a file</p>
 </li>
 <li>
-<p><code>&lt;NewName&gt;</code> refers to the new value that you would like to set the <code>Pdf`s `Name</code> to.</p>
+<p><code>&lt;PATH_TO_FILE&gt;</code> refers to the path to the <code>Pdf</code> you wish to add</p>
 </li>
 <li>
-<p><code>&lt;NewTag*&gt;</code> refers to the new `Tag`s you wish to add to.</p>
+<p><code>&lt;TAG&gt;&#8230;&#8203;</code> refers to the new <code>Tag</code> you wish to add. Leave this portion empty if you
+do not wish to tag this file.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Please ensure that you have entered the full <code>PATH_TO_FILE</code>. Please refer to
+<code>Step-by-Step Guide&#8201;&#8212;&#8201;add</code> below for detailed explanation.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_step_by_step_guide_add">Step-by-Step Guide&#8201;&#8212;&#8201;add</h5>
+<div class="paragraph">
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+workings of the Add feature.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user launches the application with either an existing set of <code>Pdf</code> or a new
+sample set of <code>Pdf</code> stored within as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep1Default.png" alt="AddFeatureStep1Default" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2: The user navigates to the folder with the file and copy the directory.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>For Windows</em>
+Once the user has navigated to the folder, click on the address bar and copy</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep2CopyDirectory.png" alt="AddFeatureStep2CopyDirectory" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>For Mac</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Step 3: The user enters the <code>add</code> command into the CLI interface, following the
+outlined syntax as illustrated below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Your users must type the file name <strong>after</strong> the directory copied at <em>Step 2</em>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep3UserInput.png" alt="AddFeatureStep3UserInput" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 4: Upon hitting enter to execute the command, the <code>AddCommandParser</code> parses the input
+into several components that are required to be executed by the <code>AddCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Upon parsing, the parser then creates a new <code>AddCommand</code> that will execute according to
+the user&#8217;s input.</p>
+</div>
+<div class="paragraph">
+<p>Step 5: Upon receiving the necessary information from the parser, the <code>AddCommand</code> first
+begins by checking for validity as shown below.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Duplicate <code>Pdf</code> found</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep5DuplicateFound.png" alt="AddFeatureStep5DuplicateFound" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Pdf</code> does not exist</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep5PdfNotFound.png" alt="AddFeatureStep5PdfNotFound" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Pdf</code> found and no duplication</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep5Sucess.png" alt="AddFeatureStep5Sucess" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 6: If the validity check and the individual property check passes, the file is then
+added to PDF++</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+As of v1.2, the Add feature is only capable of adding 1 <code>Pdf</code> file at a time. By v1.4,
+the feature will support adding multiple files.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_edit_feature">3.2. Edit feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_2">3.2.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The edit feature is facilitated by both the <code>EditCommandParser</code> and <code>EditCommand</code>.
+Essentially upon adding a Pdf to be tracked by the application, the user will be able to
+change certain attributes tied to the PDF such as the <code>Name</code> and <code>Tag</code> tied to a particular Pdf.</p>
+</div>
+<div class="paragraph">
+<p>The Edit feature has the following syntax:
+<code>edit &lt;INDEX&gt; n/&lt;NEWNAME&gt; t/&lt;NEWTAG1&gt;&#8230;&#8203;</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to edit.</p>
+</li>
+<li>
+<p><code>n/</code> indicates that you are editing the name of the file</p>
+</li>
+<li>
+<p><code>&lt;NEWNAME&gt;</code> refers to the new value that you would like to set the <code>Pdf`s `Name</code> to.</p>
+</li>
+<li>
+<p><code>&lt;NEWTAG&#8230;&#8203;&gt;</code> refers to the new <code>Tag</code> you wish to add. Leave this portion empty if you
+do not wish to tag this file.</p>
 </li>
 </ul>
 </div>
@@ -1040,12 +1224,12 @@ The index value can be referenced from the list in the main application.
 workings of the Edit feature.</p>
 </div>
 <div class="paragraph">
-<p>Step 1: The user launches an application with either an existing set of `Pdf`s or a
-new sample set of `Pdf`s stored within as shown below.</p>
+<p>Step 1: The user launches an application with either an existing set of <code>Pdf</code> or a
+new sample set of <code>Pdf</code> stored within as shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditFeatureDefault.png" alt="EditFeatureDefault" width="600">
+<img src="images/EdiFeatureStep1Default.png" alt="EdiFeatureStep1Default" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -1059,7 +1243,7 @@ illustrated below.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3: Upon hitting enter to execute the command, the <code>EditCommandParser</code> splits
+<p>Step 3: Upon hitting enter to execute the command, the <code>EditCommandParser</code> parses
 the input into relevant objects that are required to be executed by the <code>EditCommand</code>
 object. Upon parsing, the parser then creates a new <code>EditCommand</code> that will execute the
 user&#8217;s input.</p>
@@ -1079,7 +1263,7 @@ begins by checking for validity as shown below.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 5: If the validy check and the individual property check passes, the file is then
+<p>Step 5: If the validity check and the individual property check passes, the file is then
 effectively renamed within PDF++ and in the actual directory, thus resulting in an output
 as shown below.</p>
 </div>
@@ -1105,9 +1289,16 @@ to remove or add.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_undo_redo_feature">3.2. Undo/Redo feature</h3>
+<h3 id="_open_feature">3.3. Open feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_2">3.2.1. Current Implementation</h4>
+<h4 id="_current_implementation_3">3.3.1. Current Implementation</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_undo_redo_feature">3.4. Undo/Redo feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_4">3.4.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedPdfBook</code>.
 It extends <code>PdfBook</code> with an undo/redo history, stored internally as an <code>pdfBookStateList</code> and <code>currentStatePointer</code>.
@@ -1237,7 +1428,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_considerations">3.2.2. Design Considerations</h4>
+<h4 id="_design_considerations">3.4.2. Design Considerations</h4>
 <div class="sect4">
 <h5 id="_aspect_how_undo_redo_executes">Aspect: How undo &amp; redo executes</h5>
 <div class="ulist">
@@ -1307,20 +1498,20 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="_proposed_data_encryption">3.3. [Proposed] Data Encryption</h3>
+<h3 id="_proposed_data_encryption">3.5. [Proposed] Data Encryption</h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_logging">3.4. Logging</h3>
+<h3 id="_logging">3.6. Logging</h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1351,7 +1542,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration">3.5. Configuration</h3>
+<h3 id="Implementation-Configuration">3.7. Configuration</h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file directory, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2862,7 +3053,7 @@ Expected: Similar to previous.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-20 14:05:11 UTC
+Last updated 2019-03-20 14:36:32 UTC
 </div>
 </div>
 </body>
