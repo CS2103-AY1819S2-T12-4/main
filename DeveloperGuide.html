@@ -451,10 +451,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#_undo_redo_feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#_proposed_data_encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#_logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#_edit_feature">3.1. Edit feature</a></li>
+<li><a href="#_undo_redo_feature">3.2. Undo/Redo feature</a></li>
+<li><a href="#_proposed_data_encryption">3.3. [Proposed] Data Encryption</a></li>
+<li><a href="#_logging">3.4. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#_documentation">4. Documentation</a>
@@ -997,9 +998,116 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Pdf Book</cod
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="_undo_redo_feature">3.1. Undo/Redo feature</h3>
+<h3 id="_edit_feature">3.1. Edit feature</h3>
 <div class="sect3">
 <h4 id="_current_implementation">3.1.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The edit feature is facilitated by both the <code>EditCommandParser</code> and <code>EditCommand</code>.
+Essentially upon adding a Pdf to be tracked by the application, the user will be able to
+change certain attributes tied to the PDF such as the <code>Name</code> and `Tag`s tied to a particular Pdf.</p>
+</div>
+<div class="paragraph">
+<p>The Edit feature has the following syntax:
+<code>edit &lt;Index&gt; n/&lt;NewName&gt; t/&lt;NewTag1&gt; t/&lt;NewTag2&gt;</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;Index&gt;</code> refers to the index of the <code>Pdf</code> that you wish to edit.</p>
+</li>
+<li>
+<p><code>&lt;NewName&gt;</code> refers to the new value that you would like to set the <code>Pdf`s `Name</code> to.</p>
+</li>
+<li>
+<p><code>&lt;NewTag*&gt;</code> refers to the new `Tag`s you wish to add to.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The index value can be referenced from the list in the main application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+workings of the Edit feature.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user launches an application with either an existing set of `Pdf`s or a
+new sample set of `Pdf`s stored within as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureDefault.png" alt="EditFeatureDefault" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2: The user chooses a <code>Pdf</code> that they wish to edit, in this case <code>g.pdf</code>, and
+enters the <code>edit</code> command into the CLI Interface, following the outlined Syntax as
+illustrated below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureUserInput.png" alt="EditFeatureUserInput" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 3: Upon hitting enter to execute the command, the <code>EditCommandParser</code> splits
+the input into relevant objects that are required to be executed by the <code>EditCommand</code>
+object. Upon parsing, the parser then creates a new <code>EditCommand</code> that will execute the
+user&#8217;s input.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: Upon receiving the necessary information from the parser, the <code>EditCommand</code> first
+begins by checking for validity as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureNoDuplicate.png" alt="EditFeatureNoDuplicate" width="700">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureDuplicate.png" alt="EditFeatureDuplicate" width="700">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 5: If the validy check and the individual property check passes, the file is then
+effectively renamed within PDF++ and in the actual directory, thus resulting in an output
+as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureFinalOutput.png" alt="EditFeatureFinalOutput" width="600">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+As of V1.2, the Edit Feature removes any existing <code>Tag</code> s and replaces them with those
+input by the user (If any). By <code>V1.4</code> The user will be able to select tags he wishes
+to remove or add.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_undo_redo_feature">3.2. Undo/Redo feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_2">3.2.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedPdfBook</code>.
 It extends <code>PdfBook</code> with an undo/redo history, stored internally as an <code>pdfBookStateList</code> and <code>currentStatePointer</code>.
@@ -1129,7 +1237,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_considerations">3.1.2. Design Considerations</h4>
+<h4 id="_design_considerations">3.2.2. Design Considerations</h4>
 <div class="sect4">
 <h5 id="_aspect_how_undo_redo_executes">Aspect: How undo &amp; redo executes</h5>
 <div class="ulist">
@@ -1199,20 +1307,20 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="_proposed_data_encryption">3.2. [Proposed] Data Encryption</h3>
+<h3 id="_proposed_data_encryption">3.3. [Proposed] Data Encryption</h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_logging">3.3. Logging</h3>
+<h3 id="_logging">3.4. Logging</h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1243,7 +1351,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration">3.4. Configuration</h3>
+<h3 id="Implementation-Configuration">3.5. Configuration</h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file directory, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2754,7 +2862,7 @@ Expected: Similar to previous.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-20 09:17:40 UTC
+Last updated 2019-03-20 11:34:20 UTC
 </div>
 </div>
 </body>
