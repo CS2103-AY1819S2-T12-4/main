@@ -1313,8 +1313,13 @@ making content or characteristic changes when it is applied in the context of do
 </table>
 </div>
 <div class="paragraph">
-<p>The Edit feature has the following syntax:
-`move &lt;INDEX&gt; &lt;NEWDIRECTORY&gt;</p>
+<p>The Edit feature has the following syntax:</p>
+</div>
+<div class="paragraph">
+<p><code>move</code></p>
+</div>
+<div class="paragraph">
+<p><code>move &lt;INDEX&gt; &lt;NEWDIRECTORY&gt;</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1323,6 +1328,10 @@ making content or characteristic changes when it is applied in the context of do
 </li>
 <li>
 <p><code>&lt;NEWDIRECTORY&gt;</code> refers to the address of the new location the file is to be moved.</p>
+</li>
+<li>
+<p>Entering <code>move</code> without <code>&lt;INDEX&gt;</code> or  <code>&lt;NEWDIRECTORY&gt;</code> will open the default file
+selection GUI for the user to select the file directly.</p>
 </li>
 </ul>
 </div>
@@ -1343,30 +1352,39 @@ The index value can be referenced from the list in the main application.
 </div>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
-workings of the Edit feature.</p>
+workings of the <code>move</code> feature.</p>
 </div>
 <div class="paragraph">
-<p>Step 1: The user launches an application with either an existing set of <code>Pdf</code> or a
-new sample set of <code>Pdf</code> stored within as shown below.</p>
+<p>Step 1: From the main interface of the application, the user chooses a <code>Pdf</code> that
+they wish to move, and enters the <code>move</code> command into the CLI Interface, following
+the outlined Syntax as illustrated below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MoveFeatureStep1.png" alt="MoveFeatureStep1" width="600">
+</div>
 </div>
 <div class="paragraph">
-<p>Step 2: The user chooses a <code>Pdf</code> that they wish to move, and enters the <code>move</code>
-command into the CLI Interface, following the outlined Syntax as
-illustrated below.</p>
+<p>In this scenario, there is a file <strong>document.pdf</strong> in the windows <em>Desktop</em> directory, and
+the <code>move</code> command entered is intended for the file to be moved to the windows <em>Documents</em>
+ directory.</p>
 </div>
 <div class="paragraph">
-<p>Step 3: After executing the command, the <code>MoveCommandParser</code> parses the input into
-relevant objects that are required to be executed by the <code>MoveCommand</code> object. Upon
-parsing, the parser then creates a new <code>MoveCommand</code> that will execute the
-user&#8217;s input.</p>
+<p>Step 2: After executing the command, the <code>MoveCommandParser</code> parses the input into
+relevant objects that are required to be executed by the <code>MoveCommand</code> object. In
+particular, it ensures that there are correctly two arguments passed as described in the
+above Syntax. Upon parsing, the parser then creates a new <code>MoveCommand</code> that will execute
+the user&#8217;s input.</p>
 </div>
 <div class="paragraph">
-<p>Step 4: Upon receiving the necessary information from the parser, the <code>Move</code> first
-begins by checking for validity as shown below.</p>
+<p>Step 3: The <code>MoveCommand</code> is then executed. Successful execution of the command would return
+a <strong>CommandResult</strong> object, while unsuccessful execution due to validation failure will throw
+a <strong>CommandException</strong>.</p>
 </div>
-<div class="paragraph">
-<p>Step 5: If the validity check and the individual property check passes, the file is then
-set to move to the new directory.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/MoveCommandExecuteProcess.png" alt="MoveCommandExecuteProcess" width="600">
+</div>
 </div>
 </div>
 </div>
@@ -3237,7 +3255,7 @@ Expected: Similar to previous.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-21 12:12:29 UTC
+Last updated 2019-03-21 23:46:23 UTC
 </div>
 </div>
 </body>
