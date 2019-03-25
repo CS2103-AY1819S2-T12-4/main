@@ -445,7 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_exiting_the_program_code_exit_code">3.8. Exiting the program : <code>exit</code></a></li>
 <li><a href="#_assigning_and_deleting_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.9. Assigning and deleting tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></a></li>
 <li><a href="#_retrieving_information_about_the_file_code_info_code_code_coming_in_v1_3_code">3.10. Retrieving information about the file : <code>info</code> <code>[Coming in v1.3]</code></a></li>
-<li><a href="#_setting_a_deadline_for_the_file_code_deadline_code_code_coming_in_v1_3_code">3.11. Setting a deadline for the file : <code>deadline</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#_setting_a_deadline_for_the_file_code_deadline_code">3.11. Setting a deadline for the file : <code>deadline</code></a></li>
 <li><a href="#_filter_files_by_tags_code_filter_code_code_coming_in_v1_3_code">3.12. Filter files by tags: <code>filter</code> <code>[Coming in v1.3]</code></a></li>
 <li><a href="#_undo_redo_command_code_coming_in_v2_0_code">3.13. Undo, redo command <code>[Coming in v2.0]</code></a></li>
 <li><a href="#_encrypting_data_files_code_coming_in_v2_0_code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></li>
@@ -704,7 +704,7 @@ Format: <code>info INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_setting_a_deadline_for_the_file_code_deadline_code_code_coming_in_v1_3_code">3.11. Setting a deadline for the file : <code>deadline</code> <code>[Coming in v1.3]</code></h3>
+<h3 id="_setting_a_deadline_for_the_file_code_deadline_code">3.11. Setting a deadline for the file : <code>deadline</code></h3>
 <div class="paragraph">
 <p>Set or remove a deadline for the pdf file of the specified index of the list.</p>
 </div>
@@ -713,10 +713,13 @@ Format: <code>info INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Format for setting a deadline: <code>deadline INDEX dt/DATE</code><br></p>
+<p>Format for setting a deadline: <code>deadline INDEX date/DATE</code><br></p>
 </li>
 <li>
-<p>Format for removing a deadline: <code>deadline INDEX</code></p>
+<p>Format for marking a deadline as done: <code>deadline INDEX done</code><br></p>
+</li>
+<li>
+<p>Format for removing a deadline: <code>deadline INDEX remove</code><br></p>
 </li>
 <li>
 <p>The date must be in the format of dd-mm-yyyy</p>
@@ -731,10 +734,13 @@ Format: <code>info INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>deadline 3 dt/20-02-2019</code><br></p>
+<p><code>deadline 1 date/20-02-2019</code><br></p>
 </li>
 <li>
-<p><code>deadline 2</code><br></p>
+<p><code>deadline 2 done</code><br></p>
+</li>
+<li>
+<p><code>deadline 2 remove</code><br></p>
 </li>
 </ul>
 </div>
@@ -850,7 +856,7 @@ e.g. <code>deadline 3 20-02-2019</code> , <code>deadline 2</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-25 14:30:10 UTC
+Last updated 2019-03-25 18:53:21 UTC
 </div>
 </div>
 </body>
