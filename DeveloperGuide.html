@@ -455,10 +455,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_edit_feature">3.2. Edit feature</a></li>
 <li><a href="#_move_feature">3.3. Move feature</a></li>
 <li><a href="#_open_feature">3.4. Open feature</a></li>
-<li><a href="#_undo_redo_feature">3.5. Undo/Redo feature</a></li>
-<li><a href="#_proposed_data_encryption">3.6. [Proposed] Data Encryption</a></li>
-<li><a href="#_logging">3.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.8. Configuration</a></li>
+<li><a href="#_clear_feature">3.5. Clear feature</a></li>
+<li><a href="#_deadline_feature">3.6. Deadline feature</a></li>
+<li><a href="#_delete_feature">3.7. Delete feature</a></li>
+<li><a href="#_exit_feature">3.8. Exit feature</a></li>
+<li><a href="#_help_feature">3.9. Help feature</a></li>
+<li><a href="#_history_feature">3.10. History feature</a></li>
+<li><a href="#_list_feature">3.11. List feature</a></li>
+<li><a href="#_select_feature">3.12. Select feature</a></li>
+<li><a href="#_sort_feature">3.13. Sort feature</a></li>
+<li><a href="#_tag_feature">3.14. Tag feature</a></li>
+<li><a href="#_undo_redo_feature">3.15. Undo/Redo feature</a></li>
+<li><a href="#_proposed_data_encryption">3.16. [Proposed] Data Encryption</a></li>
+<li><a href="#_logging">3.17. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.18. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#_documentation">4. Documentation</a>
@@ -1012,8 +1022,8 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Pdf Book</cod
 <h4 id="_current_implementation">3.1.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The add feature is facilitated by both the <code>AddCommandParser</code> and <code>AddCommand</code>.
-This function adds the PDF file to PDF using the path specified by your users.
-Your users can then perform multiple operations supported by PDF on the added files.
+This function adds the PDF file to the app using the path specified by your users.
+Your users can then perform multiple operations supported by PDF++ on the added files.
 Some examples of features supported include <a href="#_edit_feature">Section 3.2, &#8220;Edit feature&#8221;</a> and <a href="#_open_feature">Section 3.4, &#8220;Open feature&#8221;</a></p>
 </div>
 <div class="paragraph">
@@ -1026,7 +1036,7 @@ Some examples of features supported include <a href="#_edit_feature">Section 3.2
 <div class="ulist">
 <ul>
 <li>
-<p><code>f/</code> refers to command immediately following after this prefix is a file</p>
+<p><code>f/</code> refers to the command immediately following after this prefix is a file</p>
 </li>
 <li>
 <p><code>&lt;PATH_TO_FILE&gt;</code> refers to the path to the <code>Pdf</code> you wish to add</p>
@@ -1469,9 +1479,332 @@ For more information about the behavior of launching the Pdf, please refer to Ja
 </div>
 </div>
 <div class="sect2">
-<h3 id="_undo_redo_feature">3.5. Undo/Redo feature</h3>
+<h3 id="_clear_feature">3.5. Clear feature</h3>
 <div class="sect3">
 <h4 id="_current_implementation_5">3.5.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The clear feature is facilitated by the <code>ClearCommand</code>. This function clears all the PDF files that
+were previously stored in PDF++.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Clear</code> feature has to following syntax: <code>clear</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>clear</code> command will be executed regardless if there is any invalid text that comes after the command</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you have accidentally entered the <code>clear</code> command and wish to revert the action, please refer to
+<a href="#_undo_redo_feature">Section 3.15, &#8220;Undo/Redo feature&#8221;</a> for more information.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deadline_feature">3.6. Deadline feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_6">3.6.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The deadline feature is facilitated by both <code>DeadlineCommand</code> and <code>DeadlineCommandParser</code>. This feature
+allows you to set or remove deadlines of the PDF file specified by you from PDF++.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Deadline</code> feature has the following syntax: <code>deadline &lt;INDEX&gt; &lt;ACTION&gt;</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file in the list that you wish to perform the <code>action</code> on.</p>
+</li>
+<li>
+<p><code>ACTION</code> refers to the type of action that you wish to perform. There are 3 actions that you can perform</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>date/&lt;DATE&gt;</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>date/</code> refers to command immediately following after this prefix is a date</p>
+</li>
+<li>
+<p><code>&lt;DATE&gt;</code> must be of <code>dd-mm-yyyy</code> format</p>
+</li>
+<li>
+<p>Example of a valid date format: 15-03-2019</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>done</code> assigns the PDF file a <code>DONE</code> status</p>
+</li>
+<li>
+<p><code>remove</code> assigns the PDF file a <code>REMOVE</code> status</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+After a deadline has been added to the PDF file you specified, the date will be color coded according to
+certain criteria
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_feature">3.7. Delete feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_7">3.7.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The delete feature is facilitated by both <code>DeleteCommand</code> and <code>DeleteCommandParser</code>. This feature
+either soft or hard deletes the PDF file specified by you from PDF++.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exit_feature">3.8. Exit feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_8">3.8.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The exit feature is facilitated by <code>ExitCommand</code>. This feature allows you to exit from PDF++.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Exit</code> feature has to following syntax: <code>exit</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>exit</code> command will be executed regardless if there is any invalid text that comes after the command</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+As your files and commands are immediately stored after execute, you do not need to worry for any unsaved
+files
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_help_feature">3.9. Help feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_9">3.9.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The help feature is facilitated by <code>HelpCommand</code>. This feature allows you to exit from PDF++.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Help</code> feature has to following syntax: <code>help</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter here</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Enter note here
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_history_feature">3.10. History feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_10">3.10.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The history feature is facilitated by <code>HistoryCommand</code>. This feature allows you to exit from PDF++.</p>
+</div>
+<div class="paragraph">
+<p>The <code>History</code> feature has to following syntax: <code>history</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter here</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Enter note here
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_feature">3.11. List feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_11">3.11.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The list feature is facilitated by <code>ListCommand</code>. This feature allows you to exit from PDF++.</p>
+</div>
+<div class="paragraph">
+<p>The <code>List</code> feature has to following syntax: <code>list</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter here</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Enter note here
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_select_feature">3.12. Select feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_12">3.12.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The select feature is facilitated by <code>SelectCommand</code>. <code>Enter functionality here</code></p>
+</div>
+<div class="paragraph">
+<p>The <code>Select</code> feature has to following syntax: <code>select</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter here</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Enter note here
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sort_feature">3.13. Sort feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_13">3.13.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The sort feature is facilitated by <code>SortCommand</code>. <code>Enter functionality here</code></p>
+</div>
+<div class="paragraph">
+<p>The <code>Sort</code> feature has to following syntax: <code>sort</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter here</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Enter note here
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tag_feature">3.14. Tag feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_14">3.14.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The tag feature is facilitated by <code>TagCommand</code>. <code>Enter functionality here</code></p>
+</div>
+<div class="paragraph">
+<p>The <code>Tag</code> feature has to following syntax: <code>tag t/</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter here</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Enter note here
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_undo_redo_feature">3.15. Undo/Redo feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_15">3.15.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedPdfBook</code>.
 It extends <code>PdfBook</code> with an undo/redo history, stored internally as an <code>pdfBookStateList</code> and <code>currentStatePointer</code>.
@@ -1601,7 +1934,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_considerations">3.5.2. Design Considerations</h4>
+<h4 id="_design_considerations">3.15.2. Design Considerations</h4>
 <div class="sect4">
 <h5 id="_aspect_how_undo_redo_executes">Aspect: How undo &amp; redo executes</h5>
 <div class="ulist">
@@ -1671,20 +2004,20 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="_proposed_data_encryption">3.6. [Proposed] Data Encryption</h3>
+<h3 id="_proposed_data_encryption">3.16. [Proposed] Data Encryption</h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_logging">3.7. Logging</h3>
+<h3 id="_logging">3.17. Logging</h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.18, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1715,7 +2048,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration">3.8. Configuration</h3>
+<h3 id="Implementation-Configuration">3.18. Configuration</h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file directory, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -3255,7 +3588,7 @@ Expected: Similar to previous.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-27 14:02:15 UTC
+Last updated 2019-03-27 14:38:25 UTC
 </div>
 </div>
 </body>
