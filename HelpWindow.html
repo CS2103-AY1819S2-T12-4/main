@@ -440,11 +440,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_listing_all_files_code_list_code">3.3. Listing all files : <code>list</code></a></li>
 <li><a href="#_sorting_all_files_code_sort_code">3.4. Sorting all files : <code>sort</code></a></li>
 <li><a href="#_opening_a_file_code_open_code">3.5. Opening a file : <code>open</code></a></li>
-<li><a href="#_editing_a_file_code_edit_code">3.6. Editing a file : <code>edit</code></a></li>
+<li><a href="#_renaming_a_file_code_rename_code">3.6. Renaming a file : <code>rename</code></a></li>
 <li><a href="#_deleting_a_file_code_delete_code">3.7. Deleting a file : <code>delete</code></a></li>
 <li><a href="#_moving_a_file_code_move_code">3.8. Moving a file : <code>move</code></a></li>
 <li><a href="#_exiting_the_program_code_exit_code">3.9. Exiting the program : <code>exit</code></a></li>
-<li><a href="#_assigning_and_deleting_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.10. Assigning and deleting tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#_adding_and_removing_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.10. Adding and Removing tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></a></li>
 <li><a href="#_retrieving_information_about_the_file_code_info_code_code_coming_in_v1_3_code">3.11. Retrieving information about the file : <code>info</code> <code>[Coming in v1.3]</code></a></li>
 <li><a href="#_setting_a_deadline_for_the_file_code_deadline_code">3.12. Setting a deadline for the file : <code>deadline</code></a></li>
 <li><a href="#_filter_files_by_tags_code_filter_code_code_coming_in_v1_3_code">3.13. Filter files by tags: <code>filter</code> <code>[Coming in v1.3]</code></a></li>
@@ -469,10 +469,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>PDF++ is a desktop application that targets students who are looking for a file manager in organising their PDF files.
-This application integrates both Command Line Interface (CLI) and Graphical User Interface (GUI)
-to provide an unique experience for you. All supported features can be performed via the CLI and
-relevant feedback, based on your command, will be shown via the GUI.</p>
+<p>PDF++ is a desktop application that targets students who are looking for a pdf document manager in organising their PDF files.
+This application integrates both Text Input (TI) and Graphical User Interface (GUI)
+to provide an unique experience for you. All supported features can be performed via the TI and
+relevant feedback, based on your command, will be displayed in the Response Area of the application.</p>
 </div>
 <div class="paragraph">
 <p>This manager plans to enhance your typical experience managing PDF files.
@@ -548,7 +548,7 @@ from the mentioned directory to the PDF++ list</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>open FILENAME</code>, <code>FILENAME</code> is a parameter which can be used as <code>open myfile</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add f/FILENAME</code>, <code>FILENAME</code> is a parameter which can be used as <code>open f/myfile</code>.</p>
 </li>
 <li>
 <p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>TAG&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>MyTag</code>, <code>TagA TagB TagC</code> etc.</p>
@@ -566,13 +566,17 @@ from the mentioned directory to the PDF++ list</p>
 <div class="sect2">
 <h3 id="_importing_a_file_code_add_code">3.2. Importing a file: <code>add</code></h3>
 <div class="paragraph">
-<p>Adds a PDF file to the app<br>
-Format: <code>add f/PATH_TO_FILE</code></p>
+<p>The add command allows you to add a file through text input into to the application,<br>
+or through the GUI.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add f/PATH_TO_FILE</code> [Text Input]
+Format: <code>add</code> [GUI]</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The file must be a PDF file (with .pdf extension) and does not have duplicate names</p>
+<p>The file must be a PDF file (with .pdf extension).</p>
 </li>
 </ul>
 </div>
@@ -582,7 +586,10 @@ Format: <code>add f/PATH_TO_FILE</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add f/C:\Users\Raj\Documents\Tutorial3.pdf</code></p>
+<p><code>add f/C:\Users\Raj\Documents\Tutorial3.pdf</code> for the Windows Operating System.</p>
+</li>
+<li>
+<p><code>add f//Users/raj/Desktop/CS2101 Lecture.pdf</code> for the Mac Operating System.</p>
 </li>
 </ul>
 </div>
@@ -590,25 +597,25 @@ Format: <code>add f/PATH_TO_FILE</code></p>
 <div class="sect2">
 <h3 id="_listing_all_files_code_list_code">3.3. Listing all files : <code>list</code></h3>
 <div class="paragraph">
-<p>Shows a list of all PDF files in the app.<br>
+<p>The list command shows you a list of all files that are tracked by the application.<br>
 Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_sorting_all_files_code_sort_code">3.4. Sorting all files : <code>sort</code></h3>
 <div class="paragraph">
-<p>Sorts all PDF files in the app based on certain criteria.<br>
-Format: <code>sort CRITERIA (name/date) ORDER (up/down)</code></p>
+<p>The sort command allows you to sort all the files in the application based on the input criteria.<br>
+Format: <code>sort CRITERIA ORDER</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>CRITERIA can only be either <code>name</code> or <code>date</code> corresponding to alphabetical or deadline order<br></p>
+<p>CRITERIA: <code>name</code>, <code>deadline</code>, <code>size</code>.<br></p>
 </li>
 <li>
-<p>ORDER can only be either <code>up</code> or <code>down</code> corresponding to ascending or descending order</p>
+<p>ORDER: <code>up</code> or <code>down</code> corresponding to an ascending or descending order</p>
 </li>
 </ul>
 </div>
@@ -623,7 +630,7 @@ Format: <code>sort CRITERIA (name/date) ORDER (up/down)</code></p>
 <p><code>sort name up</code><br></p>
 </li>
 <li>
-<p><code>sort date down</code><br></p>
+<p><code>sort ddeadline down</code><br></p>
 </li>
 </ul>
 </div>
@@ -631,7 +638,7 @@ Format: <code>sort CRITERIA (name/date) ORDER (up/down)</code></p>
 <div class="sect2">
 <h3 id="_opening_a_file_code_open_code">3.5. Opening a file : <code>open</code></h3>
 <div class="paragraph">
-<p>Opens an existing file at a specified index in the app with default PDF reader.<br>
+<p>The open command allows you to open an existing file of a specified index in the app with the default program that you have set<br>
 Format: <code>open INDEX</code></p>
 </div>
 <div class="paragraph">
@@ -646,10 +653,10 @@ Format: <code>open INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_editing_a_file_code_edit_code">3.6. Editing a file : <code>edit</code></h3>
+<h3 id="_renaming_a_file_code_rename_code">3.6. Renaming a file : <code>rename</code></h3>
 <div class="paragraph">
-<p>Edit the name or tags of a file at the specified index of the list.<br>
-Format: <code>edit INDEX n/NAME t/TAG</code></p>
+<p>The rename command allows you to change the name of the file that you may refer to by its index.<br>
+Format: <code>edit INDEX n/NAME</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -657,15 +664,29 @@ Format: <code>edit INDEX n/NAME t/TAG</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 n/new.pdf t/cool</code></p>
+<p><code>edit 1 n/newname.pdf</code></p>
 </li>
 </ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>NAME: Must end with <code>.pdf</code><br></p>
+</li>
+<li>
+<p>NAME: Must be a name that your Operating System deems valid.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_deleting_a_file_code_delete_code">3.7. Deleting a file : <code>delete</code></h3>
 <div class="paragraph">
-<p>Deletes the file with specified index of the list from the app.<br>
+<p>The delete command lets you delete a file from the application and your computer. The file that is to be deleted can be specified by its index on the list.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="paragraph">
@@ -682,8 +703,10 @@ Format: <code>delete INDEX</code></p>
 <div class="sect2">
 <h3 id="_moving_a_file_code_move_code">3.8. Moving a file : <code>move</code></h3>
 <div class="paragraph">
-<p>Move the file at the specified index of the list into another directory.<br>
-Format: <code>move INDEX d/DIRECTORY</code></p>
+<p>THe move command allows you to move a file at the specified index of the list from its current directory to another directory.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>move INDEX d/DIRECTORY</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -691,7 +714,10 @@ Format: <code>move INDEX d/DIRECTORY</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>move 1 d/C:\User\Jeremy\Downloads</code></p>
+<p><code>move 1 d/C:\User\Jeremy\Downloads</code> [Windows Operating System]</p>
+</li>
+<li>
+<p><code>move 1 d//Users/jet/Documents/Important</code> [Mac Operating System]</p>
 </li>
 </ul>
 </div>
@@ -699,12 +725,12 @@ Format: <code>move INDEX d/DIRECTORY</code></p>
 <div class="sect2">
 <h3 id="_exiting_the_program_code_exit_code">3.9. Exiting the program : <code>exit</code></h3>
 <div class="paragraph">
-<p>Exits the program.<br>
+<p>This command lets you exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_assigning_and_deleting_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.10. Assigning and deleting tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></h3>
+<h3 id="_adding_and_removing_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.10. Adding and Removing tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></h3>
 <div class="paragraph">
 <p>Assigns and/or deletes tags to an existing file in the list of the app. Use <code>-</code> to
  delete tag. No action will be taken when the tag you want to delete does not exist.<br>
@@ -891,7 +917,7 @@ e.g. <code>deadline 3 20-02-2019</code> , <code>deadline 2</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-27 14:38:25 UTC
+Last updated 2019-03-27 15:02:06 UTC
 </div>
 </div>
 </body>
