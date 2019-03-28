@@ -441,16 +441,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_sorting_all_files_code_sort_code">3.4. Sorting all files : <code>sort</code></a></li>
 <li><a href="#_opening_a_file_code_open_code">3.5. Opening a file : <code>open</code></a></li>
 <li><a href="#_renaming_a_file_code_rename_code">3.6. Renaming a file : <code>rename</code></a></li>
-<li><a href="#_deleting_a_file_code_delete_code">3.7. Deleting a file : <code>delete</code></a></li>
-<li><a href="#_moving_a_file_code_move_code">3.8. Moving a file : <code>move</code></a></li>
-<li><a href="#_exiting_the_program_code_exit_code">3.9. Exiting the program : <code>exit</code></a></li>
-<li><a href="#_adding_and_removing_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.10. Adding and Removing tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></a></li>
-<li><a href="#_retrieving_information_about_the_file_code_info_code_code_coming_in_v1_3_code">3.11. Retrieving information about the file : <code>info</code> <code>[Coming in v1.3]</code></a></li>
-<li><a href="#_setting_a_deadline_for_the_file_code_deadline_code">3.12. Setting a deadline for the file : <code>deadline</code></a></li>
-<li><a href="#_filter_files_by_tags_code_filter_code_code_coming_in_v1_3_code">3.13. Filter files by tags: <code>filter</code> <code>[Coming in v1.3]</code></a></li>
-<li><a href="#_undo_redo_command_code_coming_in_v2_0_code">3.14. Undo, redo command <code>[Coming in v2.0]</code></a></li>
-<li><a href="#_encrypting_data_files_code_coming_in_v2_0_code">3.15. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#_saving_the_data">3.16. Saving the data</a></li>
+<li><a href="#_tagging_a_file_code_tag_code">3.7. Tagging a file : <code>tag</code></a></li>
+<li><a href="#_deleting_a_file_code_delete_code">3.8. Deleting a file : <code>delete</code></a></li>
+<li><a href="#_moving_a_file_code_move_code">3.9. Moving a file : <code>move</code></a></li>
+<li><a href="#_exiting_the_program_code_exit_code">3.10. Exiting the program : <code>exit</code></a></li>
+<li><a href="#_adding_and_removing_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.11. Adding and Removing tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#_retrieving_information_about_the_file_code_info_code_code_coming_in_v1_3_code">3.12. Retrieving information about the file : <code>info</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#_setting_a_deadline_for_the_file_code_deadline_code">3.13. Setting a deadline for the file : <code>deadline</code></a></li>
+<li><a href="#_filter_files_by_tags_code_filter_code_code_coming_in_v1_3_code">3.14. Filter files by tags: <code>filter</code> <code>[Coming in v1.3]</code></a></li>
+<li><a href="#_undo_redo_command_code_coming_in_v2_0_code">3.15. Undo, redo command <code>[Coming in v2.0]</code></a></li>
+<li><a href="#_encrypting_data_files_code_coming_in_v2_0_code">3.16. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#_saving_the_data">3.17. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#_command_summary">4. Command Summary</a></li>
@@ -658,16 +659,6 @@ Format: <code>open INDEX</code></p>
 <p>The rename command allows you to change the name of the file that you may refer to by its index.<br>
 Format: <code>edit INDEX n/NAME</code></p>
 </div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit 1 n/newname.pdf</code></p>
-</li>
-</ul>
-</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -682,11 +673,53 @@ Format: <code>edit INDEX n/NAME</code></p>
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 n/newname.pdf</code></p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_deleting_a_file_code_delete_code">3.7. Deleting a file : <code>delete</code></h3>
+<h3 id="_tagging_a_file_code_tag_code">3.7. Tagging a file : <code>tag</code></h3>
 <div class="paragraph">
-<p>The delete command lets you delete a file from the application and your computer. The file that is to be deleted can be specified by its index on the list.<br>
+<p>The tag command allows you to add or remove a tag to a file that you may refer to by its index.<br>
+Format (add tag) : <code>tag INDEX -a [t/ADD_TAG]&#8230;&#8203;</code><br>
+Format (remove tag) : <code>tag INDEX -r [t/REMOVE_TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Tags must be a continuous word without spaces</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>tag 1 -a t/CS2103T t/SE</code></p>
+</li>
+<li>
+<p><code>tag 2 -r t/tutorials</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deleting_a_file_code_delete_code">3.8. Deleting a file : <code>delete</code></h3>
+<div class="paragraph">
+<p>The delete command lets you to delete a file from the application and your computer. The file that is to be deleted can be specified by its index on the list.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="paragraph">
@@ -701,7 +734,7 @@ Format: <code>delete INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_moving_a_file_code_move_code">3.8. Moving a file : <code>move</code></h3>
+<h3 id="_moving_a_file_code_move_code">3.9. Moving a file : <code>move</code></h3>
 <div class="paragraph">
 <p>THe move command allows you to move a file at the specified index of the list from its current directory to another directory.<br></p>
 </div>
@@ -723,14 +756,14 @@ Format: <code>delete INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exiting_the_program_code_exit_code">3.9. Exiting the program : <code>exit</code></h3>
+<h3 id="_exiting_the_program_code_exit_code">3.10. Exiting the program : <code>exit</code></h3>
 <div class="paragraph">
 <p>This command lets you exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_adding_and_removing_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.10. Adding and Removing tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></h3>
+<h3 id="_adding_and_removing_tags_to_a_file_code_tag_code_code_coming_in_v1_3_code">3.11. Adding and Removing tags to a file : <code>tag</code> <code>[Coming in v1.3]</code></h3>
 <div class="paragraph">
 <p>Assigns and/or deletes tags to an existing file in the list of the app. Use <code>-</code> to
  delete tag. No action will be taken when the tag you want to delete does not exist.<br>
@@ -748,7 +781,7 @@ Format: <code>tag INDEX t/TAG&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_retrieving_information_about_the_file_code_info_code_code_coming_in_v1_3_code">3.11. Retrieving information about the file : <code>info</code> <code>[Coming in v1.3]</code></h3>
+<h3 id="_retrieving_information_about_the_file_code_info_code_code_coming_in_v1_3_code">3.12. Retrieving information about the file : <code>info</code> <code>[Coming in v1.3]</code></h3>
 <div class="paragraph">
 <p>Retrieve information about the pdf file at the specified index of the list, e.g. file directory, deadline, etc.<br>
 Format: <code>info INDEX</code></p>
@@ -765,7 +798,7 @@ Format: <code>info INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_setting_a_deadline_for_the_file_code_deadline_code">3.12. Setting a deadline for the file : <code>deadline</code></h3>
+<h3 id="_setting_a_deadline_for_the_file_code_deadline_code">3.13. Setting a deadline for the file : <code>deadline</code></h3>
 <div class="paragraph">
 <p>Set or remove a deadline for the pdf file of the specified index of the list.</p>
 </div>
@@ -807,7 +840,7 @@ Format: <code>info INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_filter_files_by_tags_code_filter_code_code_coming_in_v1_3_code">3.13. Filter files by tags: <code>filter</code> <code>[Coming in v1.3]</code></h3>
+<h3 id="_filter_files_by_tags_code_filter_code_code_coming_in_v1_3_code">3.14. Filter files by tags: <code>filter</code> <code>[Coming in v1.3]</code></h3>
 <div class="paragraph">
 <p>Display all files that contain any of the given tags.<br>
 Format: <code>filter tx/KEYWORD&#8230;&#8203;</code></p>
@@ -844,19 +877,19 @@ Format: <code>filter tx/KEYWORD&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_undo_redo_command_code_coming_in_v2_0_code">3.14. Undo, redo command <code>[Coming in v2.0]</code></h3>
+<h3 id="_undo_redo_command_code_coming_in_v2_0_code">3.15. Undo, redo command <code>[Coming in v2.0]</code></h3>
 <div class="paragraph">
 <p><em>Users are able to undo previously entered commands and redo undone commands.</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_encrypting_data_files_code_coming_in_v2_0_code">3.15. Encrypting data files <code>[coming in v2.0]</code></h3>
+<h3 id="_encrypting_data_files_code_coming_in_v2_0_code">3.16. Encrypting data files <code>[coming in v2.0]</code></h3>
 <div class="paragraph">
 <p><em>Users will be prompted to enter the password for validation purpose to open encrypted files.</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_saving_the_data">3.16. Saving the data</h3>
+<h3 id="_saving_the_data">3.17. Saving the data</h3>
 <div class="paragraph">
 <p>PDF++ data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -917,7 +950,7 @@ e.g. <code>deadline 3 20-02-2019</code> , <code>deadline 2</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-28 11:57:37 UTC
+Last updated 2019-03-28 22:53:09 UTC
 </div>
 </div>
 </body>
