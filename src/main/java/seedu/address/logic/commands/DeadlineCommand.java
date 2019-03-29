@@ -59,11 +59,7 @@ public class DeadlineCommand extends Command {
     @Override
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
-        List<Pdf> lastShownList = model.getFilteredPdfList();
-
-        if (index.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PDF_DISPLAYED_INDEX);
-        }
+        List<Pdf> lastShownList = getFliteredPdfList(model, index);
 
         Pdf oPdf = lastShownList.get(this.index.getZeroBased());
         Pdf nPdf;

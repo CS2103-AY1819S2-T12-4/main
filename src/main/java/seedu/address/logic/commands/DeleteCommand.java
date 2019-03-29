@@ -57,11 +57,7 @@ public class DeleteCommand extends Command {
     @Override
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
-        List<Pdf> lastShownList = model.getFilteredPdfList();
-
-        if (targetIndex.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PDF_DISPLAYED_INDEX);
-        }
+        List<Pdf> lastShownList = getFliteredPdfList(model, targetIndex);
 
         Pdf pdfToDelete = lastShownList.get(targetIndex.getZeroBased());
         model.deletePdf(pdfToDelete);
