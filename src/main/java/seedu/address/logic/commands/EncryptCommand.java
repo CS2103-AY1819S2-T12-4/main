@@ -73,11 +73,11 @@ public class EncryptCommand extends Command {
             PDDocument file = PDDocument.load(Paths.get(pdfToEncrypt.getDirectory().getDirectory(),
                     pdfToEncrypt.getName().getFullName()).toFile());
             AccessPermission ap = new AccessPermission();
-            StandardProtectionPolicy spp = new StandardProtectionPolicy(this.password, this.password, ap);
+            StandardProtectionPolicy spp = new StandardProtectionPolicy("", this.password, ap);
             spp.setEncryptionKeyLength(128);
             spp.setPermissions(ap);
             file.protect(spp);
-            file.save(Paths.get("src", "test", "data", "JsonAdaptedPdfTest", "z.pdf").toFile());
+            file.save(Paths.get("src", "test", "data", "JsonAdaptedPdfTest", "CS2101_Rocks.pdf").toFile());
         } catch (IOException ioe) {
             throw new CommandException(String.format(MESSAGE_ENCRYPT_PDF_FAILURE, pdfToEncrypt));
         }
