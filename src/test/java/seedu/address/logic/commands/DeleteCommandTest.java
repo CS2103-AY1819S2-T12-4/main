@@ -34,8 +34,6 @@ import seedu.address.model.pdf.exceptions.PdfNotFoundException;
  * {@code DeleteCommand}.
  */
 public class DeleteCommandTest {
-    @Rule
-    public final TemporaryFolder tempFolder = new TemporaryFolder();
 
     private Model model = new ModelManager(getTypicalPdfBook(), new UserPrefs());
     private CommandHistory commandHistory = new CommandHistory();
