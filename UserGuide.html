@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>PDF++ - User Guide</title>
+<title>PDF++ User Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -427,11 +427,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>PDF++ - User Guide</h1>
+<h1>PDF++ User Guide</h1>
 <div id="toc" class="toc2">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#_introduction">1. Introduction</a></li>
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_pdf">1.1. PDF++ ?</a></li>
+</ul>
+</li>
 <li><a href="#_quick_start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
@@ -450,7 +454,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_filter_files_by_tags_code_filter_code">3.13. Filter files by tags: <code>filter</code></a></li>
 <li><a href="#_undo_redo_command_code_undo_code_code_redo_code">3.14. Undo &amp; redo command: <code>undo</code> &amp; <code>redo</code></a></li>
 <li><a href="#_encrypting_decryption_code_encrypt_code_code_decrypt_code">3.15. Encrypting &amp; Decryption: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
-<li><a href="#_saving_the_data">3.16. Saving the data</a></li>
+<li><a href="#_merging_files_code_merge_code">3.16. Merging Files: <code>merge</code></a></li>
+<li><a href="#_saving_the_data">3.17. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#_command_summary">4. Command Summary</a></li>
@@ -469,16 +474,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_pdf">1.1. PDF++ ?</h3>
 <div class="paragraph">
-<p>Welcome to PDF&#43;&#43;! PDF++ is a desktop application that is meant for anyone who wants or needs a convenient tool that helps you manage all the documents in your computer.
-This application can be used by both Text Input (TI) and a Graphical User Interface (GUI)
-hence, both technical users and casual users can enjoy a comfortable experience using our program. All features provided by our application can be used via the TI and relevant feedback, based on your command, will be displayed in the Response Area of the application.</p>
+<p>PDF++ is a desktop application that is meant for anyone who wants or needs a convenient tool that helps you manage all the documents in your computer.
+This application can be used by both <strong>Text Input (TI)</strong> and a Graphical <strong>User Interface (GUI)</strong>
+hence, both technical users and casual users can enjoy a comfortable experience using our program. All features provided by our application can be used via the <strong>TI</strong> and relevant feedback, based on your command, will be displayed in the Response Area of the application.</p>
 </div>
 <div class="paragraph">
 <p>This file management system plans to enhance your typical experience managing your documents and
 it strives to be the last document manager you will ever need. It includes a multitude of
 functions in elevating your PDF reading and management experience. There are many features offered by our application that you can refer to in the table of contents on the left side of this screen with many more to come! Are you fascinated by PDF++? What are you waiting for?
 Jump to the <a href="#_quick_start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+</div>
 </div>
 </div>
 </div>
@@ -538,6 +546,18 @@ from the mentioned directory to the PDF++ list.</p>
 </li>
 </ol>
 </div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+Please ensure that you have the permissions to Read, Write and Execute the files that you wish to manage through our application. Please use a web search, like Google, to assist you in identifying if you possess the permissions. If you are lacking these permissions our application may not be able to carry out the actions specified by you.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -556,6 +576,12 @@ from the mentioned directory to the PDF++ list.</p>
 <li>
 <p>Items with <code>…</code>​ after them can be used multiple times or zero times e.g. <code>t/TAG&#8230;&#8203;</code> can be left blank or used multiple times, <code>t/TagA t/TagB t/TagC</code> etc.</p>
 </li>
+<li>
+<p>ALL Commands are to be entered in the Input Area that is highlighted in Orange.</p>
+</li>
+<li>
+<p>ALL Responses to your input Commands will be displayed in the Output area that is highlighted in blue.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -570,8 +596,7 @@ The help command displays this current page for any references you may need or q
 <div class="sect2">
 <h3 id="_importing_a_file_code_add_code">3.2. Importing a file: <code>add</code></h3>
 <div class="paragraph">
-<p>The add command allows you to add a file through TI into to the application,<br>
-or through the GUI.<br>
+<p>The add command allows you to add a file through TI into to the application, or through the GUI.<br>
 The added file will appear in the Files Section, highlighted in green, shown above.<br></p>
 </div>
 <div class="paragraph">
@@ -591,13 +616,13 @@ Format: <code>add</code> [GUI]</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add f/C:\Users\Raj\Documents\Tutorial3.pdf</code>, for the Windows Operating System.</p>
+<p><code>add f/C:\Users\Raj\Documents\Tutorial3.pdf</code> [Windows Operating System]</p>
 </li>
 <li>
-<p><code>add f//Users/raj/Desktop/CS2101 Lecture.pdf</code>, for the Mac Operating System.</p>
+<p><code>add f//Users/raj/Desktop/CS2101 Lecture.pdf</code> [Mac / Linux Operating System]</p>
 </li>
 <li>
-<p><code>add</code>, would open the User Interface for easier usage.</p>
+<p><code>add</code> [Any Operating System]</p>
 </li>
 </ul>
 </div>
@@ -652,7 +677,7 @@ Hence you may be able to, for example, sort the files by their name in ascending
 <div class="sect2">
 <h3 id="_opening_a_file_code_open_code">3.5. Opening a file : <code>open</code></h3>
 <div class="paragraph">
-<p>The open command allows you to open an existing file, specified by the index of the file that is next to + the name of the file in the Files Section, highlighted in green.<br>
+<p>The open command allows you to open an existing file, specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br>
 The selected file will then be opened with any application that you have set as the default for<br>
 your computer.<br></p>
 </div>
@@ -673,10 +698,20 @@ your computer.<br></p>
 <div class="sect2">
 <h3 id="_renaming_a_file_code_rename_code">3.6. Renaming a file : <code>rename</code></h3>
 <div class="paragraph">
-<p>The rename command allows you to change the name of a file, specified by thr index of the file that is + next to the name of the file in the Files Section, highlighted in green.<br></p>
+<p>The rename command allows you to change the name of a file, specified by thr index of the file that is next to the name of the file in the Files Section, highlighted in green.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>rename INDEX n/NAME</code></p>
+<p>Format: <code>rename INDEX n/NAME</code><br></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>rename 1 n/newname.pdf</code></p>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -696,26 +731,29 @@ highlighted in blue.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_tagging_a_file_code_tag_code">3.7. Tagging a file : <code>tag</code></h3>
+<div class="paragraph">
+<p>The tag command allows you to add or remove a tag to a file, specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br>
+The prefixes <code>-a</code> refers to "add" and <code>-r</code> refers to "remove".<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>tag INDEX -a [t/TAG]&#8230;&#8203;</code> [To add a tag]<br>
+Format: <code>tag INDEX -r [t/TAG]&#8230;&#8203;</code> [To remove a tag]</p>
+</div>
 <div class="paragraph">
 <p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>rename 1 n/newname.pdf</code></p>
+<p><code>tag 1 -a t/CS2103T t/SE</code></p>
+</li>
+<li>
+<p><code>tag 2 -r t/tutorials</code></p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_tagging_a_file_code_tag_code">3.7. Tagging a file : <code>tag</code></h3>
-<div class="paragraph">
-<p>The tag command allows you to add or remove a tag to a file, specified by the index of the file that is + next to the name of the file in the Files Section, highlighted in green.<br>
-The prefixes <code>-a</code> refers to "add" and <code>-r</code> refers to "remove".<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>tag INDEX -a [t/TAG]&#8230;&#8203;</code> [To add a tag]<br>
-Format: <code>tag INDEX -r [t/TAG]&#8230;&#8203;</code> [To remove a tag]</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -731,26 +769,12 @@ Format: <code>tag INDEX -r [t/TAG]&#8230;&#8203;</code> [To remove a tag]</p>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>tag 1 -a t/CS2103T t/SE</code></p>
-</li>
-<li>
-<p><code>tag 2 -r t/tutorials</code></p>
-</li>
-</ul>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_deleting_a_file_code_delete_code">3.8. Deleting a file : <code>delete</code></h3>
 <div class="paragraph">
-<p>The delete command lets you to delete a file from the application and your computer. The file<br>
-that is to be deleted must be specified by the index of the file that is + next to the name<br>
-of the file in the Files Section, highlighted in green.<br></p>
+<p>The delete command lets you to delete a file from the application and your computer.<br>
+The file that is to be deleted must be specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete INDEX</code></p>
@@ -769,7 +793,7 @@ of the file in the Files Section, highlighted in green.<br></p>
 <div class="sect2">
 <h3 id="_moving_a_file_code_move_code">3.9. Moving a file : <code>move</code></h3>
 <div class="paragraph">
-<p>The move command allows you to move a file, specified by the index of the file that is + next to the name of the file in the Files Section, highlighted in green.<br>
+<p>The move command allows you to move a file, specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br>
 The file can be moved from its current directory on your computer to another directory on your computer.<br>
 The move file also has a User Interface Option to allow for an easier file moving experience.<br></p>
 </div>
@@ -785,10 +809,10 @@ The move file also has a User Interface Option to allow for an easier file movin
 <p><code>move 1 d/C:\User\Jeremy\Downloads</code> [Windows Operating System]</p>
 </li>
 <li>
-<p><code>move 1 d//Users/jet/Documents/Important</code> [Mac Operating System]</p>
+<p><code>move 1 d//Users/jet/Documents/Important</code> [Mac / Linux Operating System]</p>
 </li>
 <li>
-<p><code>move</code> [Launches the User Interface that lets you easily move files]</p>
+<p><code>move</code> [Any Operating System]</p>
 </li>
 </ul>
 </div>
@@ -796,24 +820,22 @@ The move file also has a User Interface Option to allow for an easier file movin
 <div class="sect2">
 <h3 id="_exiting_the_program_code_exit_code">3.10. Exiting the program : <code>exit</code></h3>
 <div class="paragraph">
-<p>This command lets you exits the program.<br>
+<p>This command lets you exit the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_retrieving_information_about_a_file">3.11. Retrieving information about a file:</h3>
 <div class="paragraph">
-<p>In order to see a little more information on a file, clicking the file in the Files Section,<br>
-highlighted in green, allows you to view more information pertaining to that file.<br>
+<p>In order to see a little more information on a file, clicking the file in the Files Section, highlighted in green, allows you to view more information pertaining to that file.<br>
 This information will be displayed in the Upcoming Deadlines Area, highlighted in red.<br></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_setting_a_deadline_for_the_file_code_deadline_code">3.12. Setting a deadline for the file : <code>deadline</code></h3>
 <div class="paragraph">
-<p>Set or remove a deadline for the a file, specified by the index of the file that is + next to the name of the file in the Files Section, highlighted in green.<br>
-A file&#8217;s deadline is located under its name and has 4 colours to indicate the amount<br>
-of time you have before it is due.<br></p>
+<p>Set or remove a deadline for the a file, specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br>
+A file&#8217;s deadline is located under its name and has 4 colours to indicate the amount of time you have before it is due.<br></p>
 </div>
 <div class="paragraph">
 <p>The colour Green, indicates that there is more <code>7</code> days till the deadline is due, as shown below.<br></p>
@@ -840,27 +862,20 @@ of time you have before it is due.<br></p>
 </div>
 </div>
 <div class="paragraph">
+<p>The colour Blue indicates that you have completed the set task.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UGDeadlineDone.png" alt="UGDeadlineDone" width="300">
+</div>
+</div>
+<div class="paragraph">
 <p>All deadlines are also displayed in the Deadlines Section of the application highlighted by Red.<br></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>DEADLINE: Format for setting a deadline: <code>deadline INDEX date/DATE</code><br></p>
-</li>
-<li>
-<p>DEADLINE: Format for marking a deadline as done: <code>deadline INDEX done</code><br></p>
-</li>
-<li>
-<p>DEADLINE: Format for removing a deadline: <code>deadline INDEX remove</code><br></p>
-</li>
-<li>
-<p>DEADLINE: The date must be in the format of dd-mm-yyyy</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="paragraph">
+<p>Format: <code>deadline INDEX date/DATE</code> [To Set a Deadline]<br>
+Format: <code>deadline INDEX done</code> [To Complete a Deadline]<br>
+Format: <code>deadline INDEX remove</code> [To remove a Deadline]<br></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -871,18 +886,30 @@ of time you have before it is due.<br></p>
 <p><code>deadline 1 date/20-02-2019</code><br></p>
 </li>
 <li>
-<p><code>deadline 2 done</code><br></p>
+<p><code>deadline 1 done</code><br></p>
 </li>
 <li>
-<p><code>deadline 2 remove</code><br></p>
+<p><code>deadline 1 remove</code><br></p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+The date must be in the format of dd-mm-yyyy.<br>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_filter_files_by_tags_code_filter_code">3.13. Filter files by tags: <code>filter</code></h3>
 <div class="paragraph">
-<p>Shows you only the files that contain the tags specified in the <code>filter</code> command.<br></p>
+<p>The filter command shows you only the files that contain the tags specified in the <code>filter</code> command.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>filter t/TAG&#8230;&#8203;</code></p>
@@ -894,6 +921,9 @@ of time you have before it is due.<br></p>
 <ul>
 <li>
 <p><code>filter t/JobApplication</code><br></p>
+</li>
+<li>
+<p><code>filter t/Lecture t/Week10</code></p>
 </li>
 </ul>
 </div>
@@ -948,11 +978,66 @@ Format: <code>redo</code> [To Redo an Action]</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>encrypt INDEX password/PASSWORD</code> [To Encrypt a file]<br>
-Format: <code>decrypt INDEX password/PASSWORD</code> [To Decrypt a file]</p>
+Format: <code>decrypt INDEX password/PASSWORD</code> [To Decrypt a file]<br></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>encrypt 2 password/ThisIsNotASecurePassword</code></p>
+</li>
+<li>
+<p><code>decrypt 2 password/ThisIsNotASecurePassword</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_saving_the_data">3.16. Saving the data</h3>
+<h3 id="_merging_files_code_merge_code">3.16. Merging Files: <code>merge</code></h3>
+<div class="paragraph">
+<p>With the <code>merge</code> command , you can merge two or more files into a new single file.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>merge INDEX INDEX&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>merge 1 2 3</code><br></p>
+</li>
+<li>
+<p><code>merge 1 2 1</code><br></p>
+</li>
+<li>
+<p><code>merge 1 1</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>A minimum of 2 files must be specified by their indexes</p>
+</li>
+<li>
+<p>The same file can be merged with itself, hence creating a new file that is composed of the same file twice.</p>
+</li>
+<li>
+<p>The newly created file will be stored in the directory of the <code>INDEX</code> that was first specified.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_saving_the_data">3.17. Saving the data</h3>
 <div class="paragraph">
 <p>PDF++ data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -1007,6 +1092,9 @@ e.g. <code>deadline 3 20-02-2019</code> , <code>deadline 2</code></p>
 <p><strong>Decrypt</strong> : <code>decrypt INDEX password/PASSWORD</code></p>
 </li>
 <li>
+<p><strong>Merge</strong> : <code>merge INDEX INDEX&#8230;&#8203;</code></p>
+</li>
+<li>
 <p><strong>Help</strong> : <code>help</code></p>
 </li>
 <li>
@@ -1022,13 +1110,16 @@ e.g. <code>deadline 3 20-02-2019</code> , <code>deadline 2</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>TI : Text Input</p>
+<p><strong>INDEX</strong> : The number that references a file managed by the application.</p>
 </li>
 <li>
-<p>GUI : Graphical User Interface</p>
+<p><strong>Command</strong> : Keyword that tells the application what to do.</p>
 </li>
 <li>
-<p>Command : Keyword that tells the application what to do.</p>
+<p><strong>GUI</strong> : Graphical User Interface</p>
+</li>
+<li>
+<p><strong>TI</strong> : Text Input</p>
 </li>
 </ul>
 </div>
@@ -1037,7 +1128,7 @@ e.g. <code>deadline 3 20-02-2019</code> , <code>deadline 2</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-02 09:17:56 UTC
+Last updated 2019-04-02 10:25:59 UTC
 </div>
 </div>
 </body>
