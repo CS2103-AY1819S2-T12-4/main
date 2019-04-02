@@ -453,22 +453,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_add_feature">3.1. Add feature</a></li>
 <li><a href="#_edit_feature">3.2. Edit feature</a></li>
-<li><a href="#_move_feature">3.3. Move feature</a></li>
-<li><a href="#_open_feature">3.4. Open feature</a></li>
-<li><a href="#_clear_feature">3.5. Clear feature</a></li>
-<li><a href="#_deadline_feature">3.6. Deadline feature</a></li>
-<li><a href="#_delete_feature">3.7. Delete feature</a></li>
-<li><a href="#_exit_feature">3.8. Exit feature</a></li>
-<li><a href="#_help_feature">3.9. Help feature</a></li>
-<li><a href="#_history_feature">3.10. History feature</a></li>
-<li><a href="#_list_feature">3.11. List feature</a></li>
-<li><a href="#_select_feature">3.12. Select feature</a></li>
-<li><a href="#_sort_feature">3.13. Sort feature</a></li>
-<li><a href="#_tag_feature">3.14. Tag feature</a></li>
-<li><a href="#_undo_redo_feature">3.15. Undo/Redo feature</a></li>
-<li><a href="#_file_protection">3.16. File Protection</a></li>
-<li><a href="#_logging">3.17. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.18. Configuration</a></li>
+<li><a href="#_merge_feature">3.3. Merge feature</a></li>
+<li><a href="#_move_feature">3.4. Move feature</a></li>
+<li><a href="#_open_feature">3.5. Open feature</a></li>
+<li><a href="#_clear_feature">3.6. Clear feature</a></li>
+<li><a href="#_deadline_feature">3.7. Deadline feature</a></li>
+<li><a href="#_delete_feature">3.8. Delete feature</a></li>
+<li><a href="#_exit_feature">3.9. Exit feature</a></li>
+<li><a href="#_help_feature">3.10. Help feature</a></li>
+<li><a href="#_history_feature">3.11. History feature</a></li>
+<li><a href="#_list_feature">3.12. List feature</a></li>
+<li><a href="#_select_feature">3.13. Select feature</a></li>
+<li><a href="#_sort_feature">3.14. Sort feature</a></li>
+<li><a href="#_tag_feature">3.15. Tag feature</a></li>
+<li><a href="#_undo_redo_feature">3.16. Undo/Redo feature</a></li>
+<li><a href="#_file_protection">3.17. File Protection</a></li>
+<li><a href="#_logging">3.18. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.19. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#_documentation">4. Documentation</a>
@@ -1024,7 +1025,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Pdf Book</cod
 <p>The add feature is facilitated by both the <code>AddCommandParser</code> and <code>AddCommand</code>.
 This function adds the PDF file to the app using the path specified by your users.
 Your users can then perform multiple operations supported by PDF++ on the added files.
-Some examples of features supported include <a href="#_edit_feature">Section 3.2, &#8220;Edit feature&#8221;</a> and <a href="#_open_feature">Section 3.4, &#8220;Open feature&#8221;</a></p>
+Some examples of features supported include <a href="#_edit_feature">Section 3.2, &#8220;Edit feature&#8221;</a> and <a href="#_open_feature">Section 3.5, &#8220;Open feature&#8221;</a></p>
 </div>
 <div class="paragraph">
 <p>Currently PDF++ only supports PDF files, any other types of files will not be accepted.</p>
@@ -1201,8 +1202,10 @@ Essentially upon adding a Pdf to be tracked by the application, the user will be
 change certain attributes tied to the PDF such as the <code>Name</code> and <code>Tag</code> tied to a particular Pdf.</p>
 </div>
 <div class="paragraph">
-<p>The Edit feature has the following syntax:
-<code>edit &lt;INDEX&gt; n/&lt;NEWNAME&gt; t/&lt;NEWTAG1&gt;&#8230;&#8203;</code></p>
+<p>The Edit feature has the following syntax:</p>
+</div>
+<div class="paragraph">
+<p><code>edit &lt;INDEX&gt; n/&lt;NEWNAME&gt; t/&lt;NEWTAG1&gt;&#8230;&#8203;</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1228,7 +1231,8 @@ do not wish to tag this file.</p>
 <div class="title">Note</div>
 </td>
 <td class="content">
-The index value can be referenced from the list in the main application.
+The index value can be referenced from the list in the main application, or from the
+result of the <code>Filter</code>, <code>Find</code> or <code>List</code> feature.
 </td>
 </tr>
 </table>
@@ -1303,9 +1307,107 @@ to remove or add.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_move_feature">3.3. Move feature</h3>
+<h3 id="_merge_feature">3.3. Merge feature</h3>
 <div class="sect3">
 <h4 id="_current_implementation_3">3.3.1. Current Implementation</h4>
+<div class="paragraph">
+<p>The merge function utilises the
+<a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a>, specifically the
+<a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a>
+API to append two or more PDFs and create a new file with the merged content. As there will be one
+additional file added to the application, this feature also implicitly performs an <code>Add</code> feature to add the new
+PDF to the application.</p>
+</div>
+<div class="paragraph">
+<p>The Merge feature has the following syntax:</p>
+</div>
+<div class="paragraph">
+<p><code>merge</code> &lt;INDEX1&gt; &lt;INDEX2&gt; &#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to merge.</p>
+</li>
+<li>
+<p>Minimum of two indices have to be provided for the merge to be performed, up to as many
+indices as desired.</p>
+</li>
+<li>
+<p>It is possible to repeat an index; the PDF would simply merge with a copy of itself.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The index value can be referenced from the list in the main application, or from the
+result of the <code>Filter</code>, <code>Find</code> or <code>List</code> feature.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_feature_breakdown">3.3.2. Feature breakdown</h4>
+<div class="paragraph">
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+workings of the <code>merge</code> feature.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: From the main interface of the application, the user chooses the file(s) that
+they wish to merge, and enters the <code>merge</code> command into the CLI Interface, following
+the outlined Syntax as illustrated below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MergeFeatureStep1.png" alt="MergeFeatureStep1" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2: After executing the command, the <code>MergeCommandParser</code> parses the input into
+relevant objects that are required to be executed by the <code>MergeCommand</code> object. In
+particular, it ensures that there are two or more arguments passed as described in the
+above Syntax. Upon parsing, the parser then creates a new <code>MergeCommand</code> that will execute
+the user&#8217;s input.</p>
+</div>
+<div class="paragraph">
+<p>In this case, the above two files will be merged, with the <em>"CS2103T_PDF++_UG_Intro.pdf"</em>
+file appended behind the other file.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: The <code>MergeCommand</code> is then executed. Successful execution
+of the command would return a <strong>CommandResult</strong> object and create the a new file with the merged
+content, while unsuccessful execution due to validation failure will throw a <strong>CommandException</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MergeCommandExecuteProcess.png" alt="MergeCommandExecuteProcess" width="600">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The new name of the merged file follows the format: "merged[hashcode].pdf". This is to ensure
+unique file name. The hashcode in the name will be modified if name already exists.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_move_feature">3.4. Move feature</h3>
+<div class="sect3">
+<h4 id="_current_implementation_4">3.4.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The move feature functions as a simplified version of the <code>Edit</code> feature, as in nature
 it is making an edit to the directory of the file. However, in addition to making changes
@@ -1327,7 +1429,7 @@ making content or characteristic changes when it is applied in the context of do
 </table>
 </div>
 <div class="paragraph">
-<p>The Edit feature has the following syntax:</p>
+<p>The Move feature has the following syntax:</p>
 </div>
 <div class="paragraph">
 <p><code>move</code></p>
@@ -1338,7 +1440,7 @@ making content or characteristic changes when it is applied in the context of do
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to edit.</p>
+<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to move.</p>
 </li>
 <li>
 <p><code>&lt;NEWDIRECTORY&gt;</code> refers to the address of the new location the file is to be moved.</p>
@@ -1356,7 +1458,8 @@ selection GUI for the user to select the file directly.</p>
 <div class="title">Note</div>
 </td>
 <td class="content">
-The index value can be referenced from the list in the main application.
+The index value can be referenced from the list in the main application, or from the
+result of the <code>Filter</code>, <code>Find</code> or <code>List</code> feature.
 </td>
 </tr>
 </table>
@@ -1364,6 +1467,9 @@ The index value can be referenced from the list in the main application.
 <div class="paragraph">
 <p>All parts of the syntax are required.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_feature_breakdown_2">3.4.2. Feature breakdown</h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the <code>move</code> feature.</p>
@@ -1381,7 +1487,7 @@ the outlined Syntax as illustrated below.</p>
 <div class="paragraph">
 <p>In this scenario, there is a file <strong>document.pdf</strong> in the windows <em>Desktop</em> directory, and
 the <code>move</code> command entered is intended for the file to be moved to the windows <em>Documents</em>
- directory.</p>
+directory.</p>
 </div>
 <div class="paragraph">
 <p>Step 2: After executing the command, the <code>MoveCommandParser</code> parses the input into
@@ -1403,9 +1509,9 @@ a <strong>CommandException</strong>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_open_feature">3.4. Open feature</h3>
+<h3 id="_open_feature">3.5. Open feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_4">3.4.1. Current Implementation</h4>
+<h4 id="_current_implementation_5">3.5.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The edit feature is facilitated by both the <code>OpenCommandParser</code> and <code>OpenCommand</code>.
 Essentially upon opening a Pdf that is tracked by the application, the user will be able to
@@ -1483,9 +1589,9 @@ For more information about the behavior of launching the Pdf, please refer to Ja
 </div>
 </div>
 <div class="sect2">
-<h3 id="_clear_feature">3.5. Clear feature</h3>
+<h3 id="_clear_feature">3.6. Clear feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_5">3.5.1. Current Implementation</h4>
+<h4 id="_current_implementation_6">3.6.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The clear feature is facilitated by the <code>ClearCommand</code>. This function clears all the PDF files that
 were previously stored in PDF++.</p>
@@ -1508,7 +1614,7 @@ were previously stored in PDF++.</p>
 </td>
 <td class="content">
 If you have accidentally entered the <code>clear</code> command and wish to revert the action, please refer to
-<a href="#_undo_redo_feature">Section 3.15, &#8220;Undo/Redo feature&#8221;</a> for more information.
+<a href="#_undo_redo_feature">Section 3.16, &#8220;Undo/Redo feature&#8221;</a> for more information.
 </td>
 </tr>
 </table>
@@ -1516,9 +1622,9 @@ If you have accidentally entered the <code>clear</code> command and wish to reve
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deadline_feature">3.6. Deadline feature</h3>
+<h3 id="_deadline_feature">3.7. Deadline feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_6">3.6.1. Current Implementation</h4>
+<h4 id="_current_implementation_7">3.7.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The deadline feature is facilitated by both <code>DeadlineCommand</code> and <code>DeadlineCommandParser</code>. This feature
 allows you to set or remove deadlines of the PDF file specified by you from PDF++.</p>
@@ -1578,9 +1684,9 @@ certain criteria
 </div>
 </div>
 <div class="sect2">
-<h3 id="_delete_feature">3.7. Delete feature</h3>
+<h3 id="_delete_feature">3.8. Delete feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_7">3.7.1. Current Implementation</h4>
+<h4 id="_current_implementation_8">3.8.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The delete feature is facilitated by both <code>DeleteCommand</code> and <code>DeleteCommandParser</code>. This feature
 either soft or hard deletes the PDF file specified by you from PDF++.</p>
@@ -1588,9 +1694,9 @@ either soft or hard deletes the PDF file specified by you from PDF++.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exit_feature">3.8. Exit feature</h3>
+<h3 id="_exit_feature">3.9. Exit feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_8">3.8.1. Current Implementation</h4>
+<h4 id="_current_implementation_9">3.9.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The exit feature is facilitated by <code>ExitCommand</code>. This feature allows you to exit from PDF++.</p>
 </div>
@@ -1620,9 +1726,9 @@ files
 </div>
 </div>
 <div class="sect2">
-<h3 id="_help_feature">3.9. Help feature</h3>
+<h3 id="_help_feature">3.10. Help feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_9">3.9.1. Current Implementation</h4>
+<h4 id="_current_implementation_10">3.10.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The help feature is facilitated by <code>HelpCommand</code>. This feature allows you to exit from PDF++.</p>
 </div>
@@ -1651,9 +1757,9 @@ Enter note here
 </div>
 </div>
 <div class="sect2">
-<h3 id="_history_feature">3.10. History feature</h3>
+<h3 id="_history_feature">3.11. History feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_10">3.10.1. Current Implementation</h4>
+<h4 id="_current_implementation_11">3.11.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The history feature is facilitated by <code>HistoryCommand</code>. This feature allows you to exit from PDF++.</p>
 </div>
@@ -1682,9 +1788,9 @@ Enter note here
 </div>
 </div>
 <div class="sect2">
-<h3 id="_list_feature">3.11. List feature</h3>
+<h3 id="_list_feature">3.12. List feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_11">3.11.1. Current Implementation</h4>
+<h4 id="_current_implementation_12">3.12.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The list feature is facilitated by <code>ListCommand</code>. This feature allows you to exit from PDF++.</p>
 </div>
@@ -1713,9 +1819,9 @@ Enter note here
 </div>
 </div>
 <div class="sect2">
-<h3 id="_select_feature">3.12. Select feature</h3>
+<h3 id="_select_feature">3.13. Select feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_12">3.12.1. Current Implementation</h4>
+<h4 id="_current_implementation_13">3.13.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The select feature is facilitated by <code>SelectCommand</code>. <code>Enter functionality here</code></p>
 </div>
@@ -1744,9 +1850,9 @@ Enter note here
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sort_feature">3.13. Sort feature</h3>
+<h3 id="_sort_feature">3.14. Sort feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_13">3.13.1. Current Implementation</h4>
+<h4 id="_current_implementation_14">3.14.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The sort feature is facilitated by <code>SortCommand</code>. <code>Enter functionality here</code></p>
 </div>
@@ -1775,9 +1881,9 @@ Enter note here
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tag_feature">3.14. Tag feature</h3>
+<h3 id="_tag_feature">3.15. Tag feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_14">3.14.1. Current Implementation</h4>
+<h4 id="_current_implementation_15">3.15.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The tag feature is facilitated by <code>TagCommand</code>. <code>Enter functionality here</code></p>
 </div>
@@ -1806,9 +1912,9 @@ Enter note here
 </div>
 </div>
 <div class="sect2">
-<h3 id="_undo_redo_feature">3.15. Undo/Redo feature</h3>
+<h3 id="_undo_redo_feature">3.16. Undo/Redo feature</h3>
 <div class="sect3">
-<h4 id="_current_implementation_15">3.15.1. Current Implementation</h4>
+<h4 id="_current_implementation_16">3.16.1. Current Implementation</h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedPdfBook</code>.
 It extends <code>PdfBook</code> with an undo/redo history, stored internally as an <code>pdfBookStateList</code> and <code>currentStatePointer</code>.
@@ -1938,7 +2044,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_considerations">3.15.2. Design Considerations</h4>
+<h4 id="_design_considerations">3.16.2. Design Considerations</h4>
 <div class="sect4">
 <h5 id="_aspect_how_undo_redo_executes">Aspect: How undo &amp; redo executes</h5>
 <div class="ulist">
@@ -2008,7 +2114,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="_file_protection">3.16. File Protection</h3>
+<h3 id="_file_protection">3.17. File Protection</h3>
 <div class="paragraph">
 <p>PDF++ has a robust in-built file protection system which allows you to encrypt or decrypt any
 PDF files you want. Both encrypt and decrypt feature are facilitated by both <code>EncryptCommand /
@@ -2060,7 +2166,7 @@ with encrypt &amp; decrypt.
 <p>Please refer to <code>Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</code> for encryption guide and <code>Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</code> for decryption guide.</p>
 </div>
 <div class="sect3">
-<h4 id="_step_by_step_guide_encrypt">3.16.1. Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</h4>
+<h4 id="_step_by_step_guide_encrypt">3.17.1. Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</h4>
 <div class="paragraph">
 <p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
 of the Encrypt feature.</p>
@@ -2131,11 +2237,11 @@ password you specified.</p>
 </div>
 <div class="paragraph">
 <p>Step 6: If the command passes the validity check, the file you have selected is encrypted.
-You can open your file to see the result. Please refer to <a href="#_open_feature">Section 3.4, &#8220;Open feature&#8221;</a> for the <code>open</code> feature.</p>
+You can open your file to see the result. Please refer to <a href="#_open_feature">Section 3.5, &#8220;Open feature&#8221;</a> for the <code>open</code> feature.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_step_by_step_guide_decrypt">3.16.2. Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</h4>
+<h4 id="_step_by_step_guide_decrypt">3.17.2. Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</h4>
 <div class="paragraph">
 <p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
 of the Decrypt feature.</p>
@@ -2243,19 +2349,19 @@ password you specified.</p>
 </div>
 <div class="paragraph">
 <p>Step 6: If the command passes the validity check, the file you have selected is decrypted.
-You can open your file to see the result. Please refer to <a href="#_open_feature">Section 3.4, &#8220;Open feature&#8221;</a> for the <code>open</code> feature.</p>
+You can open your file to see the result. Please refer to <a href="#_open_feature">Section 3.5, &#8220;Open feature&#8221;</a> for the <code>open</code> feature.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_logging">3.17. Logging</h3>
+<h3 id="_logging">3.18. Logging</h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.18, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.19, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -2286,7 +2392,7 @@ You can open your file to see the result. Please refer to <a href="#_open_featur
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration">3.18. Configuration</h3>
+<h3 id="Implementation-Configuration">3.19. Configuration</h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file directory, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -3826,7 +3932,7 @@ Expected: Similar to previous.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-02 03:17:29 UTC
+Last updated 2019-04-02 03:41:37 UTC
 </div>
 </div>
 </body>
