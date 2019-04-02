@@ -1701,7 +1701,10 @@ either soft or hard deletes the PDF file specified by you from PDF++.</p>
 <p>The exit feature is facilitated by <code>ExitCommand</code>. This feature allows you to exit from PDF++.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Exit</code> feature has to following syntax: <code>exit</code></p>
+<p>The <code>Exit</code> feature has to following syntax:</p>
+</div>
+<div class="paragraph">
+<p><code>exit</code>&#8230;&#8203;</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1717,8 +1720,8 @@ either soft or hard deletes the PDF file specified by you from PDF++.</p>
 <div class="title">Note</div>
 </td>
 <td class="content">
-As your files and commands are immediately stored after execute, you do not need to worry for any unsaved
-files
+Your files and commands are immediately stored after execution, and can be retrieved on
+reopening the application.
 </td>
 </tr>
 </table>
@@ -1730,17 +1733,22 @@ files
 <div class="sect3">
 <h4 id="_current_implementation_10">3.10.1. Current Implementation</h4>
 <div class="paragraph">
-<p>The help feature is facilitated by <code>HelpCommand</code>. This feature allows you to exit from PDF++.</p>
+<p>The <code>help</code> feature brings up the UserGuide in a browser window as a html file. Following other
+features, the command is parsed and a <strong>HelpCommand</strong> object is created to be executed.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Help</code> feature has to following syntax: <code>help</code></p>
+<p>The <code>Help</code> feature has to following syntax:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Enter here</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><code>help</code></p>
+</div>
+<div class="paragraph">
+<p>After execution, the user will be directed to the start of the <em>UserGuide.adoc</em> as shown.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UserGuide.png" alt="UserGuide" width="600">
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3932,7 +3940,7 @@ Expected: Similar to previous.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-02 04:10:59 UTC
+Last updated 2019-04-02 04:28:58 UTC
 </div>
 </div>
 </body>
