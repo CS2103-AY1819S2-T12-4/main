@@ -213,8 +213,172 @@ existence of files with the same name in different directories.
 </table>
 </div>
 <div class="paragraph">
-<p>Format: <code>add f/PATH_TO_FILE</code> [Text Input]<br>
-Format: <code>add</code> [GUI]</p>
+<p>The Add feature has the following syntax:</p>
+</div>
+<div class="paragraph">
+<p><span class="big"><code>add</code></span></p>
+</div>
+<div class="paragraph">
+<p><span class="big"><code>add f/&lt;PATH_TO_FILE&gt; t/&lt;TAG&gt;&#8230;&#8203;</code></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>f/</code> refers to the command immediately following after this prefix is a file</p>
+</li>
+<li>
+<p><code>&lt;PATH_TO_FILE&gt;</code> refers to the path to the <code>Pdf</code> you wish to add</p>
+</li>
+<li>
+<p><code>&lt;TAG&gt;&#8230;&#8203;</code> refers to the new <code>Tag</code> you wish to add. Leave this portion empty if you
+do not wish to tag this file.</p>
+</li>
+<li>
+<p>Entering <code>add</code> without <code>&lt;INDEX&gt;</code> or  <code>&lt;NEWDIRECTORY&gt;</code> will open the default file
+selection GUI for the user to add the file directly.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Please ensure that you have entered the full <code>PATH_TO_FILE</code>. Please refer to
+<code>Step-by-Step Guide&#8201;&#8212;&#8201;add</code> below for detailed explanation.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="feature-breakdown"><a class="link" href="#feature-breakdown">3.2.1. Feature breakdown</a></h4>
+<div class="paragraph">
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+workings of the Add feature.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user launches the application with either an existing set of <code>Pdf</code> or a new
+sample set of <code>Pdf</code> stored within as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep1Default.png" alt="AddFeatureStep1Default" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2: The user navigates to the folder with the file and copy the directory.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>For Windows</em>
+Once the user has navigated to the folder, click on the address bar and copy</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep2CopyDirectory.png" alt="AddFeatureStep2CopyDirectory" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>For Mac</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Step 3: The user enters the <code>add</code> command into the CLI interface, following the
+outlined syntax as illustrated below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Your users must type the file name <strong>after</strong> the directory copied at <em>Step 2</em>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep3UserInput.png" alt="AddFeatureStep3UserInput" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>[NOTE] you can enter <code>add</code> and hit enter, to open up a GUI for you to select the file you
+wish to add.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: Upon hitting enter to execute the command, the <strong>AddCommandParser</strong> parses the input
+into several components that are required to be executed by the <strong>AddCommand</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Upon parsing, the parser then creates a new <strong>AddCommand</strong> that will be executed according to
+the your input.</p>
+</div>
+<div class="paragraph">
+<p>Step 5: Upon receiving the necessary information from the parser, the <code>AddCommand</code> first
+begins by checking for validity as shown below.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Duplicate <code>Pdf</code> found in PDF++</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep5DuplicateFound.png" alt="AddFeatureStep5DuplicateFound" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Pdf</code> does not exist in directory</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep5PdfNotFound.png" alt="AddFeatureStep5PdfNotFound" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Pdf</code> found and no duplication in PDF++</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep5Sucess.png" alt="AddFeatureStep5Sucess" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 6: If the validity check and the individual property check passes, the file is then
+added to PDF++</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of v1.2, the Add feature is only capable of adding 1 <code>Pdf</code> file at a time. By v2.0,
+the feature will support adding multiple files.
+</td>
+</tr>
+</table>
 </div>
 <div class="ulist">
 <ul>
@@ -238,6 +402,7 @@ Format: <code>add</code> [GUI]</p>
 <p><code>add</code> [Any Operating System]</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -317,17 +482,31 @@ your computer.<br></p>
 <p>The rename command allows you to change the name of a file, specified by thr index of the file that is next to the name of the file in the Files Section, highlighted in green.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>rename INDEX n/NAME</code><br></p>
+<p>The rename command has the following syntax:</p>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p><span class="big"><code>rename &lt;INDEX&gt; n/&lt;NEWNAME&gt; t/&lt;NEWTAG1&gt;&#8230;&#8203;</code></span></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>rename 1 n/newname.pdf</code></p>
+<p><code>&lt;INDEX&gt;</code> refers to the index of the file that you wish to edit.</p>
+</li>
+<li>
+<p><code>n/</code> indicates that you are editing the name of the file</p>
+</li>
+<li>
+<p><code>&lt;NEWNAME&gt;</code> refers to the new value that you would like to set the file <em>Name</em> to.</p>
+</li>
+<li>
+<p><code>&lt;NEWTAG&#8230;&#8203;&gt;</code> refers to the new <em>Tag</em> you wish to add. Leave this portion empty if you
+do not wish to tag this file.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Example:
+* <code>rename 1 n/newname.pdf</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -345,6 +524,85 @@ highlighted in blue.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The index value can be referenced from the list in the main application, or from the
+result of the <code>Filter</code>, <code>Find</code> or <code>List</code> feature.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="feature-breakdown-2"><a class="link" href="#feature-breakdown-2">3.6.1. Feature Breakdown</a></h4>
+<div class="paragraph">
+<p>Step 1: The user launches an application with either an existing set of <code>Pdf</code> or a
+new sample set of <code>Pdf</code> stored within as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EdiFeatureStep1Default.png" alt="EdiFeatureStep1Default" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2: The user chooses a <code>Pdf</code> that they wish to edit, in this case <code>g.pdf</code>, and
+enters the <code>rename</code> command into the CLI Interface, following the outlined Syntax as
+illustrated below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureUserInput.png" alt="EditFeatureUserInput" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 3: Upon hitting enter to execute the command, the <strong>EditCommandParser</strong> parses
+the input into relevant objects that are required to be executed by the <strong>EditCommand</strong>
+object. Upon parsing, the parser then creates a new <strong>EditCommand</strong> that will execute the
+user&#8217;s input.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: Upon receiving the necessary information from the parser, the <strong>EditCommand</strong> first
+begins by checking for validity as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureNoDuplicate.png" alt="EditFeatureNoDuplicate" width="700">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureDuplicate.png" alt="EditFeatureDuplicate" width="700">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 5: If the validity check and the individual property check passes, the file is then
+effectively renamed within PDF++ and in the actual directory, thus resulting in an output
+as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditFeatureFinalOutput.png" alt="EditFeatureFinalOutput" width="600">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of V1.2, the Edit Feature removes any existing <code>Tag</code> s and replaces them with those
+input by the user (If any). By <code>V1.4</code> The user will be able to select tags he wishes
+to remove or add.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -764,4 +1022,4 @@ e.g <code>merge 1 2 1</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 13:39:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 13:57:13 UTC</div></div></div></body></html>
