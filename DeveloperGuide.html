@@ -1378,7 +1378,7 @@ the results. Hence, the <code>list</code> feature is added to allow for a "reset
 <p>The <code>find</code> feature is facilitated by <strong>FindCommand</strong> and <strong>FindCommandParser</strong>.
 This feature lists a subset of all the files in the application based on the keyword(s)
 provided. Using the keyword(s), the application will check the names of all files, as
-well as the content of the text within the files.</p>
+well as the content of the text within the files prior to revealing the results.</p>
 </div>
 <div class="paragraph">
 <p>The <code>find</code> feature has to following syntax:</p>
@@ -1398,6 +1398,97 @@ files. There must be at least one provided.</p>
 <div class="content">
 <img src="images/FindCommandActivityDiagram.png" alt="FindCommandActivityDiagram" width="600">
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-breakdown-6"><a class="link" href="#feature-breakdown-6">3.12.2. Feature Breakdown</a></h4>
+<div class="paragraph">
+<p>The following image briefly summarises the interactions of the <code>find</code> command with
+its immediate components.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindCommandSequenceDiagram.png" alt="FindCommandSequenceDiagram" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>When the user enters the CLI Input for the find command, the command is first passed
+from the <code>LogicManager</code> to the <code>PdfBookParser</code> will carry out the following steps.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Identify the appropriate CommandParser that is requested by the user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the case that the user requests the <code>find</code> command, the <code>PdfBookParser</code> will correctly parse
+the user-input to the <code>FindCommandParser</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Call the <code>static</code> parse method within the appropriate CommandParser that is expected
+to return the correct Command from the CommandParser.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hence in the case of the <code>find</code> command. The <code>FindCommandParser</code> would return the
+<code>FindCommand</code> back to the <code>PdfBookParser</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Upon receiving the <code>FindCommand</code> from the <code>PdfBookParser</code> the following steps are carried out.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>execute</code> method, that is part of the abstract <code>Command</code> class, is invoked.</p>
+</li>
+<li>
+<p>The parameters <code>Model</code> and <code>CommandHistory</code> are provided to the <code>execute</code> and the <code>FindCommand</code> executes its directive.</p>
+</li>
+<li>
+<p>The <code>FindCommand</code> then updates the <code>Model</code> and <code>CommandHistory</code>.</p>
+</li>
+<li>
+<p>Once the <code>Model</code> is updated, the user is able to view the visual changes of their desired actions within the application.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This is a brief explanation of the inner workings of the <code>FindCommmand</code> and its execution method.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="considerations-2"><a class="link" href="#considerations-2">3.12.3. Considerations</a></h4>
+<div class="paragraph">
+<p>Our application also implements several security features such as the ability of users to <code>Encrypt</code> and
+<code>Decrypt</code> their files. Hence, a major security concern was to prevent the <code>FindCommand</code> from searching
+through the contents of files that are previously encrypted. This is crucial to prevent the leakage of data
+as malicious users might simply utilize the <code>FindCommand</code> to extract information from the tracked files.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="future-implementation-2"><a class="link" href="#future-implementation-2">3.12.4. Future Implementation</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A main issue with the current implementation of the <code>FindCommand</code> is it&#8217;s slow speeds with respect to
+large files or files that contain a large string of text files. Hence, a possible consideration you might
+wish to improve upon is to "upgrade" this feature by improving it&#8217;s speed of this feature.</p>
+</li>
+<li>
+<p>Yet another enhancement to this feature you might wish to implement is the use of Optical Image Recognition,
+otherwise known as OCR. This will allow the application to translate images within the file to words which would further
+improve the ability of the application to look through content even if they are images.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -3577,4 +3668,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-13 04:27:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-13 04:31:44 UTC</div></div></div></body></html>
