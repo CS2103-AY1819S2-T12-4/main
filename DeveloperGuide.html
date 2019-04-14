@@ -1,14 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>PDF++ - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">PDF++</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-T12-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>PDF++ - Developer Guide</h1></div><div id="content"><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>By: <code>Team T12-4</code>      Since: <code>Feb 2019</code>      Licence: <code>MIT</code></p>
-</div>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle"></div>
-<ul class="sectlevel1">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article toc2 toc-left"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">PDF++</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-T12-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>PDF++ - Developer Guide</h1><div id="toc" class="toc2"><div id="toctitle"></div><ul class="sectlevel1">
 <li><a href="#setting-up">1. Setting up</a>
 <ul class="sectlevel2">
 <li><a href="#prerequisites">1.1. Prerequisites</a></li>
@@ -97,7 +89,11 @@
 <li><a href="#saving-data">G.3. Saving data</a></li>
 </ul>
 </li>
-</ul>
+</ul></div></div><div id="content"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>By: <code>Team T12-4</code>      Since: <code>Feb 2019</code>      Licence: <code>MIT</code></p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -182,7 +178,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2103-AY1819S2-T12-4/main/tree/master/src/main/java/seedu/pdf/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -195,7 +191,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </li>
 <li>
-<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S2-T12-4/main/tree/master/src/test/java/seedu/pdf/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
+<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
 </li>
 </ol>
 </div>
@@ -326,14 +322,14 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Architecture.png" alt="Architecture" width="600">
 </div>
 <div class="title">Figure 1. Architecture Diagram</div>
-</div>
-<div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -437,7 +433,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PdfListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
@@ -495,7 +491,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeletePdfSdForLogic.png" alt="DeletePdfSdForLogic" width="800">
+<img src="images/SDforDeletePdf.png" alt="SDforDeletePdf" width="800">
 </div>
 <div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
@@ -539,6 +535,7 @@ The following class plays an important role at the architecture level:</p>
 <td class="content">
 As a more OOP model, we can store a <code>Tag</code> list in <code>Pdf Book</code>, which <code>Pdf</code> can reference. This would allow <code>Pdf Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Pdf</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
 <br>
+.OOP Diagram
 <span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
 </td>
 </tr>
@@ -612,6 +609,7 @@ are added to the application.</p>
 <div class="content">
 <img src="images/AddCommandActivityDiagram.png" alt="AddCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 9. Add Command Activity Diagram</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -626,17 +624,18 @@ are added to the application.</p>
 </div>
 </li>
 <li>
-<p>The Pdf to be added is loaded as to check for errors.</p>
+<p>The Pdf to be added is loaded into a third-party API to verify for any errors.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Pdf will be loaded as <strong>PDDocument</strong>, which is an indicator if the application can perform other operations on the Pdf that need it to be handled as a <code>.pdf</code> file.</p>
+<p>Pdf will be loaded as <a href="https://pdfbox.apache.org/docs/2.0.2/javadocs/org/apache/pdfbox/pdmodel/PDDocument.html">PDDocument</a>,
+which verifies the file that the user wishes to add to the program.</p>
 </li>
 <li>
 <p>Created PDDocument will be closed after loading as it is unused.</p>
 </li>
 <li>
-<p>Errors in accessing Pdf would throw <strong>IOException</strong>. Errors would most likely be due to:</p>
+<p>Errors in adding the Pdf would throw <strong>IOException</strong>. Errors would most likely be due to:</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
@@ -741,6 +740,7 @@ new sample set of <code>Pdf</code> stored within as shown below.</p>
 <div class="content">
 <img src="images/OpenFeatureStep1Default.png" alt="OpenFeatureStep1Default" width="600">
 </div>
+<div class="title">Figure 10. Step 1</div>
 </div>
 <div class="paragraph">
 <p>Step 2: The user chooses a <code>Pdf</code> that they wish to open, in this case <code>a.pdf</code>, and
@@ -751,6 +751,7 @@ illustrated below.</p>
 <div class="content">
 <img src="images/OpenFeatureStep2UserInput.png" alt="OpenFeatureStep2UserInput" width="600">
 </div>
+<div class="title">Figure 11. Step 2</div>
 </div>
 <div class="paragraph">
 <p>Step 3: Upon hitting enter to execute the command, the <strong>OpenCommandParser</strong> parses
@@ -767,6 +768,7 @@ with the user-default Pdf reader.</p>
 <div class="content">
 <img src="images/OpenCommandActivityDiagram.png" alt="OpenCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 12. Open Command Activity Diagram</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -795,6 +797,7 @@ change certain attributes tied to the PDF such as the <code>Name</code> and <cod
 <div class="content">
 <img src="images/EditCommandActivityDiagram.png" alt="EditCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 13. Edit Command Activity Diagram</div>
 </div>
 </div>
 </div>
@@ -869,6 +872,7 @@ the outlined Syntax as illustrated below.</p>
 <div class="content">
 <img src="images/MoveFeatureStep1.png" alt="MoveFeatureStep1" width="600">
 </div>
+<div class="title">Figure 14. Step 1</div>
 </div>
 <div class="paragraph">
 <p>In this scenario, there is a file <strong>document.pdf</strong> in the windows <em>Desktop</em> directory, and
@@ -1011,6 +1015,7 @@ which is an indicator if the application can perform other operations on the Pdf
 <div class="content">
 <img src="images/MergeCommandSequenceDiagram.png" alt="MergeCommandSequenceDiagram" width="600">
 </div>
+<div class="title">Figure 15. Merge Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1131,6 +1136,7 @@ user&#8217;s input.</p>
 <div class="content">
 <img src="images/DeleteCommandActivityDiagram.png" alt="DeleteCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 16. Delete Command Activity Diagram</div>
 </div>
 </div>
 </div>
@@ -1178,6 +1184,7 @@ wish to revert the action, please refer to <a href="#Undo/Redo feature">[Undo/Re
 <div class="content">
 <img src="images/ClearCommandActivityDiagram.png" alt="ClearCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 17. Clear Command Activity Diagram.</div>
 </div>
 </div>
 </div>
@@ -1268,6 +1275,7 @@ user&#8217;s input.</p>
 <div class="content">
 <img src="images/DeadlineCommandActivityDiagram.png" alt="DeadlineCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 18. Deadline Command Activity Diagram</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1306,6 +1314,7 @@ Users can reference from the UserGuide directly on how to navigate the guide.</p
 <div class="content">
 <img src="images/UserGuide.png" alt="UserGuide" width="600">
 </div>
+<div class="title">Figure 19. User Guide</div>
 </div>
 </div>
 </div>
@@ -1353,7 +1362,7 @@ reopening the application.
 This feature will display all of the files currently stored within the application at the
 main interface. By default, all of the files will be displayed when the application is
 started. However, the display of the interface can be changed to reflect the results of
-<a href="#find-feature">Section 3.12, &#8220;Find feature&#8221;</a> or <a href="#filter-feature">Section 3.13, &#8220;Filter feature&#8221;</a>.</p>
+<a href="#find-feature">Find feature</a> or <a href="#filter-feature">Filter feature</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1362,7 +1371,7 @@ started. However, the display of the interface can be changed to reflect the res
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Certain features such as <a href="#merge-feature">Section 3.5, &#8220;Merge feature&#8221;</a> rely on the index of the file(s) displayed on
+Certain features such as <a href="#merge-feature">Merge Feature</a> rely on the index of the file(s) displayed on
 the main interface. Since the <code>find</code> or <code>filter</code> feature would list a sample of all
 the files at the main interface, no commands can be executed on the files not included in
 the results. Hence, the <code>list</code> feature is added to allow for a "reset" of the view of the files.
@@ -1392,7 +1401,7 @@ well as the content of the text within the files prior to revealing the results.
 <p>The <code>find</code> feature has to following syntax:</p>
 </div>
 <div class="paragraph">
-<p><span class="big"><code>find &lt;KEYWORD&gt; &#8230;&#8203;</code></span></p>
+<p>Format: <span class="big"><code>find &lt;KEYWORD&gt; &#8230;&#8203;</code></span></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1402,14 +1411,20 @@ files. There must be at least one provided.</p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/FindCommandActivityDiagram.png" alt="FindCommandActivityDiagram" width="600">
-</div>
+<div class="paragraph">
+<p>Example:
+* <code>find Resume</code>
+* <code>find Introduction</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="feature-breakdown-5"><a class="link" href="#feature-breakdown-5">3.12.2. Feature Breakdown</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindCommandActivityDiagram.png" alt="FindCommandActivityDiagram" width="600">
+</div>
+<div class="title">Figure 20. Find Command Activity Diagram</div>
+</div>
 <div class="paragraph">
 <p>The following image briefly summarises the interactions of the <code>find</code> command with
 some of its immediate components.</p>
@@ -1418,6 +1433,7 @@ some of its immediate components.</p>
 <div class="content">
 <img src="images/FindCommandSequenceDiagram.png" alt="FindCommandSequenceDiagram" width="600">
 </div>
+<div class="title">Figure 21. General Internal Illustration of Find Command.</div>
 </div>
 <div class="paragraph">
 <p>When the user enters the CLI Input for the find command, the command is first passed
@@ -1430,7 +1446,7 @@ from the <code>LogicManager</code> to the <code>PdfBookParser</code> will carry 
 e.g. <code>find keyword</code>.</p>
 </li>
 <li>
-<p>The <code>PdfBookParser</code> creates a new <code>FindCommandParser</code> upon recognizing that the user
+<p>The <code>PdfBookParser</code> creates a new <code>FindCommandParser</code> upon recognising that the user
 wishes to use the <code>find</code> feature.</p>
 </li>
 <li>
@@ -1456,7 +1472,7 @@ verify that it fulfils the predicate. This is so that the <code>model</code> can
 files that the user wishes to view.</p>
 </li>
 <li>
-<p>The <code>test</code> method invokes classes from the external <code>Apache PDFBox</code> library, nameley <code>PDDocument</code> and
+<p>The <code>test</code> method invokes classes from the external <a href="https://pdfbox.apache.org/index.html">Apache PDFBox</a> library, namely <code>PDDocument</code> and
 <code>PDFTextStripper</code> to extract the contents of the existing files.</p>
 </li>
 <li>
@@ -1511,14 +1527,14 @@ improve the ability of the application to look through content even if they are 
 <h4 id="current-implementation-13"><a class="link" href="#current-implementation-13">3.13.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>filter</code> feature is facilitated by <strong>FilterCommand</strong> and <strong>FilterCommandParser</strong>.
-This feature is similar to <a href="#find-feature">Section 3.12, &#8220;Find feature&#8221;</a> in that it lists a subset of all the files
+This feature is similar to <a href="#find-feature">Find feature</a> in that it lists a subset of all the files
 in the application, except that it will list the files based on the tag of the file.</p>
 </div>
 <div class="paragraph">
 <p>The <code>filter</code> feature has to following syntax:</p>
 </div>
 <div class="paragraph">
-<p><span class="big"><code>filter t/&lt;TAG&gt; &#8230;&#8203;</code></span></p>
+<p>Format: <span class="big"><code>filter t/&lt;TAG&gt; &#8230;&#8203;</code></span></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1530,10 +1546,87 @@ in the application, except that it will list the files based on the tag of the f
 </li>
 </ul>
 </div>
+</div>
+<div class="sect3">
+<h4 id="feature-breakdown-6"><a class="link" href="#feature-breakdown-6">3.13.2. Feature Breakdown</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/FilterCommandActivityDiagram.png" alt="FilterCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 22. Filter Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>The inner workings of <code>FilterCommand</code> can be explained in the following steps should you need to modify it.
+Given that they are extremely similar to that of the <a href="#find-feature">Find Feature</a>, you may refer to that should
+you need more information.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>LogicManager</code> component invokes a <code>PdfBookParser</code> to parse the input command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An input command such as <code>filter t/school t/lecture</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>PdfBookParser</code> then decodes the instruction by identifying the keyword, which is
+<code>select</code> and creates a new <code>FilterCommandParser</code> to parse the necessary parameters.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>These parameters are mainly each tag specified as <code>t/TAG</code></p>
+</li>
+<li>
+<p>The <code>FilterCommandParser</code> creates a predicate <code>TagContainsKeywordsPredicate</code> which tests each file
+if it contains the specified tags.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>FilterCommandParser</code> then parses the parameter, <code>FilterCommand</code> object that is returned to
+the <code>LogicManager</code> to execute.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> supplies the <code>FilterCommand</code> with the existing application <code>model</code> and
+<code>command history</code> and executes it.</p>
+</li>
+<li>
+<p>The execution of the <code>FilterCommand</code> mainly contains the following step.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Provides <code>model</code> with the newly formed <code>TagContainsKeyworkdsPredicate</code> to update the list of files with only
+those that contain the input tags.</p>
+</li>
+<li>
+<p>This change causes the invocation of the <code>UI</code> component to display the selected item to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Finally, upon successful execution, a <code>CommandResult</code> is returned to the <code>LogicManager</code> for other operations.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If any errors occur mid-execution, a <code>CommandException</code> is thrown. These errors may occur due to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Invalid parameter inputs.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1542,29 +1635,72 @@ in the application, except that it will list the files based on the tag of the f
 <div class="sect3">
 <h4 id="current-implementation-14"><a class="link" href="#current-implementation-14">3.14.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The select feature is facilitated by <code>SelectCommand</code>. <code>Enter functionality here</code></p>
+<p>The select feature is facilitated by <code>SelectCommand</code> and <code>SelectCommandParser</code>. This allows users to select a file and view
+more information pertaining to that selected file. They are able to view features such as its size,
+any deadlines assigned to it, its name, and directory.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Select</code> feature has to following syntax: <code>select</code></p>
+<p>The <code>Select</code> feature has to following syntax:
+Format: <code>select INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-breakdown-7"><a class="link" href="#feature-breakdown-7">3.14.2. Feature Breakdown</a></h4>
+<div class="paragraph">
+<p>The inner workings of <code>SelectCommand</code> can be explained in the following steps should you need to modify it.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Enter here</p>
+<p>The <code>LogicManager</code> component invokes a <code>PdfBookParser</code> to parse the input command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An input command such as <code>select 1</code>.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Enter note here
-</td>
-</tr>
-</table>
+</li>
+<li>
+<p>The <code>PdfBookParser</code> then decodes the instruction by identifying the keyword, which is
+<code>select</code> and creates a new <code>SelectCommandParser</code> to parse the necessary parameters.</p>
+</li>
+<li>
+<p>The <code>SelectCommandParser</code> then parses the parameter, in this case <code>1</code> and creates a new
+<code>SelectCommand</code> object that is returned to the <code>LogicManager</code> to execute.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> supplies the <code>SelectCommand</code> with the existing application <code>model</code> and
+<code>command history</code> and executes it.</p>
+</li>
+<li>
+<p>The execution of the <code>SelectCommand</code> sets the <code>selectedPdf</code> property of the model.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This change causes the invocation of the <code>UI</code> component to display the selected item to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Finally, upon successful execution, a <code>CommandResult</code> is returned to the <code>LogicManager</code> for other operations.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If any errors occur mid-execution, a <code>CommandException</code> is thrown. These errors may occur due to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Invalid parameter inputs.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1573,15 +1709,97 @@ Enter note here
 <div class="sect3">
 <h4 id="current-implementation-15"><a class="link" href="#current-implementation-15">3.15.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The sort feature is facilitated by <code>SortCommand</code>. <code>Enter functionality here</code></p>
+<p>The sort feature is facilitated by <code>SortCommand</code> and <code>SortCommandParser</code>.
+The sort command allows the user to arrange the list of files tracked by the application in a specified order &amp; criteria.
+The order can be ascending (<code>up</code>) or descending (<code>down</code>) while the criteria can be <code>name</code>, <code>deadline</code> or <code>size</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Sort</code> feature has to following syntax: <code>sort</code></p>
+<p>The <code>Sort</code> feature has to following syntax:
+Format: <code>sort CRITERIA ORDER</code>
+Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Enter here</p>
+<p><code>sort deadline up</code></p>
+</li>
+<li>
+<p><code>sort name down</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-breakdown-8"><a class="link" href="#feature-breakdown-8">3.15.2. Feature Breakdown</a></h4>
+<div class="paragraph">
+<p>Listed below is a brief explanation of the inner workings of the sort feature.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>LogicManager</code> component invokes a <code>PdfBookParser</code> to parse the input command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An input command such as <code>sort deadline up</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>PdfBookParser</code> then decodes the instruction by identifying the keyword, which is
+<code>select</code> and creates a new <code>SortCommandParser</code> to parse the necessary parameters.</p>
+</li>
+<li>
+<p>The <code>SortCommandParser</code> then parses both parameters and creates a <code>SortCommand</code> object that is
+returned to the <code>LogicManager</code> to execute.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The parameters are the <code>CRITERIA</code> and <code>ORDER</code> specified by the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>LogicManager</code> supplies the <code>SortCommand</code> with the existing application <code>model</code> and
+<code>command history</code> and executes it.</p>
+</li>
+<li>
+<p>The execution of the <code>SortCommand</code> contain the following steps:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The list of existing files are obtained from the <code>Model</code> component</p>
+</li>
+<li>
+<p>This list is sorted with the given <code>CRITERIA</code> and <code>ORDER</code>.</p>
+</li>
+<li>
+<p>The sorted list is set as the new default list of the <code>Model</code> component.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>This change causes the invocation of the <code>UI</code> component to display the new list of files to the user.</p>
+</li>
+<li>
+<p>Finally, upon successful execution, a <code>CommandResult</code> is returned to the <code>LogicManager</code> for other operations.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If any errors occur mid-execution, a <code>CommandException</code> is thrown. These errors may occur due to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Invalid parameter inputs such as invalid <code>CRITERIA</code> or <code>ORDER</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1592,7 +1810,8 @@ Enter note here
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Enter note here
+All other operations carried out after <code>sort</code> that require an <code>INDEX</code> to be supplied must follow the newly
+set indexes of the files tracked by the application.
 </td>
 </tr>
 </table>
@@ -1604,26 +1823,112 @@ Enter note here
 <div class="sect3">
 <h4 id="current-implementation-16"><a class="link" href="#current-implementation-16">3.16.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The tag feature is facilitated by <code>TagCommand</code>. <code>Enter functionality here</code></p>
+<p>The tag feature is facilitated by <code>TagCommand</code> and the <code>TagCommandParser</code>.
+This allows users to set tags to files that are tracked by the application that allows them to easily organize and
+view these files with other operations supported by our application such as the <a href="#filter-feature">Filter Feature</a>.
+In order to perform the Tag Command the user needs to specify a <code>PREFX</code> that is denoted by <code>-a</code> or <code>r</code> to signify the
+addition or removal of a tag. The <code>INDEX</code> that refers to the file that the user wishes to interact with and the tags
+themselves that are represented in the <code>t/TAG</code> format where <code>TAG</code> text that the user wishes to use as a tag.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Tag</code> feature has to following syntax: <code>tag t/</code></p>
+<p>The <code>Tag</code> feature has to following syntax:
+Format: <code>tag PREFIX INDEX t/TAG&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:
+* <code>tag 1 -a t/SEROCKS</code>
+* <code>tag 1 -r t/SEROCKS</code>
+* <code>tag 2 -a t/Urgent t/Resume</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-breakdown-9"><a class="link" href="#feature-breakdown-9">3.16.2. Feature Breakdown</a></h4>
+<div class="paragraph">
+<p>The inner workings of <code>TagCommand</code> can be briefly explained in the following steps should you need to modify it.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Enter here</p>
+<p>The <code>LogicManager</code> component invokes a <code>PdfBookParser</code> to parse the input command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An input command such as <code>tag 1 -a t/SEROCKS</code>.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
+</li>
+<li>
+<p>The <code>PdfBookParser</code> then decodes the instruction by identifying the keyword, which is
+<code>select</code> and creates a new <code>TagCommandParser</code> to parse the necessary parameters.</p>
+</li>
+<li>
+<p>The <code>TagCommandParser</code> then parses the relevant parameters and creates a new
+<code>SortCommand</code> object that is returned to the <code>LogicManager</code> to execute. The parsed parameters include:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PREFIX</code> which, as mentioned above, indicates if the tag is to be added or removed from the file.</p>
+</li>
+<li>
+<p><code>INDEX</code> which indicates to the command which file that the user wishes to interact with.</p>
+</li>
+<li>
+<p><code>t/TAG</code> which contain the name of the tag(s) that the user wishes to add to the specified file.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>LogicManager</code> supplies the <code>TagCommand</code> with the existing application <code>model</code> and
+<code>command history</code> and executes it.</p>
+</li>
+<li>
+<p>The execution of the <code>TagCommand</code> contain the following steps:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The file that the user wishes to add the tags to is obtained from the <code>model</code>.</p>
+</li>
+<li>
+<p>The parsed <code>tag(s)</code> are added to the chosen file.</p>
+</li>
+<li>
+<p>The <code>model</code> is then updated with the newly modified file.</p>
+</li>
+<li>
+<p>Changes are reflected in the <code>UI</code> component by new labels forming under the name of the file.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Finally, upon successful execution, a <code>CommandResult</code> is returned to the <code>LogicManager</code> for other operations.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If any errors occur mid-execution, a <code>CommandException</code> is thrown. These errors may occur due to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Invalid parameter inputs.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Enter note here
+The <code>Tag Feature</code> only allows for tags that do not contain spaces and are alphanumeric.
 </td>
 </tr>
 </table>
@@ -2319,7 +2624,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 9. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 23. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3797,4 +4102,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:34:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:43:00 UTC</div></div></div></body></html>
