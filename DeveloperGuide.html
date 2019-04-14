@@ -1873,7 +1873,7 @@ PDF files you want. These features utilises the
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-An <a href="#encrypted-file">[encrypted-file]</a> is a file that is protected with a password. The term <code>protected</code> and <code>encrypted</code> will be used interchangeably.
+An <a href="#encrypted-file">[encrypted-file]</a> is a file that is protected with a password. The terms <code>protect</code> and <code>encrypt</code> will be used interchangeably.
 </td>
 </tr>
 </table>
@@ -1988,7 +1988,7 @@ are created. The password specified will be passed to <code>StandardProtectionPo
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EncryptCommandSequenceDiagram.png" alt="EncryptCommandSequenceDiagram" width="700">
+<img src="images/EncryptCommandSequenceDiagram.png" alt="EncryptCommandSequenceDiagram" width="800">
 </div>
 </div>
 </div>
@@ -2002,27 +2002,31 @@ are created. The password specified will be passed to <code>StandardProtectionPo
 <ul>
 <li>
 <p>Alternative 1 (current choice): Execute <strong>DecryptCommand</strong> then <strong>EncryptCommand</strong></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Due to security reasons, it was decided to focus on encrypting an unprotected Pdf.
-You will need to <a href="#decryption-feature">Section 3.19.2, &#8220;Decryption feature&#8221;</a>
-before encrypting it with a new password. This is to ensure your intent in changing the password,
-as the current version <strong>PDF++</strong> does not provide <code>Forget Password</code> feature.</p>
-</div>
-<div class="paragraph">
-<p>However, this process is inefficient as you will need to enter 2 commands instead of 1.</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Alternative 2: Change password of an encrypted file</p>
+<p>Due to security reasons, it was decided to focus on encrypting an unprotected Pdf.
+You will need to use <a href="#decryption-feature">Section 3.19.2, &#8220;Decryption feature&#8221;</a>
+before encrypting it with a new password. This is to ensure your intent in changing the password,
+as the current version <strong>PDF++</strong> does not support <code>Forget Password</code> feature.</p>
+</li>
+<li>
+<p>However, this process is inefficient as you will need to enter 2 commands instead of 1.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
+</li>
+<li>
+<p>Alternative 2: Change password of an encrypted file</p>
+<div class="ulist">
+<ul>
+<li>
 <p>This minimised the number of commands to be executed, but there are several security concerns as mentioned above.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect4">
@@ -2159,7 +2163,7 @@ Common reasons of error are:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DecryptCommandSequenceDiagram.png" alt="DecryptCommandSequenceDiagram" width="700">
+<img src="images/DecryptCommandSequenceDiagram.png" alt="DecryptCommandSequenceDiagram" width="800">
 </div>
 </div>
 </div>
@@ -3793,4 +3797,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:22:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:34:50 UTC</div></div></div></body></html>
