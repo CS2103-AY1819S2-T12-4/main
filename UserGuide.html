@@ -23,9 +23,10 @@
 <li><a href="#retrieving-information-about-a-file-code-select-code">3.11. Retrieving information about a file: <code>select</code></a></li>
 <li><a href="#setting-a-deadline-for-the-file-code-deadline-code">3.12. Setting a deadline for the file : <code>deadline</code></a></li>
 <li><a href="#filter-files-by-tags-code-filter-code">3.13. Filter files by tags: <code>filter</code></a></li>
-<li><a href="#file-protection-code-encrypt-code-code-decrypt-code">3.14. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
-<li><a href="#merging-files-code-merge-code">3.15. Merging Files: <code>merge</code></a></li>
-<li><a href="#saving-the-data">3.16. Saving the data</a></li>
+<li><a href="#find-feature">3.14. Finding Content: <code>find</code></a></li>
+<li><a href="#file-protection-code-encrypt-code-code-decrypt-code">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
+<li><a href="#merging-files-code-merge-code">3.16. Merging Files: <code>merge</code></a></li>
+<li><a href="#saving-the-data">3.17. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#command-summary">4. Command Summary</a></li>
@@ -852,7 +853,129 @@ The date must be in the format of dd-mm-yyyy.<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="file-protection-code-encrypt-code-code-decrypt-code"><a class="link" href="#file-protection-code-encrypt-code-code-decrypt-code">3.14. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
+<h3 id="find-feature"><a class="link" href="#find-feature">3.14. Finding Content: <code>find</code></a></h3>
+<div class="paragraph">
+<p>The find command allows you to <code>find</code> for files that contain a keyword or phrase
+OR <code>find</code> files which contain the entered keyword or phrase inside it.</p>
+</div>
+<div id="find-format" class="paragraph">
+<p>Format: <code>find KEYWORD</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find Introduction</code><br></p>
+</li>
+<li>
+<p><code>find Author: George RR Martin</code></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="step-by-step-guide"><a class="link" href="#step-by-step-guide">3.14.1. Step-By-Step Guide</a></h4>
+<div class="paragraph">
+<p>If, for example, you wish to locate the files that contain the word <code>Introduction</code>
+in its name or files that contain the word <code>Introduction</code> in its internal content.
+You may carry out the following steps in-order to get your desired list of files.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you open the application, the image below illustrates the screen you might see initially.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Files you observe may be different and depends on the actions you have previously carried out on our application
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UGFindFeatureImage1.png" alt="UGFindFeatureImage1" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As shown by the image, your application should contain an existing list of files.</p>
+</li>
+<li>
+<p>Next you are to key in the <code>find</code> command followed by the keyword as illustrated by the command
+<a href="#find-feature">format</a>.</p>
+</li>
+<li>
+<p>Finally, press <kbd>Enter</kbd> and give the application a short time to sieve through all the files
+it manages and locate the relevant ones for you.</p>
+</li>
+<li>
+<p>Once the application is done with the task, the following screen should be visible to you.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UGFindFeatureImage2.png" alt="UGFindFeatureImage2" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As seen in the image, the files that are relevant to your search will be displayed on the top
+left. These files are those that contain the keyword <code>Introduction</code> in its name, and files which
+contain the keyword within its content.</p>
+</li>
+<li>
+<p>The application also shows you other useful information such as, the number of files that
+match the criteria you enetered into the application.</p>
+</li>
+<li>
+<p>And with that you have successfully utilized the <code>find</code> feature.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+When there are many files tracked by the application or if the files tracked by the application
+are contain many pages, the <code>find</code> command might take a little longer to operate. Hence if your
+operating system warns you that the application is not responding, please give the application some time
+to finish its operation.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+As part of a security measure, all files that are encrypted will not be subject to the <code>find</code> command.
+This will prevent any information about your secure files from being leaked.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="file-protection-code-encrypt-code-code-decrypt-code"><a class="link" href="#file-protection-code-encrypt-code-code-decrypt-code">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
 <div class="paragraph">
 <p>The command <code>encrypt</code> allow you to lock your files such that they cannot be accessed without a password that you had specified. Similarly, the command <code>decrypt</code> will let you remove the password that you had set for the file.</p>
 </div>
@@ -919,7 +1042,7 @@ with encrypt &amp; decrypt.
 <p>Please refer to <code>Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</code> for encryption guide and <code>Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</code> for decryption guide.</p>
 </div>
 <div class="sect3">
-<h4 id="step-by-step-guide-encrypt"><a class="link" href="#step-by-step-guide-encrypt">3.14.1. Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</a></h4>
+<h4 id="step-by-step-guide-encrypt"><a class="link" href="#step-by-step-guide-encrypt">3.15.1. Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</a></h4>
 <div class="paragraph">
 <p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
 of the Encrypt feature.</p>
@@ -994,7 +1117,7 @@ You can open your file to see the result. Please refer to <a href="#Open feature
 </div>
 </div>
 <div class="sect3">
-<h4 id="step-by-step-guide-decrypt"><a class="link" href="#step-by-step-guide-decrypt">3.14.2. Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</a></h4>
+<h4 id="step-by-step-guide-decrypt"><a class="link" href="#step-by-step-guide-decrypt">3.15.2. Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</a></h4>
 <div class="paragraph">
 <p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
 of the Decrypt feature.</p>
@@ -1107,7 +1230,7 @@ You can open your file to see the result. Please refer to <a href="#Open feature
 </div>
 </div>
 <div class="sect2">
-<h3 id="merging-files-code-merge-code"><a class="link" href="#merging-files-code-merge-code">3.15. Merging Files: <code>merge</code></a></h3>
+<h3 id="merging-files-code-merge-code"><a class="link" href="#merging-files-code-merge-code">3.16. Merging Files: <code>merge</code></a></h3>
 <div class="paragraph">
 <p>With the <code>merge</code> command , you can merge two or more files into a new single file.</p>
 </div>
@@ -1145,7 +1268,7 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 </table>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-3"><a class="link" href="#feature-breakdown-3">3.15.1. Feature breakdown</a></h4>
+<h4 id="feature-breakdown-3"><a class="link" href="#feature-breakdown-3">3.16.1. Feature breakdown</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the <code>merge</code> feature.</p>
@@ -1230,7 +1353,7 @@ give the application some time to completely execute the operation.
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.16. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.17. Saving the data</a></h3>
 <div class="paragraph">
 <p>PDF++ data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -1328,4 +1451,4 @@ e.g <code>sort name down</code>, <code>sort deadline up</code>, <code>sort size 
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:06:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 09:17:51 UTC</div></div></div></body></html>
