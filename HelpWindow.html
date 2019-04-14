@@ -11,7 +11,7 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#importing-a-file-code-add-code">3.2. Importing a file: <code>add</code></a></li>
+<li><a href="#adding-a-file-code-add-code">3.2. Adding a file: <code>add</code></a></li>
 <li><a href="#listing-all-files-code-list-code">3.3. Listing all files : <code>list</code></a></li>
 <li><a href="#sorting-all-files-code-sort-code">3.4. Sorting all files : <code>sort</code></a></li>
 <li><a href="#opening-a-file-code-open-code">3.5. Opening a file : <code>open</code></a></li>
@@ -206,7 +206,7 @@ The help command displays this current page for any references you may need or q
 </div>
 </div>
 <div class="sect2">
-<h3 id="importing-a-file-code-add-code"><a class="link" href="#importing-a-file-code-add-code">3.2. Importing a file: <code>add</code></a></h3>
+<h3 id="adding-a-file-code-add-code"><a class="link" href="#adding-a-file-code-add-code">3.2. Adding a file: <code>add</code></a></h3>
 <div class="paragraph">
 <p>The add command allows you to add a file through TI into to the application, or through the GUI.<br>
 The added file will appear in the Files Section, highlighted in green, shown above.<br></p>
@@ -937,7 +937,7 @@ contain the keyword within its content.</p>
 </li>
 <li>
 <p>The application also shows you other useful information such as, the number of files that
-match the criteria you enetered into the application.</p>
+match the criteria you entered into the application.</p>
 </li>
 <li>
 <p>And with that you have successfully utilized the <code>find</code> feature.</p>
@@ -977,11 +977,85 @@ This will prevent any information about your secure files from being leaked.
 <div class="sect2">
 <h3 id="file-protection-code-encrypt-code-code-decrypt-code"><a class="link" href="#file-protection-code-encrypt-code-code-decrypt-code">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
 <div class="paragraph">
-<p>The command <code>encrypt</code> allow you to lock your files such that they cannot be accessed without a password that you had specified. Similarly, the command <code>decrypt</code> will let you remove the password that you had set for the file.</p>
+<p>PDF++ offers native support for file protection.
+The command <code>encrypt</code> allows you to protect your files with a password such that
+they cannot be accessed without a password that you had specified.
+Similarly, the command <code>decrypt</code> allows you to remove the password that
+you had set for the file.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The terms <code>protect</code> and <code>encrypt</code> have the same meaning and will be used
+interchangeably.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Format: <code>encrypt INDEX password/PASSWORD</code> [To Encrypt a file]<br>
-Format: <code>decrypt INDEX password/PASSWORD</code> [To Decrypt a file]<br></p>
+<p>The <strong>Encrypt</strong> and <strong>Decrypt</strong> feature has the following syntax:</p>
+</div>
+<div class="paragraph">
+<p>Encryption: <code>encrypt INDEX password/PASSWORD</code></p>
+</div>
+<div class="paragraph">
+<p>Decryption: <code>decrypt INDEX password/PASSWORD</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file on the list that you wish to encrypt/decrypt.
+it must be</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A positive number, and</p>
+</li>
+<li>
+<p>A number within the range of number of documents in PDF++.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For example, if there are 2 documents in the app,</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Valid index: 1, 2</p>
+</li>
+<li>
+<p>Invalid index: -1, 0, "NotANumber"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>password/</code> refers to the command immediately following after this prefix is the password
+of the file</p>
+</li>
+<li>
+<p><code>PASSWORD</code> refers to the password</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>you wish to encrypt your file with, or</p>
+</li>
+<li>
+<p>of the encrypted file that you wish to decrypt</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -997,60 +1071,31 @@ Format: <code>decrypt INDEX password/PASSWORD</code> [To Decrypt a file]<br></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For encryption, you can select the file on the list that you wish to encrypt
-with a password you specified. Likewise, for decryption, you have to enter the
-password of the encrypted file that you wish to decrypt.</p>
-</div>
-<div class="paragraph">
-<p>The Encrypt and Decrypt feature has the following syntax:</p>
-</div>
-<div class="paragraph">
-<p>Encryption: <code>encrypt INDEX password/PASSWORD</code></p>
-</div>
-<div class="paragraph">
-<p>Decryption: <code>decrypt INDEX password/PASSWORD</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> refers to the index of the file on the list that you wish to encrypt/decrypt</p>
-</li>
-<li>
-<p><code>password/</code> refers to the command immediately following after this prefix is the password
-of the file</p>
-</li>
-<li>
-<p><code>PASSWORD</code> refers to the password you wish to encrypt your file with / of the encrypted file
-you want to decrypt.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Please ensure that you have entered the correct password as undo &amp; redo functions do not work
-with encrypt &amp; decrypt.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Please refer to <code>Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</code> for encryption guide and <code>Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</code> for decryption guide.</p>
+<p>Please refer to <a href="#encryption-guide">Section 3.15.1, &#8220;Encryption Guide&#8221;</a> or <a href="#decryption-guide">Section 3.15.2, &#8220;Decryption Guide&#8221;</a>
+for help in using these features.</p>
 </div>
 <div class="sect3">
-<h4 id="step-by-step-guide-encrypt"><a class="link" href="#step-by-step-guide-encrypt">3.15.1. Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</a></h4>
+<h4 id="encryption-guide"><a class="link" href="#encryption-guide">3.15.1. Encryption Guide</a></h4>
 <div class="paragraph">
-<p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner workings
 of the Encrypt feature.</p>
 </div>
 <div class="paragraph">
-<p>Step 1: The user launches the application with either an existing set of <code>Pdf</code> or a new
-sample set of <code>Pdf</code> stored within as shown below. Please refer to <a href="#Add feature">[Add feature]</a> for guide
-in how you can add your files into PDF++.</p>
+<p>Step 1: The user launches the application with either</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>an empty list, or</p>
+</li>
+<li>
+<p>an existing set of <code>Pdf</code> as shown below</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Please refer to <a href="#adding-a-file-code-add-code">Section 3.2, &#8220;Adding a file: <code>add</code>&#8221;</a> for guide
+in how you can add your files into PDF++ that you wish to encrypt.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1066,7 +1111,7 @@ in how you can add your files into PDF++.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3: Enter the <code>encrypt</code> command into the CLI interface, following the outlined syntax as
+<p>Step 3: Enter the <code>encrypt</code> command into the text box, following the outlined syntax as
 illustrated below.</p>
 </div>
 <div class="imageblock">
@@ -1075,11 +1120,12 @@ illustrated below.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 4: Upon hitting enter to execute the command, the <code>EncryptCommandParser</code> parses the input
-into several components that are required to be executed by the <code>EncryptCommand</code>.</p>
+<p>Step 4: Upon hitting <kbd>enter</kbd> to execute the command, the <code>EncryptCommandParser</code>
+breaks down the input into several components that are required to be
+executed by the <code>EncryptCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>Upon parsing, the parser then creates a new <code>EncryptCommand</code> that will be executed according
+<p>Upon analysing the input, the parser then creates a new <code>EncryptCommand</code> that will be executed according
 to your input.</p>
 </div>
 <div class="paragraph">
@@ -1089,13 +1135,40 @@ PASSWORD, the <code>EncryptCommand</code> first checks if the INDEX is valid.</p
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> is invalid or out of bound.</p>
+<p><code>INDEX</code> is not a number.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EncryptFeatureStep5InvalidIndex.png" alt="EncryptFeatureStep5InvalidIndex" width="600">
+<img src="images/EncryptFeatureStep5NotANumberIndex.png" alt="EncryptFeatureStep5NotANumberIndex" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is not within the number of documents in the list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EncryptFeatureStep5IndexOutOfBound.png" alt="EncryptFeatureStep5IndexOutOfBound" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Then checks if the PASSWORD is valid.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PASSWORD</code> is empty or a space.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EncryptFeatureStep5InvalidPassword.png" alt="EncryptFeatureStep5InvalidPassword" width="600">
 </div>
 </div>
 <div class="ulist">
@@ -1106,18 +1179,41 @@ password you specified.</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Upon successful encryption, there will be a lock icon at the bottom right of the card
+to indicate that the file is an encrypted file.
+</td>
+</tr>
+</table>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EncryptFeatureStep5Sucess.png" alt="EncryptFeatureStep5Sucess" width="600">
+<img src="images/EncryptFeatureStep5Success.png" alt="EncryptFeatureStep5Success" width="600">
 </div>
 </div>
 <div class="paragraph">
 <p>Step 6: If the command passes the validity check, the file you have selected is encrypted.
-You can open your file to see the result. Please refer to <a href="#Open feature">[Open feature]</a> for the <code>open</code> feature.</p>
+You can open your file to see the result. Please refer to
+<a href="#opening-a-file-code-open-code">Section 3.5, &#8220;Opening a file : <code>open</code>&#8221;</a> for the <code>open</code> feature.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EncryptFeatureStep6Open.png" alt="EncryptFeatureStep6Open" width="600">
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="step-by-step-guide-decrypt"><a class="link" href="#step-by-step-guide-decrypt">3.15.2. Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</a></h4>
+<h4 id="decryption-guide"><a class="link" href="#decryption-guide">3.15.2. Decryption Guide</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="step-by-step-guide-decrypt"><a class="link" href="#step-by-step-guide-decrypt">3.15.3. Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</a></h4>
 <div class="paragraph">
 <p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
 of the Decrypt feature.</p>
@@ -1134,10 +1230,34 @@ of the Decrypt feature.</p>
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>decrypt</code> feature will not work on files that are not encrypted.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>Step 1: The user launches the application with either an existing set of <code>Pdf</code> or a new
-sample set of <code>Pdf</code> stored within as shown below. Please refer to <a href="#Add feature">[Add feature]</a> for guide
-in how you can add your files into PDF++.</p>
+<p>Step 1: The user launches the application with either</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>an empty list, or</p>
+</li>
+<li>
+<p>an existing set of <code>Pdf</code> as shown below</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Please refer to <a href="#adding-a-file-code-add-code">Section 3.2, &#8220;Adding a file: <code>add</code>&#8221;</a> for guide
+in how you can add your files into PDF++ that you wish to encrypt.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1153,8 +1273,8 @@ in how you can add your files into PDF++.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3: Enter the <code>decrypt</code> command into the CLI interface, following the outlined syntax as
-illustrate below.</p>
+<p>Step 3: Enter the <code>decrypt</code> command into the text box, following the outlined syntax as
+illustrated below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1162,11 +1282,12 @@ illustrate below.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 4: Upon hitting enter to execute the command, the <code>DecryptCommandParser</code> parses the input
-into several components that are required to be executed by the <code>DecryptCommand</code>.</p>
+<p>Step 4: Upon hitting <kbd>enter</kbd> to execute the command, the <code>DecryptCommandParser</code>
+breaks down the input into several components that are required to be
+executed by the <code>DecryptCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>Upon parsing, the parser then creates a new <code>DecryptCommand</code> that will be executed according
+<p>Upon analysing the input, the parser then creates a new <code>DecryptCommand</code> that will be executed according
 to your input.</p>
 </div>
 <div class="paragraph">
@@ -1176,14 +1297,44 @@ PASSWORD, the <code>DecryptCommand</code> first checks if the INDEX is valid.</p
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> is invalid or out of bound.</p>
+<p><code>INDEX</code> is not a number.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DecryptFeatureStep5InvalidIndex.png" alt="DecryptFeatureStep5InvalidIndex" width="600">
+<img src="images/DecryptFeatureStep5NotANumberIndex.png" alt="DecryptFeatureStep5NotANumberIndex" width="600">
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is not within the number of documents in the list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DecryptFeatureStep5IndexOutOfBound.png" alt="DecryptFeatureStep5IndexOutOfBound" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Then checks whether the file specified is encrypted</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>File is not encrypted.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DecryptFeatureStep5NotEncrypted.png" alt="DecryptFeatureStep5NotEncrypted" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, checks if the PASSWORD is valid.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1213,7 +1364,8 @@ without the password.
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> and <code>PASSWORD</code> are both valid. The file you selected will be decrypted with the
+<p><code>INDEX</code> and <code>PASSWORD</code> are both valid, and the file is encrypted.
+The file you selected will be decrypted with the
 password you specified.</p>
 </li>
 </ul>
@@ -1225,7 +1377,8 @@ password you specified.</p>
 </div>
 <div class="paragraph">
 <p>Step 6: If the command passes the validity check, the file you have selected is decrypted.
-You can open your file to see the result. Please refer to <a href="#Open feature">[Open feature]</a> for the <code>open</code> feature.</p>
+You can open your file to see the result. Please refer to
+<a href="#opening-a-file-code-open-code">Section 3.5, &#8220;Opening a file : <code>open</code>&#8221;</a> for the <code>open</code> feature.</p>
 </div>
 </div>
 </div>
@@ -1451,4 +1604,4 @@ e.g <code>sort name down</code>, <code>sort deadline up</code>, <code>sort size 
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 09:17:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:22:09 UTC</div></div></div></body></html>
