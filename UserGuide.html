@@ -20,13 +20,12 @@
 <li><a href="#deleting-a-file-code-delete-code">3.8. Deleting a file : <code>delete</code></a></li>
 <li><a href="#moving-a-file-code-move-code">3.9. Moving a file : <code>move</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></li>
-<li><a href="#retrieving-information-about-a-file">3.11. Retrieving information about a file:</a></li>
+<li><a href="#retrieving-information-about-a-file-code-select-code">3.11. Retrieving information about a file: <code>select</code></a></li>
 <li><a href="#setting-a-deadline-for-the-file-code-deadline-code">3.12. Setting a deadline for the file : <code>deadline</code></a></li>
 <li><a href="#filter-files-by-tags-code-filter-code">3.13. Filter files by tags: <code>filter</code></a></li>
-<li><a href="#undo-redo-command-code-undo-code-code-redo-code">3.14. Undo &amp; redo command: <code>undo</code> &amp; <code>redo</code></a></li>
-<li><a href="#encrypting-decryption-code-encrypt-code-code-decrypt-code">3.15. Encrypting &amp; Decryption: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
-<li><a href="#merging-files-code-merge-code">3.16. Merging Files: <code>merge</code></a></li>
-<li><a href="#saving-the-data">3.17. Saving the data</a></li>
+<li><a href="#encrypting-decryption-code-encrypt-code-code-decrypt-code">3.14. Encrypting &amp; Decryption: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
+<li><a href="#merging-files-code-merge-code">3.15. Merging Files: <code>merge</code></a></li>
+<li><a href="#saving-the-data">3.16. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#command-summary">4. Command Summary</a></li>
@@ -707,10 +706,19 @@ Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="retrieving-information-about-a-file"><a class="link" href="#retrieving-information-about-a-file">3.11. Retrieving information about a file:</a></h3>
+<h3 id="retrieving-information-about-a-file-code-select-code"><a class="link" href="#retrieving-information-about-a-file-code-select-code">3.11. Retrieving information about a file: <code>select</code></a></h3>
 <div class="paragraph">
-<p>In order to see a little more information on a file, clicking the file in the Files Section, highlighted in green, allows you to view more information pertaining to that file.<br>
+<p>Select a file to see a more information about file.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, clicking the file in the Files Section, highlighted in green, allows you to view more information pertaining to that file.<br>
 This information will be displayed in the Upcoming Deadlines Area, highlighted in red.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>select INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>select 3</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -831,30 +839,7 @@ The date must be in the format of dd-mm-yyyy.<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-command-code-undo-code-code-redo-code"><a class="link" href="#undo-redo-command-code-undo-code-code-redo-code">3.14. Undo &amp; redo command: <code>undo</code> &amp; <code>redo</code></a></h3>
-<div class="paragraph">
-<p>The <code>undo</code> and <code>redo</code> commands allow you to reverse an action that was previously done on our application.<br></p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-You <strong>CANNOT</strong> Undo or Redo an encrpytion command.
-This functionality has been disabled for security reasons.<br>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Format: <code>undo</code> [To Undo an Action]<br>
-Format: <code>redo</code> [To Redo an Action]</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="encrypting-decryption-code-encrypt-code-code-decrypt-code"><a class="link" href="#encrypting-decryption-code-encrypt-code-code-decrypt-code">3.15. Encrypting &amp; Decryption: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
+<h3 id="encrypting-decryption-code-encrypt-code-code-decrypt-code"><a class="link" href="#encrypting-decryption-code-encrypt-code-code-decrypt-code">3.14. Encrypting &amp; Decryption: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
 <div class="paragraph">
 <p>The command <code>encrypt</code> allow you to lock your files such that they cannot be accessed without a password that you had specified. Similarly, the command <code>decrypt</code> will let you remove the password that you had set for the file.</p>
 </div>
@@ -877,7 +862,7 @@ Format: <code>decrypt INDEX password/PASSWORD</code> [To Decrypt a file]<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="merging-files-code-merge-code"><a class="link" href="#merging-files-code-merge-code">3.16. Merging Files: <code>merge</code></a></h3>
+<h3 id="merging-files-code-merge-code"><a class="link" href="#merging-files-code-merge-code">3.15. Merging Files: <code>merge</code></a></h3>
 <div class="paragraph">
 <p>With the <code>merge</code> command , you can merge two or more files into a new single file.</p>
 </div>
@@ -915,7 +900,7 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 </table>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-3"><a class="link" href="#feature-breakdown-3">3.16.1. Feature breakdown</a></h4>
+<h4 id="feature-breakdown-3"><a class="link" href="#feature-breakdown-3">3.15.1. Feature breakdown</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the <code>merge</code> feature.</p>
@@ -1000,7 +985,7 @@ give the application some time to completely execute the operation.
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.17. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.16. Saving the data</a></h3>
 <div class="paragraph">
 <p>PDF++ data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -1037,16 +1022,20 @@ e.g. <code>delete 4</code></p>
 e.g. <code>move 3 d/C:\User\Jeremy\Downloads</code></p>
 </li>
 <li>
-<p><strong>Tag</strong> : <code>tag INDEX t/TAG…</code><br>
-e.g. <code>tag 3 t/DijkstraGraph t/Tutorial t/CS2040</code></p>
+<p><strong>Tag</strong> : <code>tag -a INDEX t/TAG…</code> or <code>tag -r INDEX t/TAG</code><br>
+e.g. <code>tag 3 -a t/DijkstraGraph t/Tutorial</code>, <code>tag 1 -r t/Homework</code></p>
 </li>
 <li>
-<p><strong>Filter</strong> : <code>filter tx/KEYWORD&#8230;&#8203;</code><br>
-e.g. <code>filter tx/GraphsDFS</code></p>
+<p><strong>Filter</strong> : <code>filter t/KEYWORD&#8230;&#8203;</code><br>
+e.g. <code>filter t/GraphsDFS</code></p>
 </li>
 <li>
-<p><strong>Deadline</strong> : <code>deadline INDEX DATE</code> or <code>deadline INDEX</code><br>
-e.g. <code>deadline 3 20-02-2019</code> , <code>deadline 2</code></p>
+<p><strong>Deadline</strong> : <code>deadline INDEX date/DATE</code> or <code>deadline INDEX done</code> or <code>deadline INDEX remove</code><br>
+e.g. <code>deadline 3 date/20-02-2019</code> , <code>deadline 2 done</code>, <code>deadline 2 remove</code></p>
+</li>
+<li>
+<p><strong>Select</strong> : <code>select INDEX</code><br>
+e.g. <code>select 3</code></p>
 </li>
 <li>
 <p><strong>Encrypt</strong> : <code>encrypt INDEX password/PASSWORD</code><br>
@@ -1059,6 +1048,10 @@ e.g. <code>decrypt 2 password/superPASSWORD</code></p>
 <li>
 <p><strong>Merge</strong> : <code>merge INDEX INDEX&#8230;&#8203;</code><br>
 e.g <code>merge 1 2 1</code></p>
+</li>
+<li>
+<p><strong>Sort</strong> : <code>sort CRITERIA ORDER</code><br>
+e.g <code>sort name down</code>, <code>sort deadline up</code>, <code>sort size down</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -1090,4 +1083,4 @@ e.g <code>merge 1 2 1</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-13 22:58:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:00:35 UTC</div></div></div></body></html>
