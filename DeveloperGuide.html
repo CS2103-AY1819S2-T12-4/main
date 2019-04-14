@@ -46,7 +46,7 @@
 <li><a href="#sort-feature">3.15. Sort feature</a></li>
 <li><a href="#tag-feature">3.16. Tag feature</a></li>
 <li><a href="#history-feature">3.17. History feature</a></li>
-<li><a href="#undo-redo-feature">3.18. Undo/Redo feature</a></li>
+<li><a href="#undo-redo-feature-coming-in-v2-0">3.18. Undo/Redo feature [Coming in v2.0]</a></li>
 <li><a href="#file-protection">3.19. File Protection</a></li>
 <li><a href="#logging">3.20. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.21. Configuration</a></li>
@@ -1068,7 +1068,7 @@ on the file, either through the application or through the user&#8217;s operatin
 </td>
 <td class="content">
 As of v1.4 there is no way to completely undo the <em>hard</em> delete operation. When the file is deleted from the
-filesystem, it is permanently erased. Even the <a href="#undo-redo-feature">Section 3.18, &#8220;Undo/Redo feature&#8221;</a> cannot help with this&#8230;&#8203;
+filesystem, it is permanently erased. Even the <a href="#Undo/Redo feature">[Undo/Redo feature]</a> cannot help with this&#8230;&#8203;
 </td>
 </tr>
 </table>
@@ -1169,7 +1169,7 @@ filesystem.</p>
 </td>
 <td class="content">
 Since the <code>clear</code> feature is very easily executed, if you have accidentally entered the <code>clear</code> command and
-wish to revert the action, please refer to <a href="#undo-redo-feature">Section 3.18, &#8220;Undo/Redo feature&#8221;</a> for more information.
+wish to revert the action, please refer to <a href="#Undo/Redo feature">[Undo/Redo feature]</a> for more information.
 </td>
 </tr>
 </table>
@@ -1650,7 +1650,7 @@ of the application; each time the application is closed, the command history wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.18. Undo/Redo feature</a></h3>
+<h3 id="undo-redo-feature-coming-in-v2-0"><a class="link" href="#undo-redo-feature-coming-in-v2-0">3.18. Undo/Redo feature [Coming in v2.0]</a></h3>
 <div class="sect3">
 <h4 id="current-implementation-18"><a class="link" href="#current-implementation-18">3.18.1. Current Implementation</a></h4>
 <div class="paragraph">
@@ -1855,37 +1855,11 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 <h3 id="file-protection"><a class="link" href="#file-protection">3.19. File Protection</a></h3>
 <div class="paragraph">
 <p>PDF++ has a robust in-built file protection system which allows you to encrypt or decrypt any
-PDF files you want. Both encrypt and decrypt feature are facilitated by both <code>EncryptCommand /
-DecryptCommand</code> and <code>EncryptCommandParser / DecryptCommandParser</code>.</p>
-</div>
-<div class="paragraph">
-<p>For encryption, you can
-select the file on the list that you wish to encrypt with a password you specified. Likewise,
-for decryption, you have to enter the password of the encrypted file that you wish to decrypt.</p>
-</div>
-<div class="paragraph">
-<p>The Encrypt and Decrypt feature has the following syntax:</p>
-</div>
-<div class="paragraph">
-<p>Encryption: <code>encrypt INDEX password/PASSWORD</code></p>
-</div>
-<div class="paragraph">
-<p>Decryption: <code>decrypt INDEX password/PASSWORD</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> refers to the index of the file on the list that you wish to encrypt/decrypt</p>
-</li>
-<li>
-<p><code>password/</code> refers to the command immediately following after this prefix is the password
-of the file</p>
-</li>
-<li>
-<p><code>PASSWORD</code> refers to the password you wish to encrypt your file with / of the encrypted file
-you want to decrypt.</p>
-</li>
-</ul>
+PDF files you want. These features utilises the
+<a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a>, specifically the
+<a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/PDDocument.html"><em>PDDocument</em></a>,
+<a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/encryption/AccessPermission.html"><em>AccessPermission</em></a>, and
+<a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/encryption/StandardProtectionPolicy.html"><em>StandardProtectionPolicy</em></a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1894,168 +1868,195 @@ you want to decrypt.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Please ensure that you have entered the correct password as undo &amp; redo functions do not work
-with encrypt &amp; decrypt.
+An <a href="#encrypted-file">[encrypted-file]</a> is a file that is protected with a password. The term <code>protected</code> and <code>encrypted</code> will be used interchangeably.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Please refer to <code>Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</code> for encryption guide and <code>Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</code> for decryption guide.</p>
+<p>You can visit <a href="#encryption-feature">Section 3.19.1, &#8220;Encryption feature&#8221;</a> and <a href="#decryption-feature">Section 3.19.2, &#8220;Decryption feature&#8221;</a> to understand more about the respective feature.</p>
 </div>
 <div class="sect3">
-<h4 id="step-by-step-guide-encrypt"><a class="link" href="#step-by-step-guide-encrypt">3.19.1. Step-by-Step Guide&#8201;&#8212;&#8201;encrypt</a></h4>
+<h4 id="encryption-feature"><a class="link" href="#encryption-feature">3.19.1. Encryption feature</a></h4>
+<div class="sect4">
+<h5 id="current-implementation-19"><a class="link" href="#current-implementation-19">Current Implementation</a></h5>
 <div class="paragraph">
-<p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
-of the Encrypt feature.</p>
-</div>
-<div class="paragraph">
-<p>Step 1: The user launches the application with either an existing set of <code>Pdf</code> or a new
-sample set of <code>Pdf</code> stored within as shown below. Please refer to <a href="#Add feature">[Add feature]</a> for guide
-in how you can add your files into PDF++.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EncryptFeatureStep1Default.png" alt="EncryptFeatureStep1Default" width="600">
-</div>
+<p>The <code>encrypt</code> feature is facilitated by both <strong>EncryptCommand</strong> and <strong>EncryptCommandParser</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2: You select the file that you wish to encrypt via the INDEX on the list.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EncryptFeatureStep2Index.png" alt="EncryptFeatureStep2Index" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3: Enter the <code>encrypt</code> command into the CLI interface, following the outlined syntax as
-illustrated below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EncryptFeatureStep3UserInput.png" alt="EncryptFeatureStep3UserInput" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 4: Upon hitting enter to execute the command, the <code>EncryptCommandParser</code> parses the input
-into several components that are required to be executed by the <code>EncryptCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Upon parsing, the parser then creates a new <code>EncryptCommand</code> that will be executed according
-to your input.</p>
-</div>
-<div class="paragraph">
-<p>Step 5: Upon receiving the necessary information from the parser, which includes the INDEX and
-PASSWORD, the <code>EncryptCommand</code> first checks if the INDEX is valid.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> is invalid or out of bound.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EncryptFeatureStep5InvalidIndex.png" alt="EncryptFeatureStep5InvalidIndex" width="600">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> and <code>PASSWORD</code> are both valid. The file you selected will be encrypted with the
-password you specified.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EncryptFeatureStep5Sucess.png" alt="EncryptFeatureStep5Sucess" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6: If the command passes the validity check, the file you have selected is encrypted.
-You can open your file to see the result. Please refer to <a href="#open-feature">Section 3.2, &#8220;Open feature&#8221;</a> for the <code>open</code> feature.</p>
+<p>The implementation of the <strong>EncryptCommand</strong> execution is summarised in the following activity diagram:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/EncryptCommandActivityDiagram.png" alt="EncryptCommandActivityDiagram" width="600">
 </div>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The provided index is checked for validity i.e. referring to a specific Pdf in PdfBook.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If the index is invalid, a <strong>CommandException</strong> will be thrown and the execution ends.</p>
+</li>
+</ol>
 </div>
-<div class="sect3">
-<h4 id="step-by-step-guide-decrypt"><a class="link" href="#step-by-step-guide-decrypt">3.19.2. Step-by-Step Guide&#8201;&#8212;&#8201;decrypt</a></h4>
+</li>
+<li>
+<p>The Pdf specified via the index is retrieved from the PdfBook.</p>
+</li>
+<li>
+<p>A <code>File</code> object is created for the Pdf.</p>
+</li>
+<li>
+<p>The <code>File</code> will be loaded as <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/PDDocument.html"><em>PDDocument</em></a>,
+which is an indicator that the <code>File</code> is a <strong>PDF</strong> document that is uncorrupted and
+not protected with a password.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Error in loading Pdf as <strong>PDDocument</strong> would throw an <strong>IOException</strong>. Common reasons of error are:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>File not found in location</p>
+</li>
+<li>
+<p>Lack of user permissions to open File</p>
+</li>
+<li>
+<p>Protected File</p>
+</li>
+<li>
+<p>Corrupted File</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Thrown IOException is intercepted, a <strong>CommandException</strong> will be thrown and the execution ends.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/encryption/AccessPermission.html"><em>AccessPermission</em></a>, and
+<a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/encryption/StandardProtectionPolicy.html"><em>StandardProtectionPolicy</em></a>
+are created. The password specified will be passed to <code>StandardProtectionPolicy</code> for the purpose of setting security settings for the
+<code>PDDocument</code>.</p>
+</li>
+<li>
+<p>A protected Pdf will be saved and closed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Error in encrypting the file will throw an <strong>IOException</strong>. Common reasons of error are:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Excessive long password</p>
+</li>
+<li>
+<p>Empty password</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Thrown IOException is intercepted, a <strong>CommandException</strong> will be thrown and the execution ends.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The Pdf is recorded in the <a href="#Design-Model">Section 2.4, &#8220;Model component&#8221;</a> and the changes are saved.</p>
+</li>
+<li>
+<p>A <strong>CommandResult</strong> is returned upon successful exception of <strong>EncryptCommand</strong>.</p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
-<p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
-of the Decrypt feature.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<code>decrypt</code> feature is very similar to <code>encrypt</code> feature.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 1: The user launches the application with either an existing set of <code>Pdf</code> or a new
-sample set of <code>Pdf</code> stored within as shown below. Please refer to <a href="#Add feature">[Add feature]</a> for guide
-in how you can add your files into PDF++.</p>
+<p>This sequence diagram demonstrates the <a href="#main-success-scenario">[main-success-scenario]</a> from the
+<strong>LogicManager</strong> to the end of <strong>EncryptCommand</strong> execution:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DecryptFeatureStep1Default.png" alt="DecryptFeatureStep1Default" width="600">
+<img src="images/EncryptCommandSequenceDiagram.png" alt="EncryptCommandSequenceDiagram" width="700">
 </div>
 </div>
-<div class="paragraph">
-<p>Step 2: You select the file that you wish to decrypt via the INDEX on the list.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep2Index.png" alt="DecryptFeatureStep2Index" width="600">
+<div class="sect4">
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+
 </div>
-</div>
-<div class="paragraph">
-<p>Step 3: Enter the <code>decrypt</code> command into the CLI interface, following the outlined syntax as
-illustrate below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep3UserInput.png" alt="DecryptFeatureStep3UserInput" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 4: Upon hitting enter to execute the command, the <code>DecryptCommandParser</code> parses the input
-into several components that are required to be executed by the <code>DecryptCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Upon parsing, the parser then creates a new <code>DecryptCommand</code> that will be executed according
-to your input.</p>
-</div>
-<div class="paragraph">
-<p>Step 5: Upon receiving the necessary information from the parser, which includes the INDEX and
-PASSWORD, the <code>DecryptCommand</code> first checks if the INDEX is valid.</p>
-</div>
+<div class="sect4">
+<h5 id="edit-password-of-an-encrypted-file"><a class="link" href="#edit-password-of-an-encrypted-file">Edit password of an encrypted file</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> is invalid or out of bound.</p>
+<p>Alternative 1 (current choice): Execute <strong>DecryptCommand</strong> then <strong>EncryptCommand</strong></p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep5InvalidIndex.png" alt="DecryptFeatureStep5InvalidIndex" width="600">
+<div class="paragraph">
+<p>Due to security reasons, it was decided to focus on encrypting an unprotected Pdf.
+You will need to <a href="#decryption-feature">Section 3.19.2, &#8220;Decryption feature&#8221;</a>
+before encrypting it with a new password. This is to ensure your intent in changing the password,
+as the current version <strong>PDF++</strong> does not provide <code>Forget Password</code> feature.</p>
 </div>
+<div class="paragraph">
+<p>However, this process is inefficient as you will need to enter 2 commands instead of 1.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>PASSWORD</code> is invalid</p>
+<p>Alternative 2: Change password of an encrypted file</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This minimised the number of commands to be executed, but there are several security concerns as mentioned above.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="a-sophisticated-protection-system"><a class="link" href="#a-sophisticated-protection-system">A sophisticated protection system</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple adjustments to protect your interest</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#history-feature">Section 3.17, &#8220;History feature&#8221;</a> will not show the executed <code>EncryptCommand</code> which includes the password of the file.</p>
+</li>
+<li>
+<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 3.18, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
+will not comprise your privacy has been found.</p>
+</li>
+<li>
+<p>Pressing up in the command box will not show the <code>EncryptCommand</code> that was previously executed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="future-implementation-4"><a class="link" href="#future-implementation-4">Future Implementation</a></h5>
+<div class="paragraph">
+<p>There are concerns of accidental encryption of a file with a wrong password. In <strong>PDF++</strong> v2.0,
+the <strong>EncryptCommand</strong> will prompt you to re-enter the password as a form of confirmation message.
+If there is a mismatch of the two passwords entered, the command will not be executed.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="decryption-feature"><a class="link" href="#decryption-feature">3.19.2. Decryption feature</a></h4>
+<div class="sect4">
+<h5 id="current-implementation-20"><a class="link" href="#current-implementation-20">Current Implementation</a></h5>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2063,40 +2064,143 @@ PASSWORD, the <code>DecryptCommand</code> first checks if the INDEX is valid.</p
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Please enter the password of the encrypted file. You will not be able to decrypt the file
-without the password.
+The current Implementation of <strong>DecryptCommand</strong> is very similar to <a href="#encryption-feature">Section 3.19.1, &#8220;Encryption feature&#8221;</a>.
+The part where it is implemented differently will be specifically marked with a <code>*</code> for your convenience.
 </td>
 </tr>
 </table>
 </div>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep5InvalidPassword.png" alt="DecryptFeatureStep5InvalidPassword" width="600">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> and <code>PASSWORD</code> are both valid. The file you selected will be decrypted with the
-password you specified.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep5Sucess.png" alt="DecryptFeatureStep5Sucess" width="600">
-</div>
+<div class="paragraph">
+<p>The <code>decrypt</code> feature is facilitated by both <strong>DecryptCommand</strong> and <strong>DecryptCommandParser</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Step 6: If the command passes the validity check, the file you have selected is decrypted.
-You can open your file to see the result. Please refer to <a href="#open-feature">Section 3.2, &#8220;Open feature&#8221;</a> for the <code>open</code> feature.</p>
+<p>The implementation of the <code>DecryptCommand</code> execution is summarised in the following activity diagram.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DecryptCommandActivityDiagram.png" alt="DecryptCommandActivityDiagram" width="600">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The provided index is checked for validity i.e. referring to a specific Pdf in PdfBook.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If the index is invalid, a <strong>CommandException</strong> will be thrown and the execution ends.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The Pdf specified via the index is retrieved from the PdfBook.</p>
+</li>
+<li>
+<p>A <code>File</code> object is created for the Pdf.</p>
+</li>
+<li>
+<p>The <code>File</code> will be loaded as <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/PDDocument.html"><em>PDDocument</em></a>
+with the specified password, which is an indicator that the <code>File</code> is a <strong>PDF</strong> document that is uncorrupted, protected and the password
+provided is valid *.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Error in loading Pdf as <strong>PDDocument</strong> would throw an <strong>IOException</strong> and invalid password would throw an <strong>CommandException</strong>.
+Common reasons of error are:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>File not found in location</p>
+</li>
+<li>
+<p>Lack of user permissions to open File</p>
+</li>
+<li>
+<p>Unprotected File *</p>
+</li>
+<li>
+<p>Corrupted File</p>
+</li>
+<li>
+<p>Wrong password *</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Thrown IOException is intercepted, a <strong>CommandException</strong> will be thrown and the execution ends.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Upon success loading of the PDDocument, the security will be removed. *</p>
+</li>
+<li>
+<p>An unprotected * Pdf will be saved and closed.</p>
+</li>
+<li>
+<p>The Pdf is recorded in the <a href="#Design-Model">Section 2.4, &#8220;Model component&#8221;</a> and the changes are saved.</p>
+</li>
+<li>
+<p>A <strong>CommandResult</strong> is returned upon successful exception of <strong>DecryptCommand</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This sequence diagram demonstrates the <a href="#main-success-scenario">[main-success-scenario]</a> from the
+<strong>LogicManager</strong> to the end of <strong>DecryptCommand</strong> execution:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DecryptCommandSequenceDiagram.png" alt="DecryptCommandSequenceDiagram" width="700">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="a-sophisticated-protection-system-2"><a class="link" href="#a-sophisticated-protection-system-2">A sophisticated protection system</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple adjustments to protect your interest</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#history-feature">Section 3.17, &#8220;History feature&#8221;</a> will not show the executed <code>EncryptCommand</code> which includes the password of the file.</p>
+</li>
+<li>
+<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 3.18, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
+will not comprise your privacy has been found.</p>
+</li>
+<li>
+<p>Pressing up in the command box will not show the <code>EncryptCommand</code> that was previously executed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="future-implementation-5"><a class="link" href="#future-implementation-5">Future Implementation</a></h5>
+<div class="paragraph">
+<p>If an unauthorised personnel obtained the password of your files through illegal means,
+they can potentially set the file with a new password. This will hinder your access to
+your files.</p>
+</div>
+<div class="paragraph">
+<p>However, With 2-Factor Authentication, there is an additional layer of protection
+that prevents these personnel from changing the passwords of your files. This
+ensures that only you/any authorised personnel can decrypt your files.</p>
+</div>
+<div class="paragraph">
+<p>In <strong>PDF++</strong> v2.0, the <strong>DecryptCommand</strong> will support for the 2FA feature as mentioned above.
+If this feature is highly demanded, this feature will be implemented to <strong>EncryptCommand</strong> too.</p>
 </div>
 </div>
 </div>
@@ -3572,6 +3676,14 @@ for <code>RemarkCommandParser</code>.</p>
 <dd>
 <p>A contact detail that is not meant to be shared with others</p>
 </dd>
+<dt class="hdlist1"><a id="encrypted-file"></a> Encrypted file</dt>
+<dd>
+<p>A file that is protected with a password</p>
+</dd>
+<dt class="hdlist1"><a id="main-success-scenario"></a> Main Success Scenario</dt>
+<dd>
+<p>The expected sequence of events assuming that nothing goes wrong</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -3676,4 +3788,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:00:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:48:21 UTC</div></div></div></body></html>
