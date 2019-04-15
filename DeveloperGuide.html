@@ -122,12 +122,12 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PDF++ is a all-in-one document management tool that allows users to easily manage and manipulate their files.<br>
+<p>PDF++ is an all-in-one document management tool that allows users to easily manage and manipulate their files.<br>
 <em>The current version of this application only deals with PDF files</em>.</p>
 </li>
 <li>
 <p>There are many unique features to the application such as the ability to search within the content of files,
-merging several files togeter, setting of deadlines and many more. These features can be referred to within the
+merging several files together, setting of deadlines and many more. These features can be referred to within the
 <a href="#implementation">Implementation</a> Section of this document.</p>
 </li>
 </ul>
@@ -154,7 +154,7 @@ They contain sufficient diagrams and detailed explanations that will be extremel
 <h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section will assist you in setting up the project for the first time in you computer. This will allow you to work
+<p>This section will assist you in setting up the project for the first time in your computer. This will allow you to work
 on the application without any issue in the future.</p>
 </div>
 <div class="sect2">
@@ -186,7 +186,7 @@ Windows developers are highly recommended to use JDK <code>9</code>.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-IntelliJ by default has Gradle and JavaFx plugins installed.<br>
+IntelliJ by default have Gradle and JavaFX plugins installed.<br>
 Do not disable them. If you have disabled them, go to <code>File</code> &gt; <code>Settings</code> &gt; <code>Plugins</code> to re-enable them.
 </td>
 </tr>
@@ -204,7 +204,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <p>Fork this repo, and clone the fork to your computer</p>
 </li>
 <li>
-<p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog first)</p>
+<p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialogue first)</p>
 </li>
 <li>
 <p>Set up the correct JDK version for Gradle</p>
@@ -382,14 +382,14 @@ structure of the different components within PDF++.</p>
 </td>
 <td class="content">
 The <code>.pptx</code> or <code>.xml</code> files used to create diagrams in this document can be found in the
-<a href="https://github.com/CS2103-AY1819S2-T12-4/main/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in
+<a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in
 the pptx or xml file, select the objects of the diagram, and choose <code>Save as picture</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -482,7 +482,7 @@ The following class plays an important role at the architecture level:</p>
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PdfListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -508,7 +508,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -548,7 +548,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -607,7 +607,7 @@ which is the most used class throughout the application.</p>
 <div class="title">Figure 10. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -732,7 +732,7 @@ which verifies the file that the user wishes to add to the program.</p>
 command input to keep its consistency.</p>
 </div>
 <div class="paragraph">
-<p>Due to handling of files, additional checks have to be added such as the use of
+<p>Due to the handling of files, additional checks have to be added such as the use of
 <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/PDDocument.html"><em>PDDocument</em></a>
 to ascertain that it is a <code>.pdf</code> file and that it can be used with <a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a> API.</p>
 </div>
@@ -740,7 +740,7 @@ to ascertain that it is a <code>.pdf</code> file and that it can be used with <a
 <div class="sect3">
 <h4 id="future-implementation"><a class="link" href="#future-implementation">4.1.3. Future Implementation</a></h4>
 <div class="paragraph">
-<p>Currently PDF++ only supports PDF files, any other types of files will not be accepted.
+<p>Currently, PDF++ only supports PDF files, any other types of files will not be accepted.
 As the goal of the application is to be the sole manager of files, the application will be upgraded to work
 with all files in v2.0.</p>
 </div>
@@ -785,7 +785,7 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 <div class="sect3">
 <h4 id="feature-breakdown"><a class="link" href="#feature-breakdown">4.2.2. Feature Breakdown</a></h4>
 <div class="paragraph">
-<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+<p>Illustrated below is a sample usage scenario that provides a clear view of the inner
 workings of the Open feature.</p>
 </div>
 <div class="paragraph">
@@ -793,7 +793,7 @@ workings of the Open feature.</p>
 new sample set of <code>Pdf</code> stored within as shown below.</p>
 </div>
 <div class="paragraph">
-<p>Step 2: The user chooses a <code>Pdf</code> that they wish to open, in this case <code>a.pdf</code>, and
+<p>Step 2: The user chooses a <code>Pdf</code> that they wish to open, in this case,<code>a.pdf</code>, and
 enters the <code>open</code> command into the CLI Interface, following the outlined Syntax as
 illustrated below.</p>
 </div>
@@ -811,7 +811,7 @@ the input in the following method:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>This is done by initialising the <code>Index</code> objects that verifies the above properties on
+<p>This is done by initialising the <code>Index</code> objects that verify the above properties on
 instantiation.</p>
 </li>
 <li>
@@ -841,7 +841,7 @@ and returns a successful <code>CommandResult</code> to the <code>LogicManager</c
 <div class="ulist">
 <ul>
 <li>
-<p>Should there be any issue with the parsing of the <code>Pdf</code> due to invalid directories or a corrupted <code>Pdf</code> file,
+<p>Should there be an issue with the parsing of the <code>Pdf</code> due to invalid directories or a corrupted <code>Pdf</code> file,
 the <code>CommandException</code> will be thrown and the <code>OpenCommand</code> will be terminated. A "Fail Message" will then be displayed to the user.</p>
 </li>
 </ul>
@@ -943,7 +943,7 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 <div class="sect3">
 <h4 id="feature-breakdown-2"><a class="link" href="#feature-breakdown-2">4.4.2. Feature breakdown</a></h4>
 <div class="paragraph">
-<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+<p>Illustrated below is a sample usage scenario that provides a clear view of the inner
 workings of the <code>move</code> feature.</p>
 </div>
 <div class="paragraph">
@@ -982,7 +982,7 @@ a <strong>CommandException</strong>.</p>
 <h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>merge</code> feature is facilitated by both <strong>MergeCommand</strong> and <strong>MergeCommandParser</strong>.
-This feature utilises the
+This feature utilise the
 <a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a>, specifically the
 <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a>
 API to append two or more PDFs and create a new file with the merged content. As there will be one
@@ -1018,14 +1018,14 @@ PDF to the application.</p>
 </li>
 <li>
 <p><a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a> is created. The directory must be set for the merged file prior to merging,
-which also includes the name of the file. By default, the directory of the Pdf based on first index  is used.</p>
+which also includes the name of the file. By default, the directory of the Pdf based on the first index is used.</p>
 </li>
 <li>
 <p>A unique name is created for the merged file and combined with the aforementioned directory to create the full directory for the merged file.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>To avoid issues with duplicate name at the directory, the name is created based on hash code. The created name will also be verified unique at the directory - and changed if necessary.</p>
+<p>To avoid issues with duplicate names at the directory, the name is created based on hash code. The created name will also be verified unique at the directory - and changed if necessary.</p>
 </li>
 </ol>
 </div>
@@ -1077,7 +1077,7 @@ which is an indicator if the application can perform other operations on the Pdf
 <p>All loaded <strong>PDDocument</strong> are closed.</p>
 </li>
 <li>
-<p>A new Pdf is created to represented the merged file created.</p>
+<p>A new Pdf is created to represent the merged file created.</p>
 </li>
 <li>
 <p>The Pdf is recorded in the Model and the changes are committed.</p>
@@ -1108,7 +1108,7 @@ the merge operation. Users can also make use of <a href="#move-feature">Section 
 <p>For the merging of files, the current implementation involves adding all files to a single <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a>
 to merge together. One alternative to merging multiple files would be to create a separate <strong>PDFMergerUtility</strong> for every pair of files and merge the content recursively into a final merged file. The
 advantage of this would be better stability in performance when merging multiple large files as there will be lesser workload on each <strong>PDFMergerUtility</strong>. However, this would undoubtedly cause the performance
-to be slower as more merge operations are done overall. As the case of instability occurs only in very large files, it was decided to go with focus on performance.</p>
+to be slower as more merge operations are done overall. As the case of instability occurs only in very large files, it was decided to go with a focus on performance.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1160,8 +1160,8 @@ on the file, either through the application or through the user&#8217;s operatin
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-As of v1.4 there is no way to completely undo the <em>hard</em> delete operation. When the file is deleted from the
-filesystem, it is permanently erased. Even the <a href="#Undo/Redo feature">[Undo/Redo feature]</a> cannot help with this&#8230;&#8203;
+As of v1.4, there is no way to completely undo the <em>hard</em> delete operation. When the file is deleted from the
+filesystem, it is permanently erased.
 </td>
 </tr>
 </table>
@@ -1203,7 +1203,7 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 <div class="sect3">
 <h4 id="feature-breakdown-3"><a class="link" href="#feature-breakdown-3">4.6.2. Feature breakdown</a></h4>
 <div class="paragraph">
-<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+<p>Illustrated below is a sample usage scenario that provides a clear view of the inner
 workings of the <code>delete</code> feature.</p>
 </div>
 <div class="paragraph">
@@ -1218,7 +1218,7 @@ user&#8217;s input.</p>
 </div>
 <div class="paragraph">
 <p>Step 3: The <strong>DeleteCommand</strong> is then executed. Successful execution will return a
-<strong>CommandResult</strong> indicating that the changes has been made.</p>
+<strong>CommandResult</strong> indicating that the changes have been made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1240,13 +1240,13 @@ user&#8217;s input.</p>
 <h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.7.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>clear</code> feature is facilitated by both <strong>ClearCommand</strong> and <strong>ClearCommandParser</strong>.
-This features removes all the PDF files that were previously stored in PDF++. It is similar to
+This feature removes all the PDF files that were previously stored in PDF++. It is similar to
 the <a href="#delete-feature">Section 4.6, &#8220;Delete feature&#8221;</a> in that it removes files from the application, with multiple files instead of
 one at a time. However, it differs that it does not have the option to delete the file from the local
 filesystem.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Clear</code> feature has to following syntax:</p>
+<p>The <code>Clear</code> feature has the following syntax:</p>
 </div>
 <div class="paragraph">
 <p><span class="big"><code>clear</code></span></p>
@@ -1387,7 +1387,7 @@ evaluates to <code>true</code> if the deadline is set to be done, <code>false</c
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-After a deadline has been added to the PDF file specified, the date will be color coded according to days
+After a deadline has been added to the PDF file specified, the date will be color-coded according to days
 remaining from the current day until the deadline date.
 </td>
 </tr>
@@ -1402,18 +1402,18 @@ In the Pdf book model, files without a deadline will be assigned with the defaul
 <a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html"><em>LocalDate.MIN</em></a>.
 In the Jackson adapted storage, we simply set the deadline attribute of a file without a deadline as empty.
 In our previous implementation, we used to assign the default date LocalDate.MIN to the deadline attribute in the Jackson adapted Storage
-as well, however this might confuse the users if they read the <em>pdfplusplus.json</em> and find out the non-existence deadline.
+as well, however, this might confuse the users if they read the <em>pdfplusplus.json</em> and find out the non-existence deadline.
 Besides, this implementation also makes the displaying process of deadlines through the UI tedious.</p>
 </div>
 <div class="paragraph">
 <p>In order to comply with the two distinct representation of deadline model, we implemented a default deadline <code>toString</code> method that
-prints the Pdf book model version, and a modified <code>toJsonString</code> that prints the Jackson adapted storage version of deadline.</p>
+prints the Pdf book model version, and a modified <code>toJsonString</code> that prints the Jackson adapted storage version of the deadline.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="future-implementation-3"><a class="link" href="#future-implementation-3">4.8.3. Future Implementation</a></h4>
 <div class="paragraph">
-<p>Our current color coded deadlines is predefined based on the due date from the current date. Suggested improvement for this area
+<p>Our current color-coded deadlines are predefined based on the due date from the current date. Suggested improvement for this area
 would be providing user-defined color codes for a better user experience of our application.</p>
 </div>
 </div>
@@ -1427,7 +1427,7 @@ would be providing user-defined color codes for a better user experience of our 
 features, the command is parsed and a <strong>HelpCommand</strong> object is created to be executed.</p>
 </div>
 <div class="paragraph">
-<p>The <code>help</code> feature has to following syntax:</p>
+<p>The <code>help</code> feature has the following syntax:</p>
 </div>
 <div class="paragraph">
 <p><span class="big"><code>help</code></span></p>
@@ -1452,7 +1452,7 @@ Users can reference from the UserGuide directly on how to navigate the guide.</p
 <p>The <code>exit</code> feature is facilitated by <strong>ExitCommand</strong>. This feature allows you to exit from <em>PDF++</em>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>exit</code> feature has to following syntax:</p>
+<p>The <code>exit</code> feature has the following syntax:</p>
 </div>
 <div class="paragraph">
 <p><span class="big"><code>exit</code>&#8230;&#8203;</span></p>
@@ -1471,7 +1471,7 @@ Users can reference from the UserGuide directly on how to navigate the guide.</p
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Your files and commands are immediately stored after execution, and can be retrieved on
+Your files and commands are immediately stored after execution and can be retrieved on
 reopening the application.
 </td>
 </tr>
@@ -1506,7 +1506,7 @@ the results. Hence, the <code>list</code> feature is added to allow for a "reset
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>List</code> feature has to following syntax:</p>
+<p>The <code>List</code> feature has the following syntax:</p>
 </div>
 <div class="paragraph">
 <p><span class="big"><code>list</code></span></p>
@@ -1532,7 +1532,7 @@ well as the content of the text within the files prior to revealing the results.
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;KEYWORD&gt;</code> refers to the word that the application will use as reference a to find
+<p><code>&lt;KEYWORD&gt;</code> refers to the word that the application will use as a reference to find
 files. There must be at least one provided.</p>
 </li>
 </ul>
@@ -1608,7 +1608,7 @@ files that the user wishes to view.</p>
 <p>Further checks are also done to confirm if each file&#8217;s name contains the <code>keyword</code> as well.</p>
 </li>
 <li>
-<p>The <code>model</code> then updates itself and stores the current actiion in the <code>history</code> object.</p>
+<p>The <code>model</code> then updates itself and stores the current action in the <code>history</code> object.</p>
 </li>
 <li>
 <p>Finally, the <code>FindCommand</code> returns a <code>CommandResult</code> back to the <code>LogicManager</code> for follow up
@@ -1657,7 +1657,7 @@ This feature is similar to <a href="#find-feature">Find feature</a> in that it l
 in the application, except that it will list the files based on the tag of the file.</p>
 </div>
 <div class="paragraph">
-<p>The <code>filter</code> feature has to following syntax:</p>
+<p>The <code>filter</code> feature has the following syntax:</p>
 </div>
 <div class="paragraph">
 <p>Format: <span class="big"><code>filter t/&lt;TAG&gt; &#8230;&#8203;</code></span></p>
@@ -1766,7 +1766,7 @@ more information pertaining to that selected file. They are able to view feature
 any deadlines assigned to it, its name, and directory.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Select</code> feature has to following syntax:
+<p>The <code>Select</code> feature has the following syntax:
 Format: <code>select INDEX</code></p>
 </div>
 </div>
@@ -1840,7 +1840,7 @@ The sort command allows the user to arrange the list of files tracked by the app
 The order can be ascending (<code>up</code>) or descending (<code>down</code>) while the criteria can be <code>name</code>, <code>deadline</code> or <code>size</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Sort</code> feature has to following syntax:
+<p>The <code>Sort</code> feature has the following syntax:
 Format: <code>sort CRITERIA ORDER</code>
 Example:</p>
 </div>
@@ -1892,7 +1892,7 @@ returned to the <code>LogicManager</code> to execute.</p>
 <code>command history</code> and executes it.</p>
 </li>
 <li>
-<p>The execution of the <code>SortCommand</code> contain the following steps:</p>
+<p>The execution of the <code>SortCommand</code> contains the following steps:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1952,12 +1952,12 @@ set indexes of the files tracked by the application.
 <p>The tag feature is facilitated by <code>TagCommand</code> and the <code>TagCommandParser</code>.
 This allows users to set tags to files that are tracked by the application that allows them to easily organize and
 view these files with other operations supported by our application such as the <a href="#filter-feature">Filter Feature</a>.
-In order to perform the Tag Command the user needs to specify a <code>PREFX</code> that is denoted by <code>-a</code> or <code>r</code> to signify the
+In order to perform the Tag Command the user needs to specify a <code>PREFIX</code> that is denoted by <code>-a</code> or <code>r</code> to signify the
 addition or removal of a tag. The <code>INDEX</code> that refers to the file that the user wishes to interact with and the tags
 themselves that are represented in the <code>t/TAG</code> format where <code>TAG</code> text that the user wishes to use as a tag.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Tag</code> feature has to following syntax:
+<p>The <code>Tag</code> feature has the following syntax:
 Format: <code>tag PREFIX INDEX t/TAG&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
@@ -2010,7 +2010,7 @@ Format: <code>tag PREFIX INDEX t/TAG&#8230;&#8203;</code></p>
 <code>command history</code> and executes it.</p>
 </li>
 <li>
-<p>The execution of the <code>TagCommand</code> contain the following steps:</p>
+<p>The execution of the <code>TagCommand</code> contains the following steps:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2071,7 +2071,7 @@ This feature displays the previous commands entered since the start of the curre
 of the application; each time the application is closed, the command history will be erased.</p>
 </div>
 <div class="paragraph">
-<p>The <code>history</code> feature has to following syntax:</p>
+<p>The <code>history</code> feature has the following syntax:</p>
 </div>
 <div class="paragraph">
 <p><span class="big"><code>history</code></span></p>
@@ -2151,7 +2151,7 @@ not protected with a password.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Error in loading Pdf as <strong>PDDocument</strong> would throw an <strong>IOException</strong>. Common reasons of error are:</p>
+<p>Error in loading Pdf as <strong>PDDocument</strong> would throw an <strong>IOException</strong>. Common reasons for error are:</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
@@ -2186,7 +2186,7 @@ are created. The password specified will be passed to <code>StandardProtectionPo
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Error in encrypting the file will throw an <strong>IOException</strong>. Common reasons of error are:</p>
+<p>Error in encrypting the file will throw an <strong>IOException</strong>. Common reasons for error are:</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
@@ -2248,7 +2248,7 @@ as the current version <strong>PDF++</strong> does not support <code>Forget Pass
 </div>
 </li>
 <li>
-<p>Alternative 2: Change password of an encrypted file</p>
+<p>Alternative 2: Change the password of an encrypted file</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2347,8 +2347,8 @@ provided is valid *.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Error in loading Pdf as <strong>PDDocument</strong> would throw an <strong>IOException</strong> and invalid password would throw an <strong>CommandException</strong>.
-Common reasons of error are:</p>
+<p>Error in loading Pdf as <strong>PDDocument</strong> would throw an <strong>IOException</strong> and invalid password would throw a <strong>CommandException</strong>.
+Common reasons for error are:</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
@@ -2431,7 +2431,7 @@ will not comprise your privacy has been found.</p>
 <div class="sect4">
 <h5 id="future-implementation-6"><a class="link" href="#future-implementation-6">Future Implementation</a></h5>
 <div class="paragraph">
-<p>If an unauthorised personnel obtained the password of your files through illegal means,
+<p>If unauthorised personnel obtained the password of your files through illegal means,
 they can potentially set the file with a new password. This will hinder your access to
 your files.</p>
 </div>
@@ -2682,7 +2682,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 <p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
 </li>
 <li>
-<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
+<p><code>FINE</code> : Details that are not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
 </li>
 </ul>
 </div>
@@ -2876,11 +2876,11 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 <div class="sect2">
 <h3 id="site-template"><a class="link" href="#site-template">5.6. Site Template</a></h3>
 <div class="paragraph">
-<p>The files in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
+<p>The files in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
 </div>
 <div class="paragraph">
-<p>The files in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
+<p>The files in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
 These template files are written in a mixture of <a href="https://www.ruby-lang.org">Ruby</a> and <a href="http://slim-lang.com">Slim</a>.</p>
 </div>
 <div class="admonitionblock warning">
@@ -2891,7 +2891,7 @@ These template files are written in a mixture of <a href="https://www.ruby-lang.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/docs/templates"><code>docs/templates</code></a> requires some knowledge and experience with Ruby and Asciidoctor&#8217;s API.
+<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/docs/templates"><code>docs/templates</code></a> requires some knowledge and experience with Ruby and Asciidoctor&#8217;s API.
 You should only modify them if you need greater control over the site&#8217;s layout than what stylesheets can provide.
 The SE-EDU team does not provide support for modified template files.</p>
 </div>
@@ -3000,7 +3000,7 @@ e.g. <code>seedu.pdf.commons.StringUtilTest</code></p>
 e.g. <code>seedu.pdf.storage.StorageManagerTest</code></p>
 </li>
 <li>
-<p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
+<p>Hybrids of unit and integration tests. These tests are checking multiple code units as well as how they are connected together.<br>
 e.g. <code>seedu.pdf.logic.LogicManagerTest</code></p>
 </li>
 </ol>
@@ -3062,7 +3062,7 @@ e.g. <code>seedu.pdf.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/MainApp.java"><code>MainApp.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -3144,10 +3144,10 @@ Do take a look at <a href="#Design-Logic">Section 3.3, &#8220;Logic component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Just like we store each individual command word constant <code>COMMAND_WORD</code> inside <code>*Command.java</code> (e.g.  <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/logic/commands/FindCommand.java"><code>FindCommand#COMMAND_WORD</code></a>, <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu.pdf/logic/commands/DeleteCommand.java"><code>DeleteCommand#COMMAND_WORD</code></a>), you need a new constant for aliases as well (e.g. <code>FindCommand#COMMAND_ALIAS</code>).</p>
+<p>Just like we store each individual command word constant <code>COMMAND_WORD</code> inside <code>*Command.java</code> (e.g.  <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/logic/commands/FindCommand.java"><code>FindCommand#COMMAND_WORD</code></a>, <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu.pdf/logic/commands/DeleteCommand.java"><code>DeleteCommand#COMMAND_WORD</code></a>), you need a new constant for aliases as well (e.g. <code>FindCommand#COMMAND_ALIAS</code>).</p>
 </li>
 <li>
-<p><a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/logic/parser/PdfBookParser.java"><code>PdfBookParser</code></a> is responsible for analyzing command words.</p>
+<p><a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/logic/parser/PdfBookParser.java"><code>PdfBookParser</code></a> is responsible for analyzing command words.</p>
 </li>
 </ul>
 </div>
@@ -3157,7 +3157,7 @@ Do take a look at <a href="#Design-Logic">Section 3.3, &#8220;Logic component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Modify the switch statement in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/logic/parser/PdfBookParser.java"><code>PdfBookParser#parseCommand(String)</code></a> such that both the proper command word and alias can be used to execute the same intended command.</p>
+<p>Modify the switch statement in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/logic/parser/PdfBookParser.java"><code>PdfBookParser#parseCommand(String)</code></a> such that both the proper command word and alias can be used to execute the same intended command.</p>
 </li>
 <li>
 <p>Add new tests for each of the aliases that you have added.</p>
@@ -3180,7 +3180,7 @@ Do take a look at <a href="#Design-Logic">Section 3.3, &#8220;Logic component&#8
 </div>
 <h4 id="code-model-code-component" class="discrete"><code>Model</code> component</h4>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are in charge of <code>model</code>. One day, the <code>logic</code>-in-charge approaches you for help. He wants to implement a command such that the user is able to remove a particular tag from everyone in the pdf book, but the model API does not support such a functionality at the moment. Your job is to implement an API method, so that your teammate can use your API to implement his command.</p>
+<p><strong>Scenario:</strong> You are in charge of <code>model</code>. One day, the <code>logic</code>-in-charge approaches you for help. He wants to implement a command such that the user is able to remove a particular tag from everyone in the pdf book, but the model API does not support such functionality at the moment. Your job is to implement an API method so that your teammate can use your API to implement his command.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -3207,13 +3207,13 @@ Do take a look at <a href="#Design-Model">Section 3.4, &#8220;Model component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/Model.java"><code>Model</code></a> and the <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu.pdf/model/PdfBook.java"><code>PdfBook</code></a> API need to be updated.</p>
+<p>The <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/Model.java"><code>Model</code></a> and the <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu.pdf/model/PdfBook.java"><code>PdfBook</code></a> API need to be updated.</p>
 </li>
 <li>
 <p>Think about how you can use SLAP to design the method. Where should we place the main logic of deleting tags?</p>
 </li>
 <li>
-<p>Find out which of the existing API methods in  <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/PdfBook.java"><code>PdfBook</code></a> and <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu.pdf/model/pdf/Pdf.java"><code>Pdf</code></a> classes can be used to implement the tag removal logic. <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/PdfBook.java"><code>PdfBook</code></a> allows you to update a pdf, and <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/pdf/Pdf.java"><code>Pdf</code></a> allows you to update the tags.</p>
+<p>Find out which of the existing API methods in  <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/PdfBook.java"><code>PdfBook</code></a> and <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu.pdf/model/pdf/Pdf.java"><code>Pdf</code></a> classes can be used to implement the tag removal logic. <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/PdfBook.java"><code>PdfBook</code></a> allows you to update a pdf, and <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/pdf/Pdf.java"><code>Pdf</code></a> allows you to update the tags.</p>
 </li>
 </ul>
 </div>
@@ -3223,10 +3223,10 @@ Do take a look at <a href="#Design-Model">Section 3.4, &#8220;Model component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Implement a <code>removeTag(Tag)</code> method in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/PdfBook.java"><code>PdfBook</code></a>. Loop through each pdf, and remove the <code>tag</code> from each pdf.</p>
+<p>Implement a <code>removeTag(Tag)</code> method in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/PdfBook.java"><code>PdfBook</code></a>. Loop through each pdf, and remove the <code>tag</code> from each pdf.</p>
 </li>
 <li>
-<p>Add a new API method <code>deleteTag(Tag)</code> in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/ModelManager.java"><code>ModelManager</code></a>. Your <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu.pdf/model/ModelManager.java"><code>ModelManager</code></a> should call <code>PdfBook#removeTag(Tag)</code>.</p>
+<p>Add a new API method <code>deleteTag(Tag)</code> in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/ModelManager.java"><code>ModelManager</code></a>. Your <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu.pdf/model/ModelManager.java"><code>ModelManager</code></a> should call <code>PdfBook#removeTag(Tag)</code>.</p>
 </li>
 <li>
 <p>Add new tests for each of the new public methods that you have added.</p>
@@ -3291,13 +3291,13 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>The tag labels are created inside <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/PdfCard.java">the <code>PdfCard</code> constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html">JavaFX&#8217;s <code>Label</code> class</a> allows you to modify the style of each Label, such as changing its color.</p>
+<p>The tag labels are created inside <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/PdfCard.java">the <code>PdfCard</code> constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html">JavaFX&#8217;s <code>Label</code> class</a> allows you to modify the style of each Label, such as changing its color.</p>
 </li>
 <li>
 <p>Use the .css attribute <code>-fx-background-color</code> to add a color.</p>
 </li>
 <li>
-<p>You may wish to modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/resources/view/DarkTheme.css"><code>DarkTheme.css</code></a> to include some pre-defined colors using css, especially if you have experience with web-based css.</p>
+<p>You may wish to modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/resources/view/DarkTheme.css"><code>DarkTheme.css</code></a> to include some pre-defined colors using css, especially if you have experience with web-based css.</p>
 </li>
 </ul>
 </div>
@@ -3328,7 +3328,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 </div>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> such that <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu.pdf/ui/ResultDisplay.java"><code>ResultDisplay</code></a> can show a different style on error (currently it shows the same regardless of errors).</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> such that <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu.pdf/ui/ResultDisplay.java"><code>ResultDisplay</code></a> can show a different style on error (currently it shows the same regardless of errors).</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -3356,10 +3356,10 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> is raised by <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu.pdf/ui/CommandBox.java"><code>CommandBox</code></a> which also knows whether the result is a success or failure, and is caught by <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/ResultDisplay.java"><code>ResultDisplay</code></a> which is where we want to change the style to.</p>
+<p><a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> is raised by <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu.pdf/ui/CommandBox.java"><code>CommandBox</code></a> which also knows whether the result is a success or failure, and is caught by <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/ResultDisplay.java"><code>ResultDisplay</code></a> which is where we want to change the style to.</p>
 </li>
 <li>
-<p>Refer to <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/CommandBox.java"><code>CommandBox</code></a> for an example on how to display an error.</p>
+<p>Refer to <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/CommandBox.java"><code>CommandBox</code></a> for an example on how to display an error.</p>
 </li>
 </ul>
 </div>
@@ -3369,10 +3369,10 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> 's constructor so that users of the event can indicate whether an error has occurred.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> 's constructor so that users of the event can indicate whether an error has occurred.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/ResultDisplay.java"><code>ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)</code></a> to react to this event appropriately.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/ResultDisplay.java"><code>ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)</code></a> to react to this event appropriately.</p>
 </li>
 <li>
 <p>You can write two different kinds of tests to ensure that the functionality works:</p>
@@ -3382,7 +3382,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <p>The unit tests for <code>ResultDisplay</code> can be modified to include verification of the color.</p>
 </li>
 <li>
-<p>The system tests <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/systemtests/PdfBookSystemTest.java"><code>PdfBookSystemTest#assertCommandBoxShowsDefaultStyle() and PdfBookSystemTest#assertCommandBoxShowsErrorStyle()</code></a> to include verification for <code>ResultDisplay</code> as well.</p>
+<p>The system tests <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/systemtests/PdfBookSystemTest.java"><code>PdfBookSystemTest#assertCommandBoxShowsDefaultStyle() and PdfBookSystemTest#assertCommandBoxShowsErrorStyle()</code></a> to include verification for <code>ResultDisplay</code> as well.</p>
 </li>
 </ul>
 </div>
@@ -3406,7 +3406,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 </div>
 </li>
 <li>
-<p>Modify the <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to show the total number of people in the pdf book.</p>
+<p>Modify the <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to show the total number of people in the pdf book.</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -3434,10 +3434,10 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/resources/view/StatusBarFooter.fxml"><code>StatusBarFooter.fxml</code></a> will need a new <code>StatusBar</code>. Be sure to set the <code>GridPane.columnIndex</code> properly for each <code>StatusBar</code> to avoid misalignment!</p>
+<p><a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/resources/view/StatusBarFooter.fxml"><code>StatusBarFooter.fxml</code></a> will need a new <code>StatusBar</code>. Be sure to set the <code>GridPane.columnIndex</code> properly for each <code>StatusBar</code> to avoid misalignment!</p>
 </li>
 <li>
-<p><a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> needs to initialize the status bar on application start, and to update it accordingly whenever the pdf book is updated.</p>
+<p><a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> needs to initialize the status bar on application start, and to update it accordingly whenever the pdf book is updated.</p>
 </li>
 </ul>
 </div>
@@ -3447,16 +3447,16 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>Modify the constructor of <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to take in the number of pdfs when the application just started.</p>
+<p>Modify the constructor of <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to take in the number of pdfs when the application just started.</p>
 </li>
 <li>
-<p>Use <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/StatusBarFooter.java"><code>StatusBarFooter#handlePdfBookChangedEvent(PdfBookChangedEvent)</code></a> to update the number of pdfs whenever there are new changes to the pdfbook.</p>
+<p>Use <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/StatusBarFooter.java"><code>StatusBarFooter#handlePdfBookChangedEvent(PdfBookChangedEvent)</code></a> to update the number of pdfs whenever there are new changes to the pdfbook.</p>
 </li>
 <li>
-<p>For tests, modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a state-saving functionality for the total number of people status, just like what we did for save directory and sync status.</p>
+<p>For tests, modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a state-saving functionality for the total number of people status, just like what we did for save directory and sync status.</p>
 </li>
 <li>
-<p>For system tests, modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/systemtests/PdfBookSystemTest.java"><code>PdfBookSystemTest</code></a> to also verify the new total number of pdfs status bar.</p>
+<p>For system tests, modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/systemtests/PdfBookSystemTest.java"><code>PdfBookSystemTest</code></a> to also verify the new total number of pdfs status bar.</p>
 </li>
 <li>
 <p>See this <a href="https://github.com/se-edu/addressbook-level4/pull/803">PR</a> for the full solution.</p>
@@ -3500,10 +3500,10 @@ Do take a look at <a href="#Design-Storage">Section 3.5, &#8220;Storage componen
 <div class="ulist">
 <ul>
 <li>
-<p>Add the API method in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/storage/PdfBookStorage.java"><code>PdfBookStorage</code></a> interface.</p>
+<p>Add the API method in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/storage/PdfBookStorage.java"><code>PdfBookStorage</code></a> interface.</p>
 </li>
 <li>
-<p>Implement the logic in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/storage/StorageManager.java"><code>StorageManager</code></a> and <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu.pdf/storage/JsonPdfBookStorage.java"><code>JsonPdfBookStorage</code></a> class.</p>
+<p>Implement the logic in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/storage/StorageManager.java"><code>StorageManager</code></a> and <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu.pdf/storage/JsonPdfBookStorage.java"><code>JsonPdfBookStorage</code></a> class.</p>
 </li>
 </ul>
 </div>
@@ -3569,10 +3569,10 @@ Removes the remark for the first pdf.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a <code>RemarkCommand</code> that extends <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/logic/commands/Command.java"><code>Command</code></a>. Upon execution, it should just throw an <code>Exception</code>.</p>
+<p>Add a <code>RemarkCommand</code> that extends <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/logic/commands/Command.java"><code>Command</code></a>. Upon execution, it should just throw an <code>Exception</code>.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/logic/parser/PdfBookParser.java"><code>PdfBookParser</code></a> to accept a <code>RemarkCommand</code>.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/logic/parser/PdfBookParser.java"><code>PdfBookParser</code></a> to accept a <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -3585,7 +3585,7 @@ Removes the remark for the first pdf.</p>
 <p>Add <code>RemarkCommandTest</code> that tests that <code>execute()</code> throws an Exception.</p>
 </li>
 <li>
-<p>Add new test method to <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/seedu/pdf/logic/parser/PdfBookParserTest.java"><code>PdfBookParserTest</code></a>, which tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
+<p>Add new test method to <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/pdf/logic/parser/PdfBookParserTest.java"><code>PdfBookParserTest</code></a>, which tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -3607,7 +3607,7 @@ Removes the remark for the first pdf.</p>
 <p>Add <code>RemarkCommandParser</code> that knows how to parse two arguments, one index and one with prefix 'r/'.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/logic/parser/PdfBookParser.java"><code>PdfBookParser</code></a> to use the newly implemented <code>RemarkCommandParser</code>.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/logic/parser/PdfBookParser.java"><code>PdfBookParser</code></a> to use the newly implemented <code>RemarkCommandParser</code>.</p>
 </li>
 </ol>
 </div>
@@ -3624,7 +3624,7 @@ Removes the remark for the first pdf.</p>
 for <code>RemarkCommandParser</code>.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/seedu/pdf/logic/parser/PdfBookParserTest.java"><code>PdfBookParserTest</code></a> to test that the correct command is generated according to the user input.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/pdf/logic/parser/PdfBookParserTest.java"><code>PdfBookParserTest</code></a> to test that the correct command is generated according to the user input.</p>
 </li>
 </ol>
 </div>
@@ -3632,7 +3632,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-3-ui-add-a-placeholder-for-remark-in-code-pdfcard-code"><a class="link" href="#step-3-ui-add-a-placeholder-for-remark-in-code-pdfcard-code">[Step 3] Ui: Add a placeholder for remark in <code>PdfCard</code></a></h5>
 <div class="paragraph">
-<p>Let&#8217;s add a placeholder on all our <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/PdfCard.java"><code>PdfCard</code></a> s to display a remark for each pdf later.</p>
+<p>Let&#8217;s add a placeholder on all our <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/PdfCard.java"><code>PdfCard</code></a> s to display a remark for each pdf later.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -3640,10 +3640,10 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a <code>Label</code> with any random text inside <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/resources/view/PdfListCard.fxml"><code>PdfListCard.fxml</code></a>.</p>
+<p>Add a <code>Label</code> with any random text inside <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/resources/view/PdfListCard.fxml"><code>PdfListCard.fxml</code></a>.</p>
 </li>
 <li>
-<p>Add FXML annotation in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/PdfCard.java"><code>PdfCard</code></a> to tie the variable to the actual label.</p>
+<p>Add FXML annotation in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/PdfCard.java"><code>PdfCard</code></a> to tie the variable to the actual label.</p>
 </li>
 </ol>
 </div>
@@ -3653,7 +3653,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/guitests/guihandles/PdfCardHandle.java"><code>PdfCardHandle</code></a> so that future tests can read the contents of the remark label.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/guitests/guihandles/PdfCardHandle.java"><code>PdfCardHandle</code></a> so that future tests can read the contents of the remark label.</p>
 </li>
 </ol>
 </div>
@@ -3661,7 +3661,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-4-model-add-code-remark-code-class"><a class="link" href="#step-4-model-add-code-remark-code-class">[Step 4] Model: Add <code>Remark</code> class</a></h5>
 <div class="paragraph">
-<p>We have to properly encapsulate the remark in our <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/pdf/Pdf.java"><code>Pdf</code></a> class. Instead of just using a <code>String</code>, let&#8217;s follow the conventional class structure that the codebase already uses by adding a <code>Remark</code> class.</p>
+<p>We have to properly encapsulate the remark in our <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/pdf/Pdf.java"><code>Pdf</code></a> class. Instead of just using a <code>String</code>, let&#8217;s follow the conventional class structure that the codebase already uses by adding a <code>Remark</code> class.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -3669,7 +3669,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add <code>Remark</code> to model component (you can copy from <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/pdf/Directory.java"><code>Directory</code></a>, remove the regex and change the names accordingly).</p>
+<p>Add <code>Remark</code> to model component (you can copy from <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/pdf/Directory.java"><code>Directory</code></a>, remove the regex and change the names accordingly).</p>
 </li>
 <li>
 <p>Modify <code>RemarkCommand</code> to now take in a <code>Remark</code> instead of a <code>String</code>.</p>
@@ -3690,7 +3690,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-5-model-modify-code-pdf-code-to-support-a-code-remark-code-field"><a class="link" href="#step-5-model-modify-code-pdf-code-to-support-a-code-remark-code-field">[Step 5] Model: Modify <code>Pdf</code> to support a <code>Remark</code> field</a></h5>
 <div class="paragraph">
-<p>Now we have the <code>Remark</code> class, we need to actually use it inside <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/pdf/Pdf.java"><code>Pdf</code></a>.</p>
+<p>Now we have the <code>Remark</code> class, we need to actually use it inside <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/pdf/Pdf.java"><code>Pdf</code></a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -3698,13 +3698,13 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add <code>getRemark()</code> in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/pdf/Pdf.java"><code>Pdf</code></a>.</p>
+<p>Add <code>getRemark()</code> in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/pdf/Pdf.java"><code>Pdf</code></a>.</p>
 </li>
 <li>
 <p>You may assume that the user will not be able to use the <code>add</code> and <code>edit</code> commands to modify the remarks field (i.e. the pdf will be created without a remark).</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete your <code>data/pdfbook.json</code> so that the application will load the sample data when you launch it.)</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete your <code>data/pdfbook.json</code> so that the application will load the sample data when you launch it.)</p>
 </li>
 </ol>
 </div>
@@ -3712,7 +3712,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-6-storage-add-code-remark-code-field-to-code-jsonadaptedpdf-code-class"><a class="link" href="#step-6-storage-add-code-remark-code-field-to-code-jsonadaptedpdf-code-class">[Step 6] Storage: Add <code>Remark</code> field to <code>JsonAdaptedPdf</code> class</a></h5>
 <div class="paragraph">
-<p>We now have <code>Remark</code> s for <code>Pdf</code> s, but they will be gone when we exit the application. Let&#8217;s modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/storage/JsonAdaptedPdf.java"><code>JsonAdaptedPdf</code></a> to include a <code>Remark</code> field so that it will be saved.</p>
+<p>We now have <code>Remark</code> s for <code>Pdf</code> s, but they will be gone when we exit the application. Let&#8217;s modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/storage/JsonAdaptedPdf.java"><code>JsonAdaptedPdf</code></a> to include a <code>Remark</code> field so that it will be saved.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -3738,7 +3738,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-6b-test-add-withremark-for-code-pdfbuilder-code"><a class="link" href="#step-6b-test-add-withremark-for-code-pdfbuilder-code">[Step 6b] Test: Add withRemark() for <code>PdfBuilder</code></a></h5>
 <div class="paragraph">
-<p>Since <code>Pdf</code> can now have a <code>Remark</code>, we should add a helper method to <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/seedu/pdf/testutil/PdfBuilder.java"><code>PdfBuilder</code></a>, so that users are able to create remarks when building a <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu.pdf/model/pdf/Pdf.java"><code>Pdf</code></a>.</p>
+<p>Since <code>Pdf</code> can now have a <code>Remark</code>, we should add a helper method to <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/pdf/testutil/PdfBuilder.java"><code>PdfBuilder</code></a>, so that users are able to create remarks when building a <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu.pdf/model/pdf/Pdf.java"><code>Pdf</code></a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Tests:</strong></p>
@@ -3746,10 +3746,10 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a new method <code>withRemark()</code> for <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/seedu/pdf/testutil/PdfBuilder.java"><code>PdfBuilder</code></a>. This method will create a new <code>Remark</code> for the pdf that it is currently building.</p>
+<p>Add a new method <code>withRemark()</code> for <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/pdf/testutil/PdfBuilder.java"><code>PdfBuilder</code></a>. This method will create a new <code>Remark</code> for the pdf that it is currently building.</p>
 </li>
 <li>
-<p>Try and use the method on any sample <code>Pdf</code> in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/seedu/pdf/testutil/TypicalPdfs.java"><code>TypicalPdfs</code></a>.</p>
+<p>Try and use the method on any sample <code>Pdf</code> in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/pdf/testutil/TypicalPdfs.java"><code>TypicalPdfs</code></a>.</p>
 </li>
 </ol>
 </div>
@@ -3757,7 +3757,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-7-ui-connect-code-remark-code-field-to-code-pdfcard-code"><a class="link" href="#step-7-ui-connect-code-remark-code-field-to-code-pdfcard-code">[Step 7] Ui: Connect <code>Remark</code> field to <code>PdfCard</code></a></h5>
 <div class="paragraph">
-<p>Our remark label in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/PdfCard.java"><code>PdfCard</code></a> is still a placeholder. Let&#8217;s bring it to life by binding it with the actual <code>remark</code> field.</p>
+<p>Our remark label in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/PdfCard.java"><code>PdfCard</code></a> is still a placeholder. Let&#8217;s bring it to life by binding it with the actual <code>remark</code> field.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -3765,7 +3765,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/ui/PdfCard.java"><code>PdfCard</code></a>'s constructor to bind the <code>Remark</code> field to the <code>Pdf</code> 's remark.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/PdfCard.java"><code>PdfCard</code></a>'s constructor to bind the <code>Remark</code> field to the <code>Pdf</code> 's remark.</p>
 </li>
 </ol>
 </div>
@@ -3775,7 +3775,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/test/java/seedu/pdf/ui/testutil/GuiTestAssert.java"><code>GuiTestAssert#assertCardDisplaysPdf(&#8230;&#8203;)</code></a> so that it will compare the now-functioning remark label.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/pdf/ui/testutil/GuiTestAssert.java"><code>GuiTestAssert#assertCardDisplaysPdf(&#8230;&#8203;)</code></a> so that it will compare the now-functioning remark label.</p>
 </li>
 </ol>
 </div>
@@ -4313,7 +4313,7 @@ Expected: The most recent window size and directory is retained.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Adding an actual pdf file that is on local device</p>
+<p>Adding an actual pdf file that is on the local device</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -4348,7 +4348,7 @@ Note that the file path various for Operating Systems and devices.</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
-<p>Expected: No pdf is added. Error details shown in the status message. Status bar remains the same.</p>
+<p>Expected: No pdf is added. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 </ol>
 </div>
@@ -4368,20 +4368,20 @@ Note that the file path various for Operating Systems and devices.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system. The sort command works even for an empty list.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exist in the system. The sort command works even for an empty list.</p>
 </li>
 <li>
 <p>Test case: <code>sort name up</code><br>
-Expected: The list of pdfs will be sorted according to name in an ascending order.</p>
+Expected: The list of pdfs will be sorted according to name in ascending order.</p>
 </li>
 <li>
-<p>Other correct sort commands to try: <code>sort name down</code> (sort the list by name in an descending order), <code>sort size up</code> (sort the list by size in an
-ascending order), <code>sort size down</code> (sort the list by size in an descending order), <code>sort deadline up</code> (sort the list by deadline in an ascending order),
-<code>sort deadline down</code> (sort the list by deadline in an descending order).</p>
+<p>Other correct sort commands to try: <code>sort name down</code> (sort the list by name in descending order), <code>sort size up</code> (sort the list by size in
+ascending order), <code>sort size down</code> (sort the list by size in descending order), <code>sort deadline up</code> (sort the list by deadline in ascending order),
+<code>sort deadline down</code> (sort the list by deadline in descending order).</p>
 </li>
 <li>
 <p>Test case: <code>sort invalidOperation up</code><br>
-Expected: The list of pdfs is not sorted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: The list of pdfs is not sorted. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect sort commands to try: <code>sort name wrongCriteria</code> (the order is wrong), <code>sort name</code> (sort order is not specified),
@@ -4395,7 +4395,7 @@ Expected: The list of pdfs is not sorted. Error details shown in the status mess
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>move 1</code><br>
@@ -4408,7 +4408,7 @@ Expected: The pdf is moved to the new directory. Details of the deleted pdf show
 </li>
 <li>
 <p>If the directory indicated is same from the current directory of the pdf<br>
-Expected: The first pdf is not moved. Error details shown in the status message. Status bar remains the same.</p>
+Expected: The first pdf is not moved. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 </ol>
 </div>
@@ -4423,7 +4423,7 @@ Expected: The pdf is moved to the new directory. Details of the deleted pdf show
 </li>
 <li>
 <p>If the directory indicated is same from the current directory of the pdf<br>
-Expected: The first pdf is not moved. Error details shown in the status message. Status bar remains the same.
+Expected: The first pdf is not moved. Error details are shown in the status message. Status bar remains the same.
 Expected: The first pdf is moved to the new directory. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 </ol>
@@ -4431,7 +4431,7 @@ Expected: The first pdf is moved to the new directory. Details of the deleted pd
 </li>
 <li>
 <p>Test case: <code>move d/validPathToDirectory</code>
-Expected: No pdf is moved. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No pdf is moved. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect move commands to try: <code>move</code>, <code>move 1 d/</code> (no directory specified), <code>move 1 validPathToDirectory</code> (no directory prefix),
@@ -4453,7 +4453,7 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>open 1</code><br>
@@ -4461,7 +4461,7 @@ Expected: The first pdf is opened using the system default PDFReader. Details of
 </li>
 <li>
 <p><code>open 0</code><br>
-Expected: No pdf is open. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No pdf is open. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect open commands to try: <code>open</code>, <code>open x</code> (where x is larger than the list size), <code>open y</code> (where y is any negative number) <br>
@@ -4478,7 +4478,7 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdfs in the list are uncorrupted and they exists in the system.</p>
+<p>Prerequisites: The pdfs in the list are uncorrupted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>rename 1 n/newName.pdf</code><br>
@@ -4486,7 +4486,7 @@ Expected: First pdf is renamed to <code>newName.pdf</code>. Details of the updat
 </li>
 <li>
 <p>Test case: <code>rename 1 n/pdf</code><br>
-Expected: First pdf is not renamed. Error details shown in the status message. Status bar remains the same.</p>
+Expected: First pdf is not renamed. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect rename commands to try: <code>rename 1 validName.pdf</code> (no prefix), <code>rename x n/validName.pdf</code>(where x is larger than the list size),
@@ -4505,7 +4505,7 @@ Expected: First pdf is not renamed. Error details shown in the status message. S
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>tag 1 -a t/SEROCKS</code><br>
@@ -4522,7 +4522,7 @@ Expected: Similar to previous.</p>
 <ol class="lowerroman" type="i">
 <li>
 <p>If the tag does not exists:<br>
-Expected: The pdf is not tagged. Error details shown in the status message. Status bar remains the same.</p>
+Expected: The pdf is not tagged. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>If the tag exists:<br>
@@ -4533,7 +4533,7 @@ Expected: First pdf&#8217;s tag is removed. Details of the updated pdf shown in 
 </li>
 <li>
 <p>Test case: <code>tag 1 -r SEROCKS</code><br>
-Expected: The pdf is not tagged. Error details shown in the status message. Status bar remains the same.</p>
+Expected: The pdf is not tagged. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect tag commands to try: <code>tag 1 -x t/SEROCKS</code> (invalid operation), <code>tag 1 -a t/</code> (no tag specified)<br>
@@ -4562,7 +4562,7 @@ Expected: First pdf is deleted from the list. Details of the deleted pdf shown i
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No pdf is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No pdf is deleted. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size), <code>delete y</code> (where y is any negative number) <br>
@@ -4583,7 +4583,7 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>move 1</code><br>
@@ -4596,7 +4596,7 @@ Expected: The pdf is moved to the new directory. Details of the deleted pdf show
 </li>
 <li>
 <p>If the directory indicated is same from the current directory of the pdf<br>
-Expected: The first pdf is not moved. Error details shown in the status message. Status bar remains the same.</p>
+Expected: The first pdf is not moved. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 </ol>
 </div>
@@ -4611,7 +4611,7 @@ Expected: The pdf is moved to the new directory. Details of the deleted pdf show
 </li>
 <li>
 <p>If the directory indicated is same from the current directory of the pdf<br>
-Expected: The first pdf is not moved. Error details shown in the status message. Status bar remains the same.
+Expected: The first pdf is not moved. Error details are shown in the status message. Status bar remains the same.
 Expected: The first pdf is moved to the new directory. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 </ol>
@@ -4619,7 +4619,7 @@ Expected: The first pdf is moved to the new directory. Details of the deleted pd
 </li>
 <li>
 <p>Test case: <code>move d/validPathToDirectory</code>
-Expected: No pdf is moved. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No pdf is moved. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect move commands to try: <code>move</code>, <code>move 1 d/</code> (no directory specified), <code>move 1 validPathToDirectory</code> (no directory prefix),
@@ -4641,7 +4641,7 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>deadline 1 date/14-4-2019</code><br>
@@ -4652,7 +4652,7 @@ Expected: The first pdf is set with deadline 14-4-2019. Details of the edited pd
 </li>
 <li>
 <p>Test case: <code>deadline 1 date/20-20-2019</code><br>
-Expected: No deadline is set to the first pdf. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No deadline is set to the first pdf. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect deadline commands to try: <code>deadline x date/4-4-2019</code> (where x is larger than the list size), <code>deadline y date/4-4-2019</code>
@@ -4673,7 +4673,7 @@ Expected: No deadline is set to the first pdf. Error details shown in the status
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>filter t/SEROCKS</code><br>
@@ -4702,7 +4702,7 @@ Expected: An empty list will be displayed.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>find algorithm</code><br>
@@ -4714,7 +4714,7 @@ Expected: All pdfs with at least one of the keywords as the name and in the file
 </li>
 <li>
 <p>Test case: <code>find</code><br>
-Expected: No pdf is filtered. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No pdf is filtered. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 </ol>
 </div>
@@ -4731,7 +4731,7 @@ Expected: No pdf is filtered. Error details shown in the status message. Status 
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted, unencrypted and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted, unencrypted and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>encrypt 1 password/anyValidPassword</code><br>
@@ -4739,7 +4739,7 @@ Expected: The first pdf will be encrypted with the password <code>anyValidPasswo
 </li>
 <li>
 <p>Test case: <code>encrypt 1 password/</code><br>
-Expected: The first pdf is not encrypted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: The first pdf is not encrypted. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect encrypt commands to try: <code>encrypt 1 anyValidPassword</code> (no prefix), <code>encrypt 1 p/anyValidPassword</code> (wrong prefix),
@@ -4761,7 +4761,7 @@ Expected: The first pdf is not encrypted. Error details shown in the status mess
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted, protected and they exists in the system.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted, protected and they exist in the system.</p>
 </li>
 <li>
 <p>Test case: <code>decrypt 1 password/anyValidPassword</code><br>
@@ -4769,7 +4769,7 @@ Expected: The first pdf will be encrypted with the password <code>anyValidPasswo
 </li>
 <li>
 <p>Test case: <code>decrypt 1 password/</code><br>
-Expected: The first pdf is not encrypted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: The first pdf is not encrypted. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect decrypt commands to try: <code>decrypt 1 anyValidPassword</code> (no prefix), <code>decrypt 1 p/anyValidPassword</code> (wrong prefix),
@@ -4791,7 +4791,7 @@ Expected: The first pdf is not encrypted. Error details shown in the status mess
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The pdf files in the list are uncorrupted, unpotected and they exists in the system, and at least 2 indexes are specified.</p>
+<p>Prerequisites: The pdf files in the list are uncorrupted, unprotected and they exist in the system, and at least 2 indexes are specified.</p>
 </li>
 <li>
 <p>Test case: <code>merge 1 2</code><br>
@@ -4803,7 +4803,7 @@ Expected: The first pdf is merged 5 times into 1 pdf and the merged pdf is added
 </li>
 <li>
 <p>Test case: <code>merge 0</code><br>
-Expected: No merged pdf is produced. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No merged pdf is produced. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect merge commands to try: <code>merge 1</code>, (only 1 index is specified), <code>merge 1 x</code> (where x is larger than the list size),
@@ -4848,4 +4848,4 @@ the application</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 14:43:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:18:42 UTC</div></div></div></body></html>
