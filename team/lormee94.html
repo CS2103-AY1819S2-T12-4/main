@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Jeremy Low - Portfolio for PDF++</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><meta name="author" content="Jeremy Low"><title>Jeremy Low - Portfolio for PDF++</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">PDF++</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-T12-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jeremy Low - Portfolio for <strong><em>PDF++</em></strong></h1></div><div id="content"><div class="sect1">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">PDF++</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-T12-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jeremy Low - Portfolio for <strong><em>PDF++</em></strong></h1><div class="details"><span class="author" id="author">Jeremy Low</span><br></div></div><div id="content"><div class="sect1">
 <h2 id="the-project"><a class="link" href="#the-project">The Project</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -14,9 +14,9 @@ its main specialty. It is mainly a CLI (Command Line Interface) application i.e.
 through typing the desired command in the input line provided. However, several commands also allow for
 input through a GUI (Graphical User Interface), where the user is able to click on the desired input.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/images/Ui.png" alt="Ui" width="600">
+<img src="../images/Ui.png" alt="Ui" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -50,11 +50,11 @@ application to so that a new file is created with the merged content.</p>
 <li>
 <p>Justification: Merging PDF files is highly utilised, especially by students or
 users handling numerous documentations. However, merging of PDF files is usually a
-service provided by paid versions of PDF managers.</p>
+service provided by paid versions of PDF managers or other external online services.</p>
 </li>
 <li>
 <p>Highlight: Merging can be done quickly through the application, without the
-inconvenience of relying on other software and third-party online services to do it.</p>
+inconvenience of relying on other software and online services to do it.</p>
 </li>
 <li>
 <p>Credits: <a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a>
@@ -65,17 +65,21 @@ inconvenience of relying on other software and third-party online services to do
 </div>
 </li>
 <li>
-<p><span class="big"><code>find</code></span> command</p>
+<p><span class="big"><code>find</code></span> command optimisation</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Description: I added the ability to find files based on</p>
+<p>Description: Based on the originial ability of
+<a href="https://github.com/se-edu/addressbook-level4">addressbook</a> to find files based on name fully matching search keyword,
+I added the ability to find files based on partial matching of file name, as well as matching of any text content within the file.</p>
 </li>
 <li>
-<p>Justification:</p>
+<p>Justification: <strong><em>PDF&#43;&#43;</em></strong> is intended to be complete replacement for managing files. For finding a file on most other
+filesystems, the full name of the file is not required, hence it should also be made the same for the application. Additionally, users
+should be able to find for files based on the content, which can be helpful in refine the scope of the search and make it more accurate.</p>
 </li>
 <li>
-<p>Highlight:</p>
+<p>Highlight: Similar to a Google search engine, finding of files becomes faster!</p>
 </li>
 <li>
 <p>Credits: <a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a>
@@ -104,34 +108,67 @@ manually navigating to the directory to move the file.</p>
 </ul>
 </div>
 </li>
-<li>
-<p><span class="big"><code>delete</code></span> command</p>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
 <div class="ulist">
 <ul>
 <li>
-<p>Description:</p>
+<p><span class="big"><code>filter</code></span> command</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Description: I added the ability to filter files within the application based on the file tag(s) specified.</p>
 </li>
 <li>
-<p>Justification:</p>
+<p>Justification: For files that are tagged, it is necessary to have a means to use the tags as identification - if not
+then tags would be purely aesthetic!</p>
 </li>
 <li>
-<p>Highlight:</p>
+<p>Highlight: Filtering files by tag allows you to group files strategically within the application, which would make file
+management much more convenient.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><span class="big"><code>sort</code></span> command</p>
+<p><span class="big"><code>delete</code></span> command optimisation</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Description:</p>
+<p>Description: Based on the original ability of
+<a href="https://github.com/se-edu/addressbook-level4">addressbook</a> to delete files recorded within the application (but not actually deleting
+he file from the local filesystem), I upgraded it so that there is an option for the user to delete the file both from
+the application as well as from the local filesystem.</p>
 </li>
 <li>
-<p>Justification:</p>
+<p>Justification: <strong><em>PDF&#43;&#43;</em></strong> is intended to be complete replacement for managing files. From a user perspective,
+the intention behind deleting a file might be to remove the file completely. Otherwise, the user might encounter additional
+inconvenience e.g. deleting a file to create a new file of the same name, only to be unable to because the old file is still
+physically present.</p>
 </li>
 <li>
-<p>Highlight:</p>
+<p>Highlight: There is flexibility in how you want to delete a file from the application, as well as the convenience of using CLI which
+has the potential to be faster than clicking on the file directly.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="big"><code>sort</code></span> command optimisation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Description: Based on the original ability of
+<a href="https://github.com/se-edu/addressbook-level4">addressbook</a> to sort the files based on ascending order of name, I upgraded
+it so that the user can specify if the sort should be done in ascending or descending order.</p>
+</li>
+<li>
+<p>Justification: It is an implicit requirement that sorting features should have the flexibility for sorting to be done in either
+ascending or descending order.</p>
+</li>
+<li>
+<p>Highlight: Sorting ability becomes more robust and gives the user the flexbility to sort as desired.</p>
 </li>
 </ul>
 </div>
@@ -142,12 +179,101 @@ manually navigating to the directory to move the file.</p>
 <div class="sect2">
 <h3 id="code-contributions"><a class="link" href="#code-contributions">Code contributions:</a></h3>
 <div class="paragraph">
-<p>Please click these links to see samples of my code: TO ADD</p>
+<p>Please click on any of these links to see samples of my code:<br>
+<a href="https://github.com/CS2103-AY1819S2-T12-4/main/pull/191">(v1.4) Merge command</a><br>
+<a href="https://github.com/CS2103-AY1819S2-T12-4/main/pull/161">(v1.3) Upgrade find command</a><br>
+<a href="https://github.com/CS2103-AY1819S2-T12-4/main/pull/168">(v1.3) Filter command</a></p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
 <h3 id="documentation-design-contributions"><a class="link" href="#documentation-design-contributions">Documentation / Design contributions:</a></h3>
-
+<div class="ulist">
+<ul>
+<li>
+<p>Developer Guide</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added detailed documentation for the following sections under <strong>Implementation</strong> to give a comprehensive view
+of the feature design, execution process, as well as any additional design considerations:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Merge Feature</em></p>
+</li>
+<li>
+<p><em>Move Feature</em></p>
+</li>
+<li>
+<p><em>Open Feature</em></p>
+</li>
+<li>
+<p><em>Delete Feature</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Created UML Activity Diagrams for the following sections under <strong>Implementation</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Merge Feature</em></p>
+</li>
+<li>
+<p><em>Add Feature</em></p>
+</li>
+<li>
+<p><em>Rename Feature</em></p>
+</li>
+<li>
+<p><em>Encrypt Feature</em></p>
+</li>
+<li>
+<p><em>Decrypt Feature</em></p>
+</li>
+<li>
+<p><em>Clear Feature</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Created UML Sequence Diagram for the <em>Merge Feature</em> section under <strong>Implementation</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>User Guide</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added a step by step walkthrough to guide the user through merging of files. The walkthrough
+includes detailed instructions as well as visual aids of the application interface.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="minor-contributions"><a class="link" href="#minor-contributions">Minor contributions:</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Set up <a href="https://github.com/reposense/RepoSense">RepoSense</a> configuration for the team on our GitHub repository.</p>
+</li>
+<li>
+<p>Integrated a third-party library
+<a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox®</em></a> to the project which allowed for additional features to be performed on PDF files
+(e.g. reading of content, merging multiple files).</p>
+</li>
+</ul>
+</div>
+<hr>
 </div>
 </div>
 </div>
@@ -155,7 +281,7 @@ manually navigating to the directory to move the file.</p>
 <h2 id="contributions-to-developer-guide"><a class="link" href="#contributions-to-developer-guide">Contributions to Developer Guide</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following section are excerpts from my additions to the <strong><em>PDF&#43;&#43;</em> Developer Guide</strong>:</p>
+<p>The following sections are excerpts from my additions to the <strong><em>PDF&#43;&#43;</em> Developer Guide</strong> (continued next page):</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -164,204 +290,242 @@ manually navigating to the directory to move the file.</p>
 <p><span class="big"><strong>Current Implementation</strong></span></p>
 </div>
 <div class="paragraph">
-<p>The merge function utilises the
+<p>The <code>merge</code> feature is facilitated by both <strong>MergeCommand</strong> and <strong>MergeCommandParser</strong>.
+This feature utilises the
 <a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a>, specifically the
 <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a>
 API to append two or more PDFs and create a new file with the merged content. As there will be one
-additional file added to the application, this feature also implicitly performs an <code>Add</code> feature to add the new
+additional file added to the application, this feature also implicitly performs the <span class="big"><code>add</code></span> feature to add the new
 PDF to the application.</p>
 </div>
 <div class="paragraph">
-<p>The Merge feature has the following syntax:</p>
+<p>The implementation of the <strong>MergeCommand</strong> execution can be summarised in the following activity diagram:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/MergeCommandActivityDiagram.png" alt="MergeCommandActivityDiagram" width="530">
+</div>
+<div class="title">Figure 1. Merge Command Activity Diagram</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The provided indices are checked to be valid i.e. referring to a specific Pdf in the PdfBook.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If there is at least one invalid index, a <strong>CommandException</strong> will be thrown and the execution will be ended.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The required Pdfs are retrieved from the PdfBook based on indices.</p>
+</li>
+<li>
+<p>A File object is created for each Pdf which allows file operations to be performed on the Pdf.</p>
+</li>
+<li>
+<p><a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a> is created. The directory must be set for the merged file prior to merging,
+which also includes the name of the file. By default, the directory of the Pdf based on first index  is used.</p>
+</li>
+<li>
+<p>A unique name is created for the merged file and combined with the aforementioned directory to create the full directory for the merged file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>To avoid issues with duplicate name at the directory, the name is created based on hash code. The created name will also be verified unique at the directory - and changed if necessary.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The Files will be loaded as <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/pdmodel/PDDocument.html"><em>PDDocument</em></a>,
+which is an indicator if the application can perform other operations on the Pdf that need it to be handled as a <code>.pdf</code> file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Errors in accessing Pdf would throw <strong>IOException</strong>. Errors would most likely be due to:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>File not found at location</p>
+</li>
+<li>
+<p>Lack of user permissions to open file</p>
+</li>
+<li>
+<p>File has encryption</p>
+</li>
+<li>
+<p>File corruption</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Thrown <strong>IOException</strong> is intercepted, a <strong>CommandException</strong> will be thrown and the execution will be ended.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The Files are added to the PDFMergerUtility.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Errors in adding to PDFMergerUtility would throw <strong>IOException</strong>. The cause for error would be similar to above.</p>
+</li>
+<li>
+<p>Thrown <strong>IOException</strong> is intercepted, a <strong>CommandException</strong> will be thrown and the execution will be ended.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>All loaded <strong>PDDocument</strong> are closed.</p>
+</li>
+<li>
+<p>A new Pdf is created to represented the merged file created.</p>
+</li>
+<li>
+<p>The Pdf is recorded in the Model and the changes are committed.</p>
+</li>
+<li>
+<p><strong>CommandResult</strong> is returned upon successful execution.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p><code>merge</code> &lt;INDEX1&gt; &lt;INDEX2&gt; &#8230;&#8203;</p>
+<p>This sequence diagram demonstrates the interactions involved from start of <strong>MergeCommandParser</strong> to end of <strong>MergeCommand</strong> execution:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to merge.</p>
-</li>
-<li>
-<p>Minimum of two indices have to be provided for the merge to be performed, up to as many
-indices as desired.</p>
-</li>
-<li>
-<p>It is possible to repeat an index; the PDF would simply merge with a copy of itself.</p>
-</li>
-</ul>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/MergeCommandSequenceDiagram.png" alt="MergeCommandSequenceDiagram" width="650">
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The index value can be referenced from the list in the main application, or from the
-result of the <code>Filter</code>, <code>Find</code> or <code>List</code> feature.
-</td>
-</tr>
-</table>
+<div class="title">Figure 2. Merge Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p><span class="big"><strong>Feature breakdown</strong></span></p>
+<p><span class="big"><strong>Considerations</strong></span></p>
+</div>
+<div class="paragraph">
+<p>The default directory of the merged file is currently set to the directory of the first index of the files to be merged. There were considerations to make flexibility in the merge command input
+to allow for the user to specify the desired directory of the merged file. As the current version of <strong><em>PDF++</em></strong> is focused on a working product, it was decided to simplify the command to focus on
+the merge operation. Users can also make use of <span class="big"><code>move</code></span> feature to move the file; such implementation is more intuitive if the user is going to be using the application for everyday needs.</p>
+</div>
+<div class="paragraph">
+<p>For the merging of files, the current implementation involves adding all files to a single <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a>
+to merge together. One alternative to merging multiple files would be to create a separate <strong>PDFMergerUtility</strong> for every pair of files and merge the content recursively into a final merged file. The
+advantage of this would be better stability in performance when merging multiple large files as there will be lesser workload on each <strong>PDFMergerUtility</strong>. However, this would undoubtedly cause the performance
+to be slower as more merge operations are done overall. As the case of instability occurs only in very large files, it was decided to go with focus on performance.</p>
+</div>
+<div class="paragraph">
+<p><span class="big"><strong>Future Implementation</strong></span></p>
+</div>
+<div class="paragraph">
+<p>There are performance issues encountered when performing the merge operations with many files of large size. In future versions, the merge operation has to not only ensure
+performance but stability as well. By v2.0, the merging will be able to support larger files without any concern for the application to freeze or crash while merging.
+Currently, there are no means to make the merging operation perform faster due to the merging operation being performed through the
+<a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a> API.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uml-diagrams"><a class="link" href="#uml-diagrams">UML Diagrams</a></h3>
+<div class="sect3">
+<h4 id="add-command-activity-diagram"><a class="link" href="#add-command-activity-diagram">Add Command Activity Diagram</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddCommandActivityDiagram.png" alt="AddCommandActivityDiagram" width="550">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect3">
+<h4 id="rename-command-activity-diagram"><a class="link" href="#rename-command-activity-diagram">Rename Command Activity Diagram</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/RenameCommandActivityDiagram.png" alt="RenameCommandActivityDiagram" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="encrypt-command-activity-diagram"><a class="link" href="#encrypt-command-activity-diagram">Encrypt Command Activity Diagram</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EncryptCommandActivityDiagram.png" alt="EncryptCommandActivityDiagram" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="open-command-activity-diagram"><a class="link" href="#open-command-activity-diagram">Open Command Activity Diagram</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/OpenCommandActivityDiagram.png" alt="OpenCommandActivityDiagram" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="merge-command-activity-sequence-diagrams"><a class="link" href="#merge-command-activity-sequence-diagrams">Merge Command Activity &amp; Sequence Diagrams</a></h4>
+<div class="paragraph">
+<p>The aforementioned diagrams have been included in <a href="#Documentation">[Documentation]</a> above respectively under <strong>Merge Feature</strong>.</p>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-user-guide"><a class="link" href="#contributions-to-user-guide">Contributions to User Guide</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is an excerpt from my additions to the <strong><em>PDF&#43;&#43;</em> User Guide</strong> (continued next page):</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Merging Files: <code>merge</code></div>
+<div class="paragraph">
+<p><span class="big"><strong>Step-By-Step Guide</strong></span></p>
 </div>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the <code>merge</code> feature.</p>
 </div>
 <div class="paragraph">
-<p>Step 1: From the main interface of the application, the user chooses the file(s) that
-they wish to merge, and enters the <code>merge</code> command into the CLI Interface, following
-the outlined Syntax as illustrated below.</p>
+<p>Step 1: Launch the application by double clicking the <code>pdfplusplus.jar</code>. To view the following screen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Files you observe may be different and depends on the actions you have previously carried out on our application
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 2: From the main interface of the application, the user chooses the file(s) that
+they wish to merge, and enters the <code>merge</code> command into the <strong>TI</strong>, following
+the outlined syntax as illustrated below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/MergeFeatureStep1.png" alt="MergeFeatureStep1" width="600">
 </div>
+<div class="title">Figure 3. Merge Command Step 2</div>
 </div>
 <div class="paragraph">
-<p>Step 2: After executing the command, the <code>MergeCommandParser</code> parses the input into
-relevant objects that are required to be executed by the <code>MergeCommand</code> object. In
-particular, it ensures that there are two or more arguments passed as described in the
-above Syntax. Upon parsing, the parser then creates a new <code>MergeCommand</code> that will execute
-the user&#8217;s input.</p>
+<p>Step 3: After executing the command, the above two files will be merged, with the <em>"CS2103T_PDF++_UG_Intro.pdf"</em>
+file attached behind your other selected file.</p>
 </div>
 <div class="paragraph">
-<p>In this case, the above two files will be merged, with the <em>"CS2103T_PDF++_UG_Intro.pdf"</em>
-file appended behind the other file.</p>
-</div>
-<div class="paragraph">
-<p>Step 3: The <code>MergeCommand</code> is then executed. Successful execution
-of the command would return a <strong>CommandResult</strong> object and create the a new file with the merged
-content, while unsuccessful execution due to validation failure will throw a <strong>CommandException</strong>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/MergeCommandActivityDiagram.png" alt="MergeCommandActivityDiagram" width="600">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The new name of the merged file follows the format: "merged[hashcode].pdf". This is to ensure
-unique file name. The hashcode in the name will be modified if name already exists.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Move Feature</div>
-<div class="paragraph">
-<p><span class="big"><strong>Current Implementation</strong></span></p>
-</div>
-<div class="paragraph">
-<p>The move feature functions as a simplified version of the <code>Edit</code> feature, as in nature
-it is making an edit to the directory of the file. However, in addition to making changes
-to the directory in the application storage, it also ensures that the directory changes
-are reflected in the local filesystem.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The design consideration into separating move as a new command from edit factored in the
-purpose of the application; as a document manager, the term "edit" is synonymous with
-making content or characteristic changes when it is applied in the context of documents.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The Move feature has the following syntax:</p>
-</div>
-<div class="paragraph">
-<p><code>move</code></p>
-</div>
-<div class="paragraph">
-<p><code>move &lt;INDEX&gt; &lt;NEWDIRECTORY&gt;</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to move.</p>
-</li>
-<li>
-<p><code>&lt;NEWDIRECTORY&gt;</code> refers to the address of the new location the file is to be moved.</p>
-</li>
-<li>
-<p>Entering <code>move</code> without <code>&lt;INDEX&gt;</code> or  <code>&lt;NEWDIRECTORY&gt;</code> will open the default file
-selection GUI for the user to select the file directly.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The index value can be referenced from the list in the main application, or from the
-result of the <code>Filter</code>, <code>Find</code> or <code>List</code> feature.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>All parts of the syntax are required.</p>
-</div>
-<div class="paragraph">
-<p><span class="big"><strong>Feature breakdown</strong></span></p>
-</div>
-<div class="paragraph">
-<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
-workings of the <code>move</code> feature.</p>
-</div>
-<div class="paragraph">
-<p>Step 1: From the main interface of the application, the user chooses a <code>Pdf</code> that
-they wish to move, and enters the <code>move</code> command into the CLI Interface, following
-the outlined Syntax as illustrated below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/MoveFeatureStep1.png" alt="MoveFeatureStep1" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>In this scenario, there is a file <strong>document.pdf</strong> in the windows <em>Desktop</em> directory, and
-the <code>move</code> command entered is intended for the file to be moved to the windows <em>Documents</em>
-directory.</p>
-</div>
-<div class="paragraph">
-<p>Step 2: After executing the command, the <code>MoveCommandParser</code> parses the input into
-relevant objects that are required to be executed by the <code>MoveCommand</code> object. In
-particular, it ensures that there are correctly two arguments passed as described in the
-above Syntax. Upon parsing, the parser then creates a new <code>MoveCommand</code> that will execute
-the user&#8217;s input.</p>
-</div>
-<div class="paragraph">
-<p>Step 3: The <code>MoveCommand</code> is then executed. Successful execution of the command would return
-a <strong>CommandResult</strong> object, while unsuccessful execution due to validation failure will throw
-a <strong>CommandException</strong>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/MoveCommandActivityDiagram.png" alt="MoveCommandActivityDiagram" width="600">
+<p>Step 4: The <strong>MergeCommand</strong> is then executed. The new name of the merged file follows the format: "merged[hashcode].pdf",
+where hashcode is a random string of letters and numbers. This prevents any naming conflicts between files.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 14:42:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 14:43:23 UTC</div></div></div></body></html>
