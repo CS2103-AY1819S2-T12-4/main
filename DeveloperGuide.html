@@ -1292,10 +1292,24 @@ wish to revert the action, please refer to <a href="#Undo/Redo feature">[Undo/Re
 <div class="sect3">
 <h4 id="current-implementation-8"><a class="link" href="#current-implementation-8">4.8.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>deadline</code> feature is facilitated by both <strong>DeadlineCommand</strong> and <strong>DeadlineCommandParser</strong>
+<p>The <code>deadline</code> feature is facilitated by both <strong>Deadline</strong>, <strong>DeadlineCommand</strong> and <strong>DeadlineCommandParser</strong>
 This feature allows you to set or remove deadlines of the file specified by you from PDF++.
 The deadlines will be recorded and displayed both in the list of files as well as in the information panel
 for each individual file.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of the <strong>Deadline</strong> model can be represented in the following class diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeadlineClassDiagram.png" alt="DeadlineClassDiagram" width="200">
+</div>
+<div class="title">Figure 21. Deadline Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>A <strong>Deadline</strong> model has a <a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html"><em>Java.time.LocalDate</em></a>
+<code>date</code> attribute and a <code>boolean isDone</code>. The <code>date</code> is the date for the deadline assigned to the file, the <code>isDone</code> attribute
+evaluates to <code>true</code> if the deadline is set to be done, <code>false</code> if it is not done.</p>
 </div>
 <div class="paragraph">
 <p>The implementation of the <strong>DeadlineCommand</strong> execution can be summarised in the following activity diagram:</p>
@@ -1304,7 +1318,7 @@ for each individual file.</p>
 <div class="content">
 <img src="images/DeadlineCommandActivityDiagram.png" alt="DeadlineCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 21. Deadline Command Activity Diagram</div>
+<div class="title">Figure 22. Deadline Command Activity Diagram</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1369,7 +1383,7 @@ for each individual file.</p>
 <div class="content">
 <img src="images/DeadlineCommandSequenceDiagram.png" alt="DeadlineCommandSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 22. Deadline Command Sequence Diagram</div>
+<div class="title">Figure 23. Interactions Inside the Logic Component for the <code>deadline 1 done</code> Command</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1383,16 +1397,6 @@ remaining from the current day until the deadline date.
 </td>
 </tr>
 </table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeadlineClassDiagram.png" alt="DeadlineClassDiagram" width="200">
-</div>
-<div class="title">Figure 23. Deadline Class Diagram</div>
-</div>
-<div class="paragraph">
-<p>Step 1: From the main interface, the user chooses a file that they wish to set a deadline,
-enters the <code>deadline</code> command into the CLI Interface, following the outlined Syntax mentioned.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1525,7 +1529,7 @@ provided. Using the keyword(s), the application will check the names of all file
 well as the content of the text within the files prior to revealing the results.</p>
 </div>
 <div class="paragraph">
-<p>The <code>find</code> feature has to following syntax:</p>
+<p>The <code>find</code> feature has the following syntax:</p>
 </div>
 <div class="paragraph">
 <p>Format: <span class="big"><code>find &lt;KEYWORD&gt; &#8230;&#8203;</code></span></p>
@@ -1533,7 +1537,7 @@ well as the content of the text within the files prior to revealing the results.
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;KEYWORD&gt;</code> refers to the word that the application will use as reference to find
+<p><code>&lt;KEYWORD&gt;</code> refers to the word that the application will use as reference a to find
 files. There must be at least one provided.</p>
 </li>
 </ul>
@@ -1609,7 +1613,7 @@ files that the user wishes to view.</p>
 <p>Further checks are also done to confirm if each file&#8217;s name contains the <code>keyword</code> as well.</p>
 </li>
 <li>
-<p>The <code>model</code> then updates itself and stores the current actiion in the <code>history</code>.</p>
+<p>The <code>model</code> then updates itself and stores the current actiion in the <code>history</code> object.</p>
 </li>
 <li>
 <p>Finally, the <code>FindCommand</code> returns a <code>CommandResult</code> back to the <code>LogicManager</code> for follow up
@@ -1635,9 +1639,9 @@ as malicious users might simply utilize the <code>FindCommand</code> to extract 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A main issue with the current implementation of the <code>FindCommand</code> is it&#8217;s slow speeds with respect to
+<p>The main issue with the current implementation of the <code>FindCommand</code> is its slow speeds with respect to
 large files or files that contain a large string of text files. Hence, a possible consideration you might
-wish to improve upon is to "upgrade" this feature by improving it&#8217;s speed of this feature.</p>
+wish to improve upon is to "upgrade" this feature by improving its speed of this feature.</p>
 </li>
 <li>
 <p>Yet another enhancement to this feature you might wish to implement is the use of Optical Image Recognition,
@@ -4763,4 +4767,4 @@ the application</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 12:02:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 12:24:15 UTC</div></div></div></body></html>
