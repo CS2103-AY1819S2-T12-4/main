@@ -22,11 +22,12 @@
 <li><a href="#command-exit">3.10. Exiting the program : <code>exit</code></a></li>
 <li><a href="#command-select">3.11. Retrieving information about a file: <code>select</code></a></li>
 <li><a href="#command-deadline">3.12. Setting a deadline for the file : <code>deadline</code></a></li>
-<li><a href="#command-filter">3.13. Filter files by tags: <code>filter</code></a></li>
-<li><a href="#command-find">3.14. Finding Content: <code>find</code></a></li>
-<li><a href="#command-encdec">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
-<li><a href="#command-merge">3.16. Merging Files: <code>merge</code></a></li>
-<li><a href="#saving-the-data">3.17. Saving the data</a></li>
+<li><a href="#command-history">3.13. Referring to past commands: <code>History</code></a></li>
+<li><a href="#command-filter">3.14. Filter files by tags: <code>filter</code></a></li>
+<li><a href="#command-find">3.15. Finding Content: <code>find</code></a></li>
+<li><a href="#command-encdec">3.16. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
+<li><a href="#command-merge">3.17. Merging Files: <code>merge</code></a></li>
+<li><a href="#saving-the-data">3.18. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#command-summary">4. Command Summary</a></li>
@@ -653,7 +654,7 @@ illustrated below.</p>
 <div class="paragraph">
 <p>Step 3: If your inputs are deemed valid, the file is then
 effectively renamed within PDF++ and in your computer itself, thus resulting in an output
-as shown below.</p>
+that matches the image shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -915,7 +916,41 @@ The date must be in the format of dd-mm-yyyy.
 </div>
 </div>
 <div class="sect2">
-<h3 id="command-filter"><a class="link" href="#command-filter">3.13. Filter files by tags: <code>filter</code></a></h3>
+<h3 id="command-history"><a class="link" href="#command-history">3.13. Referring to past commands: <code>History</code></a></h3>
+<div class="paragraph">
+<p>The <code>history</code> command allows you to view the list of commands that are previously entered
+into the application.</p>
+</div>
+<div class="paragraph">
+<p><span class="big">Format: <code>history</code></span><br></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>history</code><br></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you previous command was <code>encrypt</code> or <code>decrypt</code>, the commands will not be saved to the
+application as part of a security concern. A malicious user could potentially refer to the
+history to get your password, hence the ability to refer back to these commands was removed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="command-filter"><a class="link" href="#command-filter">3.14. Filter files by tags: <code>filter</code></a></h3>
 <div class="paragraph">
 <p>The filter command shows you only the files that contain the tags specified in the <code>filter</code> command.<br></p>
 </div>
@@ -964,7 +999,7 @@ The date must be in the format of dd-mm-yyyy.
 </div>
 </div>
 <div class="sect2">
-<h3 id="command-find"><a class="link" href="#command-find">3.14. Finding Content: <code>find</code></a></h3>
+<h3 id="command-find"><a class="link" href="#command-find">3.15. Finding Content: <code>find</code></a></h3>
 <div class="paragraph">
 <p>The find command allows you to <code>find</code> for files that contain a keyword or phrase
 OR <code>find</code> files which contain the entered keyword or phrase inside it.</p>
@@ -992,8 +1027,22 @@ OR <code>find</code> files which contain the entered keyword or phrase inside it
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>find Author: George RR Martin</code> will not only search for the whole word but also parts of the word
+such as <code>George</code>, <code>RR</code>, <code>Martin</code> without regard for the upper or lowercase of the input text. Hence,
+a file with the word <code>correct</code> will also be flagged as containing <code>RR</code>.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
-<h4 id="steps-find"><a class="link" href="#steps-find">3.14.1. Step-By-Step Guide</a></h4>
+<h4 id="steps-find"><a class="link" href="#steps-find">3.15.1. Step-By-Step Guide</a></h4>
 <div class="paragraph">
 <p>If, for example, you wish to locate the files that contain the word <code>Introduction</code>
 in its name or files that contain the word <code>Introduction</code> in its internal content.
@@ -1097,7 +1146,7 @@ This will prevent any information about your secure files from being leaked to m
 </div>
 </div>
 <div class="sect2">
-<h3 id="command-encdec"><a class="link" href="#command-encdec">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
+<h3 id="command-encdec"><a class="link" href="#command-encdec">3.16. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
 <div class="paragraph">
 <p>PDF++ offers native support for file protection.
 The command <code>encrypt</code> allows you to protect your files with a password such that
@@ -1153,7 +1202,7 @@ interchangeably.
 for help in using these features.</p>
 </div>
 <div class="sect3">
-<h4 id="steps-encrypt"><a class="link" href="#steps-encrypt">3.15.1. Encryption Guide</a></h4>
+<h4 id="steps-encrypt"><a class="link" href="#steps-encrypt">3.16.1. Encryption Guide</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner workings
 of the Encrypt feature.</p>
@@ -1232,7 +1281,7 @@ You can open your file to see the result. Please refer to
 </div>
 </div>
 <div class="sect3">
-<h4 id="steps-decrypt"><a class="link" href="#steps-decrypt">3.15.2. Decryption Guide</a></h4>
+<h4 id="steps-decrypt"><a class="link" href="#steps-decrypt">3.16.2. Decryption Guide</a></h4>
 <div class="paragraph">
 <p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
 of the Decrypt feature.</p>
@@ -1315,7 +1364,7 @@ decrypts your file as shown below.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="command-merge"><a class="link" href="#command-merge">3.16. Merging Files: <code>merge</code></a></h3>
+<h3 id="command-merge"><a class="link" href="#command-merge">3.17. Merging Files: <code>merge</code></a></h3>
 <div class="paragraph">
 <p>With the <code>merge</code> command , you can merge two or more files into a new single file.</p>
 </div>
@@ -1380,7 +1429,7 @@ give the application some time to completely execute the operation.
 </table>
 </div>
 <div class="sect3">
-<h4 id="steps-merge"><a class="link" href="#steps-merge">3.16.1. Step-By-Step Guide</a></h4>
+<h4 id="steps-merge"><a class="link" href="#steps-merge">3.17.1. Step-By-Step Guide</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the <code>merge</code> feature.</p>
@@ -1422,7 +1471,7 @@ where hashcode is a random string of letters and numbers. This prevents any nami
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.17. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.18. Saving the data</a></h3>
 <div class="paragraph">
 <p>PDF++ data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -1491,7 +1540,10 @@ e.g <code>merge 1 2 1</code></p>
 e.g <code>sort name down</code>, <code>sort deadline up</code>, <code>sort size down</code></p>
 </li>
 <li>
-<p><a href="#command-help"><strong>Help</strong></a> : <code>help</code></p>
+<p><a href="#command-help"><strong>Help</strong></a> : <code>help</code><br></p>
+</li>
+<li>
+<p><a href="#command-history"><strong>History</strong></a> : <code>history</code><br></p>
 </li>
 <li>
 <p><a href="#command-exit"><strong>Exit</strong></a> : <code>exit</code></p>
@@ -1561,4 +1613,4 @@ We plan to allow you to use our application with file-types beyond <code>.pdf</c
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 12:24:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 13:58:11 UTC</div></div></div></body></html>
