@@ -44,8 +44,8 @@
 <li><a href="#sort-feature">4.15. Sort feature</a></li>
 <li><a href="#tag-feature">4.16. Tag feature</a></li>
 <li><a href="#history-feature">4.17. History feature</a></li>
-<li><a href="#undo-redo-feature-coming-in-v2-0">4.18. Undo/Redo feature [Coming in v2.0]</a></li>
-<li><a href="#file-protection">4.19. File Protection</a></li>
+<li><a href="#file-protection">4.18. File Protection</a></li>
+<li><a href="#undo-redo-feature-coming-in-v2-0">4.19. Undo/Redo feature [Coming in v2.0]</a></li>
 <li><a href="#logging">4.20. Logging</a></li>
 <li><a href="#Implementation-Configuration">4.21. Configuration</a></li>
 </ul>
@@ -2088,217 +2088,7 @@ of the application; each time the application is closed, the command history wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature-coming-in-v2-0"><a class="link" href="#undo-redo-feature-coming-in-v2-0">4.18. Undo/Redo feature [Coming in v2.0]</a></h3>
-<div class="sect3">
-<h4 id="current-implementation-18"><a class="link" href="#current-implementation-18">4.18.1. Current Implementation</a></h4>
-<div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedPdfBook</code>.
-It extends <code>PdfBook</code> with an undo/redo history, stored internally as an <code>pdfBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedPdfBook#commit()</code>&#8201;&#8212;&#8201;Saves the current pdf book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedPdfBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous pdf book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedPdfBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone pdf book state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitPdfBook()</code>, <code>Model#undoPdfBook()</code> and <code>Model#redoPdfBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedPdfBook</code> will be initialized with the initial pdf book state, and the <code>currentStatePointer</code> pointing to that single pdf book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
-</div>
-<div class="title">Figure 28. Undo / Redo Step 1</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th pdf in the pdf book. The <code>delete</code> command calls <code>Model#commitPdfBook()</code>, causing the modified state of the pdf book after the <code>delete 5</code> command executes to be saved in the <code>pdfBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted pdf book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
-</div>
-<div class="title">Figure 29. Undo / Redo Step 2</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new pdf. The <code>add</code> command also calls <code>Model#commitPdfBook()</code>, causing another modified pdf book state to be saved into the <code>pdfBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
-</div>
-<div class="title">Figure 30. Undo / Redo Step 3</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitPdfBook()</code>, so the pdf book state will not be saved into the <code>pdfBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the pdf was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoPdfBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous pdf book state, and restores the pdf book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
-</div>
-<div class="title">Figure 31. Undo / Redo Step 4</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial pdf book state, then there are no previous pdf book states to restore. The <code>undo</code> command uses <code>Model#canUndoPdfBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
-</div>
-<div class="title">Figure 32. Undo / Redo Sequence Diagram</div>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoPdfBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the pdf book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size() - 1</code>, pointing to the latest pdf book state, then there are no undone pdf book states to restore. The <code>redo</code> command uses <code>Model#canRedoPdfBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the pdf book, such as <code>list</code>, will usually not call <code>Model#commitPdfBook()</code>, <code>Model#undoPdfBook()</code> or <code>Model#redoPdfBook()</code>. Thus, the <code>pdfBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
-</div>
-<div class="title">Figure 33. Undo / Redo Step 5</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitPdfBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>pdfBookStateList</code>, all pdf book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
-</div>
-<div class="title">Figure 34. Undo / Redo Step 6</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
-</div>
-<div class="title">Figure 35. Undo / Redo Activity Diagram</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.18.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire pdf book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the pdf being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of pdf book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedPdfBook</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="file-protection"><a class="link" href="#file-protection">4.19. File Protection</a></h3>
+<h3 id="file-protection"><a class="link" href="#file-protection">4.18. File Protection</a></h3>
 <div class="paragraph">
 <p>PDF++ has a robust in-built file protection system which allows you to encrypt or decrypt any
 PDF files you want. These features utilises the
@@ -2320,12 +2110,12 @@ An <a href="#encrypted-file">[encrypted-file]</a> is a file that is protected wi
 </table>
 </div>
 <div class="paragraph">
-<p>You can visit <a href="#encryption-feature">Section 4.19.1, &#8220;Encryption feature&#8221;</a> and <a href="#decryption-feature">Section 4.19.2, &#8220;Decryption feature&#8221;</a> to understand more about the respective feature.</p>
+<p>You can visit <a href="#encryption-feature">Section 4.18.1, &#8220;Encryption feature&#8221;</a> and <a href="#decryption-feature">Section 4.18.2, &#8220;Decryption feature&#8221;</a> to understand more about the respective feature.</p>
 </div>
 <div class="sect3">
-<h4 id="encryption-feature"><a class="link" href="#encryption-feature">4.19.1. Encryption feature</a></h4>
+<h4 id="encryption-feature"><a class="link" href="#encryption-feature">4.18.1. Encryption feature</a></h4>
 <div class="sect4">
-<h5 id="current-implementation-19"><a class="link" href="#current-implementation-19">Current Implementation</a></h5>
+<h5 id="current-implementation-18"><a class="link" href="#current-implementation-18">Current Implementation</a></h5>
 <div class="paragraph">
 <p>The <code>encrypt</code> feature is facilitated by both <strong>EncryptCommand</strong> and <strong>EncryptCommandParser</strong>.</p>
 </div>
@@ -2336,7 +2126,7 @@ An <a href="#encrypted-file">[encrypted-file]</a> is a file that is protected wi
 <div class="content">
 <img src="images/EncryptCommandActivityDiagram.png" alt="EncryptCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 36. Encrypt Command Activity Diagram</div>
+<div class="title">Figure 28. Encrypt Command Activity Diagram</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2432,11 +2222,11 @@ are created. The password specified will be passed to <code>StandardProtectionPo
 <div class="content">
 <img src="images/EncryptCommandSequenceDiagram.png" alt="EncryptCommandSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 37. Encrypt Command Sequence Diagram</div>
+<div class="title">Figure 29. Encrypt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
 
 </div>
 <div class="sect4">
@@ -2449,7 +2239,7 @@ are created. The password specified will be passed to <code>StandardProtectionPo
 <ul>
 <li>
 <p>Due to security reasons, it was decided to focus on encrypting an unprotected Pdf.
-You will need to use <a href="#decryption-feature">Section 4.19.2, &#8220;Decryption feature&#8221;</a>
+You will need to use <a href="#decryption-feature">Section 4.18.2, &#8220;Decryption feature&#8221;</a>
 before encrypting it with a new password. This is to ensure your intent in changing the password,
 as the current version <strong>PDF++</strong> does not support <code>Forget Password</code> feature.</p>
 </li>
@@ -2484,7 +2274,7 @@ as the current version <strong>PDF++</strong> does not support <code>Forget Pass
 <p><a href="#history-feature">Section 4.17, &#8220;History feature&#8221;</a> will not show the executed <code>EncryptCommand</code> which includes the password of the file.</p>
 </li>
 <li>
-<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 4.18, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
+<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 4.19, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
 will not comprise your privacy has been found.</p>
 </li>
 <li>
@@ -2506,9 +2296,9 @@ If there is a mismatch of the two passwords entered, the command will not be exe
 </div>
 </div>
 <div class="sect3">
-<h4 id="decryption-feature"><a class="link" href="#decryption-feature">4.19.2. Decryption feature</a></h4>
+<h4 id="decryption-feature"><a class="link" href="#decryption-feature">4.18.2. Decryption feature</a></h4>
 <div class="sect4">
-<h5 id="current-implementation-20"><a class="link" href="#current-implementation-20">Current Implementation</a></h5>
+<h5 id="current-implementation-19"><a class="link" href="#current-implementation-19">Current Implementation</a></h5>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2516,7 +2306,7 @@ If there is a mismatch of the two passwords entered, the command will not be exe
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The current Implementation of <strong>DecryptCommand</strong> is very similar to <a href="#encryption-feature">Section 4.19.1, &#8220;Encryption feature&#8221;</a>.
+The current Implementation of <strong>DecryptCommand</strong> is very similar to <a href="#encryption-feature">Section 4.18.1, &#8220;Encryption feature&#8221;</a>.
 The part where it is implemented differently will be specifically marked with a <code>*</code> for your convenience.
 </td>
 </tr>
@@ -2532,7 +2322,7 @@ The part where it is implemented differently will be specifically marked with a 
 <div class="content">
 <img src="images/DecryptCommandActivityDiagram.png" alt="DecryptCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 38. Decrypt Command Activity Diagram</div>
+<div class="title">Figure 30. Decrypt Command Activity Diagram</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2609,11 +2399,11 @@ Common reasons of error are:</p>
 <div class="content">
 <img src="images/DecryptCommandSequenceDiagram.png" alt="DecryptCommandSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 39. Decrypt Command Sequence Diagram</div>
+<div class="title">Figure 31. Decrypt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
 
 </div>
 <div class="sect4">
@@ -2628,7 +2418,7 @@ Common reasons of error are:</p>
 <p><a href="#history-feature">Section 4.17, &#8220;History feature&#8221;</a> will not show the executed <code>EncryptCommand</code> which includes the password of the file.</p>
 </li>
 <li>
-<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 4.18, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
+<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 4.19, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
 will not comprise your privacy has been found.</p>
 </li>
 <li>
@@ -2655,6 +2445,208 @@ ensures that only you/any authorised personnel can decrypt your files.</p>
 <div class="paragraph">
 <p>In <strong>PDF++</strong> v2.0, the <strong>DecryptCommand</strong> will support for the 2FA feature as mentioned above.
 If this feature is highly demanded, this feature will be implemented to <strong>EncryptCommand</strong> too.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature-coming-in-v2-0"><a class="link" href="#undo-redo-feature-coming-in-v2-0">4.19. Undo/Redo feature [Coming in v2.0]</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-20"><a class="link" href="#current-implementation-20">4.19.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The undo/redo mechanism is facilitated by <code>VersionedPdfBook</code>.
+It extends <code>PdfBook</code> with an undo/redo history, stored internally as an <code>pdfBookStateList</code> and <code>currentStatePointer</code>.
+Additionally, it implements the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>VersionedPdfBook#commit()</code>&#8201;&#8212;&#8201;Saves the current pdf book state in its history.</p>
+</li>
+<li>
+<p><code>VersionedPdfBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous pdf book state from its history.</p>
+</li>
+<li>
+<p><code>VersionedPdfBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone pdf book state from its history.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitPdfBook()</code>, <code>Model#undoPdfBook()</code> and <code>Model#redoPdfBook()</code> respectively.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The <code>VersionedPdfBook</code> will be initialized with the initial pdf book state, and the <code>currentStatePointer</code> pointing to that single pdf book state.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th pdf in the pdf book. The <code>delete</code> command calls <code>Model#commitPdfBook()</code>, causing the modified state of the pdf book after the <code>delete 5</code> command executes to be saved in the <code>pdfBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted pdf book state.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new pdf. The <code>add</code> command also calls <code>Model#commitPdfBook()</code>, causing another modified pdf book state to be saved into the <code>pdfBookStateList</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a command fails its execution, it will not call <code>Model#commitPdfBook()</code>, so the pdf book state will not be saved into the <code>pdfBookStateList</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. The user now decides that adding the pdf was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoPdfBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous pdf book state, and restores the pdf book to that state.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial pdf book state, then there are no previous pdf book states to restore. The <code>undo</code> command uses <code>Model#canUndoPdfBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the undo operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoPdfBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the pdf book to that state.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size() - 1</code>, pointing to the latest pdf book state, then there are no undone pdf book states to restore. The <code>redo</code> command uses <code>Model#canRedoPdfBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the pdf book, such as <code>list</code>, will usually not call <code>Model#commitPdfBook()</code>, <code>Model#undoPdfBook()</code> or <code>Model#redoPdfBook()</code>. Thus, the <code>pdfBookStateList</code> remains unchanged.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitPdfBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>pdfBookStateList</code>, all pdf book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.19.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire pdf book.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the pdf being deleted).</p>
+</li>
+<li>
+<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of pdf book states.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+</li>
+<li>
+<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedPdfBook</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
+</li>
+<li>
+<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2764,7 +2756,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 40. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 32. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3281,7 +3273,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-tag-before.png" alt="getting started ui tag before" width="300">
 </div>
-<div class="title">Figure 41. UI Before Tag</div>
+<div class="title">Figure 33. UI Before Tag</div>
 </div>
 <div class="paragraph">
 <p><strong>After</strong></p>
@@ -3290,7 +3282,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-tag-after.png" alt="getting started ui tag after" width="300">
 </div>
-<div class="title">Figure 42. UI After Tag</div>
+<div class="title">Figure 34. UI After Tag</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -3346,7 +3338,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-result-before.png" alt="getting started ui result before" width="200">
 </div>
-<div class="title">Figure 43. Ui Before Result</div>
+<div class="title">Figure 35. Ui Before Result</div>
 </div>
 <div class="paragraph">
 <p><strong>After</strong></p>
@@ -3355,7 +3347,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-result-after.png" alt="getting started ui result after" width="200">
 </div>
-<div class="title">Figure 44. UI After Result</div>
+<div class="title">Figure 36. UI After Result</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -3424,7 +3416,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-status-before.png" alt="getting started ui status before" width="500">
 </div>
-<div class="title">Figure 45. UI Before Status</div>
+<div class="title">Figure 37. UI Before Status</div>
 </div>
 <div class="paragraph">
 <p><strong>After</strong></p>
@@ -3433,7 +3425,7 @@ Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-status-after.png" alt="getting started ui status after" width="500">
 </div>
-<div class="title">Figure 46. UI After Status</div>
+<div class="title">Figure 38. UI After Status</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -4764,4 +4756,4 @@ the application</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 13:58:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 14:10:09 UTC</div></div></div></body></html>
