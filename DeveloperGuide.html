@@ -491,7 +491,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SDforDeletePdf.png" alt="SDforDeletePdf" width="800">
+<img src="images/DeleteCommandSequenceDiagram.png" alt="DeleteCommandSequenceDiagram" width="800">
 </div>
 <div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
@@ -534,12 +534,25 @@ The following class plays an important role at the architecture level:</p>
 </td>
 <td class="content">
 As a more OOP model, we can store a <code>Tag</code> list in <code>Pdf Book</code>, which <code>Pdf</code> can reference. This would allow <code>Pdf Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Pdf</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
-<br>
-.OOP Diagram
-<span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
 </td>
 </tr>
 </table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800">
+</div>
+<div class="title">Figure 8. OOP Diagram</div>
+</div>
+<div class="paragraph">
+<p>The Pdf Class Diagram below shows the structure of the Pdf class,
+which is the most used class throughout the application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PdfClassDiagram.png" alt="PdfClassDiagram" width="300">
+</div>
+<div class="title">Figure 9. Pdf Class Diagram</div>
 </div>
 </div>
 <div class="sect2">
@@ -548,7 +561,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Pdf Book</cod
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 10. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-T12-4/main/src/main/java/seedu/pdf/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -609,7 +622,7 @@ are added to the application.</p>
 <div class="content">
 <img src="images/AddCommandActivityDiagram.png" alt="AddCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 9. Add Command Activity Diagram</div>
+<div class="title">Figure 11. Add Command Activity Diagram</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -740,7 +753,7 @@ new sample set of <code>Pdf</code> stored within as shown below.</p>
 <div class="content">
 <img src="images/OpenFeatureStep1Default.png" alt="OpenFeatureStep1Default" width="600">
 </div>
-<div class="title">Figure 10. Step 1</div>
+<div class="title">Figure 12. Step 1</div>
 </div>
 <div class="paragraph">
 <p>Step 2: The user chooses a <code>Pdf</code> that they wish to open, in this case <code>a.pdf</code>, and
@@ -751,7 +764,7 @@ illustrated below.</p>
 <div class="content">
 <img src="images/OpenFeatureStep2UserInput.png" alt="OpenFeatureStep2UserInput" width="600">
 </div>
-<div class="title">Figure 11. Step 2</div>
+<div class="title">Figure 13. Step 2</div>
 </div>
 <div class="paragraph">
 <p>Step 3: Upon hitting enter to execute the command, the <strong>OpenCommandParser</strong> parses
@@ -768,7 +781,7 @@ with the user-default Pdf reader.</p>
 <div class="content">
 <img src="images/OpenCommandActivityDiagram.png" alt="OpenCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 12. Open Command Activity Diagram</div>
+<div class="title">Figure 14. Open Command Activity Diagram</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -797,7 +810,7 @@ change certain attributes tied to the PDF such as the <code>Name</code> and <cod
 <div class="content">
 <img src="images/EditCommandActivityDiagram.png" alt="EditCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 13. Edit Command Activity Diagram</div>
+<div class="title">Figure 15. Edit Command Activity Diagram</div>
 </div>
 </div>
 </div>
@@ -872,7 +885,7 @@ the outlined Syntax as illustrated below.</p>
 <div class="content">
 <img src="images/MoveFeatureStep1.png" alt="MoveFeatureStep1" width="600">
 </div>
-<div class="title">Figure 14. Step 1</div>
+<div class="title">Figure 16. Step 1</div>
 </div>
 <div class="paragraph">
 <p>In this scenario, there is a file <strong>document.pdf</strong> in the windows <em>Desktop</em> directory, and
@@ -1015,7 +1028,7 @@ which is an indicator if the application can perform other operations on the Pdf
 <div class="content">
 <img src="images/MergeCommandSequenceDiagram.png" alt="MergeCommandSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 15. Merge Command Sequence Diagram</div>
+<div class="title">Figure 17. Merge Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1050,6 +1063,14 @@ Currently, there are no means to make the merging operation perform faster due t
 <p>The <code>delete</code> feature is facilitated by both <strong>DeleteCommand</strong> and <strong>DeleteCommandParser</strong>.
 This feature performs either a <em>soft</em> or <em>hard</em> remove operation on a file in the application
 based on the index provided.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of the <strong>DeleteCommand</strong> execution can be summarised in the following activity diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteCommandActivityDiagram.png" alt="DeleteCommandActivityDiagram" width="600">
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1136,7 +1157,13 @@ user&#8217;s input.</p>
 <div class="content">
 <img src="images/DeleteCommandActivityDiagram.png" alt="DeleteCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 16. Delete Command Activity Diagram</div>
+<div class="title">Figure 18. Delete Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteCommandSequenceDiagram.png" alt="DeleteCommandSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 19. Delete Command Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -1184,7 +1211,7 @@ wish to revert the action, please refer to <a href="#Undo/Redo feature">[Undo/Re
 <div class="content">
 <img src="images/ClearCommandActivityDiagram.png" alt="ClearCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 17. Clear Command Activity Diagram.</div>
+<div class="title">Figure 20. Clear Command Activity Diagram.</div>
 </div>
 </div>
 </div>
@@ -1275,7 +1302,7 @@ user&#8217;s input.</p>
 <div class="content">
 <img src="images/DeadlineCommandActivityDiagram.png" alt="DeadlineCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 18. Deadline Command Activity Diagram</div>
+<div class="title">Figure 21. Deadline Command Activity Diagram</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1314,7 +1341,7 @@ Users can reference from the UserGuide directly on how to navigate the guide.</p
 <div class="content">
 <img src="images/UserGuide.png" alt="UserGuide" width="600">
 </div>
-<div class="title">Figure 19. User Guide</div>
+<div class="title">Figure 22. User Guide</div>
 </div>
 </div>
 </div>
@@ -1423,7 +1450,7 @@ files. There must be at least one provided.</p>
 <div class="content">
 <img src="images/FindCommandActivityDiagram.png" alt="FindCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 20. Find Command Activity Diagram</div>
+<div class="title">Figure 23. Find Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The following image briefly summarises the interactions of the <code>find</code> command with
@@ -1433,7 +1460,7 @@ some of its immediate components.</p>
 <div class="content">
 <img src="images/FindCommandSequenceDiagram.png" alt="FindCommandSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 21. General Internal Illustration of Find Command.</div>
+<div class="title">Figure 24. General Internal Illustration of Find Command.</div>
 </div>
 <div class="paragraph">
 <p>When the user enters the CLI Input for the find command, the command is first passed
@@ -1553,7 +1580,7 @@ in the application, except that it will list the files based on the tag of the f
 <div class="content">
 <img src="images/FilterCommandActivityDiagram.png" alt="FilterCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 22. Filter Command Activity Diagram</div>
+<div class="title">Figure 25. Filter Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The inner workings of <code>FilterCommand</code> can be explained in the following steps should you need to modify it.
@@ -2624,7 +2651,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 23. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 26. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -4102,4 +4129,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 04:45:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 07:31:07 UTC</div></div></div></body></html>
