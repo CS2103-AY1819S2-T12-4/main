@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><meta name="author" content="Kan Yip Keng"><title>Projects Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">PDF++</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-T12-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Projects Portfolio</h1><div class="details"><span class="author" id="author">Kan Yip Keng</span><br></div></div><div id="content"><div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hi, I&#8217;m Yip Keng, a Year 2 Computer Science Undergraduate and a part-time tutor at the National University of Singapore.
+I am passionate about building useful applications which benefits millions of people around the world.</p>
+</div>
+<div class="paragraph">
+<p>One of my favourite projects is the PDF++, an ambitious file management system aims to replace the
+current file management system found in most operating systems. This document provides you with a detailed description of
+the project and my contributions to its creation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-pdf"><a class="link" href="#project-pdf">2. Project: PDF++</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>PDF++ is a desktop application that is meant for anyone who wants or needs a convenient tool that helps them manage all the documents in their computer.</p>
+</div>
+<div class="paragraph">
+<p>The application has a Graphical User Interface (GUI), built upon the JavaFX framework, that is supplemented with a Command Line Interface (CLI)
+to accept more specific requests by the User.</p>
+</div>
+<div class="paragraph">
+<p>The PDF++ offers a wide range of features with potentials for future improvement including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>File Manipulation</strong> : Adding, Moving, Merging and Deleting Documents.</p>
+</li>
+<li>
+<p><strong>File Organization</strong> : Labelling tags and Assigning deadlines to Documents.</p>
+</li>
+<li>
+<p><strong>File Extraction</strong> : Finding Documents based on tags and in-text content.</p>
+</li>
+<li>
+<p><strong>File Encryption</strong> : Securing Documents with password encryption.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="implementation-of-code-deadline-code-function"><a class="link" href="#implementation-of-code-deadline-code-function">2.1. Implementation of <code>deadline</code> function</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What</strong>: This function allows the user to assign a deadline to a document.</p>
+</li>
+<li>
+<p><strong>Justification</strong>: This is an integration of task reminder into our computer files.
+Users can set a deadline reminder to the documents which have tasks to be met before
+a specific date.</p>
+</li>
+<li>
+<p><strong>Highlights</strong>: The application labels the deadlines based on the number of days to
+the document&#8217;s due date. Upon launching the application, a list of deadline reminders
+will be shown in chronological order. This can improve the user&#8217;s productivity by keeping
+track of their upcoming tasks.</p>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect2">
+<h3 id="user-guide-contributions"><a class="link" href="#user-guide-contributions">2.2. User Guide Contributions</a></h3>
+<hr>
+<div class="sect4">
+<h5 id="excerpt-from-userguide-setting-a-deadline-for-a-file-code-deadline-code"><a class="link" href="#excerpt-from-userguide-setting-a-deadline-for-a-file-code-deadline-code">Excerpt from UserGuide: Setting a deadline for a file: <code>deadline</code></a></h5>
+<div class="paragraph">
+<p>Set or remove a deadline for the file, specified by the index of the file that is next to the name of the file in the Files Section.<br>
+A file&#8217;s deadline is located under its name and has 4 colours to indicate the amount of time you have before it is due.<br></p>
+</div>
+<div class="paragraph">
+<p>The colour Green, indicates that there is more than <code>7</code> days till the deadline is due, as shown below.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UGDeadlineFar.png" alt="UGDeadlineFar" width="300">
+</div>
+<div class="title">Figure 1. Deadline Colour Green</div>
+</div>
+<div class="paragraph">
+<p>The colour Orange, indicates that you have <code>7</code> or less days till it is due. As shown below.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UGDeadlineNear.png" alt="UGDeadlineNear" width="300">
+</div>
+<div class="title">Figure 2. Deadline Colour Orange</div>
+</div>
+<div class="paragraph">
+<p>The colour Red, indicates that you have reached or failed to complete the task by the due date, as shown below<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UGDeadlineDue.png" alt="UGDeadlineDue" width="300">
+</div>
+<div class="title">Figure 3. Deadline Colour Red</div>
+</div>
+<div class="paragraph">
+<p>The colour Blue indicates that you have completed the set task.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UGDeadlineDone.png" alt="UGDeadlineDone" width="300">
+</div>
+<div class="title">Figure 4. Deadline Colour Blue</div>
+</div>
+<div class="paragraph">
+<p>All deadlines are also displayed in the Deadlines section of the application.<br></p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p><span class="big">Format: <code>deadline INDEX date/DATE</code> [To Set a Deadline]</span><br>
+<span class="big">Format: <code>deadline INDEX done</code> [To Complete a Deadline]</span><br>
+<span class="big">Format: <code>deadline INDEX remove</code> [To remove a Deadline]</span><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file that you wish to edit.</p>
+</li>
+<li>
+<p><code>DATE</code> to the deadline you wish to assign the file.</p>
+</li>
+<li>
+<p><code>done</code> is the prefix that tells the application that you have completed the deadline.</p>
+</li>
+<li>
+<p><code>remove</code> is the prefix that tells the application that you wish to remove the deadline.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deadline 1 date/20-02-2019</code><br></p>
+</li>
+<li>
+<p><code>deadline 1 done</code><br></p>
+</li>
+<li>
+<p><code>deadline 1 remove</code><br></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The date must be in the format of dd-mm-yyyy.
+'''
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="developer-guide-contributions"><a class="link" href="#developer-guide-contributions">2.3. Developer Guide Contributions</a></h3>
+<hr>
+<div class="sect4">
+<h5 id="excerpt-from-developer-guide-deadline-feature"><a class="link" href="#excerpt-from-developer-guide-deadline-feature">Excerpt From Developer Guide: Deadline feature</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h5>
+<div class="paragraph">
+<p>The <code>deadline</code> feature is facilitated by both <strong>Deadline</strong>, <strong>DeadlineCommand</strong> and <strong>DeadlineCommandParser</strong>
+This feature allows you to set or remove deadlines of the file specified by you from PDF++.
+The deadlines will be recorded and displayed both in the list of files as well as in the information panel
+for each individual file.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of the <strong>Deadline</strong> model can be represented in the following class diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeadlineClassDiagram.png" alt="DeadlineClassDiagram" width="200">
+</div>
+<div class="title">Figure 5. Deadline Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>A <strong>Deadline</strong> model has a <a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html"><em>Java.time.LocalDate</em></a>
+<code>date</code> attribute and a <code>boolean isDone</code>. The <code>date</code> is the date for the deadline assigned to the file, the <code>isDone</code> attribute
+evaluates to <code>true</code> if the deadline is set to be done, <code>false</code> if it is not done.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of the <strong>DeadlineCommand</strong> execution can be summarised in the following activity diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeadlineCommandActivityDiagram.png" alt="DeadlineCommandActivityDiagram" width="600">
+</div>
+<div class="title">Figure 6. Deadline Command Activity Diagram</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The provided index is checked to be valid i.e. referring to a specific Pdf in the PdfBook.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If the index is invalid, a <strong>CommandException</strong> will be thrown and the execution will be ended.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The required Pdf is retrieved from the PdfBook based on the index.</p>
+</li>
+<li>
+<p>A duplicate Pdf of the required Pdf is created.</p>
+</li>
+<li>
+<p>For cases of assigning a new deadline,</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The duplicate Pdf is assigned with new deadline attributes.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>For cases of setting an existing deadline as done or removed,</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The existing deadline from the retrieved Pdf is tested to be a valid deadline.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>If the existing deadline is a valid deadline, the duplicate Pdf is assigned with new deadline attributes.</p>
+</li>
+<li>
+<p>If the existing deadline is not a valid deadline, a <strong>CommandException</strong> will be thrown and the execution will be ended.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The duplicate Pdf with new deadline attributes is recorded in the Model and the changes are committed.</p>
+</li>
+<li>
+<p><strong>CommandResult</strong> is returned upon successful execution.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This sequence diagram demonstrates the interactions involved from start of <strong>DeadlineCommandParser</strong> to end of <strong>DeadlineCommand</strong> execution:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeadlineCommandSequenceDiagram.png" alt="DeadlineCommandSequenceDiagram" width="600">
+</div>
+<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>deadline 1 done</code> Command</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+After a deadline has been added to the PDF file specified, the date will be color-coded according to days
+remaining from the current day until the deadline date.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="considerations"><a class="link" href="#considerations">Considerations</a></h5>
+<div class="paragraph">
+<p>There are some discrepancy for the representation of a file without a deadline in the Jackson adapted storage and the Pdf book model.
+In the Pdf book model, files without a deadline will be assigned with the default deadline whereas the date is set to
+<a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html"><em>LocalDate.MIN</em></a>.
+In the Jackson adapted storage, we simply set the deadline attribute of a file without a deadline as empty.
+In our previous implementation, we used to assign the default date LocalDate.MIN to the deadline attribute in the Jackson adapted Storage
+as well, however this might confuse the users if they read the <em>pdfplusplus.json</em> and find out the non-existence deadline.
+Besides, this implementation also makes the displaying process of deadlines through the UI tedious.</p>
+</div>
+<div class="paragraph">
+<p>In order to comply with the two distinct representation of deadline model, we implemented a default deadline <code>toString</code> method that
+prints the Pdf book model version, and a modified <code>toJsonString</code> that prints the Jackson adapted storage version of deadline.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="future-implementation"><a class="link" href="#future-implementation">Future Implementation</a></h5>
+<div class="paragraph">
+<p>Our current color-coded deadlines are predefined based on the due date from the current date. Suggested improvement for this area
+would be providing user-defined color-codes for enhanced user experience.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="summary-of-minor-contributions"><a class="link" href="#summary-of-minor-contributions">2.4. Summary of Minor Contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Refactored project from an existing project <a href="https://github.com/nus-cs2103-AY1819S2/addressbook-level4/">AddressBook Level-4</a> to our current application
+<a href="https://github.com/CS2103-AY1819S2-T12-4/main/pull/307">#307</a></p>
+</li>
+<li>
+<p>Implemented the <code>sort</code> Command for both <strong>name</strong> and <strong>deadline</strong> mode. <a href="https://github.com/CS2103-AY1819S2-T12-4/main/pull/166">#166</a></p>
+</li>
+<li>
+<p>Implemented the <code>tag</code> Command. <a href="https://github.com/CS2103-AY1819S2-T12-4/main/pull/175">#175</a></p>
+</li>
+<li>
+<p>Reported bugs and fixes to the relevant issues <a href="https://github.com/CS2103-AY1819S2-T12-4/main/issues/287">#287</a></p>
+</li>
+<li>
+<p>Updated UI user feedback message for better user experience <a href="https://github.com/CS2103-AY1819S2-T12-4/main/pull/296">#296</a></p>
+</li>
+<li>
+<p>Other minor contributions to autotests and the source code</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 14:14:35 UTC</div></div></div></body></html>
