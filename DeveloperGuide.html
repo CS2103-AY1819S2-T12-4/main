@@ -21,9 +21,9 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#adding-of-files-to-application">3.1. Adding of files to application</a></li>
+<li><a href="#add-feature">3.1. Add Feature</a></li>
 <li><a href="#open-feature">3.2. Open feature</a></li>
-<li><a href="#edit-feature">3.3. Edit feature</a></li>
+<li><a href="#rename-feature">3.3. Rename Feature</a></li>
 <li><a href="#move-feature">3.4. Move feature</a></li>
 <li><a href="#merge-feature">3.5. Merge feature</a></li>
 <li><a href="#delete-feature">3.6. Delete feature</a></li>
@@ -614,13 +614,13 @@ which is the most used class throughout the application.</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="adding-of-files-to-application"><a class="link" href="#adding-of-files-to-application">3.1. Adding of files to application</a></h3>
+<h3 id="add-feature"><a class="link" href="#add-feature">3.1. Add Feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>This feature is facilitated by both the <strong>AddCommandParser</strong> and <strong>AddCommand</strong>.
 This feature adds the PDF file to the app using the path specified by your users.
-Other features such as the <a href="#edit-feature">Section 3.3, &#8220;Edit feature&#8221;</a> and <a href="#open-feature">Section 3.2, &#8220;Open feature&#8221;</a> can only be performed on files that
+Other features such as the <a href="#rename-feature">Section 3.3, &#8220;Rename Feature&#8221;</a> and <a href="#open-feature">Section 3.2, &#8220;Open feature&#8221;</a> can only be performed on files that
 are added to the application.</p>
 </div>
 <div class="paragraph">
@@ -789,6 +789,9 @@ user&#8217;s input.</p>
 retrieves the directory of the Pdf listed in the Pdf Book. It then launches the Pdf
 with the user-default Pdf reader.</p>
 </div>
+<div class="paragraph">
+<p>The implementation of the <strong>OpenCommand</strong> execution can be summarised in the following activity diagram:</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/OpenCommandActivityDiagram.png" alt="OpenCommandActivityDiagram" width="600">
@@ -810,19 +813,19 @@ For more information about the behavior of launching the Pdf, please refer to Ja
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit-feature"><a class="link" href="#edit-feature">3.3. Edit feature</a></h3>
+<h3 id="rename-feature"><a class="link" href="#rename-feature">3.3. Rename Feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>edit</code> feature is facilitated by both the <strong>EditCommandParser</strong> and <strong>EditCommand</strong>.
+<p>The <code>rename</code> feature is facilitated by both the <strong>RenameCommandParser</strong> and <strong>RenameCommand</strong>.
 Essentially upon adding a Pdf to be tracked by the application, the user will be able to
-change certain attributes tied to the PDF such as the <code>Name</code> and <code>Tag</code> tied to a particular Pdf.</p>
+change certain attributes tied to the PDF such as the <code>Name</code> and tied to a particular Pdf.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditCommandActivityDiagram.png" alt="EditCommandActivityDiagram" width="600">
+<img src="images/RenameCommandActivityDiagram.png" alt="RenameCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 15. Edit Command Activity Diagram</div>
+<div class="title">Figure 15. Rename Command Activity Diagram</div>
 </div>
 </div>
 </div>
@@ -832,7 +835,7 @@ change certain attributes tied to the PDF such as the <code>Name</code> and <cod
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>move</code> feature is facilitated by both <strong>MoveCommand</strong> and <strong>MoveCommandParser</strong>.
-This feature functions as a simplified version of <a href="#edit-feature">Section 3.3, &#8220;Edit feature&#8221;</a>, as in nature
+This feature functions as a simplified version of <a href="#rename-feature">Section 3.3, &#8220;Rename Feature&#8221;</a>, as in nature
 it is making an edit to the directory of the file. However, in addition to making changes
 to the directory in the application storage, it also ensures that the directory changes
 are reflected in the local filesystem.</p>
@@ -933,7 +936,7 @@ This feature utilises the
 <a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a>, specifically the
 <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a>
 API to append two or more PDFs and create a new file with the merged content. As there will be one
-additional file added to the application, this feature also implicitly performs <a href="#adding-of-files-to-application">Section 3.1, &#8220;Adding of files to application&#8221;</a> to add the new
+additional file added to the application, this feature also implicitly performs <a href="#add-feature">Section 3.1, &#8220;Add Feature&#8221;</a> to add the new
 PDF to the application.</p>
 </div>
 <div class="paragraph">
@@ -4634,4 +4637,4 @@ the application</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 10:14:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 10:17:24 UTC</div></div></div></body></html>
