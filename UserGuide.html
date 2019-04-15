@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>PDF++ User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article toc2 toc-left"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">PDF++</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-T12-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>PDF++ User Guide</h1><div id="toc" class="toc2"><div id="toctitle"></div><ul class="sectlevel1">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article toc2 toc-left"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">PDF++</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-T12-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>PDF++ User Guide</h1><div id="toc" class="toc2"><div id="toctitle"></div><ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#pdf">1.1. PDF++ ?</a></li>
@@ -10,27 +10,28 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-file-code-add-code">3.2. Adding a file: <code>add</code></a></li>
-<li><a href="#listing-all-files-code-list-code">3.3. Listing all files : <code>list</code></a></li>
-<li><a href="#sorting-all-files-code-sort-code">3.4. Sorting all files : <code>sort</code></a></li>
-<li><a href="#opening-a-file-code-open-code">3.5. Opening a file : <code>open</code></a></li>
-<li><a href="#renaming-a-file-code-rename-code">3.6. Renaming a file : <code>rename</code></a></li>
-<li><a href="#tagging-a-file-code-tag-code">3.7. Tagging a file : <code>tag</code></a></li>
-<li><a href="#deleting-a-file-code-delete-code">3.8. Deleting a file : <code>delete</code></a></li>
-<li><a href="#moving-a-file-code-move-code">3.9. Moving a file : <code>move</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></li>
-<li><a href="#retrieving-information-about-a-file-code-select-code">3.11. Retrieving information about a file: <code>select</code></a></li>
-<li><a href="#setting-a-deadline-for-the-file-code-deadline-code">3.12. Setting a deadline for the file : <code>deadline</code></a></li>
-<li><a href="#filter-files-by-tags-code-filter-code">3.13. Filter files by tags: <code>filter</code></a></li>
-<li><a href="#find-feature">3.14. Finding Content: <code>find</code></a></li>
-<li><a href="#file-protection-code-encrypt-code-code-decrypt-code">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
-<li><a href="#merging-files-code-merge-code">3.16. Merging Files: <code>merge</code></a></li>
+<li><a href="#command-help">3.1. Viewing the User Guide : <code>help</code></a></li>
+<li><a href="#command-add">3.2. Adding a file: <code>add</code></a></li>
+<li><a href="#command-list">3.3. Listing all files : <code>list</code></a></li>
+<li><a href="#command-sort">3.4. Sorting all files : <code>sort</code></a></li>
+<li><a href="#command-open">3.5. Opening a file : <code>open</code></a></li>
+<li><a href="#command-rename">3.6. Renaming a file : <code>rename</code></a></li>
+<li><a href="#command-tag">3.7. Tagging a file : <code>tag</code></a></li>
+<li><a href="#command-delete">3.8. Deleting a file : <code>delete</code></a></li>
+<li><a href="#command-move">3.9. Moving a file : <code>move</code></a></li>
+<li><a href="#command-exit">3.10. Exiting the program : <code>exit</code></a></li>
+<li><a href="#command-exit">3.11. Retrieving information about a file: <code>select</code></a></li>
+<li><a href="#command-deadline">3.12. Setting a deadline for the file : <code>deadline</code></a></li>
+<li><a href="#command-filter">3.13. Filter files by tags: <code>filter</code></a></li>
+<li><a href="#command-find">3.14. Finding Content: <code>find</code></a></li>
+<li><a href="#command-encdec">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></li>
+<li><a href="#command-merge">3.16. Merging Files: <code>merge</code></a></li>
 <li><a href="#saving-the-data">3.17. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#command-summary">4. Command Summary</a></li>
 <li><a href="#glossary">5. Glossary</a></li>
+<li><a href="#upcoming-features">6. Upcoming Features</a></li>
 </ul></div></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -44,9 +45,9 @@
 <div class="sect2">
 <h3 id="pdf"><a class="link" href="#pdf">1.1. PDF++ ?</a></h3>
 <div class="paragraph">
-<p>PDF++ is a desktop application that is meant for anyone who wants or needs a convenient tool that helps you manage all the documents in your computer.
-This application can be used by both <strong>Text Input (TI)</strong> and a Graphical <strong>User Interface (GUI)</strong>
-hence, both technical users and casual users can enjoy a comfortable experience using our program. All features provided by our application can be used via the <strong>TI</strong> and relevant feedback, based on your command, will be displayed in the Response Area of the application.</p>
+<p>PDF++ is a desktop application that is meant for anyone who wants or needs a convenient tool that helps them manage all the documents in their computer.
+This application can be used by both <strong>Text Input (TI)</strong> and a <strong>Graphical User Interface (GUI)</strong>
+hence, both technical users and casual users can enjoy a comfortable experience using our program. All the features provided by our application can be used via the <strong>TI</strong> and relevant feedback, based on your input, will be displayed in the <a href="#app-layout">Output Area</a> of the application.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -55,8 +56,8 @@ hence, both technical users and casual users can enjoy a comfortable experience 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The current version of PDF++ supports PDF documents only. However, it is projected
-to support for all file types in the future.
+The current version of our application supports PDF documents only. However, we aim to provide
+support for many more file types in the future.
 </td>
 </tr>
 </table>
@@ -65,20 +66,36 @@ to support for all file types in the future.
 <div class="sect2">
 <h3 id="proper-usage-of-pdf"><a class="link" href="#proper-usage-of-pdf">1.2. Proper Usage of PDF++</a></h3>
 <div class="paragraph">
-<p>As PDF++ aims to replace your existing File Management System, all operations should be done
-through the application. In order to ensure smooth user experience, you should not perform any
-operation, such as removing, renaming or replacing, on the files that was previously added into
-the application outside of the application.</p>
+<p>PDF++ aims to replace your existing File Management System, all operations concerning file management
+should be done through the application. In order to ensure smooth user experience, you should not perform any
+file manipulation actions on the files themselves. It is recommended that once you add a file to our application, you should
+only make changes to those files through our application to prevent the application from misbehaving.</p>
 </div>
 <div class="paragraph">
-<p>Furthermore, due to the properties of the Operating Systems, no operation can be performed on the
-files that are opened. Please ensure that your files are not opened before executing the command.</p>
+<p>Furthermore, due to security features provided by the Operating Systems, some actions cannot be performed on the
+files if they are currently opened (In any PDF Viewer). Please ensure that your files are closed prior to performing any actions
+on them.</p>
 </div>
 <div class="paragraph">
 <p>This File Management System plans to enhance your typical experience managing your documents and
 it strives to be the last document manager you will ever need. It includes a multitude of
-functions in elevating your PDF reading and management experience. There are many features offered by our application that you can refer to in the table of contents on the left side of this screen with many more to come! Are you fascinated by PDF++? What are you waiting for?
+functions that will elevate your PDF reading and management experience.
+You can refer to the table of contents on the left side of this screen to indulge in the many features provided by our app and with many more to come!
+Are you fascinated by PDF++? What are you waiting for?
 Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The words "app" and "application" are used interchangeably in this document and mainly refer to the PDF++
+Application.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -99,15 +116,17 @@ Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to g
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
-<div class="imageblock">
+<div id="app-layout" class="imageblock">
 <div class="content">
 <img src="images/UGAppOverview.png" alt="UGAppOverview" width="800">
 </div>
+<div class="title">Figure 1. PDF++ Layout</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UGPdfCard.png" alt="UGPdfCard" width="500">
 </div>
+<div class="title">Figure 2. Individual File Representation</div>
 </div>
 </li>
 <li>
@@ -119,17 +138,16 @@ e.g. typing <strong><code>help</code></strong> in the command box and pressing <
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all files in PDF++</p>
+<p><code>list</code> : Lists all files currently managed in PDF++.</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>f/C:\Users\Raj\Documents\myfile.pdf</code> : adds a PDF file named <code>myfile</code>
-from the mentioned directory to the PDF++ list.</p>
+<p><code>help</code>: Opens the User Guide.</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>index</code> : deletes the file indexed at <code>index</code> of the list and all relevant information from PDF++.</p>
+<p><code>delete INDEX</code>: deletes the file indexed at <code>index</code> on the list and all its relevant information from PDF++.</p>
 </li>
 <li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><code>exit</code> : exits the app</p>
 </li>
 </ul>
 </div>
@@ -152,10 +170,10 @@ from the mentioned directory to the PDF++ list.</p>
 </td>
 <td class="content">
 Please ensure that you have the permissions to Read, Write and
-Execute the files that you wish to manage through our application. Please use
-a web search, like Google, to assist you in identifying if you possess the
+Execute the files that you wish to manage through our application. You may use
+a web search, like Google, to assist you in identifying if you possess the relavant
 permissions. If you are lacking these permissions our application may not be
-able to carry out the actions specified by you.
+able to carry out the actions you specify.
 </td>
 </tr>
 </table>
@@ -175,6 +193,19 @@ the need for you to perform these actions manually on your files yourselves.
 </tr>
 </table>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If your file is open please close it before proceeding to perform ANY other actions in the application.
+If the file is kept open, the application may misbehave as it is sharing access to the file with other unknown applications.
+</td>
+</tr>
+</table>
+</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -183,33 +214,36 @@ the need for you to perform these actions manually on your files yourselves.
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the additional information that you need to input e.g. in <code>add f/FILENAME</code>, <code>FILENAME</code> is a parameter which can be used as <code>add f/myfile</code>.</p>
+<p>Texts such as <code>f/</code> or <code>t/</code> or <code>date/</code> and are prefixes that signify information that is required by a particular command.</p>
+</li>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the additional information that you need to input e.g. in <code>add f/FILENAME</code>, <code>FILENAME</code> is a parameter which you need to input.</p>
 </li>
 <li>
 <p>Items with <code>…</code>​ after them can be used multiple times or zero times e.g. <code>t/TAG&#8230;&#8203;</code> can be left blank or used multiple times, <code>t/TagA t/TagB t/TagC</code> etc.</p>
 </li>
 <li>
-<p>ALL Commands are to be entered in the Input Area that is highlighted in Orange.</p>
+<p>ALL Commands are to be entered in the <a href="#app-layout">Input Area</a> that is highlighted in Orange.</p>
 </li>
 <li>
-<p>ALL Responses to your input Commands will be displayed in the Output area that is highlighted in blue.</p>
+<p>ALL Responses to your input Commands will be displayed in the <a href="#app-layout">Output Area</a> that is highlighted in blue.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="command-help"><a class="link" href="#command-help">3.1. Viewing the User Guide : <code>help</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>help</code><br>
-The help command displays this current page for any references you may need or questions that you may require answers to.</p>
+The help command displays this page for any references you may need or questions that you may require answers to.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-file-code-add-code"><a class="link" href="#adding-a-file-code-add-code">3.2. Adding a file: <code>add</code></a></h3>
+<h3 id="command-add"><a class="link" href="#command-add">3.2. Adding a file: <code>add</code></a></h3>
 <div class="paragraph">
-<p>The add command allows you to add a file through TI into to the application, or through the GUI.<br>
-The added file will appear in the Files Section, highlighted in green, shown above.<br></p>
+<p>The add command allows you to add a file through <strong>TI</strong> into to the application, or through the <strong>GUI</strong>.<br>
+The added file will appear in the <a href="#app-layout">Files Section</a>, highlighted in green, shown above.<br></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -229,197 +263,20 @@ existence of files with the same name in different directories.
 <p>The Add feature has the following syntax:</p>
 </div>
 <div class="paragraph">
-<p><span class="big"><code>add</code></span></p>
+<p><span class="big">Format: <code>add</code></span></p>
 </div>
 <div class="paragraph">
-<p><span class="big"><code>add f/&lt;PATH_TO_FILE&gt; t/&lt;TAG&gt;&#8230;&#8203;</code></span></p>
+<p><span class="big">Format: <code>add f/PATH_TO_FILE</code></span></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>f/</code> refers to the command immediately following after this prefix is a file</p>
+<p><code>PATH_TO_FILE</code> refers to the path to the <code>Pdf</code> you wish to add</p>
 </li>
 <li>
-<p><code>&lt;PATH_TO_FILE&gt;</code> refers to the path to the <code>Pdf</code> you wish to add</p>
+<p>Entering <code>add</code> without <code>f/PATH_TO_FILE</code> will open the file
+selection <strong>GUI</strong> for the user to <code>add</code> a file to our application.</p>
 </li>
-<li>
-<p><code>&lt;TAG&gt;&#8230;&#8203;</code> refers to the new <code>Tag</code> you wish to add. Leave this portion empty if you
-do not wish to tag this file.</p>
-</li>
-<li>
-<p>Entering <code>add</code> without <code>&lt;INDEX&gt;</code> or  <code>&lt;NEWDIRECTORY&gt;</code> will open the default file
-selection GUI for the user to add the file directly.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Please ensure that you have entered the full <code>PATH_TO_FILE</code>. Please refer to
-<code>Step-by-Step Guide&#8201;&#8212;&#8201;add</code> below for detailed explanation.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="feature-breakdown"><a class="link" href="#feature-breakdown">3.2.1. Feature breakdown</a></h4>
-<div class="paragraph">
-<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
-workings of the Add feature.</p>
-</div>
-<div class="paragraph">
-<p>Step 1: The user launches the application with either an existing set of <code>Pdf</code> or a new
-sample set of <code>Pdf</code> stored within as shown below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddFeatureStep1Default.png" alt="AddFeatureStep1Default" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2: The user navigates to the folder with the file and copy the directory.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><em>For Windows</em>
-Once the user has navigated to the folder, click on the address bar and copy</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddFeatureStep2CopyDirectory.png" alt="AddFeatureStep2CopyDirectory" width="600">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><em>For Mac</em>
-Right click the file that you wish to add to our application and you should see
-the following menu pop up.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UGAddPathMac1.png" alt="UGAddPathMac1" width="200">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>When this menu appears, if you press <kbd>control</kbd> on your keyboard, you should
-see the menu change as shown in the image below.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UGAddPathMac2.png" alt="UGAddPathMac2" width="200">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Now if you press the button highlighted in <strong>blue</strong>, you have successfully copied
-the path of the file you wish to add to the application.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Step 3: You may now enter the <code>add</code> command into the CLI interface followed by the
-path of the file you wish to add to the application as illustrated below.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Your users must type the file name <strong>after</strong> the directory copied at <em>Step 2</em>
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddFeatureStep3UserInput.png" alt="AddFeatureStep3UserInput" width="600">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-You can enter <code>add</code> and hit <kbd>enter</kbd>, to open up a GUI for you to select the file you
-wish to add.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4: Upon hitting <kbd>enter</kbd> to execute the command, the <strong>AddCommandParser</strong> parses the input
-into several components that are required to be executed by the <strong>AddCommand</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Upon parsing, the parser then creates a new <strong>AddCommand</strong> that will be executed according to
-the your input.</p>
-</div>
-<div class="paragraph">
-<p>Step 5: Upon receiving the necessary information from the parser, the <code>AddCommand</code> first
-begins by checking for validity as shown below.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Pdf</code> does not exist in directory</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddFeatureStep5PdfNotFound.png" alt="AddFeatureStep5PdfNotFound" width="600">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Pdf</code> found and no duplication in PDF++</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddFeatureStep5Sucess.png" alt="AddFeatureStep5Sucess" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6: If the validity check and the individual property check passes, the file is then
-added to PDF++</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of v1.4, the Add feature is only capable of adding 1 <code>Pdf</code> file at a time. By v2.0,
-the feature will support adding multiple files.
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
 <li>
 <p>The file must be a <strong>PDF</strong> file (with .pdf extension).</p>
 </li>
@@ -441,26 +298,187 @@ the feature will support adding multiple files.
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Please ensure that you have entered the full <code>PATH_TO_FILE</code>. Please refer to
+<a href="#steps-add"><code>Step-by-Step Guide</code></a> below for a detailed guide on the steps necessary
+to obtain the full <code>PATH_TO_FILE</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="steps-add"><a class="link" href="#steps-add">3.2.1. Step-by-Step Guide</a></h4>
+<div class="paragraph">
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+workings of the Add feature.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: Launch the application by double clicking the <code>pdfplusplus.jar</code>. To view the following screen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You may see different files in your application based on the actions that you have carried out before.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep1Default.png" alt="AddFeatureStep1Default" width="600">
+</div>
+<div class="title">Figure 3. Add Command Step 1</div>
+</div>
+<div id="steps-add-2" class="paragraph">
+<p>Step 2: Once the application is opened you should navigate to the folder, which contains the file
+which you wish to add to the application, to obtain the path to the file through the following methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>For Windows</em><br>
+Once you have navigated to the necessary folder, click on the address bar and copy the path as shown below.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep2CopyDirectory.png" alt="AddFeatureStep2CopyDirectory" width="600">
+</div>
+<div class="title">Figure 4. Add Command Step 2.1</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>For Mac</em><br>
+Right click the file that you wish to add to our application and you should see
+the following menu pop up.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UGAddPathMac1.png" alt="UGAddPathMac1" width="200">
+</div>
+<div class="title">Figure 5. Add Command Step 2.2</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When this menu appears, if you press <kbd>option</kbd> on your keyboard, you should
+see the menu change to match the image shown below.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UGAddPathMac2.png" alt="UGAddPathMac2" width="200">
+</div>
+<div class="title">Figure 6. Add Command Step 2.3</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Now if you press the button highlighted in <span class="big blue"><strong>blue</strong></span>, you would have successfully copied
+the path of the file you wish to add to the application.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For Mac OS: These steps can be replicated to get the path to a particular folder on your computer as well. Instead of selecting a file,
+select the folder which you wish to get the path to and repeat the steps.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3: You may now enter the <code>add</code> command into the CLI interface followed by the
+path of the file you wish to add to the application as illustrated below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Windows users must type the file name <strong>after</strong> pasting the directory, which you copied in copied at <a href="#steps-add-2"><em>Step 2</em></a>,
+in to the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddFeatureStep3UserInput.png" alt="AddFeatureStep3UserInput" width="600">
+</div>
+<div class="title">Figure 7. Add Command Step 3</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can simply type <code>add</code> and hit <kbd>enter</kbd>, to open up a <strong>GUI</strong> for you to select the file you
+wish to add.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4: Upon hitting <kbd>enter</kbd> Your file is added into the application.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of v1.4, the Add command is only capable of adding 1 <code>Pdf</code> file at a time. By v2.0,
+the feature will support adding multiple files.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-files-code-list-code"><a class="link" href="#listing-all-files-code-list-code">3.3. Listing all files : <code>list</code></a></h3>
+<h3 id="command-list"><a class="link" href="#command-list">3.3. Listing all files : <code>list</code></a></h3>
 <div class="paragraph">
 <p>The list command shows you a list of all files that are tracked by the application.<br>
-The files will be displayed in the Files Section of the application, highlighted in green.<br></p>
+The files will be displayed in the <a href="#app-layout">Files Section</a> of the application, highlighted in green.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>list</code></p>
+<p><span class="big">Format: <code>list</code></span></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-all-files-code-sort-code"><a class="link" href="#sorting-all-files-code-sort-code">3.4. Sorting all files : <code>sort</code></a></h3>
+<h3 id="command-sort"><a class="link" href="#command-sort">3.4. Sorting all files : <code>sort</code></a></h3>
 <div class="paragraph">
 <p>The sort command allows you to sort all the files in the application based on the input criteria.<br>
 Hence you may be able to, for example, sort the files by their name in ascending or descending order.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>sort CRITERIA ORDER</code></p>
+<p><span class="big">Format: <code>sort CRITERIA ORDER</code></span></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -494,14 +512,21 @@ Hence you may be able to, for example, sort the files by their name in ascending
 </div>
 </div>
 <div class="sect2">
-<h3 id="opening-a-file-code-open-code"><a class="link" href="#opening-a-file-code-open-code">3.5. Opening a file : <code>open</code></a></h3>
+<h3 id="command-open"><a class="link" href="#command-open">3.5. Opening a file : <code>open</code></a></h3>
 <div class="paragraph">
-<p>The open command allows you to open an existing file, specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br>
+<p>The open command allows you to open an existing file, specified by the index of the file that is next to the name of the file in the <a href="#app-layout">Files Section</a>, highlighted in green.<br>
 The selected file will then be opened with any application that you have set as the default for<br>
 your computer.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>open INDEX</code></p>
+<p><span class="big">Format: <code>open INDEX</code></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file that you wish to edit.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -513,31 +538,47 @@ your computer.<br></p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Please close the opened file before proceeding to perform ANY other actions in the application.
+If the file is kept open, the application may misbehave as it is sharing access to the file with other unknown applications.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="renaming-a-file-code-rename-code"><a class="link" href="#renaming-a-file-code-rename-code">3.6. Renaming a file : <code>rename</code></a></h3>
+<h3 id="command-rename"><a class="link" href="#command-rename">3.6. Renaming a file : <code>rename</code></a></h3>
 <div class="paragraph">
-<p>The rename command allows you to change the name of a file, specified by thr index of the file that is next to the name of the file in the Files Section, highlighted in green.<br></p>
+<p>The rename command allows you to change the name of a file, specified by the index of the file that is next to the name of the file in the the <a href="#app-layout">Files Section</a>, highlighted in green.<br></p>
 </div>
 <div class="paragraph">
-<p>The rename command has the following syntax:</p>
-</div>
-<div class="paragraph">
-<p><span class="big">`rename &lt;INDEX&gt; n/&lt;NEWNAME&gt;</span></p>
+<p><span class="big">Format: <code>rename INDEX n/NEWNAME</code></span></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;INDEX&gt;</code> refers to the index of the file that you wish to edit.</p>
+<p><code>INDEX</code> refers to the index of the file that you wish to edit.</p>
 </li>
 <li>
-<p><code>n/</code> indicates that you are editing the name of the file</p>
+<p><code>NEWNAME</code> refers to the new name that you wish to give your file.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Example:
-* <code>rename 1 n/newname.pdf</code></p>
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>rename 1 n/newname.pdf</code></p>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -550,6 +591,9 @@ your computer.<br></p>
 <p>NAME: Must be a name that your Operating System deems valid.</p>
 </li>
 <li>
+<p>NAME: Must be a name that no other file in the same directory of your selected file possesses.<br></p>
+</li>
+<li>
 <p>OUTPUT: If the rename is invalid, our application will notify you in the output area,<br>
 highlighted in blue.</p>
 </li>
@@ -557,6 +601,11 @@ highlighted in blue.</p>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="steps-rename"><a class="link" href="#steps-rename">3.6.1. Step-By-Step Guide</a></h4>
+<div class="paragraph">
+<p>SStep 1: Launch the application by double clicking the <code>pdfplusplus.jar</code>. To view the following screen.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -564,88 +613,62 @@ highlighted in blue.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The index value can be referenced from the list in the main application, or from the
-result of the <code>Filter</code>, <code>Find</code> or <code>List</code> feature.
+You may see different files in your application based on the actions that you have carried out before.
 </td>
 </tr>
 </table>
-</div>
-<div class="sect3">
-<h4 id="feature-breakdown-2"><a class="link" href="#feature-breakdown-2">3.6.1. Feature Breakdown</a></h4>
-<div class="paragraph">
-<p>Step 1: The user launches an application with either an existing set of <code>Pdf</code> or a
-new sample set of <code>Pdf</code> stored within as shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/EdiFeatureStep1Default.png" alt="EdiFeatureStep1Default" width="600">
 </div>
+<div class="title">Figure 8. Rename Command Step 1</div>
 </div>
 <div class="paragraph">
-<p>Step 2: The user chooses a <code>Pdf</code> that they wish to edit, in this case <code>g.pdf</code>, and
-enters the <code>rename</code> command into the CLI Interface, following the outlined Syntax as
+<p>Step 2: The user chooses a <code>Pdf</code> that they wish to edit, in this case <code>Monday Grouping List.pdf</code>, and
+enters the <code>rename</code> command into the <strong>TI</strong> Interface, following the outlined Syntax as
 illustrated below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/EditFeatureUserInput.png" alt="EditFeatureUserInput" width="600">
 </div>
+<div class="title">Figure 9. Rename Command Step 2</div>
 </div>
 <div class="paragraph">
-<p>Step 3: Upon hitting enter to execute the command, the <strong>EditCommandParser</strong> parses
-the input into relevant objects that are required to be executed by the <strong>EditCommand</strong>
-object. Upon parsing, the parser then creates a new <strong>EditCommand</strong> that will execute the
-user&#8217;s input.</p>
-</div>
-<div class="paragraph">
-<p>Step 4: Upon receiving the necessary information from the parser, the <strong>EditCommand</strong> first
-begins by checking for validity as shown below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EditFeatureNoDuplicate.png" alt="EditFeatureNoDuplicate" width="700">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EditFeatureDuplicate.png" alt="EditFeatureDuplicate" width="700">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 5: If the validity check and the individual property check passes, the file is then
-effectively renamed within PDF++ and in the actual directory, thus resulting in an output
+<p>Step 3: If your inputs are deemed valid, the file is then
+effectively renamed within PDF++ and in your computer itself, thus resulting in an output
 as shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/EditFeatureFinalOutput.png" alt="EditFeatureFinalOutput" width="600">
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of V1.2, the Edit Feature removes any existing <code>Tag</code> s and replaces them with those
-input by the user (If any). By <code>V1.4</code> The user will be able to select tags he wishes
-to remove or add.
-</td>
-</tr>
-</table>
+<div class="title">Figure 10. Rename Command Step 3</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="tagging-a-file-code-tag-code"><a class="link" href="#tagging-a-file-code-tag-code">3.7. Tagging a file : <code>tag</code></a></h3>
+<h3 id="command-tag"><a class="link" href="#command-tag">3.7. Tagging a file : <code>tag</code></a></h3>
 <div class="paragraph">
-<p>The tag command allows you to add or remove a tag to a file, specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br>
-The prefixes <code>-a</code> refers to "add" and <code>-r</code> refers to "remove".<br></p>
+<p>The tag command allows you to add or remove a tag to a file, specified by the index of the file that is next to the name of the file in the <a href="#app-layout">Files Section</a>, highlighted in green.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>tag INDEX -a [t/TAG]&#8230;&#8203;</code> [To add a tag]<br>
-Format: <code>tag INDEX -r [t/TAG]&#8230;&#8203;</code> [To remove a tag]</p>
+<p><span class="big">Format: <code>tag INDEX -a [t/TAG]&#8230;&#8203;</code> [To add a tag]</span>
+<span class="big">Format: <code>tag INDEX -r [t/TAG]&#8230;&#8203;</code> [To remove a tag]</span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file that you wish to edit.</p>
+</li>
+<li>
+<p><code>-a</code> is a prefix that tells the applicaton you wish to add a tag to the file.</p>
+</li>
+<li>
+<p><code>-r</code> is a prefix that tells the applicaton you wish to remove a tag from the file.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -679,15 +702,25 @@ Format: <code>tag INDEX -r [t/TAG]&#8230;&#8203;</code> [To remove a tag]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-file-code-delete-code"><a class="link" href="#deleting-a-file-code-delete-code">3.8. Deleting a file : <code>delete</code></a></h3>
+<h3 id="command-delete"><a class="link" href="#command-delete">3.8. Deleting a file : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>The delete command lets you to delete a file from the application and/or your computer.<br>
 In order to delete the file completely from the computer, you must specify the <code>hard</code> parameter to the <code>delete</code> command.
-The file that is to be deleted must be specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br></p>
+The file that is to be deleted must be specified by the index of the file that is next to the name of the file in the <a href="#app-layout">Files Section</a>, highlighted in green.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>delete INDEX</code>
-Format: <code>delete INDEX hard</code></p>
+<p><span class="big">Format: <code>delete INDEX</code></span><br>
+<span class="big">Format: <code>delete INDEX hard</code></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file that you wish to edit.</p>
+</li>
+<li>
+<p><code>hard</code> is a prefix that tells the application to remove the file from your computer completely.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -704,14 +737,25 @@ Format: <code>delete INDEX hard</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="moving-a-file-code-move-code"><a class="link" href="#moving-a-file-code-move-code">3.9. Moving a file : <code>move</code></a></h3>
+<h3 id="command-move"><a class="link" href="#command-move">3.9. Moving a file : <code>move</code></a></h3>
 <div class="paragraph">
-<p>The move command allows you to move a file, specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br>
-The file can be moved from its current directory on your computer to another directory on your computer.<br>
-The move file also has a User Interface Option to allow for an easier file moving experience.<br></p>
+<p>The <code>move</code> command allows you to move a file, specified by the index of the file that is next to the name of the file in the <a href="#app-layout">Files Section</a>, highlighted in green.<br>
+The file can be moved from its current folder on your computer to another folder on your computer.<br>
+The <code>move</code> command also has a <strong>GUI</strong> option to allow for an easier file moving experience.<br>
+To obtain the full path of a directory, you can follow the steps highlighted in the <a href="#steps-add">Step-By-Step Guide</a> of the <code>add</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>move INDEX d/DIRECTORY</code></p>
+<p><span class="big">Format: <code>move INDEX d/DIRECTORY</code></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file that you wish to edit.</p>
+</li>
+<li>
+<p><code>DIRECTORY</code> refers to the new folder you wish to move your file to.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -731,32 +775,39 @@ The move file also has a User Interface Option to allow for an easier file movin
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></h3>
+<h3 id="command-exit"><a class="link" href="#command-exit">3.10. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>This command lets you exit the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="retrieving-information-about-a-file-code-select-code"><a class="link" href="#retrieving-information-about-a-file-code-select-code">3.11. Retrieving information about a file: <code>select</code></a></h3>
+<h3 id="command-exit"><a class="link" href="#command-exit">3.11. Retrieving information about a file: <code>select</code></a></h3>
 <div class="paragraph">
 <p>Select a file to see a more information about file.</p>
 </div>
 <div class="paragraph">
-<p>Alternatively, clicking the file in the Files Section, highlighted in green, allows you to view more information pertaining to that file.<br>
-This information will be displayed in the Upcoming Deadlines Area, highlighted in red.<br></p>
+<p>Alternatively, clicking the file in the <a href="#app-layout">Files Section</a>, highlighted in green, allows you to view more information pertaining to that file.<br>
+This information will be displayed in the <a href="#app-layout">Upcoming Deadlines</a> Area, highlighted in red.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>select INDEX</code></p>
+<p><span class="big">Format: <code>select INDEX</code></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file that you wish to edit.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example: <code>select 3</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-a-deadline-for-the-file-code-deadline-code"><a class="link" href="#setting-a-deadline-for-the-file-code-deadline-code">3.12. Setting a deadline for the file : <code>deadline</code></a></h3>
+<h3 id="command-deadline"><a class="link" href="#command-deadline">3.12. Setting a deadline for the file : <code>deadline</code></a></h3>
 <div class="paragraph">
-<p>Set or remove a deadline for the a file, specified by the index of the file that is next to the name of the file in the Files Section, highlighted in green.<br>
+<p>Set or remove a deadline for the a file, specified by the index of the file that is next to the name of the file in the <a href="#app-layout">Files Section</a>, highlighted in green.<br>
 A file&#8217;s deadline is located under its name and has 4 colours to indicate the amount of time you have before it is due.<br></p>
 </div>
 <div class="paragraph">
@@ -766,6 +817,7 @@ A file&#8217;s deadline is located under its name and has 4 colours to indicate 
 <div class="content">
 <img src="images/UGDeadlineFar.png" alt="UGDeadlineFar" width="300">
 </div>
+<div class="title">Figure 11. Deadline Colour Green</div>
 </div>
 <div class="paragraph">
 <p>The colour Orange, indicates that you have <code>7</code> or less days till it is due. As shown below.<br></p>
@@ -774,6 +826,7 @@ A file&#8217;s deadline is located under its name and has 4 colours to indicate 
 <div class="content">
 <img src="images/UGDeadlineNear.png" alt="UGDeadlineNear" width="300">
 </div>
+<div class="title">Figure 12. Deadline Colour Orange</div>
 </div>
 <div class="paragraph">
 <p>The colour Red, indicates that you have reached or failed to complete the task by the due date, as shown below<br></p>
@@ -782,6 +835,7 @@ A file&#8217;s deadline is located under its name and has 4 colours to indicate 
 <div class="content">
 <img src="images/UGDeadlineDue.png" alt="UGDeadlineDue" width="300">
 </div>
+<div class="title">Figure 13. Deadline Colour Red</div>
 </div>
 <div class="paragraph">
 <p>The colour Blue indicates that you have completed the set task.<br></p>
@@ -790,14 +844,31 @@ A file&#8217;s deadline is located under its name and has 4 colours to indicate 
 <div class="content">
 <img src="images/UGDeadlineDone.png" alt="UGDeadlineDone" width="300">
 </div>
+<div class="title">Figure 14. Deadline Colour Blue</div>
 </div>
 <div class="paragraph">
-<p>All deadlines are also displayed in the Deadlines Section of the application highlighted by Red.<br></p>
+<p>All deadlines are also displayed in the <a href="#app-layout">Deadlines Section</a> of the application highlighted by Red.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>deadline INDEX date/DATE</code> [To Set a Deadline]<br>
-Format: <code>deadline INDEX done</code> [To Complete a Deadline]<br>
-Format: <code>deadline INDEX remove</code> [To remove a Deadline]<br></p>
+<p><span class="big">Format: <code>deadline INDEX date/DATE</code> [To Set a Deadline]</span><br>
+<span class="big">Format: <code>deadline INDEX done</code> [To Complete a Deadline]</span><br>
+<span class="big">Format: <code>deadline INDEX remove</code> [To remove a Deadline]</span><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index of the file that you wish to edit.</p>
+</li>
+<li>
+<p><code>DATE</code> to the deadline you wish to assign the file.</p>
+</li>
+<li>
+<p><code>done</code> is the prefix that tells the application that you have completed the deadline.</p>
+</li>
+<li>
+<p><code>remove</code> is the prefix that tells the application that you wish to remove the deadline.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -822,19 +893,26 @@ Format: <code>deadline INDEX remove</code> [To remove a Deadline]<br></p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-The date must be in the format of dd-mm-yyyy.<br>
+The date must be in the format of dd-mm-yyyy.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="filter-files-by-tags-code-filter-code"><a class="link" href="#filter-files-by-tags-code-filter-code">3.13. Filter files by tags: <code>filter</code></a></h3>
+<h3 id="command-filter"><a class="link" href="#command-filter">3.13. Filter files by tags: <code>filter</code></a></h3>
 <div class="paragraph">
 <p>The filter command shows you only the files that contain the tags specified in the <code>filter</code> command.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>filter t/TAG&#8230;&#8203;</code></p>
+<p><span class="big">Format: <code>filter t/TAG&#8230;&#8203;</code></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>TAG</code> refers to the tag you wish to filter the files by.<br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -854,16 +932,16 @@ The date must be in the format of dd-mm-yyyy.<br>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>lecture</code> will match <code>LECTURE</code></p>
+<p>The search is case insensitive. e.g <code>lecture</code> will match <code>LECTURE</code>.</p>
 </li>
 <li>
-<p>The order of the tags does not matter. e.g. <code>Lecture Week_1</code> will match <code>Week_1 Lecture</code></p>
+<p>The order of the tags does not matter. e.g. <code>t/Lecture t/Week_1</code> will match <code>t/Week_1 t/Lecture</code>.</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Urgent</code> will not match <code>UrgentFiles</code></p>
+<p>Only full words will be matched e.g. <code>Urgent</code> will not match <code>UrgentFiles</code>.</p>
 </li>
 <li>
-<p>File matching at least one keyword will be returned</p>
+<p>File matching at least one of the input tags will be shown.</p>
 </li>
 </ul>
 </div>
@@ -871,13 +949,20 @@ The date must be in the format of dd-mm-yyyy.<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-feature"><a class="link" href="#find-feature">3.14. Finding Content: <code>find</code></a></h3>
+<h3 id="command-find"><a class="link" href="#command-find">3.14. Finding Content: <code>find</code></a></h3>
 <div class="paragraph">
 <p>The find command allows you to <code>find</code> for files that contain a keyword or phrase
 OR <code>find</code> files which contain the entered keyword or phrase inside it.</p>
 </div>
 <div id="find-format" class="paragraph">
-<p>Format: <code>find KEYWORD</code></p>
+<p><span class="big">Format: <code>find KEYWORD</code></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>KEYWORD</code> refers to the word that you wish to search for within the files of the application.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -893,18 +978,14 @@ OR <code>find</code> files which contain the entered keyword or phrase inside it
 </ul>
 </div>
 <div class="sect3">
-<h4 id="step-by-step-guide"><a class="link" href="#step-by-step-guide">3.14.1. Step-By-Step Guide</a></h4>
+<h4 id="steps-find"><a class="link" href="#steps-find">3.14.1. Step-By-Step Guide</a></h4>
 <div class="paragraph">
 <p>If, for example, you wish to locate the files that contain the word <code>Introduction</code>
 in its name or files that contain the word <code>Introduction</code> in its internal content.
-You may carry out the following steps in-order to get your desired list of files.</p>
+You may carry out the following steps in-order to get your desired list of files.<br></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>When you open the application, the image below illustrates the screen you might see initially.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Step 1: Launch the application by double clicking the <code>pdfplusplus.jar</code>. To view the following screen.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -922,6 +1003,10 @@ Files you observe may be different and depends on the actions you have previousl
 <div class="content">
 <img src="images/UGFindFeatureImage1.png" alt="UGFindFeatureImage1" width="600">
 </div>
+<div class="title">Figure 15. Find Command Step 1 &amp; Step 2</div>
+</div>
+<div class="paragraph">
+<p>Step 2:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -929,9 +1014,16 @@ Files you observe may be different and depends on the actions you have previousl
 <p>As shown by the image, your application should contain an existing list of files.</p>
 </li>
 <li>
-<p>Next you are to key in the <code>find</code> command followed by the keyword as illustrated by the command
-<a href="#find-feature">format</a>.</p>
+<p>You are to key in the <code>find</code> command followed by the keyword as illustrated by the command
+<a href="#command-find">format</a>.</p>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Step 3:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Finally, press <kbd>Enter</kbd> and give the application a short time to sieve through all the files
 it manages and locate the relevant ones for you.</p>
@@ -945,22 +1037,19 @@ it manages and locate the relevant ones for you.</p>
 <div class="content">
 <img src="images/UGFindFeatureImage2.png" alt="UGFindFeatureImage2" width="600">
 </div>
+<div class="title">Figure 16. Find Command Step 3</div>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>As seen in the image, the files that are relevant to your search will be displayed on the top
 left. These files are those that contain the keyword <code>Introduction</code> in its name, and files which
-contain the keyword within its content.</p>
-</li>
-<li>
+contain the keyword within its content.<br></p>
+</div>
+<div class="paragraph">
 <p>The application also shows you other useful information such as, the number of files that
-match the criteria you entered into the application.</p>
-</li>
-<li>
-<p>And with that you have successfully utilized the <code>find</code> feature.</p>
-</li>
-</ul>
+match the criteria you entered into the application as shown in the image above.<br></p>
+</div>
+<div class="paragraph">
+<p>And with that you have successfully utilized the <code>find</code> feature.<br></p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -985,7 +1074,7 @@ to finish its operation.
 </td>
 <td class="content">
 As part of a security measure, all files that are encrypted will not be subject to the <code>find</code> command.
-This will prevent any information about your secure files from being leaked.
+This will prevent any information about your secure files from being leaked to malicious users.
 </td>
 </tr>
 </table>
@@ -993,11 +1082,11 @@ This will prevent any information about your secure files from being leaked.
 </div>
 </div>
 <div class="sect2">
-<h3 id="file-protection-code-encrypt-code-code-decrypt-code"><a class="link" href="#file-protection-code-encrypt-code-code-decrypt-code">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
+<h3 id="command-encdec"><a class="link" href="#command-encdec">3.15. File Protection: <code>encrypt</code> &amp; <code>decrypt</code></a></h3>
 <div class="paragraph">
 <p>PDF++ offers native support for file protection.
 The command <code>encrypt</code> allows you to protect your files with a password such that
-they cannot be accessed without a password that you had specified.
+they cannot be accessed without the password that you had specified.
 Similarly, the command <code>decrypt</code> allows you to remove the password that
 you had set for the file.</p>
 </div>
@@ -1018,60 +1107,16 @@ interchangeably.
 <p>The <strong>Encrypt</strong> and <strong>Decrypt</strong> feature has the following syntax:</p>
 </div>
 <div class="paragraph">
-<p>Encryption: <code>encrypt INDEX password/PASSWORD</code></p>
-</div>
-<div class="paragraph">
-<p>Decryption: <code>decrypt INDEX password/PASSWORD</code></p>
+<p><span class="big">Format: <code>encrypt INDEX password/PASSWORD</code> [For Encryption]</span><br>
+<span class="big">Format: <code>decrypt INDEX password/PASSWORD</code> [For Decryption]</span></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> refers to the index of the file on the list that you wish to encrypt/decrypt.
-it must be</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>A positive number, and</p>
+<p><code>INDEX</code> refers to the index of the file on the list that you wish to encrypt/decrypt.</p>
 </li>
 <li>
-<p>A number within the range of number of documents in PDF++.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>For example, if there are 2 documents in the app,</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Valid index: 1, 2</p>
-</li>
-<li>
-<p>Invalid index: -1, 0, "NotANumber"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><code>password/</code> refers to the command immediately following after this prefix is the password
-of the file</p>
-</li>
-<li>
-<p><code>PASSWORD</code> refers to the password</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>you wish to encrypt your file with, or</p>
-</li>
-<li>
-<p>of the encrypted file that you wish to decrypt</p>
-</li>
-</ol>
-</div>
+<p><code>PASSWORD</code> refers to the password which you wish to assign to the particular file.</p>
 </li>
 </ul>
 </div>
@@ -1089,44 +1134,44 @@ of the file</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Please refer to <a href="#encryption-guide">Encryption Guide</a> or <a href="#decryption-guide">Decryption Guide</a>
+<p>Please refer to <a href="#steps-encrypt">Encryption Guide</a> or <a href="#steps-decrypt">Decryption Guide</a>
 for help in using these features.</p>
 </div>
 <div class="sect3">
-<h4 id="encryption-guide"><a class="link" href="#encryption-guide">3.15.1. Encryption Guide</a></h4>
+<h4 id="steps-encrypt"><a class="link" href="#steps-encrypt">3.15.1. Encryption Guide</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner workings
 of the Encrypt feature.</p>
 </div>
 <div class="paragraph">
-<p>Step 1: The user launches the application with either</p>
+<p>Step 1: Launch the application by double clicking the <code>pdfplusplus.jar</code>. To view the following screen.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>an empty list, or</p>
-</li>
-<li>
-<p>an existing set of <code>Pdf</code> as shown below</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Please refer to <a href="#adding-a-file-code-add-code">add feature</a> guide in understanding
-how you can add your files into PDF++ that you wish to encrypt.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Files you observe may be different and depends on the actions you have previously carried out on our application
+</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/EncryptFeatureStep1Default.png" alt="EncryptFeatureStep1Default" width="600">
 </div>
+<div class="title">Figure 17. Encrypt Command Step 1</div>
 </div>
 <div class="paragraph">
-<p>Step 2: You select the file that you wish to encrypt via the INDEX on the list.</p>
+<p>Step 2: Select the file that you wish to encrypt via the <code>INDEX</code> on the list.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/EncryptFeatureStep2Index.png" alt="EncryptFeatureStep2Index" width="600">
 </div>
+<div class="title">Figure 18. Encrypt Command Step 2</div>
 </div>
 <div class="paragraph">
 <p>Step 3: Enter the <code>encrypt</code> command into the text box, following the outlined syntax as
@@ -1136,72 +1181,17 @@ illustrated below.</p>
 <div class="content">
 <img src="images/EncryptFeatureStep3UserInput.png" alt="EncryptFeatureStep3UserInput" width="600">
 </div>
+<div class="title">Figure 19. Encrypt Command Step 3</div>
 </div>
 <div class="paragraph">
-<p>Step 4: Upon hitting <kbd>enter</kbd> to execute the command, the <code>EncryptCommandParser</code>
-breaks down the input into several components that are required to be
-executed by the <code>EncryptCommand</code>.</p>
+<p>Step 4: Upon hitting <kbd>enter</kbd> to execute the command, your inputs are verified and if successful,
+your selected file is encrypted with the given password.</p>
 </div>
-<div class="paragraph">
-<p>Upon analysing the input, the parser then creates a new <code>EncryptCommand</code> that will be executed according
-to your input.</p>
-</div>
-<div class="paragraph">
-<p>Step 5: Upon receiving the necessary information from the parser, which includes the INDEX and
-PASSWORD, the <code>EncryptCommand</code> first checks if the INDEX is valid.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> is not a number.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EncryptFeatureStep5NotANumberIndex.png" alt="EncryptFeatureStep5NotANumberIndex" width="600">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> is not within the number of documents in the list.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EncryptFeatureStep5IndexOutOfBound.png" alt="EncryptFeatureStep5IndexOutOfBound" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Then checks if the PASSWORD is valid.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>PASSWORD</code> is empty or a space.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EncryptFeatureStep5InvalidPassword.png" alt="EncryptFeatureStep5InvalidPassword" width="600">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> and <code>PASSWORD</code> are both valid. The file you selected will be encrypted with the
-password you specified.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 Upon successful encryption, there will be a lock icon at the bottom right of the card
@@ -1216,9 +1206,9 @@ to indicate that the file is an encrypted file.
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6: If the command passes the validity check, the file you have selected is encrypted.
+<p>Step 5: If the command passes the validity check, the file you have selected is encrypted.
 You can open your file to see the result. Please refer to
-<a href="#opening-a-file-code-open-code">open feature</a> guide in understanding the <code>open</code> feature.</p>
+<a href="#command-open">Section 3.5, &#8220;Opening a file : <code>open</code>&#8221;</a> for the <code>open</code> feature.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1227,7 +1217,7 @@ You can open your file to see the result. Please refer to
 </div>
 </div>
 <div class="sect3">
-<h4 id="decryption-guide"><a class="link" href="#decryption-guide">3.15.2. Decryption Guide</a></h4>
+<h4 id="steps-decrypt"><a class="link" href="#steps-decrypt">3.15.2. Decryption Guide</a></h4>
 <div class="paragraph">
 <p>Illustrate below is a sample usage scenario that provides a clear view to the inner workings
 of the Decrypt feature.</p>
@@ -1257,26 +1247,13 @@ of the Decrypt feature.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 1: The user launches the application with either</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>an empty list, or</p>
-</li>
-<li>
-<p>an existing set of <code>Pdf</code> as shown below</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Please refer to <a href="#adding-a-file-code-add-code">add feature</a> guide in understanding
-how you can add your files into PDF++ that you wish to decrypt.</p>
+<p>Step 1: Launch the application, similar to the <a href="#steps-encrypt">Step-By-Step</a> Encrypt guide.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DecryptFeatureStep1Default.png" alt="DecryptFeatureStep1Default" width="600">
 </div>
+<div class="title">Figure 20. Decrypt Command Step 1</div>
 </div>
 <div class="paragraph">
 <p>Step 2: You select the file that you wish to decrypt via the INDEX on the list.</p>
@@ -1285,6 +1262,7 @@ how you can add your files into PDF++ that you wish to decrypt.</p>
 <div class="content">
 <img src="images/DecryptFeatureStep2Index.png" alt="DecryptFeatureStep2Index" width="600">
 </div>
+<div class="title">Figure 21. Decrypt Command Step 2</div>
 </div>
 <div class="paragraph">
 <p>Step 3: Enter the <code>decrypt</code> command into the text box, following the outlined syntax as
@@ -1294,66 +1272,8 @@ illustrated below.</p>
 <div class="content">
 <img src="images/DecryptFeatureStep3UserInput.png" alt="DecryptFeatureStep3UserInput" width="600">
 </div>
+<div class="title">Figure 22. Decrypt Command Step 3</div>
 </div>
-<div class="paragraph">
-<p>Step 4: Upon hitting <kbd>enter</kbd> to execute the command, the <code>DecryptCommandParser</code>
-breaks down the input into several components that are required to be
-executed by the <code>DecryptCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Upon analysing the input, the parser then creates a new <code>DecryptCommand</code> that will be executed according
-to your input.</p>
-</div>
-<div class="paragraph">
-<p>Step 5: Upon receiving the necessary information from the parser, which includes the INDEX and
-PASSWORD, the <code>DecryptCommand</code> first checks if the INDEX is valid.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> is not a number.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep5NotANumberIndex.png" alt="DecryptFeatureStep5NotANumberIndex" width="600">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> is not within the number of documents in the list.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep5IndexOutOfBound.png" alt="DecryptFeatureStep5IndexOutOfBound" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Then checks whether the file specified is encrypted</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>File is not encrypted.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep5NotEncrypted.png" alt="DecryptFeatureStep5NotEncrypted" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Finally, checks if the PASSWORD is valid.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>PASSWORD</code> is invalid</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1367,37 +1287,20 @@ without the password.
 </tr>
 </table>
 </div>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DecryptFeatureStep5InvalidPassword.png" alt="DecryptFeatureStep5InvalidPassword" width="600">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> and <code>PASSWORD</code> are both valid, and the file is encrypted.
-The file you selected will be decrypted with the
-password you specified.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Step 4: Upon hitting <kbd>enter</kbd>, the application verifies that you have entered the correct password and
+decrypts your file as shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DecryptFeatureStep5Success.png" alt="DecryptFeatureStep5Success" width="600">
 </div>
-</div>
-<div class="paragraph">
-<p>Step 6: If the command passes the validity check, the file you have selected is decrypted.
-You can open your file to see the result. Please refer to
-<a href="#opening-a-file-code-open-code">open feature</a> guide in understanding the <code>open</code> feature.</p>
+<div class="title">Figure 23. Decrypt Command Step 4</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="merging-files-code-merge-code"><a class="link" href="#merging-files-code-merge-code">3.16. Merging Files: <code>merge</code></a></h3>
+<h3 id="command-merge"><a class="link" href="#command-merge">3.16. Merging Files: <code>merge</code></a></h3>
 <div class="paragraph">
 <p>With the <code>merge</code> command , you can merge two or more files into a new single file.</p>
 </div>
@@ -1405,71 +1308,20 @@ You can open your file to see the result. Please refer to
 <p>The Merge feature has the following syntax:</p>
 </div>
 <div class="paragraph">
-<p><span class="big"><code>merge &lt;INDEX1&gt; &lt;INDEX2&gt; &#8230;&#8203;</code></span></p>
+<p><span class="big">Format: <code>merge INDEX1 INDEX2 &#8230;&#8203;</code></span></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;INDEX&gt;</code> refers to the index of the <code>Pdf</code> that you wish to merge.</p>
+<p><code>INDEX</code> refers to the index of the <code>Pdf</code> that you wish to merge.</p>
 </li>
 <li>
-<p>Minimum of two indices have to be provided for the merge to be performed, up to as many
-indices as desired.</p>
+<p>Minimum of two index values have to be provided to the application.</p>
 </li>
 <li>
-<p>It is possible to repeat an index; the PDF would simply merge with a copy of itself.</p>
+<p>It is possible to repeat an index value, the PDF would simply merge with a copy of itself.</p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The index value can be referenced from the list in the main application, or from the
-result of the <code>Filter</code>, <code>Find</code> or <code>List</code> feature.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="feature-breakdown-3"><a class="link" href="#feature-breakdown-3">3.16.1. Feature breakdown</a></h4>
-<div class="paragraph">
-<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
-workings of the <code>merge</code> feature.</p>
-</div>
-<div class="paragraph">
-<p>Step 1: From the main interface of the application, the user chooses the file(s) that
-they wish to merge, and enters the <code>merge</code> command into the CLI Interface, following
-the outlined Syntax as illustrated below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/MergeFeatureStep1.png" alt="MergeFeatureStep1" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2: After executing the command, the <strong>MergeCommandParser</strong> parses the input into
-relevant objects that are required to be executed by the <strong>MergeCommand</strong> object. In
-particular, it ensures that there are two or more arguments passed as described in the
-above Syntax. Upon parsing, the parser then creates a new <strong>MergeCommand</strong> that will execute
-the user&#8217;s input.</p>
-</div>
-<div class="paragraph">
-<p>In this case, the above two files will be merged, with the <em>"CS2103T_PDF++_UG_Intro.pdf"</em>
-file appended behind the other file.</p>
-</div>
-<div class="paragraph">
-<p>Step 3: The <strong>MergeCommand</strong> is then executed. During the execution, there are several levels
-of validation that, failing which would stop the execution and throw an exception.
-Here are the different cases:</p>
-</div>
-<div class="paragraph">
-<p>Step 4: Successful execution of the command would return a <strong>CommandResult</strong> object and create the
-a new file with the merged content. The new name of the merged file follows the format: "merged[hashcode].pdf". This is to ensure
-unique file name. The hashcode in the name will be modified if name already exists.</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1494,28 +1346,63 @@ unique file name. The hashcode in the name will be modified if name already exis
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+The newly created file will be stored in the directory of the <code>INDEX</code> that was first specified.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
 If the combined file size is &gt; 100MB, the operation will take more than a minute to execute. Please
 give the application some time to completely execute the operation.
 </td>
 </tr>
 </table>
 </div>
-<div class="sidebarblock">
+<div class="sect3">
+<h4 id="steps-merge"><a class="link" href="#steps-merge">3.16.1. Step-By-Step Guide</a></h4>
+<div class="paragraph">
+<p>Illustrated below is a sample usage scenario that provides a clear view to the inner
+workings of the <code>merge</code> feature.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: Launch the application by double clicking the <code>pdfplusplus.jar</code>. To view the following screen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Files you observe may be different and depends on the actions you have previously carried out on our application
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 2: From the main interface of the application, the user chooses the file(s) that
+they wish to merge, and enters the <code>merge</code> command into the <strong>TI</strong>, following
+the outlined syntax as illustrated below.</p>
+</div>
+<div class="imageblock">
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>A minimum of 2 files must be specified by their indexes</p>
-</li>
-<li>
-<p>The same file can be merged with itself, hence creating a new file that is composed of the same file twice.</p>
-</li>
-<li>
-<p>The newly created file will be stored in the directory of the <code>INDEX</code> that was first specified.</p>
-</li>
-</ul>
+<img src="images/MergeFeatureStep1.png" alt="MergeFeatureStep1" width="600">
 </div>
+<div class="title">Figure 24. Merge Command Step 2</div>
 </div>
+<div class="paragraph">
+<p>Step 3: After executing the command, the above two files will be merged, with the <em>"CS2103T_PDF++_UG_Intro.pdf"</em>
+file attached behind your other selected file.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: The <strong>MergeCommand</strong> is then executed. The new name of the merged file follows the format: "merged[hashcode].pdf",
+where hashcode is a random string of letters and numbers. This prevents any naming conflicts between files.</p>
 </div>
 </div>
 </div>
@@ -1534,65 +1421,65 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add f/PATH_TO_FILE</code><br>
+<p><a href="#command-add"><strong>Add</strong></a> <code>add f/PATH_TO_FILE</code><br>
 e.g. <code>add f/C:\Users\Raj\Documents\Tutorial3.pdf</code></p>
 </li>
 <li>
-<p><strong>Rename</strong> <code>rename INDEX n/NEW_NAME</code><br>
+<p><a href="#command-rename"><strong>Rename</strong></a> <code>rename INDEX n/NEW_NAME</code><br>
 e.g. <code>rename 2 n/Resume.pdf</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p><a href="#command-list"><strong>List</strong></a> : <code>list</code></p>
 </li>
 <li>
-<p><strong>Open</strong> : <code>open INDEX</code>
+<p><a href="#command-open"><strong>Open</strong></a> : <code>open INDEX</code>
 e.g. <code>open 3</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
+<p><a href="#command-delete"><strong>Delete</strong></a> : <code>delete INDEX</code><br>
 e.g. <code>delete 4</code></p>
 </li>
 <li>
-<p><strong>Move</strong> : <code>move INDEX d/LOCATION</code>
+<p><a href="#command-move"><strong>Move</strong></a> : <code>move INDEX d/LOCATION</code>
 e.g. <code>move 3 d/C:\User\Jeremy\Downloads</code></p>
 </li>
 <li>
-<p><strong>Tag</strong> : <code>tag -a INDEX t/TAG…</code> or <code>tag -r INDEX t/TAG</code><br>
+<p><a href="#command-tag"><strong>Tag</strong></a> : <code>tag -a INDEX t/TAG…</code> or <code>tag -r INDEX t/TAG</code><br>
 e.g. <code>tag 3 -a t/DijkstraGraph t/Tutorial</code>, <code>tag 1 -r t/Homework</code></p>
 </li>
 <li>
-<p><strong>Filter</strong> : <code>filter t/KEYWORD&#8230;&#8203;</code><br>
+<p><a href="#command-filter"><strong>Filter</strong></a> : <code>filter t/KEYWORD&#8230;&#8203;</code><br>
 e.g. <code>filter t/GraphsDFS</code></p>
 </li>
 <li>
-<p><strong>Deadline</strong> : <code>deadline INDEX date/DATE</code> or <code>deadline INDEX done</code> or <code>deadline INDEX remove</code><br>
+<p><a href="#command-deadline"><strong>Deadline</strong></a> : <code>deadline INDEX date/DATE</code> or <code>deadline INDEX done</code> or <code>deadline INDEX remove</code><br>
 e.g. <code>deadline 3 date/20-02-2019</code> , <code>deadline 2 done</code>, <code>deadline 2 remove</code></p>
 </li>
 <li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
+<p><a href="#command-select"><strong>Select</strong></a> : <code>select INDEX</code><br>
 e.g. <code>select 3</code></p>
 </li>
 <li>
-<p><strong>Encrypt</strong> : <code>encrypt INDEX password/PASSWORD</code><br>
+<p><a href="#command-encdec"><strong>Encrypt</strong></a> : <code>encrypt INDEX password/PASSWORD</code><br>
 e.g. <code>encrypt 2 password/superPASSWORD</code></p>
 </li>
 <li>
-<p><strong>Decrypt</strong> : <code>decrypt INDEX password/PASSWORD</code><br>
+<p><a href="#command-encdec"><strong>Decrypt</strong></a> : <code>decrypt INDEX password/PASSWORD</code><br>
 e.g. <code>decrypt 2 password/superPASSWORD</code></p>
 </li>
 <li>
-<p><strong>Merge</strong> : <code>merge INDEX INDEX&#8230;&#8203;</code><br>
+<p><a href="#command-merge"><strong>Merge</strong></a> : <code>merge INDEX INDEX&#8230;&#8203;</code><br>
 e.g <code>merge 1 2 1</code></p>
 </li>
 <li>
-<p><strong>Sort</strong> : <code>sort CRITERIA ORDER</code><br>
+<p><a href="#command-sort"><strong>Sort</strong></a> : <code>sort CRITERIA ORDER</code><br>
 e.g <code>sort name down</code>, <code>sort deadline up</code>, <code>sort size down</code></p>
 </li>
 <li>
-<p><strong>Help</strong> : <code>help</code></p>
+<p><a href="#command-help"><strong>Help</strong></a> : <code>help</code></p>
 </li>
 <li>
-<p><strong>Exit</strong> : <code>exit</code></p>
+<p><a href="#command-exit"><strong>Exit</strong></a> : <code>exit</code></p>
 </li>
 </ul>
 </div>
@@ -1604,9 +1491,6 @@ e.g <code>sort name down</code>, <code>sort deadline up</code>, <code>sort size 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>INDEX</strong> : The number that references a file managed by the application.</p>
-</li>
-<li>
 <p><strong>Command</strong> : Keyword that tells the application what to do.</p>
 </li>
 <li>
@@ -1615,7 +1499,51 @@ e.g <code>sort name down</code>, <code>sort deadline up</code>, <code>sort size 
 <li>
 <p><strong>TI</strong> : Text Input</p>
 </li>
+<li>
+<p><strong>Merge</strong> : Attach the contents of one PDF to another.</p>
+</li>
+<li>
+<p><strong>Encrypt</strong> : To lock a PDF with a password.</p>
+</li>
+<li>
+<p><strong>Decrypt</strong> : To remove the lock from a PDF. (Provided it already has one)</p>
+</li>
+<li>
+<p><strong>Filter</strong> : To sieve relevant files from irrelevant ones.</p>
+</li>
+<li>
+<p><strong>Deadline</strong> : To set a due date to a file.</p>
+</li>
+<li>
+<p><strong>Tag</strong> : A text label attached to a file for identification or providing more information.</p>
+</li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 08:11:15 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="upcoming-features"><a class="link" href="#upcoming-features">6. Upcoming Features</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Connection to External Servers:<br>
+We plan to allow you connect directly to your cloud servers to synchronize documents across several devices.<br>
+These servers include popular sites such as LumiNus.</p>
+</li>
+<li>
+<p>Login Page:<br>
+We plan to include a Login Page to help authenticate you to the application so that you can access the app more securely.</p>
+</li>
+<li>
+<p>Text-to-Speech:<br>
+We plan to implement a Text-to-Speech option that could potentially read the contents of your file or the name of your file to you.</p>
+</li>
+<li>
+<p>Multiple File Formats:<br>
+We plan to allow you to use our application with file-types beyond <code>.pdf</code> files.</p>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 08:25:27 UTC</div></div></div></body></html>
