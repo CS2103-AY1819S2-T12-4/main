@@ -85,8 +85,20 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-pdf">G.2. Deleting a pdf</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#adding-a-pdf">G.2. Adding a pdf</a></li>
+<li><a href="#sorting-the-list-of-pdf">G.3. Sorting the list of pdf</a></li>
+<li><a href="#open">G.4. Open</a></li>
+<li><a href="#rename-a-pdf-file">G.5. Rename a pdf file</a></li>
+<li><a href="#tagging-a-pdf">G.6. Tagging a pdf</a></li>
+<li><a href="#deleting-a-pdf">G.7. Deleting a pdf</a></li>
+<li><a href="#move">G.8. Move</a></li>
+<li><a href="#deadline">G.9. Deadline</a></li>
+<li><a href="#filter">G.10. Filter</a></li>
+<li><a href="#find">G.11. Find</a></li>
+<li><a href="#encrypt">G.12. Encrypt</a></li>
+<li><a href="#decrypt">G.13. Decrypt</a></li>
+<li><a href="#merge">G.14. Merge</a></li>
+<li><a href="#saving-data">G.15. Saving data</a></li>
 </ul>
 </li>
 </ul></div></div><div id="content"><div id="preamble">
@@ -4083,7 +4095,244 @@ Expected: The most recent window size and directory is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-pdf"><a class="link" href="#deleting-a-pdf">G.2. Deleting a pdf</a></h3>
+<h3 id="adding-a-pdf"><a class="link" href="#adding-a-pdf">G.2. Adding a pdf</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an actual pdf file that is on local device</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Have Read, Write and Execute permissions to access the file.</p>
+</li>
+<li>
+<p>The file must be an unencrypted and uncorrupted pdf file.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>add f/C:\Users\WeiTang\Desktop\test\validPdfFile.pdf</code></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Please make sure that your command is of this format: <code>add f/VALIDFILEPATH.pdf</code>.
+Note that the file path various for Operating Systems and devices.</p>
+</li>
+<li>
+<p>Expected: The pdf is added to the last index of the list. Details of the added pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>add f/invalidFilePath</code></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Expected: No pdf is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-the-list-of-pdf"><a class="link" href="#sorting-the-list-of-pdf">G.3. Sorting the list of pdf</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sorting the list of pdfs in a specified order</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system. The sort command works even for an empty list.</p>
+</li>
+<li>
+<p>Test case: <code>sort name up</code><br>
+Expected: The list of pdfs will be sorted according to name in an ascending order.</p>
+</li>
+<li>
+<p>Other correct sort commands to try: <code>sort name down</code> (sort the list by name in an descending order), <code>sort size up</code> (sort the list by size in an
+ascending order), <code>sort size down</code> (sort the list by size in an descending order), <code>sort deadline up</code> (sort the list by deadline in an ascending order),
+<code>sort deadline down</code> (sort the list by deadline in an descending order).</p>
+</li>
+<li>
+<p>Test case: <code>sort invalidOperation up</code><br>
+Expected: The list of pdfs is not sorted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect sort commands to try: <code>sort name wrongCriteria</code> (the order is wrong), <code>sort name</code> (sort order is not specified),
+<code>sort up</code> (sort order is not specified).</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Moving a pdf to a new specified directory</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>move 1</code><br>
+Expected: A GUI will show to allow you to select the directory that you want to move the first pdf to.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>If the directory indicated is different from the current directory of pdf<br>
+Expected: The pdf is moved to the new directory. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>If the directory indicated is same from the current directory of the pdf<br>
+Expected: The first pdf is not moved. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>move 1 d/validPathToDirectory</code></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>If the directory indicated is different from the current directory of pdf<br>
+Expected: The pdf is moved to the new directory. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>If the directory indicated is same from the current directory of the pdf<br>
+Expected: The first pdf is not moved. Error details shown in the status message. Status bar remains the same.
+Expected: The first pdf is moved to the new directory. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>move d/validPathToDirectory</code>
+Expected: No pdf is moved. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect move commands to try: <code>move</code>, <code>move 1 d/</code> (no directory specified), <code>move 1 validPathToDirectory</code> (no directory prefix),
+<code>move 1 d/NotADirectory.pdf</code> (not directory path specified)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="open"><a class="link" href="#open">G.4. Open</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the pdf by the specified index in the list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>open 1</code>
+Expected: The first pdf is opened using the system default PDFReader. Details of the updated pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p><code>open 0</code><br>
+Expected: No pdf is open. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect open commands to try: <code>open</code>, <code>open x</code> (where x is larger than the list size), <code>open y</code> (where y is any negative number) <br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rename-a-pdf-file"><a class="link" href="#rename-a-pdf-file">G.5. Rename a pdf file</a></h3>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdfs in the list are uncorrupted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>rename 1 n/newName.pdf</code><br>
+Expected: First pdf is renamed to <code>newName.pdf</code>. Details of the updated pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>rename 1 n/pdf</code><br>
+Expected: First pdf is not renamed. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect rename commands to try: <code>rename 1 validName.pdf</code> (no prefix), <code>rename x n/validName.pdf</code>(where x is larger than the list size),
+<code>rename y n/validName.pdf</code> (where y is any negative number), <code>rename n/validName.pdf</code> (no index), <code>rename 1 wrong/validName.pdf</code> (wrong prefix) <br>
+    Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tagging-a-pdf"><a class="link" href="#tagging-a-pdf">G.6. Tagging a pdf</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tagging a pdf that is in the list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>tag 1 -a t/SEROCKS</code><br>
+Expected: First pdf is tagged with SEROCKS. Details of the updated pdf shown in the status message. Timestamp in the status bar is updated.
+The first file in the file section GUI has the <code>SEROCKS</code> tag.</p>
+</li>
+<li>
+<p>Other correct tag commands to try: <code>tag 1 -a t/SEROCKS t/CS2103T</code> (as tag supports for adding of multiple tags)<br>
+Expected: Similar to previous.</p>
+</li>
+<li>
+<p>Test case: <code>tag 1 -r t/SEROCKS</code></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>If the tag don&#8217;t exists:<br>
+Expected: The pdf is not tagged. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>If the tag exists:<br>
+Expected: First pdf&#8217;s tag is removed. Details of the updated pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>tag 1 -r SEROCKS</code><br>
+Expected: The pdf is not tagged. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect tag commands to try: <code>tag 1 -x t/SEROCKS</code> (invalid operation), <code>tag 1 -a t/</code> (no tag specified)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-pdf"><a class="link" href="#deleting-a-pdf">G.7. Deleting a pdf</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4095,14 +4344,14 @@ Expected: The most recent window size and directory is retained.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First pdf is deleted from the list. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
 Expected: No pdf is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size), <code>delete y</code> (where y is any negative number) <br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -4112,7 +4361,249 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="move"><a class="link" href="#move">G.8. Move</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Moving a pdf to a new specified directory</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>move 1</code><br>
+Expected: A GUI will show to allow you to select the directory that you want to move the first pdf to.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>If the directory indicated is different from the current directory of pdf<br>
+Expected: The pdf is moved to the new directory. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>If the directory indicated is same from the current directory of the pdf<br>
+Expected: The first pdf is not moved. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>move 1 d/validPathToDirectory</code></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>If the directory indicated is different from the current directory of pdf<br>
+Expected: The pdf is moved to the new directory. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>If the directory indicated is same from the current directory of the pdf<br>
+Expected: The first pdf is not moved. Error details shown in the status message. Status bar remains the same.
+Expected: The first pdf is moved to the new directory. Details of the deleted pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>move d/validPathToDirectory</code>
+Expected: No pdf is moved. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect move commands to try: <code>move</code>, <code>move 1 d/</code> (no directory specified), <code>move 1 validPathToDirectory</code> (no directory prefix),
+<code>move 1 d/NotADirectory.pdf</code> (not directory path specified)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deadline"><a class="link" href="#deadline">G.9. Deadline</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setting deadline of the pdf</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>deadline 1 date/14-4-2019</code><br>
+Expected: The first pdf is set with deadline 14-4-2019. Details of the edited pdf shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Other correct deadline commands to try: <code>deadline 1 done</code> (set that the task has been completed), <code>deadline 1 remove</code> (remove the deadline)</p>
+</li>
+<li>
+<p>Test case: <code>deadline 1 date/20-20-2019</code><br>
+Expected: No deadline is set to the first pdf. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect deadline commands to try: <code>deadline x date/4-4-2019</code> (where x is larger than the list size), <code>deadline y date/4-4-2019</code>
+(where y is any negative number), <code>deadline 1 date/</code> (no date specified), <code>deadline 1 d</code> (wrong prefix), <code>deadline date</code> (no index specified)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filter"><a class="link" href="#filter">G.10. Filter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Filters the list of pdfs by the specified tag</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>filter t/SEROCKS</code><br>
+Expected: All pdfs with the same tag will be shown in the filtered list. Details of the number of pdf is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Other correct filter commands to try: <code>filter t/SEROCKS t/CS2103T</code> (more than 1 tag specified)
+Expected: All pdfs with either of the tags will be shown in the filtered list.</p>
+</li>
+<li>
+<p>Test case: <code>filter t/</code><br>
+Expected: The list is not filtered. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find"><a class="link" href="#find">G.11. Find</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Finds the list of pdfs with the specified keyword(s)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>find algorithm</code><br>
+Expected: All pdfs with the keyword as the name and in the file will be shown in the filtered list. Details of the the number of pdf listed is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Other correct find commands to try: <code>find algorithm SEROCK</code> (more than one keyword)<br>
+Expected: All pdfs with at least one of the keywords as the name and in the file will be shown in the filtered list.</p>
+</li>
+<li>
+<p>Test case: <code>find</code><br>
+Expected: No pdf is filtered. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="encrypt"><a class="link" href="#encrypt">G.12. Encrypt</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Encrypts the pdf by the specified index of the list with the specified password</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted, unencrypted and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>encrypt 1 password/anyValidPassword</code><br>
+Expected: The first pdf will be encrypted with the password <code>anyValidPassword</code>. Details of the encryption is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>encrypt 1 password/</code><br>
+Expected: The first pdf is not encrypted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect encrypt commands to try: <code>encrypt 1 anyValidPassword</code> (no prefix), <code>encrypt 1 p/anyValidPassword</code> (wrong prefix),
+<code>encrypt password/anyValidPassword</code> (no index)
+    Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="decrypt"><a class="link" href="#decrypt">G.13. Decrypt</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Decrypts the pdf by the specified index of the list with the specified password.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted, protected and they exists in the system.</p>
+</li>
+<li>
+<p>Test case: <code>decrypt 1 password/anyValidPassword</code><br>
+Expected: The first pdf will be encrypted with the password <code>anyValidPassword</code>. Details of the decryption is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>decrypt 1 password/</code><br>
+Expected: The first pdf is not encrypted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect decrypt commands to try: <code>decrypt 1 anyValidPassword</code> (no prefix), <code>decrypt 1 p/anyValidPassword</code> (wrong prefix),
+<code>decrypt password/anyValidPassword</code> (no index)
+    Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="merge"><a class="link" href="#merge">G.14. Merge</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Merge 2 or more pdfs into 1 and adds the merged pdf to the back of the list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The pdf files in the list are uncorrupted, unpotected and they exists in the system, and at least 2 indexes are specified.</p>
+</li>
+<li>
+<p>Test case: <code>merge 1 2</code><br>
+Expected: The first and second pdfs are merged into one pdf and put at the back of the list. Details of the merge is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Other correct merge commands to try: <code>merge 1 1 1 1 1</code><br>
+Expected: The first pdf is merged 5 times into 1 pdf and the merged pdf is added to the back of the list.</p>
+</li>
+<li>
+<p>Test case: <code>merge 0</code><br>
+Expected: No merged pdf is produced. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect merge commands to try: <code>merge 1</code>, (only 1 index is specified), <code>merge 1 x</code> (where x is larger than the list size),
+<code>merge 1 y</code> (where y is any negative number)<br>
+    Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.15. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4120,13 +4611,27 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>When you have a corrupted data files in the application. You can follow the steps below:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Enter <code>open INDEX</code> to test that the file is really uncorrupted and cannot be accessed from
+the application</p>
+</li>
+<li>
+<p>Enter <code>delete INDEX</code> to remove the file from the application</p>
+</li>
+<li>
+<p>Enter <code>add f/PATHTOFILE.pdf</code> to add the file from the system to the application.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
+</li>
+</ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 08:25:27 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 10:14:26 UTC</div></div></div></body></html>
