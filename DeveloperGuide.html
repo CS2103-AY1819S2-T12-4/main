@@ -1,74 +1,80 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>PDF++ - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article toc2 toc-left"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">PDF++</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-T12-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>PDF++ - Developer Guide</h1><div id="toc" class="toc2"><div id="toctitle"></div><ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a>
+<li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#prerequisites">1.1. Prerequisites</a></li>
-<li><a href="#setting-up-the-project-in-your-computer">1.2. Setting up the project in your computer</a></li>
-<li><a href="#verifying-the-setup">1.3. Verifying the setup</a></li>
-<li><a href="#configurations-to-do-before-writing-code">1.4. Configurations to do before writing code</a></li>
+<li><a href="#software-overview">1.1. Software Overview</a></li>
+<li><a href="#developer-guide-usage">1.2. Developer Guide Usage</a></li>
 </ul>
 </li>
-<li><a href="#design">2. Design</a>
+<li><a href="#setting-up">2. Setting up</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#prerequisites">2.1. Prerequisites</a></li>
+<li><a href="#setting-up-the-project-in-your-computer">2.2. Setting up the project in your computer</a></li>
+<li><a href="#verifying-the-setup">2.3. Verifying the setup</a></li>
+<li><a href="#configurations-to-do-before-writing-code">2.4. Configurations to do before writing code</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#add-feature">3.1. Add Feature</a></li>
-<li><a href="#open-feature">3.2. Open feature</a></li>
-<li><a href="#rename-feature">3.3. Rename Feature</a></li>
-<li><a href="#move-feature">3.4. Move feature</a></li>
-<li><a href="#merge-feature">3.5. Merge feature</a></li>
-<li><a href="#delete-feature">3.6. Delete feature</a></li>
-<li><a href="#clear-feature">3.7. Clear feature</a></li>
-<li><a href="#deadline-feature">3.8. Deadline feature</a></li>
-<li><a href="#help-feature">3.9. Help feature</a></li>
-<li><a href="#exit-feature">3.10. Exit feature</a></li>
-<li><a href="#list-feature">3.11. List feature</a></li>
-<li><a href="#find-feature">3.12. Find feature</a></li>
-<li><a href="#filter-feature">3.13. Filter feature</a></li>
-<li><a href="#select-feature">3.14. Select feature</a></li>
-<li><a href="#sort-feature">3.15. Sort feature</a></li>
-<li><a href="#tag-feature">3.16. Tag feature</a></li>
-<li><a href="#history-feature">3.17. History feature</a></li>
-<li><a href="#undo-redo-feature-coming-in-v2-0">3.18. Undo/Redo feature [Coming in v2.0]</a></li>
-<li><a href="#file-protection">3.19. File Protection</a></li>
-<li><a href="#logging">3.20. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.21. Configuration</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a>
+<li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#editing-documentation">4.1. Editing Documentation</a></li>
-<li><a href="#publishing-documentation">4.2. Publishing Documentation</a></li>
-<li><a href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></li>
-<li><a href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></li>
-<li><a href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></li>
-<li><a href="#site-template">4.6. Site Template</a></li>
+<li><a href="#add-feature">4.1. Add Feature</a></li>
+<li><a href="#open-feature">4.2. Open feature</a></li>
+<li><a href="#rename-feature">4.3. Rename Feature</a></li>
+<li><a href="#move-feature">4.4. Move feature</a></li>
+<li><a href="#merge-feature">4.5. Merge feature</a></li>
+<li><a href="#delete-feature">4.6. Delete feature</a></li>
+<li><a href="#clear-feature">4.7. Clear feature</a></li>
+<li><a href="#deadline-feature">4.8. Deadline feature</a></li>
+<li><a href="#help-feature">4.9. Help feature</a></li>
+<li><a href="#exit-feature">4.10. Exit feature</a></li>
+<li><a href="#list-feature">4.11. List feature</a></li>
+<li><a href="#find-feature">4.12. Find feature</a></li>
+<li><a href="#filter-feature">4.13. Filter feature</a></li>
+<li><a href="#select-feature">4.14. Select feature</a></li>
+<li><a href="#sort-feature">4.15. Sort feature</a></li>
+<li><a href="#tag-feature">4.16. Tag feature</a></li>
+<li><a href="#history-feature">4.17. History feature</a></li>
+<li><a href="#undo-redo-feature-coming-in-v2-0">4.18. Undo/Redo feature [Coming in v2.0]</a></li>
+<li><a href="#file-protection">4.19. File Protection</a></li>
+<li><a href="#logging">4.20. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.21. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#Testing">5. Testing</a>
+<li><a href="#documentation">5. Documentation</a>
 <ul class="sectlevel2">
-<li><a href="#running-tests">5.1. Running Tests</a></li>
-<li><a href="#types-of-tests">5.2. Types of tests</a></li>
-<li><a href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></li>
+<li><a href="#editing-documentation">5.1. Editing Documentation</a></li>
+<li><a href="#publishing-documentation">5.2. Publishing Documentation</a></li>
+<li><a href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF format</a></li>
+<li><a href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></li>
+<li><a href="#Docs-PerFileDocSettings">5.5. Per-file Documentation Settings</a></li>
+<li><a href="#site-template">5.6. Site Template</a></li>
 </ul>
 </li>
-<li><a href="#dev-ops">6. Dev Ops</a>
+<li><a href="#Testing">6. Testing</a>
 <ul class="sectlevel2">
-<li><a href="#build-automation">6.1. Build Automation</a></li>
-<li><a href="#continuous-integration">6.2. Continuous Integration</a></li>
-<li><a href="#coverage-reporting">6.3. Coverage Reporting</a></li>
-<li><a href="#documentation-previews">6.4. Documentation Previews</a></li>
-<li><a href="#making-a-release">6.5. Making a Release</a></li>
-<li><a href="#managing-dependencies">6.6. Managing Dependencies</a></li>
+<li><a href="#running-tests">6.1. Running Tests</a></li>
+<li><a href="#types-of-tests">6.2. Types of tests</a></li>
+<li><a href="#troubleshooting-testing">6.3. Troubleshooting Testing</a></li>
+</ul>
+</li>
+<li><a href="#dev-ops">7. Dev Ops</a>
+<ul class="sectlevel2">
+<li><a href="#build-automation">7.1. Build Automation</a></li>
+<li><a href="#continuous-integration">7.2. Continuous Integration</a></li>
+<li><a href="#coverage-reporting">7.3. Coverage Reporting</a></li>
+<li><a href="#documentation-previews">7.4. Documentation Previews</a></li>
+<li><a href="#making-a-release">7.5. Making a Release</a></li>
+<li><a href="#managing-dependencies">7.6. Managing Dependencies</a></li>
 </ul>
 </li>
 <li><a href="#GetStartedProgramming">Appendix A: Suggested Programming Tasks to Get Started</a>
@@ -109,10 +115,50 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="prerequisites"><a class="link" href="#prerequisites">1.1. Prerequisites</a></h3>
+<h3 id="software-overview"><a class="link" href="#software-overview">1.1. Software Overview</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>PDF++ is a all-in-one document management tool that allows users to easily manage and manipulate their files.<br>
+<em>The current version of this application only deals with PDF files</em>.</p>
+</li>
+<li>
+<p>There are many unique features to the application such as the ability to search within the content of files,
+merging several files togeter, setting of deadlines and many more. These features can be referred to within the
+<a href="#implementation">Implementation</a> Section of this document.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="developer-guide-usage"><a class="link" href="#developer-guide-usage">1.2. Developer Guide Usage</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>This document is for developers who aim to further improve upon the application or change it to suit the needs of
+your target audience.</p>
+</li>
+<li>
+<p>Each feature and design component has its own sub-heading and can be referred through the links in the table-of-contents.<br>
+They contain sufficient diagrams and detailed explanations that will be extremely useful to you.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section will assist you in setting up the project for the first time in you computer. This will allow you to work
+on the application without any issue in the future.</p>
+</div>
+<div class="sect2">
+<h3 id="prerequisites"><a class="link" href="#prerequisites">2.1. Prerequisites</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -151,7 +197,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">1.2. Setting up the project in your computer</a></h3>
+<h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">2.2. Setting up the project in your computer</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -190,7 +236,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/main/java/seedu/pdf/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -203,13 +249,13 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </li>
 <li>
-<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
+<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S2-T12-4/main/blob/master/src/test/java/seedu/pdf/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">1.3. Verifying the setup</a></h3>
+<h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">2.3. Verifying the setup</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -222,9 +268,9 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="configurations-to-do-before-writing-code"><a class="link" href="#configurations-to-do-before-writing-code">1.4. Configurations to do before writing code</a></h3>
+<h3 id="configurations-to-do-before-writing-code"><a class="link" href="#configurations-to-do-before-writing-code">2.4. Configurations to do before writing code</a></h3>
 <div class="sect3">
-<h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">1.4.1. Configuring the coding style</a></h4>
+<h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">2.4.1. Configuring the coding style</a></h4>
 <div class="paragraph">
 <p>This project follows <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">oss-generic coding standards</a>. IntelliJ&#8217;s default style is mostly compliant with ours but it uses a different import order from ours. To rectify,</p>
 </div>
@@ -256,26 +302,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="updating-documentation-to-match-your-fork"><a class="link" href="#updating-documentation-to-match-your-fork">1.4.2. Updating documentation to match your fork</a></h4>
-<div class="paragraph">
-<p>After forking the repo, the documentation will still have the SE-EDU branding and refer to the <code>se-edu/addressbook-level4</code> repo.</p>
-</div>
-<div class="paragraph">
-<p>If you plan to develop this fork as a separate product (i.e. instead of contributing to <code>se-edu/addressbook-level4</code>), you should do the following:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
-</li>
-<li>
-<p>Replace the URL in the attribute <code>repoURL</code> in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="https://github.com/CS2103-AY1819S2-T12-4/main/docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="setting-up-ci"><a class="link" href="#setting-up-ci">1.4.3. Setting up CI</a></h4>
+<h4 id="setting-up-ci"><a class="link" href="#setting-up-ci">2.4.2. Setting up CI</a></h4>
 <div class="paragraph">
 <p>Set up Travis to perform Continuous Integration (CI) for your fork. See <a href="UsingTravis.html">UsingTravis.adoc</a> to learn how to set it up.</p>
 </div>
@@ -311,14 +338,14 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </div>
 </div>
 <div class="sect3">
-<h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">1.4.4. Getting started with coding</a></h4>
+<h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">2.4.3. Getting started with coding</a></h4>
 <div class="paragraph">
 <p>When you are ready to start coding,</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 2.1, &#8220;Architecture&#8221;</a>.</p>
+<p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 3.1, &#8220;Architecture&#8221;</a>.</p>
 </li>
 <li>
 <p>Take a look at <a href="#GetStartedProgramming">Appendix A, <em>Suggested Programming Tasks to Get Started</em></a>.</p>
@@ -330,10 +357,14 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section allows you to visualise the application in a top-down view, where you are able to see the general
+structure of the different components within PDF++.</p>
+</div>
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="paragraph">
 <p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
 </div>
@@ -430,14 +461,14 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/SDforDeletePdf.png" alt="SDforDeletePdf" width="800">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 3. Delete Image</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
@@ -468,7 +499,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
@@ -509,7 +540,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
@@ -568,7 +599,7 @@ which is the most used class throughout the application.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
@@ -593,7 +624,7 @@ which is the most used class throughout the application.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.pdfbook.commons</code> package.</p>
 </div>
@@ -601,7 +632,7 @@ which is the most used class throughout the application.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
@@ -614,13 +645,13 @@ which is the most used class throughout the application.</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="add-feature"><a class="link" href="#add-feature">3.1. Add Feature</a></h3>
+<h3 id="add-feature"><a class="link" href="#add-feature">4.1. Add Feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>This feature is facilitated by both the <strong>AddCommandParser</strong> and <strong>AddCommand</strong>.
 This feature adds the PDF file to the app using the path specified by your users.
-Other features such as the <a href="#rename-feature">Section 3.3, &#8220;Rename Feature&#8221;</a> and <a href="#open-feature">Section 3.2, &#8220;Open feature&#8221;</a> can only be performed on files that
+Other features such as the <a href="#rename-feature">Section 4.3, &#8220;Rename Feature&#8221;</a> and <a href="#open-feature">Section 4.2, &#8220;Open feature&#8221;</a> can only be performed on files that
 are added to the application.</p>
 </div>
 <div class="paragraph">
@@ -694,7 +725,7 @@ which verifies the file that the user wishes to add to the program.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="considerations"><a class="link" href="#considerations">3.1.2. Considerations</a></h4>
+<h4 id="considerations"><a class="link" href="#considerations">4.1.2. Considerations</a></h4>
 <div class="paragraph">
 <p>The implementation design of this feature was built upon the original implementation used by the
 <a href="https://github.com/se-edu/addressbook-level4">addressbook</a>. As the application is primarily meant to be operated through the CLI, it was decided to continue using the same prefix for the
@@ -707,7 +738,7 @@ to ascertain that it is a <code>.pdf</code> file and that it can be used with <a
 </div>
 </div>
 <div class="sect3">
-<h4 id="future-implementation"><a class="link" href="#future-implementation">3.1.3. Future Implementation</a></h4>
+<h4 id="future-implementation"><a class="link" href="#future-implementation">4.1.3. Future Implementation</a></h4>
 <div class="paragraph">
 <p>Currently PDF++ only supports PDF files, any other types of files will not be accepted.
 As the goal of the application is to be the sole manager of files, the application will be upgraded to work
@@ -716,9 +747,9 @@ with all files in v2.0.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="open-feature"><a class="link" href="#open-feature">3.2. Open feature</a></h3>
+<h3 id="open-feature"><a class="link" href="#open-feature">4.2. Open feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>open</code> feature is facilitated by both the <strong>OpenCommandParser</strong> and <strong>OpenCommand</strong>.
 Essentially upon opening a Pdf that is tracked by the application, the user will be able to
@@ -752,7 +783,7 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown"><a class="link" href="#feature-breakdown">3.2.2. Feature Breakdown</a></h4>
+<h4 id="feature-breakdown"><a class="link" href="#feature-breakdown">4.2.2. Feature Breakdown</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the Open feature.</p>
@@ -761,33 +792,59 @@ workings of the Open feature.</p>
 <p>Step 1: The user launches an application with either an existing set of <code>Pdf</code> or a
 new sample set of <code>Pdf</code> stored within as shown below.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/OpenFeatureStep1Default.png" alt="OpenFeatureStep1Default" width="600">
-</div>
-<div class="title">Figure 12. Step 1</div>
-</div>
 <div class="paragraph">
 <p>Step 2: The user chooses a <code>Pdf</code> that they wish to open, in this case <code>a.pdf</code>, and
 enters the <code>open</code> command into the CLI Interface, following the outlined Syntax as
 illustrated below.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/OpenFeatureStep2UserInput.png" alt="OpenFeatureStep2UserInput" width="600">
-</div>
-<div class="title">Figure 13. Step 2</div>
-</div>
 <div class="paragraph">
 <p>Step 3: Upon hitting enter to execute the command, the <strong>OpenCommandParser</strong> parses
-the input into relevant objects that are required to be executed by the <strong>OpenCommand</strong>
-object. Upon parsing, the parser then creates a new <strong>OpenCommand</strong> that will execute the
-user&#8217;s input.</p>
+the input in the following method:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Extract the <code>INDEX</code> that is input that was entered by the user.</p>
+</li>
+<li>
+<p>Verify that it contains a valid integer.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This is done by initialising the <code>Index</code> objects that verifies the above properties on
+instantiation.</p>
+</li>
+<li>
+<p>If the supplied parameter is invalid a <code>ParseException</code> is thrown and the <code>open</code> command is
+terminated.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Upon successfully parsing the input <code>Index</code>, a <code>OpenCommand</code> object is created with the relevant index
+and returned to the <code>LogicManager</code> for execution.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Step 4: Upon receiving the necessary information from the parser, the <strong>OpenCommand</strong>
-retrieves the directory of the Pdf listed in the Pdf Book. It then launches the Pdf
-with the user-default Pdf reader.</p>
+<p>Step 4: The <code>LogicManager</code> attempts to execute the <code>OpenCommand</code> by supplying it the <code>model</code> and <code>commandHistory</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5: The <code>OpenCommand</code> checks that the supplied <code>Index</code> matches a <code>Pdf</code> in the model and sources for the
+default application within the <code>Operating System</code> to open the file.</p>
+</div>
+<div class="paragraph">
+<p>Step 6: Finally, the <code>OpenCommand</code> supplies the default application with the file-path of the <code>Pdf</code> to open
+and returns a successful <code>CommandResult</code> to the <code>LogicManager</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Should there be any issue with the parsing of the <code>Pdf</code> due to invalid directories or a corrupted <code>Pdf</code> file,
+the <code>CommandException</code> will be thrown and the <code>OpenCommand</code> will be terminated. A "Fail Message" will then be displayed to the user.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>The implementation of the <strong>OpenCommand</strong> execution can be summarised in the following activity diagram:</p>
@@ -796,7 +853,7 @@ with the user-default Pdf reader.</p>
 <div class="content">
 <img src="images/OpenCommandActivityDiagram.png" alt="OpenCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 14. Open Command Activity Diagram</div>
+<div class="title">Figure 12. Open Command Activity Diagram</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -805,7 +862,8 @@ with the user-default Pdf reader.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-For more information about the behavior of launching the Pdf, please refer to Java SE 9 class Desktop.
+For more information about the behaviour of sourcing for the default application to open the
+Pdf, please refer to Java SE 9 class <a href="https://docs.oracle.com/javase/9/docs/api/java/awt/Desktop.html">Desktop</a>.
 </td>
 </tr>
 </table>
@@ -813,9 +871,9 @@ For more information about the behavior of launching the Pdf, please refer to Ja
 </div>
 </div>
 <div class="sect2">
-<h3 id="rename-feature"><a class="link" href="#rename-feature">3.3. Rename Feature</a></h3>
+<h3 id="rename-feature"><a class="link" href="#rename-feature">4.3. Rename Feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>rename</code> feature is facilitated by both the <strong>RenameCommandParser</strong> and <strong>RenameCommand</strong>.
 Essentially upon adding a Pdf to be tracked by the application, the user will be able to
@@ -825,17 +883,17 @@ change certain attributes tied to the PDF such as the <code>Name</code> and tied
 <div class="content">
 <img src="images/RenameCommandActivityDiagram.png" alt="RenameCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 15. Rename Command Activity Diagram</div>
+<div class="title">Figure 13. Rename Command Activity Diagram</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="move-feature"><a class="link" href="#move-feature">3.4. Move feature</a></h3>
+<h3 id="move-feature"><a class="link" href="#move-feature">4.4. Move feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>move</code> feature is facilitated by both <strong>MoveCommand</strong> and <strong>MoveCommandParser</strong>.
-This feature functions as a simplified version of <a href="#rename-feature">Section 3.3, &#8220;Rename Feature&#8221;</a>, as in nature
+This feature functions as a simplified version of <a href="#rename-feature">Section 4.3, &#8220;Rename Feature&#8221;</a>, as in nature
 it is making an edit to the directory of the file. However, in addition to making changes
 to the directory in the application storage, it also ensures that the directory changes
 are reflected in the local filesystem.</p>
@@ -886,7 +944,7 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-2"><a class="link" href="#feature-breakdown-2">3.4.2. Feature breakdown</a></h4>
+<h4 id="feature-breakdown-2"><a class="link" href="#feature-breakdown-2">4.4.2. Feature breakdown</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the <code>move</code> feature.</p>
@@ -900,7 +958,7 @@ the outlined Syntax as illustrated below.</p>
 <div class="content">
 <img src="images/MoveFeatureStep1.png" alt="MoveFeatureStep1" width="600">
 </div>
-<div class="title">Figure 16. Step 1</div>
+<div class="title">Figure 14. Step 1</div>
 </div>
 <div class="paragraph">
 <p>In this scenario, there is a file <strong>document.pdf</strong> in the windows <em>Desktop</em> directory, and
@@ -917,26 +975,23 @@ the user&#8217;s input.</p>
 <div class="paragraph">
 <p>Step 3: The <code>MoveCommand</code> is then executed. Successful execution of the command would return
 a <strong>CommandResult</strong> object, while unsuccessful execution due to validation failure will throw
-a <strong>CommandException</strong>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/MoveCommandActivityDiagram.png" alt="MoveCommandActivityDiagram" width="600">
-</div>
+a <strong>CommandException</strong>.
+.Move Command Activity Diagram
+image::MoveCommandActivityDiagram.png[width="600"]</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="merge-feature"><a class="link" href="#merge-feature">3.5. Merge feature</a></h3>
+<h3 id="merge-feature"><a class="link" href="#merge-feature">4.5. Merge feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current Implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>merge</code> feature is facilitated by both <strong>MergeCommand</strong> and <strong>MergeCommandParser</strong>.
 This feature utilises the
 <a href="https://pdfbox.apache.org/download.cgi#20x"><em>Apache PDFBox® library</em></a>, specifically the
 <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a>
 API to append two or more PDFs and create a new file with the merged content. As there will be one
-additional file added to the application, this feature also implicitly performs <a href="#add-feature">Section 3.1, &#8220;Add Feature&#8221;</a> to add the new
+additional file added to the application, this feature also implicitly performs <a href="#add-feature">Section 4.1, &#8220;Add Feature&#8221;</a> to add the new
 PDF to the application.</p>
 </div>
 <div class="paragraph">
@@ -946,6 +1001,7 @@ PDF to the application.</p>
 <div class="content">
 <img src="images/MergeCommandActivityDiagram.png" alt="MergeCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 15. Merge Command Activity Diagram</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1043,15 +1099,15 @@ which is an indicator if the application can perform other operations on the Pdf
 <div class="content">
 <img src="images/MergeCommandSequenceDiagram.png" alt="MergeCommandSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 17. Merge Command Sequence Diagram</div>
+<div class="title">Figure 16. Merge Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="considerations-2"><a class="link" href="#considerations-2">3.5.2. Considerations</a></h4>
+<h4 id="considerations-2"><a class="link" href="#considerations-2">4.5.2. Considerations</a></h4>
 <div class="paragraph">
 <p>The default directory of the merged file is currently set to the directory of the first index of the files to be merged. There were considerations to make flexibility in the merge command input
 to allow for the user to specify the desired directory of the merged file. As the current version of <strong><em>PDF++</em></strong> is focused on a working product, it was decided to simplify the command to focus on
-the merge operation. Users can also make use of <a href="#move-feature">Section 3.4, &#8220;Move feature&#8221;</a> to move the file; such implementation is more intuitive if the user is going to be using the application for everyday needs.</p>
+the merge operation. Users can also make use of <a href="#move-feature">Section 4.4, &#8220;Move feature&#8221;</a> to move the file; such implementation is more intuitive if the user is going to be using the application for everyday needs.</p>
 </div>
 <div class="paragraph">
 <p>For the merging of files, the current implementation involves adding all files to a single <a href="https://pdfbox.apache.org/docs/2.0.1/javadocs/org/apache/pdfbox/multipdf/PDFMergerUtility.html"><em>PDFMergerUtility</em></a>
@@ -1061,7 +1117,7 @@ to be slower as more merge operations are done overall. As the case of instabili
 </div>
 </div>
 <div class="sect3">
-<h4 id="future-implementation-2"><a class="link" href="#future-implementation-2">3.5.3. Future Implementation</a></h4>
+<h4 id="future-implementation-2"><a class="link" href="#future-implementation-2">4.5.3. Future Implementation</a></h4>
 <div class="paragraph">
 <p>There are performance issues encountered when performing the merge operations with many files of large size. In future versions, the merge operation has to not only ensure
 performance but stability as well. By v2.0, the merging will be able to support larger files without any concern for the application to freeze or crash while merging.
@@ -1071,9 +1127,9 @@ Currently, there are no means to make the merging operation perform faster due t
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete-feature"><a class="link" href="#delete-feature">3.6. Delete feature</a></h3>
+<h3 id="delete-feature"><a class="link" href="#delete-feature">4.6. Delete feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">3.6.1. Current Implementation</a></h4>
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.6.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>delete</code> feature is facilitated by both <strong>DeleteCommand</strong> and <strong>DeleteCommandParser</strong>.
 This feature performs either a <em>soft</em> or <em>hard</em> remove operation on a file in the application
@@ -1086,6 +1142,7 @@ based on the index provided.</p>
 <div class="content">
 <img src="images/DeleteCommandActivityDiagram.png" alt="DeleteCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 17. Delete Command Activity Diagram</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1149,7 +1206,7 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-3"><a class="link" href="#feature-breakdown-3">3.6.2. Feature breakdown</a></h4>
+<h4 id="feature-breakdown-3"><a class="link" href="#feature-breakdown-3">4.6.2. Feature breakdown</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the <code>delete</code> feature.</p>
@@ -1183,13 +1240,13 @@ user&#8217;s input.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear-feature"><a class="link" href="#clear-feature">3.7. Clear feature</a></h3>
+<h3 id="clear-feature"><a class="link" href="#clear-feature">4.7. Clear feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">3.7.1. Current Implementation</a></h4>
+<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.7.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>clear</code> feature is facilitated by both <strong>ClearCommand</strong> and <strong>ClearCommandParser</strong>.
 This features removes all the PDF files that were previously stored in PDF++. It is similar to
-the <a href="#delete-feature">Section 3.6, &#8220;Delete feature&#8221;</a> in that it removes files from the application, with multiple files instead of
+the <a href="#delete-feature">Section 4.6, &#8220;Delete feature&#8221;</a> in that it removes files from the application, with multiple files instead of
 one at a time. However, it differs that it does not have the option to delete the file from the local
 filesystem.</p>
 </div>
@@ -1231,9 +1288,9 @@ wish to revert the action, please refer to <a href="#Undo/Redo feature">[Undo/Re
 </div>
 </div>
 <div class="sect2">
-<h3 id="deadline-feature"><a class="link" href="#deadline-feature">3.8. Deadline feature</a></h3>
+<h3 id="deadline-feature"><a class="link" href="#deadline-feature">4.8. Deadline feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-8"><a class="link" href="#current-implementation-8">3.8.1. Current Implementation</a></h4>
+<h4 id="current-implementation-8"><a class="link" href="#current-implementation-8">4.8.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>deadline</code> feature is facilitated by both <strong>DeadlineCommand</strong> and <strong>DeadlineCommandParser</strong>
 This feature allows you to set or remove deadlines of the file specified by you from PDF++.
@@ -1294,10 +1351,16 @@ result of the <code>Filter</code>, <code>Find</code> or <code>List</code> featur
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-4"><a class="link" href="#feature-breakdown-4">3.8.2. Feature Breakdown</a></h4>
+<h4 id="feature-breakdown-4"><a class="link" href="#feature-breakdown-4">4.8.2. Feature Breakdown</a></h4>
 <div class="paragraph">
 <p>Illustrated below is a sample usage scenario that provides a clear view to the inner
 workings of the <code>deadline</code> feature.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeadlineClassDiagram.png" alt="DeadlineClassDiagram" width="200">
+</div>
+<div class="title">Figure 21. Deadline Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>Step 1: From the main interface, the user chooses a file that they wish to set a deadline,
@@ -1317,7 +1380,7 @@ user&#8217;s input.</p>
 <div class="content">
 <img src="images/DeadlineCommandActivityDiagram.png" alt="DeadlineCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 21. Deadline Command Activity Diagram</div>
+<div class="title">Figure 22. Deadline Command Activity Diagram</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1335,9 +1398,9 @@ remaining from the current day until the deadline date.
 </div>
 </div>
 <div class="sect2">
-<h3 id="help-feature"><a class="link" href="#help-feature">3.9. Help feature</a></h3>
+<h3 id="help-feature"><a class="link" href="#help-feature">4.9. Help feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-9"><a class="link" href="#current-implementation-9">3.9.1. Current Implementation</a></h4>
+<h4 id="current-implementation-9"><a class="link" href="#current-implementation-9">4.9.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>help</code> feature brings up the UserGuide in a browser window as a html file. Following other
 features, the command is parsed and a <strong>HelpCommand</strong> object is created to be executed.</p>
@@ -1356,14 +1419,14 @@ Users can reference from the UserGuide directly on how to navigate the guide.</p
 <div class="content">
 <img src="images/UserGuide.png" alt="UserGuide" width="600">
 </div>
-<div class="title">Figure 22. User Guide</div>
+<div class="title">Figure 23. User Guide</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exit-feature"><a class="link" href="#exit-feature">3.10. Exit feature</a></h3>
+<h3 id="exit-feature"><a class="link" href="#exit-feature">4.10. Exit feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-10"><a class="link" href="#current-implementation-10">3.10.1. Current Implementation</a></h4>
+<h4 id="current-implementation-10"><a class="link" href="#current-implementation-10">4.10.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>exit</code> feature is facilitated by <strong>ExitCommand</strong>. This feature allows you to exit from <em>PDF++</em>.</p>
 </div>
@@ -1396,9 +1459,9 @@ reopening the application.
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-feature"><a class="link" href="#list-feature">3.11. List feature</a></h3>
+<h3 id="list-feature"><a class="link" href="#list-feature">4.11. List feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-11"><a class="link" href="#current-implementation-11">3.11.1. Current Implementation</a></h4>
+<h4 id="current-implementation-11"><a class="link" href="#current-implementation-11">4.11.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The list feature is facilitated by <strong>ListCommand</strong>.
 This feature will display all of the files currently stored within the application at the
@@ -1430,9 +1493,9 @@ the results. Hence, the <code>list</code> feature is added to allow for a "reset
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-feature"><a class="link" href="#find-feature">3.12. Find feature</a></h3>
+<h3 id="find-feature"><a class="link" href="#find-feature">4.12. Find feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-12"><a class="link" href="#current-implementation-12">3.12.1. Current Implementation</a></h4>
+<h4 id="current-implementation-12"><a class="link" href="#current-implementation-12">4.12.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>find</code> feature is facilitated by <strong>FindCommand</strong> and <strong>FindCommandParser</strong>.
 This feature lists a subset of all the files in the application based on the keyword(s)
@@ -1460,12 +1523,12 @@ files. There must be at least one provided.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-5"><a class="link" href="#feature-breakdown-5">3.12.2. Feature Breakdown</a></h4>
+<h4 id="feature-breakdown-5"><a class="link" href="#feature-breakdown-5">4.12.2. Feature Breakdown</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandActivityDiagram.png" alt="FindCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 23. Find Command Activity Diagram</div>
+<div class="title">Figure 24. Find Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The following image briefly summarises the interactions of the <code>find</code> command with
@@ -1475,7 +1538,7 @@ some of its immediate components.</p>
 <div class="content">
 <img src="images/FindCommandSequenceDiagram.png" alt="FindCommandSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 24. General Internal Illustration of Find Command.</div>
+<div class="title">Figure 25. General Internal Illustration of Find Command.</div>
 </div>
 <div class="paragraph">
 <p>When the user enters the CLI Input for the find command, the command is first passed
@@ -1537,7 +1600,7 @@ action.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="considerations-3"><a class="link" href="#considerations-3">3.12.3. Considerations</a></h4>
+<h4 id="considerations-3"><a class="link" href="#considerations-3">4.12.3. Considerations</a></h4>
 <div class="paragraph">
 <p>Our application also implements several security features such as the ability of users to <code>Encrypt</code> and
 <code>Decrypt</code> their files. Hence, a major security concern was to prevent the <code>FindCommand</code> from searching
@@ -1546,7 +1609,7 @@ as malicious users might simply utilize the <code>FindCommand</code> to extract 
 </div>
 </div>
 <div class="sect3">
-<h4 id="future-implementation-3"><a class="link" href="#future-implementation-3">3.12.4. Future Implementation</a></h4>
+<h4 id="future-implementation-3"><a class="link" href="#future-implementation-3">4.12.4. Future Implementation</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1564,9 +1627,9 @@ improve the ability of the application to look through content even if they are 
 </div>
 </div>
 <div class="sect2">
-<h3 id="filter-feature"><a class="link" href="#filter-feature">3.13. Filter feature</a></h3>
+<h3 id="filter-feature"><a class="link" href="#filter-feature">4.13. Filter feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-13"><a class="link" href="#current-implementation-13">3.13.1. Current Implementation</a></h4>
+<h4 id="current-implementation-13"><a class="link" href="#current-implementation-13">4.13.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>filter</code> feature is facilitated by <strong>FilterCommand</strong> and <strong>FilterCommandParser</strong>.
 This feature is similar to <a href="#find-feature">Find feature</a> in that it lists a subset of all the files
@@ -1590,12 +1653,12 @@ in the application, except that it will list the files based on the tag of the f
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-6"><a class="link" href="#feature-breakdown-6">3.13.2. Feature Breakdown</a></h4>
+<h4 id="feature-breakdown-6"><a class="link" href="#feature-breakdown-6">4.13.2. Feature Breakdown</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/FilterCommandActivityDiagram.png" alt="FilterCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 25. Filter Command Activity Diagram</div>
+<div class="title">Figure 26. Filter Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The inner workings of <code>FilterCommand</code> can be explained in the following steps should you need to modify it.
@@ -1673,9 +1736,9 @@ those that contain the input tags.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="select-feature"><a class="link" href="#select-feature">3.14. Select feature</a></h3>
+<h3 id="select-feature"><a class="link" href="#select-feature">4.14. Select feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-14"><a class="link" href="#current-implementation-14">3.14.1. Current Implementation</a></h4>
+<h4 id="current-implementation-14"><a class="link" href="#current-implementation-14">4.14.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The select feature is facilitated by <code>SelectCommand</code> and <code>SelectCommandParser</code>. This allows users to select a file and view
 more information pertaining to that selected file. They are able to view features such as its size,
@@ -1687,7 +1750,7 @@ Format: <code>select INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-7"><a class="link" href="#feature-breakdown-7">3.14.2. Feature Breakdown</a></h4>
+<h4 id="feature-breakdown-7"><a class="link" href="#feature-breakdown-7">4.14.2. Feature Breakdown</a></h4>
 <div class="paragraph">
 <p>The inner workings of <code>SelectCommand</code> can be explained in the following steps should you need to modify it.</p>
 </div>
@@ -1747,9 +1810,9 @@ Format: <code>select INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-feature"><a class="link" href="#sort-feature">3.15. Sort feature</a></h3>
+<h3 id="sort-feature"><a class="link" href="#sort-feature">4.15. Sort feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-15"><a class="link" href="#current-implementation-15">3.15.1. Current Implementation</a></h4>
+<h4 id="current-implementation-15"><a class="link" href="#current-implementation-15">4.15.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The sort feature is facilitated by <code>SortCommand</code> and <code>SortCommandParser</code>.
 The sort command allows the user to arrange the list of files tracked by the application in a specified order &amp; criteria.
@@ -1772,7 +1835,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-8"><a class="link" href="#feature-breakdown-8">3.15.2. Feature Breakdown</a></h4>
+<h4 id="feature-breakdown-8"><a class="link" href="#feature-breakdown-8">4.15.2. Feature Breakdown</a></h4>
 <div class="paragraph">
 <p>Listed below is a brief explanation of the inner workings of the sort feature.</p>
 </div>
@@ -1861,9 +1924,9 @@ set indexes of the files tracked by the application.
 </div>
 </div>
 <div class="sect2">
-<h3 id="tag-feature"><a class="link" href="#tag-feature">3.16. Tag feature</a></h3>
+<h3 id="tag-feature"><a class="link" href="#tag-feature">4.16. Tag feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-16"><a class="link" href="#current-implementation-16">3.16.1. Current Implementation</a></h4>
+<h4 id="current-implementation-16"><a class="link" href="#current-implementation-16">4.16.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The tag feature is facilitated by <code>TagCommand</code> and the <code>TagCommandParser</code>.
 This allows users to set tags to files that are tracked by the application that allows them to easily organize and
@@ -1884,7 +1947,7 @@ Format: <code>tag PREFIX INDEX t/TAG&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-breakdown-9"><a class="link" href="#feature-breakdown-9">3.16.2. Feature Breakdown</a></h4>
+<h4 id="feature-breakdown-9"><a class="link" href="#feature-breakdown-9">4.16.2. Feature Breakdown</a></h4>
 <div class="paragraph">
 <p>The inner workings of <code>TagCommand</code> can be briefly explained in the following steps should you need to modify it.</p>
 </div>
@@ -1978,9 +2041,9 @@ The <code>Tag Feature</code> only allows for tags that do not contain spaces and
 </div>
 </div>
 <div class="sect2">
-<h3 id="history-feature"><a class="link" href="#history-feature">3.17. History feature</a></h3>
+<h3 id="history-feature"><a class="link" href="#history-feature">4.17. History feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-17"><a class="link" href="#current-implementation-17">3.17.1. Current Implementation</a></h4>
+<h4 id="current-implementation-17"><a class="link" href="#current-implementation-17">4.17.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The history feature is facilitated by <code>HistoryCommand</code>.
 This feature displays the previous commands entered since the start of the current session
@@ -2002,9 +2065,9 @@ of the application; each time the application is closed, the command history wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature-coming-in-v2-0"><a class="link" href="#undo-redo-feature-coming-in-v2-0">3.18. Undo/Redo feature [Coming in v2.0]</a></h3>
+<h3 id="undo-redo-feature-coming-in-v2-0"><a class="link" href="#undo-redo-feature-coming-in-v2-0">4.18. Undo/Redo feature [Coming in v2.0]</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-18"><a class="link" href="#current-implementation-18">3.18.1. Current Implementation</a></h4>
+<h4 id="current-implementation-18"><a class="link" href="#current-implementation-18">4.18.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedPdfBook</code>.
 It extends <code>PdfBook</code> with an undo/redo history, stored internally as an <code>pdfBookStateList</code> and <code>currentStatePointer</code>.
@@ -2036,6 +2099,7 @@ Additionally, it implements the following operations:</p>
 <div class="content">
 <img src="images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
 </div>
+<div class="title">Figure 27. Undo / Redo Step 1</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>delete 5</code> command to delete the 5th pdf in the pdf book. The <code>delete</code> command calls <code>Model#commitPdfBook()</code>, causing the modified state of the pdf book after the <code>delete 5</code> command executes to be saved in the <code>pdfBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted pdf book state.</p>
@@ -2044,6 +2108,7 @@ Additionally, it implements the following operations:</p>
 <div class="content">
 <img src="images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
 </div>
+<div class="title">Figure 28. Undo / Redo Step 2</div>
 </div>
 <div class="paragraph">
 <p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new pdf. The <code>add</code> command also calls <code>Model#commitPdfBook()</code>, causing another modified pdf book state to be saved into the <code>pdfBookStateList</code>.</p>
@@ -2052,6 +2117,7 @@ Additionally, it implements the following operations:</p>
 <div class="content">
 <img src="images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
 </div>
+<div class="title">Figure 29. Undo / Redo Step 3</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2072,6 +2138,7 @@ If a command fails its execution, it will not call <code>Model#commitPdfBook()</
 <div class="content">
 <img src="images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
 </div>
+<div class="title">Figure 30. Undo / Redo Step 4</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2092,6 +2159,7 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial p
 <div class="content">
 <img src="images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 31. Undo / Redo Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoPdfBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the pdf book to that state.</p>
@@ -2115,6 +2183,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 <div class="content">
 <img src="images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
 </div>
+<div class="title">Figure 32. Undo / Redo Step 5</div>
 </div>
 <div class="paragraph">
 <p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitPdfBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>pdfBookStateList</code>, all pdf book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
@@ -2123,6 +2192,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 <div class="content">
 <img src="images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
 </div>
+<div class="title">Figure 33. Undo / Redo Step 6</div>
 </div>
 <div class="paragraph">
 <p>The following activity diagram summarizes what happens when a user executes a new command:</p>
@@ -2131,10 +2201,11 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 <div class="content">
 <img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
 </div>
+<div class="title">Figure 34. Undo / Redo Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.18.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.18.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -2204,7 +2275,7 @@ If the <code>currentStatePointer</code> is at index <code>pdfBookStateList.size(
 </div>
 </div>
 <div class="sect2">
-<h3 id="file-protection"><a class="link" href="#file-protection">3.19. File Protection</a></h3>
+<h3 id="file-protection"><a class="link" href="#file-protection">4.19. File Protection</a></h3>
 <div class="paragraph">
 <p>PDF++ has a robust in-built file protection system which allows you to encrypt or decrypt any
 PDF files you want. These features utilises the
@@ -2226,10 +2297,10 @@ An <a href="#encrypted-file">[encrypted-file]</a> is a file that is protected wi
 </table>
 </div>
 <div class="paragraph">
-<p>You can visit <a href="#encryption-feature">Section 3.19.1, &#8220;Encryption feature&#8221;</a> and <a href="#decryption-feature">Section 3.19.2, &#8220;Decryption feature&#8221;</a> to understand more about the respective feature.</p>
+<p>You can visit <a href="#encryption-feature">Section 4.19.1, &#8220;Encryption feature&#8221;</a> and <a href="#decryption-feature">Section 4.19.2, &#8220;Decryption feature&#8221;</a> to understand more about the respective feature.</p>
 </div>
 <div class="sect3">
-<h4 id="encryption-feature"><a class="link" href="#encryption-feature">3.19.1. Encryption feature</a></h4>
+<h4 id="encryption-feature"><a class="link" href="#encryption-feature">4.19.1. Encryption feature</a></h4>
 <div class="sect4">
 <h5 id="current-implementation-19"><a class="link" href="#current-implementation-19">Current Implementation</a></h5>
 <div class="paragraph">
@@ -2242,6 +2313,7 @@ An <a href="#encrypted-file">[encrypted-file]</a> is a file that is protected wi
 <div class="content">
 <img src="images/EncryptCommandActivityDiagram.png" alt="EncryptCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 35. Encrypt Command Activity Diagram</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2322,7 +2394,7 @@ are created. The password specified will be passed to <code>StandardProtectionPo
 </div>
 </li>
 <li>
-<p>The Pdf is recorded in the <a href="#Design-Model">Section 2.4, &#8220;Model component&#8221;</a> and the changes are saved.</p>
+<p>The Pdf is recorded in the <a href="#Design-Model">Section 3.4, &#8220;Model component&#8221;</a> and the changes are saved.</p>
 </li>
 <li>
 <p>A <strong>CommandResult</strong> is returned upon successful exception of <strong>EncryptCommand</strong>.</p>
@@ -2337,6 +2409,7 @@ are created. The password specified will be passed to <code>StandardProtectionPo
 <div class="content">
 <img src="images/EncryptCommandSequenceDiagram.png" alt="EncryptCommandSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 36. Encrypt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect4">
@@ -2353,7 +2426,7 @@ are created. The password specified will be passed to <code>StandardProtectionPo
 <ul>
 <li>
 <p>Due to security reasons, it was decided to focus on encrypting an unprotected Pdf.
-You will need to use <a href="#decryption-feature">Section 3.19.2, &#8220;Decryption feature&#8221;</a>
+You will need to use <a href="#decryption-feature">Section 4.19.2, &#8220;Decryption feature&#8221;</a>
 before encrypting it with a new password. This is to ensure your intent in changing the password,
 as the current version <strong>PDF++</strong> does not support <code>Forget Password</code> feature.</p>
 </li>
@@ -2385,10 +2458,10 @@ as the current version <strong>PDF++</strong> does not support <code>Forget Pass
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="#history-feature">Section 3.17, &#8220;History feature&#8221;</a> will not show the executed <code>EncryptCommand</code> which includes the password of the file.</p>
+<p><a href="#history-feature">Section 4.17, &#8220;History feature&#8221;</a> will not show the executed <code>EncryptCommand</code> which includes the password of the file.</p>
 </li>
 <li>
-<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 3.18, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
+<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 4.18, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
 will not comprise your privacy has been found.</p>
 </li>
 <li>
@@ -2410,7 +2483,7 @@ If there is a mismatch of the two passwords entered, the command will not be exe
 </div>
 </div>
 <div class="sect3">
-<h4 id="decryption-feature"><a class="link" href="#decryption-feature">3.19.2. Decryption feature</a></h4>
+<h4 id="decryption-feature"><a class="link" href="#decryption-feature">4.19.2. Decryption feature</a></h4>
 <div class="sect4">
 <h5 id="current-implementation-20"><a class="link" href="#current-implementation-20">Current Implementation</a></h5>
 <div class="admonitionblock note">
@@ -2420,7 +2493,7 @@ If there is a mismatch of the two passwords entered, the command will not be exe
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The current Implementation of <strong>DecryptCommand</strong> is very similar to <a href="#encryption-feature">Section 3.19.1, &#8220;Encryption feature&#8221;</a>.
+The current Implementation of <strong>DecryptCommand</strong> is very similar to <a href="#encryption-feature">Section 4.19.1, &#8220;Encryption feature&#8221;</a>.
 The part where it is implemented differently will be specifically marked with a <code>*</code> for your convenience.
 </td>
 </tr>
@@ -2436,6 +2509,7 @@ The part where it is implemented differently will be specifically marked with a 
 <div class="content">
 <img src="images/DecryptCommandActivityDiagram.png" alt="DecryptCommandActivityDiagram" width="600">
 </div>
+<div class="title">Figure 37. Decrypt Command Activity Diagram</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2497,7 +2571,7 @@ Common reasons of error are:</p>
 <p>An unprotected * Pdf will be saved and closed.</p>
 </li>
 <li>
-<p>The Pdf is recorded in the <a href="#Design-Model">Section 2.4, &#8220;Model component&#8221;</a> and the changes are saved.</p>
+<p>The Pdf is recorded in the <a href="#Design-Model">Section 3.4, &#8220;Model component&#8221;</a> and the changes are saved.</p>
 </li>
 <li>
 <p>A <strong>CommandResult</strong> is returned upon successful exception of <strong>DecryptCommand</strong>.</p>
@@ -2512,6 +2586,7 @@ Common reasons of error are:</p>
 <div class="content">
 <img src="images/DecryptCommandSequenceDiagram.png" alt="DecryptCommandSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 38. Decrypt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect4">
@@ -2527,10 +2602,10 @@ Common reasons of error are:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="#history-feature">Section 3.17, &#8220;History feature&#8221;</a> will not show the executed <code>EncryptCommand</code> which includes the password of the file.</p>
+<p><a href="#history-feature">Section 4.17, &#8220;History feature&#8221;</a> will not show the executed <code>EncryptCommand</code> which includes the password of the file.</p>
 </li>
 <li>
-<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 3.18, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
+<p>The <a href="#undo-redo-feature-coming-in-v2-0">Section 4.18, &#8220;Undo/Redo feature [Coming in v2.0]&#8221;</a> is temporarily disabled until a solution that
 will not comprise your privacy has been found.</p>
 </li>
 <li>
@@ -2562,14 +2637,14 @@ If this feature is highly demanded, this feature will be implemented to <strong>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.20. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.20. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.21, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.21, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -2600,7 +2675,7 @@ If this feature is highly demanded, this feature will be implemented to <strong>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.21. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.21. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file directory, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2608,7 +2683,7 @@ If this feature is highly demanded, this feature will be implemented to <strong>
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>We use asciidoc for writing documentation.</p>
@@ -2626,20 +2701,20 @@ We chose asciidoc over Markdown because asciidoc, although a bit more complex th
 </table>
 </div>
 <div class="sect2">
-<h3 id="editing-documentation"><a class="link" href="#editing-documentation">4.1. Editing Documentation</a></h3>
+<h3 id="editing-documentation"><a class="link" href="#editing-documentation">5.1. Editing Documentation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
 Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">4.2. Publishing Documentation</a></h3>
+<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">5.2. Publishing Documentation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to learn how to deploy GitHub Pages using Travis.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></h3>
+<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF format</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
 </div>
@@ -2666,11 +2741,11 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 26. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 39. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></h3>
+<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></h3>
 <div class="paragraph">
 <p>The <a href="https://github.com/CS2103-AY1819S2-T12-4/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
 </div>
@@ -2729,7 +2804,7 @@ This will render the SE-EDU navigation bar at the top of the page, and add some 
 </table>
 </div>
 <div class="sect2">
-<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></h3>
+<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">5.5. Per-file Documentation Settings</a></h3>
 <div class="paragraph">
 <p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how the file is rendered.</p>
 </div>
@@ -2786,7 +2861,7 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 </table>
 </div>
 <div class="sect2">
-<h3 id="site-template"><a class="link" href="#site-template">4.6. Site Template</a></h3>
+<h3 id="site-template"><a class="link" href="#site-template">5.6. Site Template</a></h3>
 <div class="paragraph">
 <p>The files in <a href="https://github.com/CS2103-AY1819S2-T12-4/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
@@ -2815,10 +2890,10 @@ The SE-EDU team does not provide support for modified template files.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Testing"><a class="link" href="#Testing">5. Testing</a></h2>
+<h2 id="Testing"><a class="link" href="#Testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="running-tests"><a class="link" href="#running-tests">5.1. Running Tests</a></h3>
+<h3 id="running-tests"><a class="link" href="#running-tests">6.1. Running Tests</a></h3>
 <div class="paragraph">
 <p>There are three ways to run tests.</p>
 </div>
@@ -2880,7 +2955,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 </div>
 </div>
 <div class="sect2">
-<h3 id="types-of-tests"><a class="link" href="#types-of-tests">5.2. Types of tests</a></h3>
+<h3 id="types-of-tests"><a class="link" href="#types-of-tests">6.2. Types of tests</a></h3>
 <div class="paragraph">
 <p>We have two types of tests:</p>
 </div>
@@ -2922,7 +2997,7 @@ e.g. <code>seedu.pdf.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></h3>
+<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">6.3. Troubleshooting Testing</a></h3>
 <div class="paragraph">
 <p><strong>Problem: <code>HelpWindowTest</code> fails with a <code>NullPointerException</code>.</strong></p>
 </div>
@@ -2940,34 +3015,34 @@ e.g. <code>seedu.pdf.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="build-automation"><a class="link" href="#build-automation">6.1. Build Automation</a></h3>
+<h3 id="build-automation"><a class="link" href="#build-automation">7.1. Build Automation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="continuous-integration"><a class="link" href="#continuous-integration">6.2. Continuous Integration</a></h3>
+<h3 id="continuous-integration"><a class="link" href="#continuous-integration">7.2. Continuous Integration</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">6.3. Coverage Reporting</a></h3>
+<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">7.3. Coverage Reporting</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://coveralls.io/">Coveralls</a> to track the code coverage of our projects. See <a href="UsingCoveralls.html">UsingCoveralls.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="documentation-previews"><a class="link" href="#documentation-previews">6.4. Documentation Previews</a></h3>
+<h3 id="documentation-previews"><a class="link" href="#documentation-previews">7.4. Documentation Previews</a></h3>
 <div class="paragraph">
 <p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="making-a-release"><a class="link" href="#making-a-release">6.5. Making a Release</a></h3>
+<h3 id="making-a-release"><a class="link" href="#making-a-release">7.5. Making a Release</a></h3>
 <div class="paragraph">
 <p>Here are the steps to create a new release.</p>
 </div>
@@ -2989,7 +3064,7 @@ e.g. <code>seedu.pdf.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">6.6. Managing Dependencies</a></h3>
+<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">7.6. Managing Dependencies</a></h3>
 <div class="paragraph">
 <p>A project often depends on third-party libraries. For example, Pdf Book depends on the <a href="https://github.com/FasterXML/jackson">Jackson library</a> for JSON parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:</p>
 </div>
@@ -3038,7 +3113,7 @@ e.g. <code>seedu.pdf.logic.LogicManagerTest</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8221;</a> before attempting to modify the <code>Logic</code> component.
+Do take a look at <a href="#Design-Logic">Section 3.3, &#8220;Logic component&#8221;</a> before attempting to modify the <code>Logic</code> component.
 </td>
 </tr>
 </table>
@@ -3101,7 +3176,7 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8221;</a> before attempting to modify the <code>Model</code> component.
+Do take a look at <a href="#Design-Model">Section 3.4, &#8220;Model component&#8221;</a> before attempting to modify the <code>Model</code> component.
 </td>
 </tr>
 </table>
@@ -3167,7 +3242,7 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</a> before attempting to modify the <code>UI</code> component.
+Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</a> before attempting to modify the <code>UI</code> component.
 </td>
 </tr>
 </table>
@@ -3183,6 +3258,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-tag-before.png" alt="getting started ui tag before" width="300">
 </div>
+<div class="title">Figure 40. UI Before Tag</div>
 </div>
 <div class="paragraph">
 <p><strong>After</strong></p>
@@ -3191,6 +3267,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-tag-after.png" alt="getting started ui tag after" width="300">
 </div>
+<div class="title">Figure 41. UI After Tag</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -3246,6 +3323,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-result-before.png" alt="getting started ui result before" width="200">
 </div>
+<div class="title">Figure 42. Ui Before Result</div>
 </div>
 <div class="paragraph">
 <p><strong>After</strong></p>
@@ -3254,6 +3332,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-result-after.png" alt="getting started ui result after" width="200">
 </div>
+<div class="title">Figure 43. UI After Result</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -3322,6 +3401,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-status-before.png" alt="getting started ui status before" width="500">
 </div>
+<div class="title">Figure 44. UI Before Status</div>
 </div>
 <div class="paragraph">
 <p><strong>After</strong></p>
@@ -3330,6 +3410,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="content">
 <img src="images/getting-started-ui-status-after.png" alt="getting started ui status after" width="500">
 </div>
+<div class="title">Figure 45. UI After Status</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -3388,7 +3469,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage component&#8221;</a> before attempting to modify the <code>Storage</code> component.
+Do take a look at <a href="#Design-Storage">Section 3.5, &#8220;Storage component&#8221;</a> before attempting to modify the <code>Storage</code> component.
 </td>
 </tr>
 </table>
@@ -3852,53 +3933,76 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 <h3 id="use-case-add-new-pdf-file" class="discrete">Use case: Add new PDF file</h3>
 <div class="paragraph">
-<p><strong>MSS</strong></p>
+<p><strong>System: PDF*  +
+*Use case: Adding a Pdf to PDF</strong><br>
+<strong>Actor: Student</strong><br>
+<strong>MSS</strong><br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User clicks on <code>Import PDF</code> button [top-left corner of the UI].</p>
+<p>User types <code>add f/FILEPATH</code> into the CLI Input.</p>
 </li>
 <li>
-<p>User navigates to directory of the PDF file to be added.</p>
-</li>
-<li>
-<p>User clicks desired PDF file followed by <code>Add</code> button.</p>
+<p>User clicks enter.</p>
 </li>
 <li>
 <p>PDF++ makes a record of the relevant attributes of the selected PDF.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
 </li>
 </ol>
 </div>
-<h3 id="use-case-sort-files-within-pdf" class="discrete">Use case: Sort files within PDF++</h3>
 <div class="paragraph">
-<p><strong>MSS</strong></p>
+<p>Use case ends.</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong><br>
+3a.<br>
+  3a1. User loads an invalid file (not a pdf).<br>
+  3a2. PDF shows an error message to user. +
+  3a3. User repeats Step 1 and 2 to add a valid pdf into PDF.<br>
+  Use Case resumes at step 3.<br></p>
+</div>
+<h3 id="use-case-find-keyword-in-files-within-pdf" class="discrete">Use case: Find keyword in files within PDF++</h3>
+<div class="paragraph">
+<p><strong>System: PDF*  +
+*Use case: Adding a Pdf to PDF</strong><br>
+<strong>Actor: Student</strong><br>
+<strong>MSS</strong><br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User clicks on <code>Sort</code> dropdown box.</p>
+<p>Clicks on the CLI Input Area.</p>
 </li>
 <li>
-<p>User clicks on sorting criteria based on dropdown box options.</p>
+<p>User types <code>find KEYWORD</code>.</p>
 </li>
 <li>
-<p>User clicks on <code>Sort</code> button.</p>
+<p>User presses enter.</p>
 </li>
 <li>
-<p>PDF++ sorts the list of files and displays sorted list to user.</p>
+<p>PDF++ Returns a list of files that contain the keyword in its names or content.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p><strong>Extensions</strong><br>
+3a. User input invalid data.<br>
+3a1. PDF++ throws an exception to alert the user.<br>
+3a2. User repeats Step 1 to 3 to search till a valid <code>KEYWORD</code> is entered.<br></p>
+</div>
+<div class="paragraph">
+<p>3b. User inputs a <code>KEYWORD</code> that is not in any of the files.<br>
+3b1. PDF++ Returns an empty list.<br>
+Use Case ends.</p>
+</div>
 <h3 id="use-case-delete-pdf" class="discrete">Use case: Delete pdf</h3>
 <div class="paragraph">
-<p><strong>MSS</strong></p>
+<p><strong>System: PDF++</strong>
+<strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -4637,4 +4741,4 @@ the application</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 10:17:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 11:06:38 UTC</div></div></div></body></html>
