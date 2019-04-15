@@ -299,13 +299,41 @@ Once the user has navigated to the folder, click on the address bar and copy</p>
 <div class="ulist">
 <ul>
 <li>
-<p><em>For Mac</em></p>
+<p><em>For Mac</em>
+Right click the file that you wish to add to our application and you should see
+the following menu pop up.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UGAddPathMac1.png" alt="UGAddPathMac1" width="200">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When this menu appears, if you press <kbd>control</kbd> on your keyboard, you should
+see the menu change as shown in the image below.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UGAddPathMac2.png" alt="UGAddPathMac2" width="200">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Now if you press the button highlighted in <strong>blue</strong>, you have successfully copied
+the path of the file you wish to add to the application.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Step 3: The user enters the <code>add</code> command into the CLI interface, following the
-outlined syntax as illustrated below.</p>
+<p>Step 3: You may now enter the <code>add</code> command into the CLI interface followed by the
+path of the file you wish to add to the application as illustrated below.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -324,12 +352,21 @@ Your users must type the file name <strong>after</strong> the directory copied a
 <img src="images/AddFeatureStep3UserInput.png" alt="AddFeatureStep3UserInput" width="600">
 </div>
 </div>
-<div class="paragraph">
-<p>[NOTE] you can enter <code>add</code> and hit enter, to open up a GUI for you to select the file you
-wish to add.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can enter <code>add</code> and hit <kbd>enter</kbd>, to open up a GUI for you to select the file you
+wish to add.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Step 4: Upon hitting enter to execute the command, the <strong>AddCommandParser</strong> parses the input
+<p>Step 4: Upon hitting <kbd>enter</kbd> to execute the command, the <strong>AddCommandParser</strong> parses the input
 into several components that are required to be executed by the <strong>AddCommand</strong>.</p>
 </div>
 <div class="paragraph">
@@ -339,18 +376,6 @@ the your input.</p>
 <div class="paragraph">
 <p>Step 5: Upon receiving the necessary information from the parser, the <code>AddCommand</code> first
 begins by checking for validity as shown below.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Duplicate <code>Pdf</code> found in PDF++</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddFeatureStep5DuplicateFound.png" alt="AddFeatureStep5DuplicateFound" width="600">
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -387,7 +412,7 @@ added to PDF++</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As of v1.2, the Add feature is only capable of adding 1 <code>Pdf</code> file at a time. By v2.0,
+As of v1.4, the Add feature is only capable of adding 1 <code>Pdf</code> file at a time. By v2.0,
 the feature will support adding multiple files.
 </td>
 </tr>
@@ -396,7 +421,7 @@ the feature will support adding multiple files.
 <div class="ulist">
 <ul>
 <li>
-<p>The file must be a PDF file (with .pdf extension).</p>
+<p>The file must be a <strong>PDF</strong> file (with .pdf extension).</p>
 </li>
 </ul>
 </div>
@@ -498,7 +523,7 @@ your computer.<br></p>
 <p>The rename command has the following syntax:</p>
 </div>
 <div class="paragraph">
-<p><span class="big"><code>rename &lt;INDEX&gt; n/&lt;NEWNAME&gt; t/&lt;NEWTAG1&gt;&#8230;&#8203;</code></span></p>
+<p><span class="big">`rename &lt;INDEX&gt; n/&lt;NEWNAME&gt;</span></p>
 </div>
 <div class="ulist">
 <ul>
@@ -507,13 +532,6 @@ your computer.<br></p>
 </li>
 <li>
 <p><code>n/</code> indicates that you are editing the name of the file</p>
-</li>
-<li>
-<p><code>&lt;NEWNAME&gt;</code> refers to the new value that you would like to set the file <em>Name</em> to.</p>
-</li>
-<li>
-<p><code>&lt;NEWTAG&#8230;&#8203;&gt;</code> refers to the new <em>Tag</em> you wish to add. Leave this portion empty if you
-do not wish to tag this file.</p>
 </li>
 </ul>
 </div>
@@ -1600,4 +1618,4 @@ e.g <code>sort name down</code>, <code>sort deadline up</code>, <code>sort size 
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 04:44:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 04:45:37 UTC</div></div></div></body></html>

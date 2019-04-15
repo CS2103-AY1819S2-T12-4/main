@@ -78,7 +78,7 @@ application require upgrading.</p>
 </div>
 </li>
 <li>
-<p><strong>Introduction of Deadline Feature</strong></p>
+<p><strong>Introduction of Find Feature</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -151,7 +151,7 @@ diagrammatical explanations.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="deadline"><a class="link" href="#deadline">Deadline</a></h5>
+<h5 id="find"><a class="link" href="#find">Find</a></h5>
 <div class="paragraph">
 <p>As for the Deadline, there were several aspects that had to be communicated to
 the end user namely, the usage style of the feature, additional requirements,
@@ -166,59 +166,13 @@ referenced in the following <em>Github</em> issue
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-a-deadline-for-the-file-code-deadline-code"><a class="link" href="#setting-a-deadline-for-the-file-code-deadline-code">Setting a deadline for the file : <code>deadline</code></a></h3>
+<h3 id="find-feature"><a class="link" href="#find-feature">Finding Content: <code>find</code></a></h3>
 <div class="paragraph">
-<p>Set or remove a deadline for the a file, specified by the index of the file
-that is next to the name of the file in the Files Section, highlighted
-in green.<br></p>
+<p>The find command allows you to <code>find</code> for files that contain a keyword or phrase
+OR <code>find</code> files which contain the entered keyword or phrase inside it.</p>
 </div>
-<div class="paragraph">
-<p>A file&#8217;s deadline is located under its name and has 4 colours to indicate the
-amount of time you have before it is due.<br></p>
-</div>
-<div class="paragraph">
-<p>The colour Green, indicates that there is more <code>7</code> days till the deadline
-is due, as shown below.<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UGDeadlineFar.png" alt="UGDeadlineFar" width="300">
-</div>
-</div>
-<div class="paragraph">
-<p>The colour Orange, indicates that you have less than <code>7</code> days till it is due.
-As shown below.<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UGDeadlineNear.png" alt="UGDeadlineNear" width="300">
-</div>
-</div>
-<div class="paragraph">
-<p>The colour Red, indicates that you have reached or failed to complete the
-task by the due date, as shown below<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UGDeadlineDue.png" alt="UGDeadlineDue" width="300">
-</div>
-</div>
-<div class="paragraph">
-<p>The colour Blue indicates that you have completed the set task.<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UGDeadlineDone.png" alt="UGDeadlineDone" width="300">
-</div>
-</div>
-<div class="paragraph">
-<p>All deadlines are also displayed in the Deadlines Section of the application
-highlighted by Red.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deadline INDEX date/DATE</code> [To Set a Deadline]<br>
-Format: <code>deadline INDEX done</code> [To Complete a Deadline]<br>
-Format: <code>deadline INDEX remove</code> [To remove a Deadline]<br></p>
+<div id="find-format" class="paragraph">
+<p>Format: <code>find KEYWORD</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -226,77 +180,24 @@ Format: <code>deadline INDEX remove</code> [To remove a Deadline]<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>deadline 1 date/20-02-2019</code><br></p>
+<p><code>find Introduction</code><br></p>
 </li>
 <li>
-<p><code>deadline 1 done</code><br></p>
-</li>
-<li>
-<p><code>deadline 1 remove</code><br></p>
+<p><code>find Author: George RR Martin</code></p>
 </li>
 </ul>
 </div>
-<hr>
 <div class="sect3">
-<h4 id="developer-guide-contributions"><a class="link" href="#developer-guide-contributions">Developer Guide Contributions</a></h4>
-<div class="sect4">
-<h5 id="deadline-feature"><a class="link" href="#deadline-feature">Deadline feature</a></h5>
+<h4 id="step-by-step-guide"><a class="link" href="#step-by-step-guide">Step-By-Step Guide</a></h4>
 <div class="paragraph">
-<p>For the deadline feature the following excerpt was inserted into the Developer
-Guide.</p>
-</div>
-<hr>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deadline-feature-2"><a class="link" href="#deadline-feature-2">Deadline Feature</a></h3>
-<div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
-<div class="paragraph">
-<p>The deadline feature is facilitated by both <code>DeadlineCommand</code> and
-<code>DeadlineCommandParser</code>. This feature
-allows you to set or remove deadlines of the PDF file specified
-by you from PDF++.</p>
-</div>
-<div class="paragraph">
-<p>The <code>Deadline</code> feature has the following syntax: <code>deadline &lt;INDEX&gt; &lt;ACTION&gt;</code>.</p>
+<p>If, for example, you wish to locate the files that contain the word <code>Introduction</code>
+in its name or files that contain the word <code>Introduction</code> in its internal content.
+You may carry out the following steps in-order to get your desired list of files.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> refers to the index of the file in the list that you wish to perform
-the <code>action</code> on.</p>
-</li>
-<li>
-<p><code>ACTION</code> refers to the type of action that you wish to perform.
-There are 3 actions that you can perform</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>date/&lt;DATE&gt;</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>date/</code> refers to command immediately following after this prefix is a date</p>
-</li>
-<li>
-<p><code>&lt;DATE&gt;</code> must be of <code>dd-mm-yyyy</code> format</p>
-</li>
-<li>
-<p>Example of a valid date format: 15-03-2019</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>done</code> assigns the PDF file a <code>DONE</code> status</p>
-</li>
-<li>
-<p><code>remove</code> assigns the PDF file a <code>REMOVE</code> status</p>
-</li>
-</ul>
-</div>
+<p>When you open the application, the image below illustrates the screen you might see initially.</p>
 </li>
 </ul>
 </div>
@@ -307,8 +208,79 @@ There are 3 actions that you can perform</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-After a deadline has been added to the PDF file you specified, the date will be
-colour coded according to a fixed criteria
+Files you observe may be different and depends on the actions you have previously carried out on our application
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UGFindFeatureImage1.png" alt="UGFindFeatureImage1" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As shown by the image, your application should contain an existing list of files.</p>
+</li>
+<li>
+<p>Next you are to key in the <code>find</code> command followed by the keyword as illustrated by the command
+<a href="#find-feature">format</a>.</p>
+</li>
+<li>
+<p>Finally, press <kbd>Enter</kbd> and give the application a short time to sieve through all the files
+it manages and locate the relevant ones for you.</p>
+</li>
+<li>
+<p>Once the application is done with the task, the following screen should be visible to you.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UGFindFeatureImage2.png" alt="UGFindFeatureImage2" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As seen in the image, the files that are relevant to your search will be displayed on the top
+left. These files are those that contain the keyword <code>Introduction</code> in its name, and files which
+contain the keyword within its content.</p>
+</li>
+<li>
+<p>The application also shows you other useful information such as, the number of files that
+match the criteria you entered into the application.</p>
+</li>
+<li>
+<p>And with that you have successfully utilized the <code>find</code> feature.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+When there are many files tracked by the application or if the files tracked by the application
+are contain many pages, the <code>find</code> command might take a little longer to operate. Hence if your
+operating system warns you that the application is not responding, please give the application some time
+to finish its operation.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+As part of a security measure, all files that are encrypted will not be subject to the <code>find</code> command.
+This will prevent any information about your secure files from being leaked.
 </td>
 </tr>
 </table>
@@ -316,18 +288,150 @@ colour coded according to a fixed criteria
 <hr>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="developer-guide-contributions"><a class="link" href="#developer-guide-contributions">Developer Guide Contributions</a></h4>
+<div class="sect4">
+<h5 id="find-feature-2"><a class="link" href="#find-feature-2">Find feature</a></h5>
 <div class="paragraph">
-<p>When designing the UI, there were several considerations that I had keep in
-mind. These include ensuring that the there is sufficient but not a suffocating
-amount of information presented to the User to ensure an optimal experience.<br>
-&#160;<br>
-As for the Deadline feature there were several considerations regarding the
-input allowances to provide the user. For instance the need to ensure that
-dates are valid, and no illegal characters are inserted such that a security
-flaw is introduced into the system.</p>
+<p>For the deadline feature the following excerpt was inserted into the Developer
+Guide.</p>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-feature-3"><a class="link" href="#find-feature-3">Find feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>find</code> feature is facilitated by <strong>FindCommand</strong> and <strong>FindCommandParser</strong>.
+This feature lists a subset of all the files in the application based on the keyword(s)
+provided. Using the keyword(s), the application will check the names of all files, as
+well as the content of the text within the files prior to revealing the results.</p>
+</div>
+<div class="paragraph">
+<p>The <code>find</code> feature has to following syntax:</p>
+</div>
+<div class="paragraph">
+<p>Format: <span class="big"><code>find &lt;KEYWORD&gt; &#8230;&#8203;</code></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;KEYWORD&gt;</code> refers to the word that the application will use as reference to find
+files. There must be at least one provided.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:
+* <code>find Resume</code>
+* <code>find Introduction</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-breakdown"><a class="link" href="#feature-breakdown">Feature Breakdown</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandActivityDiagram.png" alt="FindCommandActivityDiagram" width="600">
+</div>
+<div class="title">Figure 1. Find Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>The following image briefly summarises the interactions of the <code>find</code> command with
+some of its immediate components.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandSequenceDiagram.png" alt="FindCommandSequenceDiagram" width="600">
+</div>
+<div class="title">Figure 2. General Internal Illustration of Find Command.</div>
+</div>
+<div class="paragraph">
+<p>When the user enters the CLI Input for the find command, the command is first passed
+from the <code>LogicManager</code> to the <code>PdfBookParser</code> will carry out the following steps.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user inputs a request to <code>find</code> a keyword within the files of the application.
+e.g. <code>find keyword</code>.</p>
+</li>
+<li>
+<p>The <code>PdfBookParser</code> creates a new <code>FindCommandParser</code> upon recognising that the user
+wishes to use the <code>find</code> feature.</p>
+</li>
+<li>
+<p>Parse method within the <code>FindCommandParser</code> would create a <code>NameContainsKeywordPredicate</code> which will allow
+the <code>Model</code> to filter its list of files to show the user the requested files.</p>
+</li>
+<li>
+<p>Finally, the <code>FindCommand</code> object is returned to the <code>LogicManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Upon receiving the <code>FindCommand</code> from the <code>PdfBookParser</code> the following steps are carried out.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>execute</code> method is invoked from the <code>LogicManager</code> with the parameters of <code>model</code> and <code>history</code>.</p>
+</li>
+<li>
+<p>The <code>model</code> then uses the <code>NameContainsKeywordPredicate</code> and runs the <code>test</code> method to check each file and
+verify that it fulfils the predicate. This is so that the <code>model</code> can update itself to present the list of
+files that the user wishes to view.</p>
+</li>
+<li>
+<p>The <code>test</code> method invokes classes from the external <a href="https://pdfbox.apache.org/index.html">Apache PDFBox</a> library, namely <code>PDDocument</code> and
+<code>PDFTextStripper</code> to extract the contents of the existing files.</p>
+</li>
+<li>
+<p>The extracted content is then checked to verify if it contains the <code>keyword</code> input by the user.</p>
+</li>
+<li>
+<p>Further checks are also done to confirm if each file&#8217;s name contains the <code>keyword</code> as well.</p>
+</li>
+<li>
+<p>The <code>model</code> then updates itself and stores the current actiion in the <code>history</code>.</p>
+</li>
+<li>
+<p>Finally, the <code>FindCommand</code> returns a <code>CommandResult</code> back to the <code>LogicManager</code> for follow up
+action.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This is a brief explanation of the inner workings of the <code>FindCommmand</code> and its execution method.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="considerations"><a class="link" href="#considerations">Considerations</a></h4>
+<div class="paragraph">
+<p>Our application also implements several security features such as the ability of users to <code>Encrypt</code> and
+<code>Decrypt</code> their files. Hence, a major security concern was to prevent the <code>FindCommand</code> from searching
+through the contents of files that are previously encrypted. This is crucial to prevent the leakage of data
+as malicious users might simply utilize the <code>FindCommand</code> to extract information from the tracked files.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="future-implementation"><a class="link" href="#future-implementation">Future Implementation</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A main issue with the current implementation of the <code>FindCommand</code> is it&#8217;s slow speeds with respect to
+large files or files that contain a large string of text files. Hence, a possible consideration you might
+wish to improve upon is to "upgrade" this feature by improving it&#8217;s speed of this feature.</p>
+</li>
+<li>
+<p>Yet another enhancement to this feature you might wish to implement is the use of Optical Image Recognition,
+otherwise known as OCR. This will allow the application to translate images within the file to words which would further
+improve the ability of the application to look through content even if they are images.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 04:44:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 04:45:37 UTC</div></div></div></body></html>
